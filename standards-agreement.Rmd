@@ -1,0 +1,60 @@
+## Github
+
+1. Never use spaces or special characters
+2. use - to separate words not _
+3. use small caps
+4. files should have an extension: .txt .Rmd for example
+5. we need an extension or some other way, perhaps directory structure, to distinguish regular Rmd from Datacamp format.
+
+## R
+
+1. use lower case
+2. use _ to separate words
+3. make them human readable when appropriate. For example use `murder_rate` rather than `r`
+4. Words like "list" and "index" have specific meaning in the scope of R and should not be used interchangeably.  
+
+
+## Datacamp
+
+1. Make instruction into bullet points if they have more than one part 
+- Do this and that ...
+- Note that in R blah blah works like this ...
+
+2. Backticks around variable names, functions and short math expressions. Long math expressions use markdown format: $math$. No backticks in sample code (comment)
+
+3. "variable" vs "object": We use the term object to describe stuff that is stored in R. Variables are examples, but objects can also be more complicated entities such as functions, which are described below. (Quote from Rafa's datasciencebook R-basics.)
+
+4. Make it clear when variables are carried over to later exercises (repeat the information).
+
+5. Be succinct and informative/no need for conversational language ("You'll find that in R it's very easy to do this". etc.) when the instruction is already long.  
+
+6. All the question titles need to have ## before them. (for ex. Within chapter 1, R-Basics, question 1 would be - ## 1. Quadratic Functions.)
+
+7. If there are more than one way to do something, ask students to define a new variable containing the result. Then as long as the result is correct, they are fine. The setback might be in some cases, the student can manually/brute forcely find the answer. To avoid that, make it hard or impossible to do that. For example, in a question asking the count of NAs, create a sample with > 100 NAs so students won't just print the dataset and count the NAs.
+
+
+## Loading external packages
+
+We should not be loading Rdas from the web. Below are instructions for installing external packages, including `dslabs`.
+
+1) Change the course .yml file to modify the underlying R-build. At the end of the file, write:
+
+```from : 'r-base-prod:24'```
+
+2) Next, create a file called `requirements.R` in the same folder as the .yml file. In this file, install all packages the course needs. They will be available in all exercises.
+
+2a) Note that switching to this different R-Build will allow you to install packages, but it also means that it won't come with any pre-installed packages. Most importantly for our purposes that means that `dplyr` is not installed. So 
+
+2b) Instead of using the standard ```install.packages()```, Datacamp recommends that we use  ```devtools::install_version("package_name", version="version_nr")```. This is because sometimes new versions of packages are buggy and we don't want them to mess up the functionality of the whole course.
+
+3) So, as an example, if we wanted to pre-install `dplyr` and Rafa's `dslabs` package, this is how the `requirements.R` file should look like:
+
+```
+library(devtools)
+devtools::install_version("dplyr", version="0.5.0")
+devtools::install_github("rafalab/dslabs")
+```
+
+4) After creating the `requirements.R` file, go to the Datacamp course editor, hit `Builds` and then `Refresh` to create a new build of the course. You may also have to close and open the teach-editor to make the package work in Preview mode.
+
+
