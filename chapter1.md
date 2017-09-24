@@ -14,7 +14,7 @@ Remember, R does not show any results when you store a value. If you make an err
 
 Note how `#` is used to make comments. Comments won't run as code.
 
-Consider this problem: The book Harry Potter and the Goblet of Fire(part 4) sold $55 million$ copies and one of its sequel books, Harry Potter and the Deathly Hallows(part 7) sold $50 million$ copies. What is the combined sale of the two books? 
+Consider this problem: The book Harry Potter and the Goblet of Fire (part 4) sold $55&nbsp;million$ copies and one of its sequel books, Harry Potter and the Deathly Hallows(part 7) sold $50$ (million) copies. What is the combined sale of the two books? 
 
 *** =instructions
 - Assign the number of books sold (in millions) to hp4 and hp7 variables 
