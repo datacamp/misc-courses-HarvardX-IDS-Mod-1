@@ -5,7 +5,7 @@ description          : In this course we introduce you the basics of computing a
 author_bio           : Madhuri D. is a TA for this course. Hello! :) 
 university           : Harvard University 
 difficulty level     : 1
-time needed          : Approximately 1 hour for each module 
+time needed          : Approximately 1 hour for each section 
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 title                : R Basics Exercises
@@ -252,3 +252,24 @@ msg4 = "Try again! Check what the question is asking for"
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
+
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+## End of Section
+
+This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+
+
+
+*** =instructions
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
