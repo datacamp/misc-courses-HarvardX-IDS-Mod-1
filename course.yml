@@ -1,6 +1,6 @@
-title            : PH125.1x
+title            : IDS Module 1 Alt 3
 description      : "Find the complete course on edx.org <a href='https://www.edx.org/course/data-science-r-basics-harvardx-ph125-1x' target='_blank'>here</a>."
 university       : HarvardX
-difficulty_level : 1
-time_needed      : 8 hours
+difficulty_level : 2
+time_needed      : 1 hour
 from             : 'r-base-prod:28'
