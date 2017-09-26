@@ -261,8 +261,10 @@ This is the end of the programming assignment for this section. You can close th
 
 
 *** =instructions
-
+- Wait wait..
+- Let's continue
 *** =hint
+
 
 *** =pre_exercise_code
 ```{r}
