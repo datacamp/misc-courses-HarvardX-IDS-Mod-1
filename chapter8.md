@@ -139,3 +139,25 @@ test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dat
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
 ----
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+## End of Section
+
+This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+
+
+
+*** =instructions
+- Wait wait..
+- Let's continue
+*** =hint
+
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```

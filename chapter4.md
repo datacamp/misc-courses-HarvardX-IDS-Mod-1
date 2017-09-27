@@ -421,3 +421,25 @@ test_output_contains("mean(na_example[!ind])", incorrect_msg = "Check your code 
 success_msg("Awesome ! Now you're all set with vectors! Get practicing on your own!")
 ```
 ----
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+## End of Section
+
+This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+
+
+
+*** =instructions
+- Wait wait..
+- Let's continue
+*** =hint
+
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```

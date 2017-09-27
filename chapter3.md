@@ -558,4 +558,27 @@ test_object("x", undefined_msg = "Make sure to define x first.", incorrect_msg =
 test_output_contains("as.integer(x)", incorrect_msg = "Check the code again.")
 success_msg("Awesome!Doesn`t that feel wonderful. Now, you can try changing it back to character, using the code `as.character(x)`.")
 ```
-----
+-------
+type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+## End of Section
+
+This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+
+
+
+*** =instructions
+- Wait wait..
+- Let's continue
+*** =hint
+
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+

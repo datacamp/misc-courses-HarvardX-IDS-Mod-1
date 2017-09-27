@@ -412,3 +412,26 @@ test_error()
 test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "Make sure you're checking your formula!")
 success_msg("This is great! We are done with this module. Time to move on to bigger things!")
 ```
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+## End of Section
+
+This is the end of the programming assignment for this section. If you've completed the assignments from the other sections, check your progress bar in the edx course!
+
+
+
+*** =instructions
+- Wait wait..
+- Let's continue
+*** =hint
+
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
+
