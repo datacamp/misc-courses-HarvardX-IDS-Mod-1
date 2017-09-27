@@ -1,162 +1,134 @@
 ---
-title       : 8. Basic Plots
-description :
+title       : Basic Plots
+description : We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.
+--- type:NormalExercise lang:r xp:100 skills:1 key:54f4b68ff9
+## 1. Scatterplot 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:4c6d0d3bc3
-## 1. Scatterplot
+We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get plot.)
 
-In this chapter, you will practice using basic plotting tools in R. 
+`library(dslabs)`
+`data(murders)`
+`population_in_millions <- murders$population/10^6`
+`total_gun_murders <- murders$total`
+`plot(population_in_millions, total_gun_murders)`
 
-You will use the same dataset as we did in the chapter on `Sorting` - `RatPupWeight`.
-
-The `plot(<x axis>,<y axis>)` function generates a scatter plot of 2 variables, the first variable across the x-axis and the second variable across the y-axis. 
-
-For example, `plot(time, height)` plots `time` variable on the x-axis and `height` variable on y-axis. 
-
+Note that many states have populations below 5 million and are bunched up. We may gain further insights from making this plot in the log scale. 
 *** =instructions
-- In `weight`, store the rats' weights `RatPupWeight$weight`
-- In `lsize`, store the number of pups per litter `RatPupWeight$Lsize`
-- Create a scatterplot of the weights of the ratpups (on x-axis) with the size of the litter they were born in (on y-axis)
+Transform the variables using the log10 transformation and then plot the total murders versus population.
+
 
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-library(nlme)
-data(RatPupWeight)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
 ```
 
 *** =sample_code
 ```{r}
 # Load the datasets
-library(nlme)
-data(RatPupWeight)
+library(dslabs)
+data(murders)
+population_in_millions <- murders$population/10^6
+total_gun_murders <- murders$total
+plot(population_in_millions, total_gun_murders)
 
-# Store the values of `weight` and `lsize`
+# Transform population using `log10` transformation
 
+# Transform total gun murders using `log10` transformation
 
-
-# Create a scatterplot with `weight` and `lsize`
+# Create a scatterplot with population and murders 
 
 ```
 
 *** =solution
 ```{r}
-# Store the values of `weight` and `lsize`
-weight <- RatPupWeight$weight
-lsize <- RatPupWeight$Lsize
 
-# Create a scatterplot with `weight` and `lsize`
-plot(weight, lsize)
+# Transform population using `log10` transformation
+log10_population<- log10(murders$population)
+
+# Transform total gun murders using `log10` transformation
+log10_total_gun_murders <- log10(murders$total)
+
+# Create a scatterplot with population and murders 
+plot(log10_population, log10_total_gun_murders)
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_object("weight", undefined_msg = "Define weight first.", incorrect_msg = "Store the value of weight.")
-test_object("lsize", undefined_msg = "Define lsize first.", incorrect_msg = "Store the lsize.")
-test_function("plot", incorrect_msg = "Scatter weight on lsize.")
+test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Transform variable using log10.")
+test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_murders first.", incorrect_msg = "Transform variable using log10.")
+test_function("plot", incorrect_msg = "Scatter population on murders.")
 success_msg("Doesn't that plot look neat!")
 ```
 ----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:4c598008e7
-## 2. Histogram
+--- type:NormalExercise lang:r xp:100 skills:1 key:08c2ba4a0f
+## 2. Histogram 
 
-A histogram helps you visualize the number of occurences of a range of data. 
-
-In R, you can plot the histogram of a variable using the `hist()` function. It takes the variable as its argument. 
 
 *** =instructions
-- In `weight`, store the rats' weights `RatPupWeight$weight`
-- Plot the histogram of `weight`
+Create a histogram of the state populations.
 
 *** =hint
 
-
 *** =pre_exercise_code
 ```{r}
-library(nlme)
-data(RatPupWeight)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
 ```
 
 *** =sample_code
 ```{r}
-# Load the datasets
-library(nlme)
-data(RatPupWeight)
-
-# Store the value of `weight` (same as previous question)
+# Store the population in millions (same as previous question)
 
 
-# Create a histogram of the weight
-
-
+# Create a histogram of the population 
 ```
 
 *** =solution
 ```{r}
-# Store the value of `weight` (same as previous question)
-weight <- RatPupWeight$weight
+# Store the population in millions (same as previous question)
+population_in_millions <- murders$population/10^6
 
-# Create a histogram of the weight
-hist(weight)
+# Create a histogram of the population 
+hist(population_in_millions)
 ```
 
 *** =sct
 ```{r}
 test_error()
-test_object("weight", undefined_msg = "Define weight first.", incorrect_msg = "Check code!")
+test_object("population_in_millions", undefined_msg = "Define the population first.", incorrect_msg = "Check code!")
 test_function("hist", incorrect_msg = "Check code again.")
-success_msg("You've got a histogram! Awesome!")
+success_msg("We got a histogram! Awesome!")
 ```
 ----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:126ec89fd8
-## 3. Boxplot
+--- type:NormalExercise lang:r xp:100 skills:1 key:e81739b658
+## 3. Boxplot 
 
-A boxplot helps you graphically visualize the minimum, first quartile, median, third quartile and maximum in a given dataset. 
-
-The y-axis variable is continuous (eg: weight which can take a range of values) while the x-axis variable is discrete (eg: gender which takes 2 values - male, female). 
-
-The syntax of boxplot is `boxplot(y~x, dataset = <Name of the dataset>)`. 
-
-For example, `boxplot(rain~region, dataset = Weather)` plots the boxplot `rain` on y-axis for different values of `region` on x-axis in the `Weather` dataset. 
 
 *** =instructions
-- In `weight`, store the rats' weights `RatPupWeight$weight`
-- In `sex`, store the rats' sex `RatPupWeight$sex`
-- Plot the boxplot of `weight` of pups by their `sex`, specifying the dataset
+Generate boxplots of the state populations by region (`population~region`), using one line of code.  
 
 *** =hint
-```{r}
 Make sure you specify the dataset.
-```
 
 *** =pre_exercise_code
 ```{r}
-# Load the datasets
-library(nlme)
-data(RatPupWeight)
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
 ```
 
 *** =sample_code
 ```{r}
-# Store values as in previous questions
-
-
-# Create a boxplot of weight by sex and specify the dataset
+# Create a boxplot of state populations by region and specify dataset 
 
 ```
 
 *** =solution
 ```{r}
-# Store values as in previous questions
-weight <- RatPupWeight$weight
-sex <- RatPupWeight$sex
-
-# Create a boxplot of weight by sex and specify the dataset
-boxplot(weight~sex, dataset = RatPupWeight)
+# Create a boxplot of state populations by region and specify dataset 
+boxplot(population~region, data = murders)
 
 ```
 
@@ -167,3 +139,25 @@ test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dat
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
 ----
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+## End of Section
+
+This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+
+
+
+*** =instructions
+- Wait wait..
+- Let's continue
+*** =hint
+
+
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
