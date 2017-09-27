@@ -1,6 +1,6 @@
 ---
 title       : Vector Arithmetics 
-description : We will learn about the more powerful vector arithmetic fucntions in R, that help us solve us higher-level problems. 
+description : We will learn about the more powerful vector arithmetic functions in R, that help us solve us higher-level problems. 
 --- type:NormalExercise lang:r xp:100 skills:1 key:748a24d3ef
 ## 1. Arithmetic Funtions 1
 
