@@ -249,7 +249,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 --- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+This is the end of the programming assignment for this section. Close this window and go back to the course. If you want to continue without watching the videos, you can keep working with the programming part for the next section if you do not want to watch the videos in the next section.
 
 
 
