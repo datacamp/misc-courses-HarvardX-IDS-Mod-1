@@ -131,8 +131,7 @@ success_msg("Good job ! Let`s get to work on another question!")
 ## 3. Sum and Seq
 
 Look at the result of typing the following code into R (Run the code from the console): 
-`n <- 1000`
-`x <- seq(1,n)`
+`n <- 1000\nx <- seq(1,n)`
 `sum(x)`
 
 Based on the result, what do you think the functions seq and sum do? You can use the help system:
