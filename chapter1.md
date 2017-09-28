@@ -97,10 +97,7 @@ Same formula as the last exercise
 *** =sample_code
 ```{r}
 
-# Define the first 1000 integers 
-
-
-# Calculate the sum of the first 1000 positive integers
+# Below, write you code to calculate the sum of the first 100 integers 
 
 
 ``` 
