@@ -14,7 +14,7 @@ description          : In these exercises, we introduce you to the basics of ari
 ## 1. Learning functions in R
 
 What is the sum of the first $100$ positive integers? 
-There is a formula that tells us that it is 'n (n-1)/2'
+There is a formula that tells us that it is 'n (n+1)/2'
 
 
 *** =instructions
@@ -37,7 +37,7 @@ Follow the sample code in the editor.
 ```{r}
 # Here is how you would do it for the first 20 integers
 n <- 20
-n*(n-1)/2 
+n*(n+1)/2 
 
 # Below, write you code to calculate the sum of the first 100 integers 
 
@@ -51,13 +51,13 @@ n*(n-1)/2
 n <- 20
 
 # Calculate the sum of the first 20 positive integers
-n*(n-1)/2 
+n*(n+1)/2 
 
 # Define the first 100 integers 
 n <- 100
 
 # Calculate the sum of the first 100 positive integers
-n*(n-1)/2 
+n*(n+1)/2 
 ```
 
 *** =sct
@@ -67,7 +67,7 @@ n*(n-1)/2
 test_object("n", incorrect_msg = "Something is wrong with `n`. Make sure you have assigned the correct value to `n`.")
 
 # second instruction
-test_output_contains ("(n*(n-1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
+test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
 
 # General 
 test_error() 
@@ -130,7 +130,7 @@ success_msg("Good job ! Let`s get to work on another question!")
 
 ## 3. Sum and Seq
 
-Look at the result of typing the following code into R (Run the code from the console): 
+Look to the right and see the result of typing the following code into R (Run the code from the console): 
 ```{r, eval=FALSE}
 n <- 1000
 x <- seq(1,n)
@@ -165,10 +165,10 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 
 ## 4. Function inside a function
 In math and programming we say we evaluate a function when we replace the argument with a given number. 
-So if we type sqrt(4) we evaluate the sqrt function. 
+So if we type `sqrt(4)` we evaluate the `sqrt` function. 
 In R you can evaluate a function inside another function. 
 
-Example: sqrt (log10(25)), will calculate the square root of the log of 25, to the base 10. 
+Example: `sqrt(log10(25))`, will calculate the square root of the log of 25, to the base 10. 
 
 
 *** =instructions
@@ -218,7 +218,7 @@ success_msg("Very good ! Doesn`t this make life so much easier !")
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:df508b6664
 ## 5. Logs
 
-Which of the following will always return the numeric value stored in x? 
+Which of the following will always return the numeric value stored in `x`? 
 You can try out examples and use the help system if you want.
 
 *** =instructions
@@ -254,8 +254,7 @@ This is the end of the programming assignment for this section. You can close th
 
 
 *** =instructions
-- Wait wait..
-- Let's continue
+
 *** =hint
 
 
