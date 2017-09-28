@@ -14,9 +14,7 @@ description          : In these exercises, we introduce you to the basics of ari
 ## 1. Learning functions in R
 
 What is the sum of the first $100$ positive integers? 
-There is a formula that tells us the sum of integers $1$ through n. 
-
-It is `n (n-1)/2`
+There is a formula that tells us that it is $n (n-1)/2$
 
 
 *** =instructions
