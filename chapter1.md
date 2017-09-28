@@ -14,12 +14,12 @@ description          : In these exercises, we introduce you to the basics of ari
 ## 1. Learning functions in R
 
 What is the sum of the first $100$ positive integers? 
-There is a formula that tells us that it is $n (n-1)/2$
+There is a formula that tells us that it is 'n (n-1)/2'
 
 
 *** =instructions
  
-Define n=100 and then use R to compute the sum of 1 through 100 using the formula. 
+Define 'n=100' and then use R to compute the sum of 1 through 100 using the given formula. 
 What is the sum?
 
 
@@ -35,10 +35,10 @@ Follow the sample code in the editor.
 
 *** =sample_code
 ```{r}
-# Define the first 20 integers 
+# For instance, if you can define the first 20 integers 
 n <- 20
 
-# Calculate the sum of the first 20 positive integers
+# Then, you would calculate the sum of the first 20 positive integers
 n*(n-1)/2 
 
 # Define the first 100 integers 
