@@ -35,13 +35,12 @@ Follow the sample code in the editor.
 
 *** =sample_code
 ```{r}
-# For instance, if you can define the first 20 integers 
+# Here is how you would do it for the first 20 integers
 n <- 20
-
-# Then, you would calculate the sum of the first 20 positive integers
 n*(n-1)/2 
 
-# Define the first 100 integers 
+
+# Below, write you code for the first 100 integers 
 
 
 # Calculate the sum of the first 100 positive integers
