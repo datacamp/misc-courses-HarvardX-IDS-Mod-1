@@ -76,9 +76,6 @@ success_msg("Good job ! Let`s apply this to another question")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:d1735adac6
-title                : R Basics Exercises
-description          : In these exercises, we introduce you to the basics of arithmetic computing -addition, subtraction, 
-
 ## 2. Learning functions in R - 2
 
 *** =instructions
