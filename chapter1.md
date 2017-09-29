@@ -11,7 +11,7 @@ programming language : R
 title                : R Basics Exercises
 description          : In these exercises, we introduce you to the basics of arithmetic computing -addition, subtraction, 
 
-## 1. Learning functions in R
+## R Basics Exercises: 1. Learning functions in R
 
 What is the sum of the first $100$ positive integers? 
 There is a formula that tells us that it is 'n (n+1)/2'
