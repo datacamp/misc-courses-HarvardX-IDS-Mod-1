@@ -9,7 +9,7 @@ time needed          : Approximately 1 hour for each section
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 title                : R Basics Exercises
-description          : In these exercises, we introduce you to the basics of arithmetic computing -addition, subtraction, 
+description          : Go back to the edx course <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/course/' target='_blank'>here</a>
 
 ## R Basics Exercises: 1. Learning functions in R
 
@@ -105,7 +105,7 @@ Same formula as the last exercise
 n <- 1000
 
 # Calculate the sum of the first 1000 positive integers
-n*(n-1)/2
+n*(n+1)/2
 
 ```
 
@@ -116,7 +116,7 @@ n*(n-1)/2
 test_object("n", incorrect_msg = "Something is wrong with `n`. Make sure you have assigned the correct value to `n`.")
 
 # second instruction
-test_output_contains ("(n*(n-1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
+test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
 
 # General 
 test_error() 
@@ -246,21 +246,18 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 --- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
 ## End of Section
 
-This is the end of the programming assignment for this section. Close this window and go back to the course. If you want to continue without watching the videos, you can keep working with the programming part for the next section if you do not want to watch the videos in the next section.
+This is the end of the programming assignment for this section. Close this window and go back to the course. If you want to continue without watching the videos, you can keep working with the programming part for the next section if you do not want to watch the videos in the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
 
 
 *** =instructions
-
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
+- Let's go back to the course.
+- Let's continue with the assessments.
 
 *** =sct
 ```{r}
-
+msg1 = "Ok."
+msg2 = "Ok."
+test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
 ```
+----
