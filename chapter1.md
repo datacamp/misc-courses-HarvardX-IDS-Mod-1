@@ -2,8 +2,8 @@
 title                : R-basics 
 author_field         : 
 description          : In this course we introduce you the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
-author_bio           : Madhuri D. is a TA for this course. Hello! :) 
-university           : Harvard University 
+author_bio           : 
+university           : HarvardX 
 difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
 programming language : R 
