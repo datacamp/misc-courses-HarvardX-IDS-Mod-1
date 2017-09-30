@@ -94,7 +94,7 @@ Same formula as the last exercise
 *** =sample_code
 ```{r}
 
-# Below, write you code to calculate the sum of the first 100 integers 
+# Below, write you code to calculate the sum of the first 1000 integers 
 
 
 ``` 
