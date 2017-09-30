@@ -39,7 +39,7 @@ Follow the sample code in the editor.
 n <- 20
 n*(n+1)/2 
 
-# Below, write you code to calculate the sum of the first 100 integers 
+# Below, write your code to calculate the sum of the first 100 integers 
 
 
 ```
