@@ -230,7 +230,7 @@ success_msg("Very good!")
 ```
 ----
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:df508b6664
-## Nested Functions 2
+## Nested functions call 2
 
 Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
 
