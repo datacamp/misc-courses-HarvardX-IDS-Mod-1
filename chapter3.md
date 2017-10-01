@@ -3,14 +3,16 @@ title       : Vectors
 description : The most basic unit to store data in R are vectors. We'll learn about creating and working with them in this chapter. 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7ffb66e63a
 
-## 1. Creating a numeric vector
-Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data.
-In R, you create a vector with the combine function c(). You place the vector elements separated by a comma between the parentheses. 
-For example a numeric vector would look something like this: 
-`cost <- c(50, 75, 90, 100, 150)`
+## Numeric vectors
+
+A vectors is series of values all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
+
+```{r}
+cost <- c(50, 75, 90, 100, 150)
+```
 
 *** =instructions
-Use the function c to create a numeric vector with the average high temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto which are `35, 88, 42, 84, 81, and 30` degrees farenheit. Call the object `temp`.
+Use the function `c()` to create a numeric vector with the average high temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto which are `35, 88, 42, 84, 81, and 30` degrees farenheit. Call the object `temp`.
 
 *** =hint
 Make sure your numbers are within parenthesis and have commas separating them. 
@@ -22,15 +24,21 @@ Make sure your numbers are within parenthesis and have commas separating them.
 
 *** =sample_code
 ```{r}
-# create a numeric vector to store the cost of different food items and assign it to `cost`
+# Here is an example creating a numeric vector named cost
 cost <- c(50, 75, 90, 100, 150)
 
-# create a numeric vector to store the temperatures in Jan for 6 countries  and assign it to `temp`
+# Create a numeric vector to store the temperatures listed above into temp
+# Make sure to follow the same order as above
+
 ```
 
 *** =solution
 ```{r}
-# create a numeric vector to store the temperatures in Jan for 6 countries and assign it to `temp`
+# Here is an example creating a numeric vector named cost
+cost <- c(50, 75, 90, 100, 150)
+
+# Create a numeric vector to store the temperatures listed above into temp
+# Make sure to follow the same order as above
 temp <- c(35, 88, 42, 84, 81, 30)
 ```
 
@@ -44,12 +52,15 @@ success_msg("Good job! Do you want to now try creating a character vector")
 
 ---type:NormalExercise lang:r xp:100 skills:1 key:d226f2d807
 
-## 2. Character Vectors  
+## Character vectors  
 
-As in the previous question, we are going to create a vector. Only this time, let's learn to create a character vector. The main difference is that these have to be written as strings and so the names are enclosed within double inverted commas. 
+As in the previous question, we are going to create a vector. Only this time, we learn to create character vectors. The main difference is that these have to be written as strings and so the names are enclosed within double quotes. 
 
 A character vector would look something like this:
-`food <- c("pizza", "burgers", "salads", "cheese", "pasta")`
+
+```{r}
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+```
 
 *** =instructions
 Using the same cities as in the previous question (Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto), create a vector with the city names and call the object `city`. 
@@ -64,16 +75,21 @@ Be sure to place the names within double inverted commas.
 
 *** =sample_code
 ```{r}
-# create a character vector to store the different types of food items and assign it to `food`
+# here is an example of how to create a character vector
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# create a character vector to store the names of the 6 cities and assign it to `city`
+# Create a numeric vector to store the temperatures listed above into temp
+# Make sure to follow the same order as above
 
 ```
 
 *** =solution
 ```{r}
-# create a character vector to store the names of the 6 cities  and assign it to `city`
+# here is an example of how to create a character vector
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+
+# Create a numeric vector to store the temperatures listed above into city
+# Make sure to follow the same order as above
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
 ```
@@ -88,14 +104,17 @@ success_msg("Awesome! Now you`ve learnt to store both numeric and character vect
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:b4215811b5
-## 3. Connecting Numeric and Character Vectors 
+## Connecting Numeric and Character Vectors 
 
-We have successfully assigned the temperatures (numeric values) to `temp` and the city names(character values) to `city`. But can we associate the temperature to it's related city? Yes! We can do so using a code we already know - `names`. We assign names to the numeric values.  
+We have successfully assigned the temperatures as numeric values to `temp` and the city names as character values to `city`. But can we associate the temperature to it's related city? Yes! We can do so using a code we already know - `names`. We assign names to the numeric values.  
 
 It would look like this:
-`cost <- c(50, 75, 90, 100, 150)`
-`food <- c("pizza", "burgers", "salads", "cheese", "pasta")`
-`names(cost) <- food` 
+
+```{r}
+cost <- c(50, 75, 90, 100, 150)
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+names(cost) <- food
+```
 
 *** =instructions
 Use the names function and the objects defined in the previous exercises to associate the temperature data with its corresponding city.
@@ -116,8 +135,9 @@ cost <- c(50, 75, 90, 100, 150)
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 names(cost) <- food
 
-# Remember, R just stores the values in the object and doesn't display unless asked. To display, just type the name of the object
-cost
+# You already wrote this code
+temp <- c(35, 88, 42, 84, 81, 30)
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
 # Associate the temperature values with its corresponding city
 
@@ -125,10 +145,16 @@ cost
 
 *** =solution
 ```{r}
+# Associate the cost values with its corresponding food item
+cost <- c(50, 75, 90, 100, 150)
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+names(cost) <- food
 
-# Associate the temperature values with its corresponding city
+# You already wrote this code
 temp <- c(35, 88, 42, 84, 81, 30)
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+
+# Associate the temperature values with its corresponding city
 names(temp) <- city
 
 ```
@@ -137,7 +163,7 @@ names(temp) <- city
 ```{r}
 test_error()
 test_object("temp", incorrect_msg = "Check to match the numbers from the question!")
-test_object("city", incorrect_msg = "Each of the city names need inverted commas.")
+test_object("city", incorrect_msg = "Each of the city names need quotes.")
 test_function("names", incorrect_msg = "The numeric vector should be in the parenthesis.") 
 success_msg("Great job! We now know the temperatures of the respective cities.")
 ```
@@ -145,7 +171,7 @@ success_msg("Great job! We now know the temperatures of the respective cities.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:2d2690ae69
-## 4. Using Operators
+## Using Operators
 
 If we want to display only selected values from the object, R can help us do that easily. 
 

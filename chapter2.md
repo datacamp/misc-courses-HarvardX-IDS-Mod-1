@@ -153,7 +153,7 @@ success_msg("That's great! Now, you know what the class of `abb` is. Play around
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f9207929f3
-## More than one ways to access variables 
+## More than one way to access variables 
 
 An important lesson you should learn early is that there are multiple ways of doing things in R. For example, to generate the first five integeers we note that `1:5`, and `seq(1,5)` return the same result. 
 
