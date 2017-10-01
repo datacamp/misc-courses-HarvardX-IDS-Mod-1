@@ -3,18 +3,17 @@ title       : Data Types
 description : We're going to get an overview, of the different types of variables that there are in R, and how to work with them. 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:8a1f23741a
 
-## Data Types: Structure 
+## `str`
 
 We're going to be using the following dataset for this module. 
 Run this code in the console. 
 
 ```{r}
 library(dslabs)
-data("murders")
+data(murders)
 ```
 
-Use the function `str` to examine the structure of the murders object. 
-We can see that this object is a data frame with 51 rows and five columns. 
+Next, use the function `str` to examine the structure of the murders object. We can see that this object is a data frame with 51 rows and five columns. 
 
 Which of the following best describes the variables represented in this data frame:
 
@@ -44,8 +43,10 @@ msg4 = "Try again! Check what the question is asking for"
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:a481e086d1
-## 2. Variable Names
+
+## Variable names
 
 In the previous question, we saw the different variables that are a part of this dataset from the output of the `src()` function. The  function `names()` is specifically designed to extract the column names from a data frame. 
 
@@ -74,6 +75,11 @@ data(murders)
 
 *** =solution
 ```{r}
+# Load package and data
+
+library(dslabs)
+data(murders)
+
 # Checking the column names 
 names(murders)
 ```
@@ -87,17 +93,16 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e22e8e58ef
-## 3. Accessor $ and Class
+## Examining variables
 
-As we have learned in this module, every variable has a class. It could be a character, numeric or logical. The function `class()` can be used to determine the class of an object.
+In this module we have learned that every variable has a class. For example, the class can be character, numeric or logical. The function `class()` can be used to determine the class of an object.
 
-Here we are going to determine the class of one of the variables in the murders data frame. To extract the variables from a data frame we use `$`, referred to as the accessor.
+Here we are going to determine the class of one of the variables in the murders data frame. To extract a variables from a data frame we use `$`, referred to as the accessor.
 
-If you look to the right, the R-script shows you an example for this. Let`s try it out for ourselves. 
+In the editor we show an example of how to do this. Let`s try it out for ourselves. 
 
 *** =instructions
-Use the accessor `$` to extract the state abbreviations and assign them to the object `a`. 
-What is the class of this object?
+Use the accessor `$` to extract the state abbreviations and assign them to the object `a`. What is the class of this object?
 
 *** =hint
 Remember to assign the state abbreviations to the object `a`. 
@@ -110,14 +115,13 @@ data(murders)
 
 *** =sample_code
 ```{r}
-# To access the variable population from the murers dataset
-# we can use this code:
-m <- murders$population 
+# To access the population variable from the murers dataset use this code:
+p <- murders$population 
 
-# To determine the class of object `m` we use this code:
-class(m)
+# To determine the class of object `p` we use this code:
+class(p)
 
-# Use the accessor to extract `state abbreviations` from `murders`, and assign it to `a`
+# Use the accessor to extract state abbreviations and assign it to `a`
 
 # Determine the class of `a`
 
@@ -125,12 +129,17 @@ class(m)
 
 *** =solution
 ```{r}
-# Use the accessor to extract `state abbreviations` from `murders`, and assign it to `a`
+# To access the population variable from the murers dataset use this code:
+m <- murders$population 
+
+# To determine the class of object `m` we use this code:
+class(m)
+
+# Use the accessor to extract state abbreviations and assign it to `a`
 a <- murders$abb 
 
 # Determine the class of `a`
 class(a)  
-
 ```
 
 *** =sct
@@ -144,16 +153,15 @@ success_msg("That's great! Now, you know what the class of `abb` is. Play around
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f9207929f3
-## 4. Accessors again! This time with comparisons. 
+## 4. More than one ways to access variables 
 
-There are multiple ways of doing things in R. For example,  `c(1,2,3,4,5)` and `1:5` return the same result. Another example is that we can access variables from a data frame using the square brackets `[[`
-instead of the accessor `$`.
+An important lesson you should learn early is that there are multiple ways of doing things in R. For example, to generate the first five integeers we note that `1:5`, and `seq(1,5)` return the same result. 
 
-When you've done that, you'll notice there's another part to this question, and that is to find out whether the two symbols `$` and `[]` actually serve the same purpose! Don't believe something until you try it out for yourself! 
+There are also other ways to variables from a data frame. For example we can use the square brackets `[[`
+instead of the accessor `$`. Example code is included in the editor.
 
 *** =instructions
-Use the square brackets `[]` to extract the state abbreviations and assign them to the object `b`. 
-Use the identical function to determine if `a` and `b` are the same.
+Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. Then use the identical function to determine if `a`, as defined in the previous exercises, and `b` are the same.
 
 *** =hint
 You need to use 2 sets of square brackets. 
@@ -167,13 +175,16 @@ a <- murders$abb
 
 *** =sample_code
 ```{r}
-# Using square brackets to extract variable (population) from dataset (murders) and assign it to object `n`
-n <- murders[["population"]] 
+# We extract the population like this:
+p <- murders$population
 
-# Check whether `m` from the previous question and `n` from this one are the same
-identical(m,n)
+# This is how we do the same with the square brackets:
+o <- murders[["population"]] 
 
-# Use square brackets to extract `abb` from `murders` and assign to `b`
+# We can confirm these two are the same
+identical(o, p)
+
+# Use square brackets to extract `abb` from `murders` and assign it to `b`
 
 # Check if `a` and `b` are identical 
 
@@ -181,7 +192,16 @@ identical(m,n)
 
 *** =solution
 ```{r}
-# Use square brackets to extract `abb` from `murders` and assign to `b`
+# We extract the population like this:
+p <- murders$population
+
+# This is how we do the same with the square brackets:
+o <- murders[["population"]] 
+
+# We can confirm these two are the same
+identical(o, p)
+
+# Use square brackets to extract `abb` from `murders` and assign it to 
 b <- murders[["abb"]]
 
 # Check if `a` and `b` are identical 
@@ -193,13 +213,12 @@ identical(a,b)
 test_error()
 test_object ("b", undefined_msg = "You need to define the object `b`.", incorrect_msg = "Make sure to save the variable `abb` in the object `b`.")
 test_function("identical")
-success_msg("You've now learnt different ways of doing the same thing in R! You're making great progress! Let's move on!")
+success_msg("You've now learned different ways of doing the same thing in R! You're making great progress!")
 ```
 ----
 
-
 --- type:NormalExercise lang:r xp:100 skills:1 key:e3211138bb
-## 5. Class and factors
+## Factors
 
 Using the `str()` command, we saw that the regions column stores a factor. You can corroborate this by using the `class` command for region. 
 
@@ -247,7 +266,7 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c79e23df50
-## 6. Tables and vectors 
+## Tables and vectors 
 
 The function table takes a vector as input and returns the frequency of each unique element in the vector. 
 
@@ -288,26 +307,16 @@ success_msg("You got this! Now you're a pro at making tables in R!")
 
 ```
 ----
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1 key:011b43bb92
+
+
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
-
+----
