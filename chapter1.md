@@ -8,10 +8,10 @@ difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
-title                : R Basics Exercises
-description          : Go back to the edx course <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/course/' target='_blank'>here</a>
 
-## R Basics Exercises: 1. Learning functions in R
+# R Basics Exercises
+
+## 1. Learning functions in R
 
 What is the sum of the first $100$ positive integers? 
 There is a formula that tells us that it is 'n (n+1)/2'
