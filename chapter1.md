@@ -9,12 +9,12 @@ time needed          : Approximately 1 hour for each section
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 
-# R Basics Exercises
+## R Basics Exercises
 
-## 1. Learning functions in R
+### 1. Learning functions in R
 
-What is the sum of the first $100$ positive integers? 
-There is a formula that tells us that it is 'n (n+1)/2'
+What is the sum of the first $n$ positive integers? 
+There is a formula that tells us that it is $n (n+1)/2$
 
 
 *** =instructions
