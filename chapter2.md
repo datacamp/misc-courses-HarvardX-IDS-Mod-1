@@ -153,7 +153,7 @@ success_msg("That's great! Now, you know what the class of `abb` is. Play around
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f9207929f3
-## 4. More than one ways to access variables 
+## More than one ways to access variables 
 
 An important lesson you should learn early is that there are multiple ways of doing things in R. For example, to generate the first five integeers we note that `1:5`, and `seq(1,5)` return the same result. 
 
@@ -220,7 +220,7 @@ success_msg("You've now learned different ways of doing the same thing in R! You
 --- type:NormalExercise lang:r xp:100 skills:1 key:e3211138bb
 ## Factors
 
-Using the `str()` command, we saw that the regions column stores a factor. You can corroborate this by using the `class` command for region. 
+Using the `str()` command, we saw that the region column stores a factor. You can corroborate this by using the `class` command for region. 
 
 The function `levels` shows us the categories included in the factor. 
 
@@ -250,6 +250,8 @@ class(murders$region)
 
 *** =solution
 ```{r}
+# We can see the class of the region variable using class
+class(murders$region)
 
 # Determine the number of regions included in this variable 
 length(levels(murders$region))
@@ -266,7 +268,7 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c79e23df50
-## Tables and vectors 
+## Tables
 
 The function table takes a vector as input and returns the frequency of each unique element in the vector. 
 
@@ -288,12 +290,17 @@ data(murders)
 # Here is an example of what the table function does
 x <- c("a", "a", "b", "b", "b", "c")
 table(x)
+
 # Write one line of code to show the number of states per region
 
 ```
 
 *** =solution
 ```{r}
+# Here is an example of what the table function does
+x <- c("a", "a", "b", "b", "b", "c")
+table(x)
+
 # Write one line of code to show the number of states per region
 table(murders$region)
 
