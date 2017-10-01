@@ -35,7 +35,7 @@ Follow the sample code in the editor.
 
 20*(20+1)/2 
 
-## However, we can define a variable and then use the formula for other values of n
+## However, we can define a variable to use the formula for other values of n
 
 n <- 20
 n*(n+1)/2
