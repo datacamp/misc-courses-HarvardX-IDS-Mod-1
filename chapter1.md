@@ -177,9 +177,10 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 --- type:NormalExercise lang:r xp:100 skills:1 key:26f2e309a3
 
 ## 4. Nested function calls
-In math and programming we say we evaluate a function when we replace the argument with a given number. So if we type `sqrt(4)` we evaluate the `sqrt` function to get `2`. In R it is often useful to evaluate a function inside another function. 
+In math and programming we say we evaluate a function when we replace the argument with a given number. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
 
-Example: `sqrt(log2(16))`, will calculate the log to the base 2 of 16 and then compute the square root of that value. So the first evaluation  gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
+In R it is often useful to evaluate a function inside another function. 
+For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. So the first evaluation  gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
 
 
 *** =instructions
@@ -197,46 +198,48 @@ The sqrt function comes before the log function in this case.
 
 *** =sample_code
 ```{r}
-# sqrt function 
-sqrt (5)
+# log to the base 2 
+log2(16)
 
-# sqrt of the log to the base 2 of 25, to the base 10
-sqrt (log10(25))
-## can also be written as, `sqrt (log 25, base = 10)`
+# sqrt of the log to the base 2 of 16:
+sqrt(log2(16))
 
-# Compute log of the sqrt of 100, to base 10
-
-
+# Compute log to the base 10 (log10) of the sqrt of 100
 
 ```
 
 *** =solution
 ```{r}
-# Compute log of the sqrt of 100, to base 10
-log(sqrt(100), base = 10)
+# log to the base 2 
+log2(16)
+
+# sqrt of the log to the base 2 of 16:
+sqrt(log2(16))
+
+# Compute log to the base 10 of the sqrt of 100
+log10(sqrt(100))
 
 ```
 
 *** =sct
 ```{r}
 
-test_output_contains ("log(sqrt(100), base = 10)", times = 1, incorrect_msg = "Make sure you mentioned the base and put the sqrt function in parenthesis.")
+test_output_contains ("log10(sqrt(100))", times = 1, incorrect_msg = "Make sure you mentioned the base and put the sqrt function in parenthesis.")
 test_error() 
-success_msg("Very good ! Doesn`t this make life so much easier !")
+success_msg("Very good!")
 
 ```
 ----
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:df508b6664
 ## 5. Logs
 
-Which of the following will always return the numeric value stored in `x`? 
-You can try out examples and use the help system if you want.
+Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
 
 *** =instructions
-- log(10^x)
-- log10(x^10)
-- log(exp(x))
-- exp(log(x, base = 2))
+- `log(10^x)`
+- `log10(x^10)`
+- `log(exp(x))`
+- `exp(log(x, base = 2))`
 
 *** =hint
 
@@ -260,18 +263,10 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 --- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
 ## End of Section
 
-This is the end of the programming assignment for this section. Close this window and go back to the course. If you want to continue without watching the videos, you can keep working with the programming part for the next section if you do not want to watch the videos in the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
+This is the end of the programming assignment for this section. 
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
+If you want to continue the assessments without watching the videos, you can keep click on next exercise or hit Ctrl-K.
 
-*** =instructions
-- Let's go back to the course.
-- Let's continue with the assessments.
-
-*** =sct
-```{r}
-msg1 = "Ok."
-msg2 = "Ok."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2))
-```
 ----
