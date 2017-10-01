@@ -9,9 +9,8 @@ time needed          : Approximately 1 hour for each section
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 
-## R Basics Exercises
 
-## 1. Learning functions in R
+## Using variables
 
 What is the sum of the first $n$ positive integers? There is a formula that tells us that it is $$n(n+1)/2$$.
 
@@ -34,10 +33,17 @@ Follow the sample code in the editor.
 
 *** =sample_code
 ```{r}
-# Here is how you would do it for the first 20 integers
+# Here is how you compute the sum for the first 20 integers
+
+20*(20+1)/2 
+
+## However, we can define a variable and then use the same formula for other values of n
 
 n <- 20
-n*(n+1)/2 
+n*(n+1)/2
+
+n <- 25
+n*(n+1)/2
 
 # Below, write your code to calculate the sum of the first 100 integers 
 
