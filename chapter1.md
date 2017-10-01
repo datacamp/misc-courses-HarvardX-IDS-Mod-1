@@ -1,7 +1,7 @@
 ---
 title                : R-basics 
 author_field         : 
-description          : In this course we introduce you the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
+description          : In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
 author_bio           : 
 university           : HarvardX 
 difficulty level     : 1
@@ -9,10 +9,9 @@ time needed          : Approximately 1 hour for each section
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 
-
 ## Using variables
 
-What is the sum of the first $n$ positive integers? There is a formula that tells us that it is $$n(n+1)/2$$.
+What is the sum of the first $n$ positive integers? There is a formula that tells us that it is $n(n+1)/2$.
 
 
 *** =instructions
@@ -84,7 +83,8 @@ success_msg("Good job ! Let`s apply this to another question")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:d1735adac6
-## 2. Learning functions in R - 2
+
+## Functions
 
 *** =instructions
 
