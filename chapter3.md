@@ -612,8 +612,8 @@ test_output_contains("as.integer(x)", incorrect_msg = "Check the code again.")
 success_msg("Awesome!Doesn`t that feel wonderful. Now, you can try changing it back to character, using the code `as.character(x)`.")
 ```
 --- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1 key:011b43bb92
-## End of Section
 
+## End of Section
 
 This is the end of the programming assignment for this section.
 
