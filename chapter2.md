@@ -8,9 +8,10 @@ description : We're going to get an overview, of the different types of variable
 We're going to be using the following dataset for this module. 
 Run this code in the console. 
 
-`library(dslabs)`
-
-`data("murders")`
+```{r}
+library(dslabs)
+data("murders")
+```
 
 Use the function `str` to examine the structure of the murders object. 
 We can see that this object is a data frame with 51 rows and five columns. 
@@ -46,13 +47,10 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 --- type:NormalExercise lang:r xp:100 skills:1 key:a481e086d1
 ## 2. Variable Names
 
-In the previous question, we saw the different variables that are a part of this dataset. 
-Let's find out if we can get the names of the different columns in this dataset. 
-To find out the names of the variables, there is a very simple command, called `names()`, which we will use now. 
+In the previous question, we saw the different variables that are a part of this dataset from the output of the `src()` function. The  function `names()` is specifically designed to extract the column names from a data frame. 
 
 *** =instructions
-What are the column names used by the data.frame for these five variables?
-Find out, using the code: `names(murders)` 
+What are the column names used by the murders data frame for the five variables?
 
 *** =hint
 Make sure you put the name of the dataset - `murders` - in parenthesis after names. 
@@ -86,15 +84,14 @@ success_msg("Good job!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:e22e8e58ef
 ## 3. Accessor $ and Class
 
-As we`ve learnt in this module, every variable has a class. It could be a character, numeric or logical. 
-R let`s us know the class of our variable very easily. All we need to do is ask it nicely! 
+As we have learned in this module, every variable has a class. It could be a character, numeric or logical. The function `class()` can be used to determine the class of an object.
 
 Since we can open more than one dataset in R, we need to specify where it can find a certain variable. To do this, we use something called an accessor, denoted by the `$` sign. 
 
 If you look to the right, the R-script shows you an example for this. Let`s try it out for ourselves. 
 
 *** =instructions
-Use the accessor $ to extract the state abbreviations and assign them to the object a. 
+Use the accessor `$` to extract the state abbreviations and assign them to the object `a`. 
 What is the class of this object?
 
 *** =hint
