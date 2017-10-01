@@ -11,10 +11,9 @@ programming language : R
 
 ## R Basics Exercises
 
-**1. Learning functions in R**
+## 1. Learning functions in R
 
-What is the sum of the first $n$ positive integers? 
-There is a formula that tells us that it is $n (n+1)/2$
+What is the sum of the first $n$ positive integers? There is a formula that tells us that it is $n(n+1)/2$.
 
 
 *** =instructions
@@ -36,6 +35,7 @@ Follow the sample code in the editor.
 *** =sample_code
 ```{r}
 # Here is how you would do it for the first 20 integers
+
 n <- 20
 n*(n+1)/2 
 
@@ -75,6 +75,8 @@ success_msg("Good job ! Let`s apply this to another question")
 
 ```
 ----
+
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:d1735adac6
 ## 2. Learning functions in R - 2
 
