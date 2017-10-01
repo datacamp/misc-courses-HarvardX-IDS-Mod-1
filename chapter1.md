@@ -11,7 +11,7 @@ programming language : R
 
 ## R Basics Exercises
 
-### 1. Learning functions in R
+**1. Learning functions in R**
 
 What is the sum of the first $n$ positive integers? 
 There is a formula that tells us that it is $n (n+1)/2$
