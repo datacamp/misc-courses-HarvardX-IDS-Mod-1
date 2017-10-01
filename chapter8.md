@@ -3,7 +3,7 @@ title       : Basic Plots
 description : We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.
 --- type:NormalExercise lang:r xp:100 skills:1 key:54f4b68ff9
 
-## 1. Scatterplots
+## Scatterplots
 
 We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get plot.)
 
@@ -69,7 +69,7 @@ success_msg("Doesn't that plot look neat!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:08c2ba4a0f
-## 2. Histograms 
+## Histograms 
 
 
 *** =instructions
@@ -111,7 +111,7 @@ success_msg("We got a histogram! Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e81739b658
-## 3. Boxplots
+## Boxplots
 
 
 *** =instructions
