@@ -66,7 +66,7 @@ success_msg("Good job! Now you know how to sort data in an ascending order.")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c55b4ac0f9
 
-## 2. order
+## order
 
 *** =instructions
 Now instead of the smallest population size, let's find out the index number of the state with the smallest population size, using the command `order`. 
@@ -114,7 +114,7 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:44a224bc10
-## 3. New Codes 
+## New Codes 
 
 We can actually perform the same operation as in the previous exercise using the function `which.min`. It basically tells us which is the minimum value. 
 
@@ -406,7 +406,7 @@ success_msg("Great job! Now let's move to one last thing in this chapter.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7d6eebca10
-## 8. Removing NAs  
+## Removing NAs  
 
 A common operation we perform is removing the entries that are NA and do operations on the rest. 
 
