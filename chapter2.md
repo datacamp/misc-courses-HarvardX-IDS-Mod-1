@@ -57,13 +57,14 @@ Make sure you put the name of the dataset - `murders` - in parenthesis after nam
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
 # Load package and data
+
 library(dslabs)
 data(murders)
 
