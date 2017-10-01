@@ -441,7 +441,7 @@ test_output_contains("mean(na_example[!ind])", incorrect_msg = "Check your code 
 success_msg("Awesome ! Now you're all set with vectors! Get practicing on your own!")
 ```
 ----
---- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
 
 ## End of Section
 
