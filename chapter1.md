@@ -9,7 +9,7 @@ time needed          : Approximately 1 hour for each section
 programming language : R 
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 
-## Using variables
+## Using variables 1
 
 What is the sum of the first $n$ positive integers? We can use the formula $n(n+1)/2$ to quickly compute this quantity.
 
@@ -87,7 +87,7 @@ success_msg("Good job ! Let`s apply this to another question")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:d1735adac6
 
-##  Using variables
+##  Using variables 2
 
 *** =instructions
 
@@ -132,7 +132,7 @@ success_msg("Good job ! Let`s get to work on another question!")
 ----
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba448c1da3
 
-## 3. Functions
+## Functions
 
 Run the following code in the R console:
 
@@ -175,7 +175,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:26f2e309a3
 
-## 4. Nested function calls
+## Nested function calls 1
 In math and programming we say we evaluate a function when we replace the argument with a given number. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
 
 In R it is often useful to evaluate a function inside another function. 
@@ -230,7 +230,7 @@ success_msg("Very good!")
 ```
 ----
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:df508b6664
-## 5. Logs
+## Nested Functions 2
 
 Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
 
