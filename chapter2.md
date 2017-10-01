@@ -31,7 +31,7 @@ Check the output that you see with the `str` function.
 *** =pre_exercise_code
 ```{r}
 
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
 str(murders) 
 ```
 
@@ -104,7 +104,8 @@ Remember to assign the state abbreviations to the object `a`.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -159,7 +160,8 @@ You need to use 2 sets of square brackets.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 a <- murders$abb 
 ```
 
@@ -213,7 +215,8 @@ Make sure you're using both commands - `length` and `levels`, to get the number 
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 
 ```
 
@@ -257,7 +260,8 @@ Extract the variable region from the murders dataset and then use the `table` fu
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
