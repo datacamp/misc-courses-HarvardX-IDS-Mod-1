@@ -233,7 +233,7 @@ success_msg("Awesome! You`ve learnt how to make your work easier.")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:2f3c6a9045
-## 5. Subsetting vectors continued...
+## Subsetting vectors continued...
 
 In the previous question, we accessed the temperature for consecutive cities (1st three). But what if we want to access the temperatures for any 2 specific cities?
 
@@ -282,7 +282,7 @@ success_msg("Isn`t that awesome! Let`s move to the next exercise!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a96ba3d1b8
-## 6. Sequences 
+## Sequences 
 
 The `:` operator helps us create sequences of numbers. 
 For example, `32:99` would create a list of numbers from 32 to 99. 
