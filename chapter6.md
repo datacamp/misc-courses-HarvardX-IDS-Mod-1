@@ -2,8 +2,7 @@
 title       : Indexing 
 description : R provides a powerful and convenient way of indexing vectors. We're going to learn some ways of doing that!
 --- type:NormalExercise lang:r xp:100 skills:1 key:6bb68b8400
-## 1. Logical Vectors
-
+## Logical Vectors
 
 *** =instructions
 Compute the per 100,000 murder rate for each state and store it in an object called `murder_rate`. 
@@ -16,7 +15,8 @@ The code for calculating the murder rate is: `murders$total/murders$population*1
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -51,9 +51,9 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a76be07302
-## 2. Which
+## which
 
-The code `which` helps us know directly, which values are low or high etc. Let's use it in this question. 
+The function`which()` help us know directly, which values are low or high etc. Let's use it in this question. 
 
 *** =instructions
 Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
@@ -63,20 +63,17 @@ Use the results from the previous exercise and the function `which` to determine
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
 # Store the murder rate per 100,000 for each state, in `murder_rate`
 
+# Store the murder_rate < 1 in low 
 
-# Store the `murder_rate < 1` in `low` 
-
-
-# Use `which(low)`, to get the lowest value
-
+# Use which(), to get the lowest value
 
 ```
 
@@ -88,7 +85,7 @@ murder_rate <- murders$total/murders$population*100000
 # Store the `murder_rate < 1` in `low` 
 low <- murder_rate < 1
 
-# Use `which(low)`, to get the lowest value
+# Use which(), to get the lowest value
 which(low)
 ```
 
@@ -103,8 +100,8 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:43f34535d7
-## 3. [] operators and names
 
+## Ordering vectors
 
 *** =instructions
 Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the name of the states from the dataset. 
@@ -115,8 +112,8 @@ For example: `food$cost[low]`, would give us the cost of food lower than 1.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(dslabs)
 ```
 
 *** =sample_code
@@ -155,13 +152,13 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:a15f758c03
-## 4. Low &
+## Filtering
 
 
 *** =instructions
 
-Now extend the code from exercise 2 and 3 to report the states in the Northeast with murder rates lower than 1. 
-For example: `low & food$courses=="Desserts"`, would give us the desserts from the courses variable in the food dataset.  
+Now extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1. We will use the `&` operator.
+
 
 
 *** =hint
@@ -169,8 +166,8 @@ Use the previously defined logical vector low and the logical operator &.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -213,7 +210,8 @@ success_msg("Wasn't that good! Let's move to the next one.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2004ac34f
-## 5. Average and below average 
+
+## Filtering continued
 
 *** =instructions
 In a previous exercise we computed the murder rate for each state and the average of these numbers. How many states are below the average?
@@ -223,8 +221,8 @@ In a previous exercise we computed the murder rate for each state and the averag
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -264,7 +262,7 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:19320f72ab
-## 6. Match 
+## Match 
 
 
 *** =instructions
@@ -278,17 +276,17 @@ Start by defining an index of the entries of `murders$abb` that match the three 
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-# Store the 3 abbreviations in `abbs`. (remember that they are character vectors)
+# Store the 3 abbreviations in abbs. (remember that they are character vectors)
 
-# Match the abbs to the murders$abb and store in `ind`
+# Match the abbs to the murders$abb and store in ind
 
-# Print state names from `ind`
+# Print state names from ind
 
 
 ```
@@ -316,11 +314,17 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:beea127137
-## 7. %in% 
+## %in% 
 
-If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second we can use the function %in%.
-For example: `deserts%in%courses$food`, would tell us whether or not deserts are in the courses section in dataset food. 
+If rather than an index we want a logical that tells us whether or not each element of a first vector is in we can use the function `%in%`.
+For example: 
 
+```{r}
+x <- c(2, 3, 5)
+y <- c(1, 2, 3, 4)
+x%in%y
+```
+Gives us a two `TRUE` followed by a `FALSE` becuase 2 and 3 are in `y`.  
 *** =instructions
 
 Use the %in% operator to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU ?
@@ -330,8 +334,8 @@ Use code `abbs%in%murders$abb`.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -339,7 +343,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 # Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
 
 
-# Use the %in% command 
+# Use the %in% command to compare to murders$abb
 
 
 ```
@@ -364,21 +368,21 @@ success_msg("Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:65a74691fd
-## 8. Operator `!`
+## Logical operator 
 
 
 *** =instructions
 
 Extend the code you used in exercise seven to report the one entry that is not an actual abbreviation. 
-Use the ! operator, which turns FALSE into TRUE and vice-versa, then which to obtain an index.
+Use the `!` operator, which turns `FALSE` into `TRUE` and vice-versa, then which to obtain an index.
 
 *** =hint
 Use the code `ind <- which(!abbs%in%murders$abb)`. 
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -416,25 +420,16 @@ test_output_contains("abbs[ind]", incorrect_msg = "Have you used square brackets
 success_msg("Awesome!")
 ```
 ----
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
+
+
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
+----
