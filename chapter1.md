@@ -35,7 +35,7 @@ Follow the sample code in the editor.
 
 20*(20+1)/2 
 
-## However, we can define a variable and then use the same formula for other values of n
+## However, we can define a variable and then use the formula for other values of n
 
 n <- 20
 n*(n+1)/2
@@ -260,7 +260,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
 
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+---
 ## End of Section
 
 This is the end of the programming assignment for this section. 
