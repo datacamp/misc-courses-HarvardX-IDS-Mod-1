@@ -259,7 +259,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
 
---- type:VideoExercise lang:r aspect_ratio:62.5 xp:50 skills:1
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1
 ## End of Section
 
 This is the end of the programming assignment for this section. 
