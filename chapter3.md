@@ -519,7 +519,7 @@ success_msg("Good job! Let`s move on to the next exercise!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:0f90522662
-## 11. Class, Integers and Numerics
+## Integers and Numerics
 
 Let's confirm that `1L` is an intenger not a numeric.
 *** =instructions
