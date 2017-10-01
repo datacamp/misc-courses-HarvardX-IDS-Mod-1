@@ -101,9 +101,7 @@ Same formula as the last exercise
 
 *** =sample_code
 ```{r}
-
 # Below, write you code to calculate the sum of the first 1000 integers 
-
 
 ``` 
 
@@ -266,6 +264,6 @@ This is the end of the programming assignment for this section. Close this windo
 ```{r}
 msg1 = "Ok."
 msg2 = "Ok."
-test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
+test_mc(correct = 2, feedback_msgs = c(msg1,msg2))
 ```
 ----
