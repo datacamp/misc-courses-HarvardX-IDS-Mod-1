@@ -81,7 +81,6 @@ test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code f
 # General 
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
-
 ```
 ----
 
@@ -260,7 +259,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
 
----
+--- type:VideoExercise lang:r aspect_ratio:62.5 xp:50 skills:1
 ## End of Section
 
 This is the end of the programming assignment for this section. 
