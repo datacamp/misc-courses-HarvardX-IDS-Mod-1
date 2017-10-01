@@ -2,15 +2,18 @@
 title       : Basic Plots
 description : We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.
 --- type:NormalExercise lang:r xp:100 skills:1 key:54f4b68ff9
-## 1. Scatterplot 
+
+## 1. Scatterplots
 
 We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get plot.)
 
-`library(dslabs)`
-`data(murders)`
-`population_in_millions <- murders$population/10^6`
-`total_gun_murders <- murders$total`
-`plot(population_in_millions, total_gun_murders)`
+```{r}
+library(dslabs)
+data(murders)
+population_in_millions <- murders$population/10^6
+total_gun_murders <- murders$total
+plot(population_in_millions, total_gun_murders)
+```
 
 Note that many states have populations below 5 million and are bunched up. We may gain further insights from making this plot in the log scale. 
 *** =instructions
@@ -21,12 +24,13 @@ Transform the variables using the log10 transformation and then plot the total m
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-# Load the datasets
+# Load the datasets and define some variables
 library(dslabs)
 data(murders)
 population_in_millions <- murders$population/10^6
@@ -65,7 +69,7 @@ success_msg("Doesn't that plot look neat!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:08c2ba4a0f
-## 2. Histogram 
+## 2. Histograms 
 
 
 *** =instructions
@@ -75,12 +79,14 @@ Create a histogram of the state populations.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
 # Store the population in millions (same as previous question)
+population_in_millions <- murders$population/10^6
 
 
 # Create a histogram of the population 
@@ -105,18 +111,18 @@ success_msg("We got a histogram! Awesome!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e81739b658
-## 3. Boxplot 
+## 3. Boxplots
 
 
 *** =instructions
-Generate boxplots of the state populations by region (`population~region`), using one line of code.  
+Stratify the state populations by region, the generate boxplots for the strate.  You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
 
 *** =hint
 Make sure you specify the dataset.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
 ```
 
 *** =sample_code
@@ -139,25 +145,15 @@ test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dat
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
 ----
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
+
+
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
+----

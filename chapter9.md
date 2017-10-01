@@ -3,13 +3,19 @@ title       : Programming Basics
 description : 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba015a0cbd
-## 1. Conditional Expressions 
+## Conditionals
 
 What will this conditional expression return?
 Run it from the console. 
 
-`x <- c(1,2,-3,4)` 
-`if(all(x>0)){print("All Postives")} else{print("Not All Positives")}`
+```{r}
+x <- c(1,2,-3,4)
+if(all(x>0)){
+    print("All Postives")
+  } else{
+     print("Not All Positives")
+  }
+```
 
 *** =instructions
 - All Positives
@@ -34,7 +40,7 @@ msg4 = "Check the values in x once more."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:3641a0ea21
-## 2. Conditional Expressions again! 
+## Conditional continued
 
 Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`?
 
@@ -61,25 +67,28 @@ test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:9e33032243
-## 3. Conditional Expressions again and again! "nchar & ifelse"
+
+## ifelse
 
 The function nchar tells you how many characters long a character vector is. For example:
 
+```{r}
 library(dslabs)
 data(murders)
-`char_len <- nchar(murders$state)`
-`char_len[1:5]`
-
+char_len <- nchar(murders$state)
+char_len[1:5]
+```
 *** =instructions
 
-Write a line of code that assigns to the object new_names the state abbreviation when the state name is longer than 8 characters.
+Use the `ifelse` function to write a line of code that assigns to the object new_names the state abbreviation when the state name is longer than 8 characters.
 
 
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -102,13 +111,12 @@ success_msg("Whoohoo! You're becoming a pro at this!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:8232e54e7b
-## 4. Defining functions
+## Defining functions
 
-You will encounter situations in which the function you need does not already exist so R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
+You will encounter situations in which the function you need does not already exist. R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
 
 *** =instructions
-Create a function `sum_n` that for any given value, say `$n$`, computes the sum of the integers from 1 to n (inclusive).
-Use the function to determine the sum of integers from 1 to 5,000.
+Create a function `sum_n` that for any given value, say `$n$`, computes the sum of the integers from 1 to n. Use the function to determine the sum of integers from 1 to 5,000.
 
 *** =hint
 - To make it inclusive, use {}. 
@@ -123,7 +131,7 @@ Use the function to determine the sum of integers from 1 to 5,000.
 ```{r}
 # Create function called `sum_n`
 
-# Determine the sum of integers from 1 to 5000
+# Use the function to determine the sum of integers from 1 to 5000
 
 
 ```
@@ -146,7 +154,7 @@ success_msg("This is awesome! Let's get to the next exercise.")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:bc66a1fe8f
-## 5. Defining functions continued...
+## Defining functions continued...
 
 *** =instructions
 
@@ -165,8 +173,6 @@ The command for plot, is `{plot(x+y, y-x)}`.
 ```{r}
 # Create `altman_plot` 
 
-# Try running this function on your own by replacing x and y with any number! 
-
 ```
 
 *** =solution
@@ -184,12 +190,12 @@ success_msg("That's great! You can also play around with the variables and put i
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:6544013f7c
-## 6. Defining functions - another one ! 
-
+## Lexical scope
 
 *** =instructions
 ```{r}
-After running the code below, what is the value of x?
+
+The lexical scoping is a convention used by many languages that determins when an object is available by its name. When you run the code below you will see which x is available when. After running the code below, what is the value of x?
 
 ```
 *** =hint
@@ -226,10 +232,11 @@ success_msg("Good job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:cf000aaad9
-## 7. For Loops - 1
+## For loops 
 
 
 *** =instructions
+We are soon going to write a foor loop. In that for-loop we are going to call a function. We define that function here. 
 Write a function `compute_s_n` that for any given $n$ computes the sum `S_n = 1^2 + 2^2 + 3^2 +...+ n^2`. 
 Report the value of the sum when `n=10`.
 
@@ -270,7 +277,7 @@ success_msg("That's awesome! You're getting so good at this!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:02c5d3c4b6
-## 8. For Loops - 2 
+## 8. For loops
 
 *** =instructions
 
@@ -321,7 +328,7 @@ success_msg("This is great! You now know the basics of for loops in R.")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:81431dc1d4
-## 9. For Loops and Plotting - 1 
+## 9. For Loops and Plotting  
 
 `s_n` and `n` have already been defined in the previous question and are stored in memory for you!  
 
@@ -371,7 +378,7 @@ success_msg("Awesome! Let's go to the last exercise in this chapter!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:cb64a8f82d
-## 10. Identical 
+## Identical 
 
 
 *** =instructions
@@ -412,26 +419,15 @@ test_error()
 test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "Make sure you're checking your formula!")
 success_msg("This is great! We are done with this module. Time to move on to bigger things!")
 ```
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
+
+
 ## End of Section
 
-This is the end of the programming assignment for this section. If you've completed the assignments from the other sections, check your progress bar in the edx course!
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
-
+----
