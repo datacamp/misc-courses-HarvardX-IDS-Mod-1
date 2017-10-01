@@ -2,13 +2,13 @@
 title       : Sorting
 description : This chapter deals with getting more of an insight into the data we have, by helping us sort through it.
 --- type:NormalExercise lang:r xp:100 skills:1 key:f2c94437a4
-## 1. Sort 
+## sort 
 
-When looking at a dataset, we may want to sort the data in an order that makes more sense to analyse it. Let's see how we can do that with the `murders` dataset that we have. 
+When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the  `murders` as an example. 
 
 *** =instructions
 Use the `$` operator to access the population size data and store it the object `pop`. 
-Then use the `sort` function to redefine pop so that it is sorted. 
+Then use the `sort` function to redefine `pop` so that it is sorted. 
 Finally use the `[` operator to report the smallest population size.
 
 
@@ -17,19 +17,20 @@ Finally use the `[` operator to report the smallest population size.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-# Access the variable from the dataset and store it in an object 
-state <- murders$state 
+# Access a total murders and store it in an object 
+total <- murders$state 
 
-# Sort the object and redefine the object 
-state <- sort(state) 
+# Sort the object  and redefine the object 
+total <- sort(total) 
 
-# Report the smallest state 
-state[1]
+# Report the smallers total of murders 
+total[1]
 
 # Access `population` from the dataset and store it in `pop`
 
@@ -44,7 +45,7 @@ state[1]
 *** =solution
 ```{r}
 
-# Access `population` from the dataset and store it in `pop`
+# Access population from the dataset and store it in pop
 pop <- murders$population
 
 # Sort the object and save it in the same object
@@ -64,17 +65,19 @@ success_msg("Good job! Now you know how to sort data in an ascending order.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:c55b4ac0f9
-## 2. Order
 
+## 2. order
 
 *** =instructions
-Now instead of the smallest population size, let's find out the index number of the state with the smallest population size, using the command `o[1]`. 
+Now instead of the smallest population size, let's find out the index number of the state with the smallest population size, using the command `order`. 
+
 *** =hint
 Use order instead of sort
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -124,15 +127,16 @@ Use `which.min` directly.
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-# Find the smallest value for variable `total` 
+# Find the smallest value for variable total 
 which.min(murders$total)
 
-# Find the smallest value for `population`
+# Find the smallest value for population
 
 
 ```
@@ -153,35 +157,46 @@ success_msg("Great ! You`ve learnt another code in R!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:90b98a2790
-## 4. Learning more about Ordering 
+## Using the output of order 
 
 Now we know how small the smallest state is and we know which row represents it. However, which state is it? 
 
 *** =instructions
-Define a variable `states` to be the state names from the murders data frame. 
-Report the name of the state with the smallest population using the `states[which.min(murders$population)]` code.
+Define a variable `states` to hold the state names from the murders data frame. Find the index of the smalles state using `which.min(murders$population)]`. Then combine these to find the state name for the smallest state.
 
 *** =hint
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-# Define variable `state`
+# Define the variable `pop` to hold the population sizes
 
-# Report the name of the state with the smallest population 
+# Define the variable `i` to be the index of the smallest state
+
+# Define variable `state` to hold the states
+
+# Use the index you define to find the state with the smallest population
+
 ```
 
 *** =solution
 ```{r}
-# Define variable `states`
-states <- murders$state
+# Define the variable `pop` to hold the population sizes
+pop <- murders$population
 
-# Report the name of the state with the smallest population 
-states[which.min(murders$population)]
+# Define the variable `i` to be the index of the smallest state
+i <- which.min(pop)
+
+# Define variable `state` to hold the states
+state <- murders$state
+
+# Use the index you define to find the state with the smallest population
+state[i]
 ```
 
 *** =sct
@@ -194,7 +209,7 @@ success_msg("Awesome! Now we have the names of the states as well !")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:47c076de70
-## 5. Data Frames and Ranks 
+## Ranks 
 
 You can create a data frame using the `data.frame` function. Here is a quick example:
 
@@ -214,7 +229,8 @@ Then create a data frame with the state name and its rank. Call the data frame `
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -261,13 +277,14 @@ success_msg("That`s awesome! You got this!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:22594ff7ec
-## 6. Data Frames, Ranks and Orders 
+## Data Frames, Ranks and Orders 
 
 *** =instructions
 
-Repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
-Create an object ind that stores the indexes needed to order the population values, using the `order` command.  
-Then use the bracket operator [ to re-order each column in the data frame. example: `abb = abb [0]` 
+This exercise is somewhat more challenging. We are going to 
+repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
+Create an object ind that stores the indexes needed to order the population values, using the `order` command.  For example we could define `o <- order(murders$population)`
+Then use the bracket operator `[` to re-order each column in the data frame. For example, example, `abb[o]` orders the abbreviations based by population size. 
 
 
 *** =hint
@@ -275,10 +292,8 @@ Then use the bracket operator [ to re-order each column in the data frame. examp
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-pop<- murders$population
-o <- order(pop)
-o[1]
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -323,32 +338,39 @@ success_msg("Great job! See how well you're building on your knowledge of R!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f7d3786068
-## 7.NA (really, the chapter is called NA) 
+## NA 
 
 The `na_example` dataset represents a series of counts. You can quickly examine the object using
 
-`data(na_example)`  
-`str(na_example)`
+```{r}
+library(na_example)
+data(na_example)
+str(na_example)
+```
 
-However, when we compute the average we obtain an NA
+However, when we compute the average we obtain an `NA`. You can see this by typing 
 
-`mean(na_example)`
-
+```{r}
+mean(na_example)
+```
 *** =instructions
-The `is.na` returns a logical vector that tells us which entries are NA. 
-Assign this logical vector to an object called `ind`, using code `is.na(na_example)` and determine how many NA does na_example have, using the `sum` command?
+The `is.na` returns a logical vector that tells us which entries are `NA`.
+
+Assign this logical vector to an object called `ind`, using `is.na(na_example)` and determine how many NA does na_example have, using the `sum` command.
 
 *** =hint
 
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/na_example.rda"))
+library(dslabs)
+data(na_example)  
 ```
 
 *** =sample_code
 ```{r}
 # Using new dataset 
+library(dslabs)
 data(na_example)  
 
 # Checking the structure 
@@ -357,10 +379,9 @@ str(na_example)
 # Find out the mean of the entire dataset 
 mean(na_example)
 
-# Assign `is.na` to logical vector `ind` 
+# Use `is.na` to create an logical index `ind` that tells which entries are NA
 
-
-# Determine how many NA does `ind` have? 
+# Determine how many NA does `ind` have
 
 
 ```
@@ -385,26 +406,25 @@ success_msg("Great job! Now let's move to one last thing in this chapter.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7d6eebca10
-## 8. NA ! 
+## 8. Removing NAs  
 
-We can leave out the points that are NA and do operations on the rest. 
+A common operation we perform is removing the entries that are NA and do operations on the rest. 
 
 *** =instructions
 Compute the average again but only for the entries that are not NA making use of the `!` operator before `ind`. 
 
 *** =hint
-Remember the ! operator. Use code "mean(na_example[!ind])". 
+Remember the `!` operator. Use code `mean(na_example[!ind])`. 
 
 *** =pre_exercise_code
 ```{r}
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/na_example.rda"))
-ind <- is.na(na_example)
+library(dslabs)
+data(na_example)
 ```
 
 *** =sample_code
 ```{r}
 # Compute the average, for entries that are not NA 
-
 
 ```
 
@@ -421,25 +441,13 @@ test_output_contains("mean(na_example[!ind])", incorrect_msg = "Check your code 
 success_msg("Awesome ! Now you're all set with vectors! Get practicing on your own!")
 ```
 ----
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1 key:011b43bb92
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
 
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
+----
