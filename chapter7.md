@@ -97,7 +97,7 @@ success_msg("Good job!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:555ca41873
-## 3. filter 
+## filter 
 
 
 *** =instructions
