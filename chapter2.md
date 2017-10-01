@@ -22,7 +22,7 @@ Which of the following best describes the variables represented in this data fra
 - The 51 states 
 - The murder rates for all 50 states and DC 
 - The state name, the abbreviation of the state name, the state's region, and the state's population and the total number of murders for 2010.
-- str shows no relevant information
+- `str` shows no relevant information
 
 *** =hint
 Check the output that you see with the `str` function.
@@ -63,6 +63,10 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 *** =sample_code
 ```{r}
+# Load package and data
+library(dslabs)
+data(murders)
+
 # Checking the column names 
 
 ```
@@ -86,7 +90,7 @@ success_msg("Good job!")
 
 As we have learned in this module, every variable has a class. It could be a character, numeric or logical. The function `class()` can be used to determine the class of an object.
 
-Since we can open more than one dataset in R, we need to specify where it can find a certain variable. To do this, we use something called an accessor, denoted by the `$` sign. 
+Here we are going to determine the class of one of the variables in the murders data frame. To extract the variables from a data frame we use `$`, referred to as the accessor.
 
 If you look to the right, the R-script shows you an example for this. Let`s try it out for ourselves. 
 
@@ -95,26 +99,25 @@ Use the accessor `$` to extract the state abbreviations and assign them to the o
 What is the class of this object?
 
 *** =hint
-Remeber to assign the state abbreviations to the object `a`. 
+Remember to assign the state abbreviations to the object `a`. 
 
 *** =pre_exercise_code
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
- 
 ```
 
 *** =sample_code
 ```{r}
-# Using the accessor to extract a variable (population) from dataset (murders), and assigning it to object `m`
+# To access the variable population from the murers dataset
+# we can use this code:
 m <- murders$population 
 
-# Determine the class of object `m`
+# To determine the class of object `m` we use this code:
 class(m)
 
 # Use the accessor to extract `state abbreviations` from `murders`, and assign it to `a`
 
 # Determine the class of `a`
-
 
 ```
 
@@ -141,15 +144,14 @@ success_msg("That's great! Now, you know what the class of `abb` is. Play around
 --- type:NormalExercise lang:r xp:100 skills:1 key:f9207929f3
 ## 4. Accessors again! This time with comparisons. 
 
-There are multiple ways to do things in R. For example, we can write c(1,2,3,4,5) as c(1:5) and get the same result. 
-Another way to access the variables in your dataset is to use square brackets. 
-Look at the top-right screen for an example and then practice the code for yourself! 
+There are multiple ways of doing things in R. For example,  `c(1,2,3,4,5)` and `1:5` return the same result. Another example is that we can access variables from a data frame using the square brackets `[[`
+instead of the accessor `$`.
 
 When you've done that, you'll notice there's another part to this question, and that is to find out whether the two symbols `$` and `[]` actually serve the same purpose! Don't believe something until you try it out for yourself! 
 
 *** =instructions
-Use the square brackets [] to extract the state abbreviations and assign them to the object b. 
-Use the identical function to determine if a and b are the same.
+Use the square brackets `[]` to extract the state abbreviations and assign them to the object `b`. 
+Use the identical function to determine if `a` and `b` are the same.
 
 *** =hint
 You need to use 2 sets of square brackets. 
@@ -196,13 +198,14 @@ success_msg("You've now learnt different ways of doing the same thing in R! You'
 --- type:NormalExercise lang:r xp:100 skills:1 key:e3211138bb
 ## 5. Class and factors
 
-With the `str` command, we saw that the regions column stores a factor. You can corroborate this by using the `class` command for region. 
-R helps us get a quick look at the variable. If we want to know the number of regions in this dataset, we need to use the `levels` and `length` commands. (add an explanation about these commands.)
+Using the `str()` command, we saw that the regions column stores a factor. You can corroborate this by using the `class` command for region. 
 
+The function `levels` shows us the categories included in the factor. 
 
 *** =instructions
 
-With one line of code, use the function `levels` and `length` to determine the number of regions defined by this dataset. Use the code `length(levels(murders$region))`
+With one line of code, use the function `levels` and `length` to determine the number of regions defined by this dataset. 
+
 
 *** =hint
 Make sure you're using both commands - `length` and `levels`, to get the number of regions.  
@@ -210,20 +213,22 @@ Make sure you're using both commands - `length` and `levels`, to get the number 
 *** =pre_exercise_code
 ```{r}
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-class(murders$region)
 
 ```
 
 *** =sample_code
 ```{r}
-# Determine the number of regions defined by this dataset 
+# We can see the class of the region variable using class
+class(murders$region)
+
+# Determine the number of regions included in this variable 
 
 ```
 
 *** =solution
 ```{r}
 
-# Determine the number of regions defined by this dataset 
+# Determine the number of regions included in this variable 
 length(levels(murders$region))
 
 ```
@@ -240,14 +245,14 @@ success_msg("Good job!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:c79e23df50
 ## 6. Tables and vectors 
 
-The function table takes a vector and returns the frequency of each element. You can quickly see how many states are in each region by applying the `table` function. 
+The function table takes a vector as input and returns the frequency of each unique element in the vector. 
 
 *** =instructions
 
-Use this function in one line of code to create a table of states per region.
+Use this function in one line of code to create a table showing the number of states per region.
 
 *** =hint
-Extract the variable region from the murders dataset and then create the table. 
+Extract the variable region from the murders dataset and then use the `table` function to create the table. 
 
 *** =pre_exercise_code
 ```{r}
@@ -256,17 +261,16 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 
 *** =sample_code
 ```{r}
-# Creating a table of states according to the variable 'population'. Note that this will not give us very meaningful information, as the frequency of each population datapoint will be 1. It is just used as an example to illustrate the solution. 
-# Also note how we use the accessor to extract our variable again! 
-table(murders$population)
-
-# Create a table of states per region
+# Here is an example of what the table function does
+x <- c("a", "a", "b", "b", "b", "c")
+table(x)
+# Write one line of code to show the number of states per region
 
 ```
 
 *** =solution
 ```{r}
-# Create a table of states per region
+# Write one line of code to show the number of states per region
 table(murders$region)
 
 ```
