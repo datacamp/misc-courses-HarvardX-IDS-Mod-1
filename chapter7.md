@@ -2,17 +2,20 @@
 title       : Basic Data Manipulation 
 description : Just as the name suggests, we're going to practice the basics of data manipulation here.
 --- type:NormalExercise lang:r xp:100 skills:1 key:fa7b6092fb
-## 1. Mutate
+
+## dplyr
 
 Load the `dplyr` package and the murders dataset.
 
-`library(dslabs)`
-`library(dplyr)`
-`data(murders)`
+```{r}
+library(dplyr)
+library(dslabs)
+data(murders)
+```
 
 *** =instructions
 
-Use the function `mutate` to add a rate column with the per 100,000 murder rate.
+Use the function `mutate` to add a murders rate column with the per 100,000 murder rate.
 
 *** =hint
 Use code `murders <- mutate(murders, rate =  total / population * 100000)`. 
@@ -20,7 +23,8 @@ Use code `murders <- mutate(murders, rate =  total / population * 100000)`.
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -29,7 +33,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/dat
 library(dplyr)
 data(murders)
 
-# Use mutate to add a rate column and store in `murders`
+# Use mutate to add a column named rate and store in murders
 
 ```
 
@@ -48,11 +52,11 @@ success_msg("Awesome! Let's learn another command with mutate.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:545fbadeea
-## 2. Mutate and rank 
+## Mutate 
 
 
 *** =instructions
-Use the function `mutate` again to add a column `rank` containing the rank, from highest to lowest murder rate, [including code `(rank = rank(-rank)`.]
+Use the function `mutate` again to add a column `rank` containing the rank, from highest to lowest murder rate. Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
 
 *** =hint
 Use the function rank and remember by default it ranks form lowest to highest.
@@ -60,8 +64,9 @@ Use the function rank and remember by default it ranks form lowest to highest.
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-rate =  (murders$total)/ (murders$population) * 100000
+library(dslabs)
+data(murders)
+rate =  murders$total)/ (murders$population) * 100000
 ```
 
 *** =sample_code
@@ -70,12 +75,16 @@ rate =  (murders$total)/ (murders$population) * 100000
 library(dplyr)
 data(murders)
 
+# Defining rate
+rate <-  murders$total/ murders$population * 100000
+
 # Use mutate to add a rate column, rank from highest to lowest and store in `murders`
 
 ```
 
 *** =solution
 ```{r}
+
 # Use mutate to add a rate column, rank from highest to lowest and store in `murders`
 murders <- mutate(murders, rank = rank(-rate))
 ```
@@ -88,11 +97,12 @@ success_msg("Good job!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:555ca41873
-## 3. Filter 
+## 3. filter 
 
 
 *** =instructions
-Use the function filter to show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result.
+
+The `dplyr` function `filter` is used to select specific rows of the data frame to keep. Show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result.
 
 *** =hint
 
@@ -100,8 +110,8 @@ Use the function filter to show the top 5 states with the highest murder rates. 
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-rate =  (murders$total)/ (murders$population) * 100000
+library(dslabs)
+data(murders)
 
 ```
 
@@ -111,22 +121,21 @@ rate =  (murders$total)/ (murders$population) * 100000
 library(dplyr)
 data(murders)
 
-# Filter the top 7 food items with highest cost rates
-# filter(cost, rank <= 7)
+# Add the necessary columns
+murders <- mutate(murders, rate = total/population * 100000, rank = rank(-rate))
 
-# Rate and Rank
-murders$rate = (murders$total)/ (murders$population) * 100000
-murders$rank = rank (rate)
-
-# Filter to show the top 5 states with the highest murder rates (using `murders`)
+# Filter to show the top 5 states with the highest murder rates
 
 ```
 
 *** =solution
 ```{r}
-# Rate and Rank
-murders$rate = (murders$total)/ (murders$population) * 100000
-murders$rank = rank (rate)
+# Loading the libraries
+library(dplyr)
+data(murders)
+
+# Add the necessary columns
+murders <- mutate(murders, rate = total/population * 100000, rank = rank(-rate))
 
 # Filter to show the top 5 states with the highest murder rates
 filter(murders, rank <= 5)
@@ -141,12 +150,10 @@ success_msg("Great job!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:42352c70c5
-## 4. Filter and ! 
-
+## filter with !=
 
 *** =instructions
-Create a new data frame called `no_south` that removes states from the south. 
-How many states are in this category? 
+Create a new data frame called `no_south` that removes states from the south. How many states are in this category? 
 
 *** =hint
 Use filter and the != operator. You can use nrow to quickly get the number of rows of a data frame.
@@ -154,25 +161,23 @@ Use filter and the != operator. You can use nrow to quickly get the number of ro
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-
 # Loading the libraries
 library(dplyr)
 data(murders)
 
-# Creating a new dataframe `no_south`
+# Use filter Creat a new dataframe `no_south`
 
-# Number of states (rows) in this category 
-
+# Use nrow() to calculate the number of rows
 ```
 
 *** =solution
 ```{r}
-
 # Creating a new dataframe `no_south`
 no_south <- filter(murders, region != "South" )
 
@@ -190,7 +195,7 @@ success_msg("That's great! Let's move to the next exercise.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:18111c7bfd
-## 5. Filter and %in%
+## filter with %in%
 
 
 *** =instructions
@@ -199,23 +204,20 @@ How many states are in this category?
 
 
 *** =hint
-Use filter and the %in% operator. You can use nrow to quickly get the number of rows of a data frame.
+Use filter and the `%in%` operator. You can use nrow to quickly get the number of rows of a data frame.
 
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+libary(dslabs)
+data(murders)
 ```
 
 *** =sample_code
 ```{r}
-
 # Loading the libraries
 library(dplyr)
 data(murders)
-
-# Use mutate to add a rate column and store in `murders`
-murders <- mutate(murders, rate =  total / population * 100000)
 
 # Create a new dataframe called `murders_nw` with only the states from the northeast and the west
 
@@ -244,7 +246,7 @@ success_msg("This is great!")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:e572c8806a
-## 6. Combining functions 
+## filtering by two conditions 
 
 *** =instructions
 Suppose you want to live in the Northeast or West and want the murder rate to be less than 1. 
@@ -257,8 +259,8 @@ Use the `my_states <- filter(murders, region %in% c("Northeast", "West") & rate 
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
-rate =  (murders$total)/ (murders$population) * 100000
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -267,7 +269,10 @@ rate =  (murders$total)/ (murders$population) * 100000
 library(dplyr)
 data(murders)
 
-# Create a table, call it `my_states`, that satisfies both the conditions 
+# add the rate column
+murders <- mutate(murders, rate =  total / population * 100000)
+
+# Create a table, call it my_states, that satisfies both the conditions 
 
 # Number of states (rows) in this category
 
@@ -293,7 +298,7 @@ success_msg("Now you know how to combine functions and use them to get specific 
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:3d4de3a34a
-## 7. Combining functions 2 
+## Using the pipe %>%
 
 *** =instructions
 Repeat exercise 5, but now instead of creating a new obejct, show the result and only include the state, rate, and rank columns. Use a pipe (`%>%`) to do this in just one line.
@@ -305,23 +310,22 @@ Use code: `filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 rate =  (murders$total)/ (murders$population) * 100000
-
 ```
+
 *** =sample_code
 ```{r}
-# Rate and Rank
-murders$rate = (murders$total)/ (murders$population) * 100000
-murders$rank = rank (rate)
+## Define the rate column
+murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
 # show the result and only include the state, rate, and rank columns, all in one line
 ```
 *** =solution
 ```{r}
-# Rate and Rank
-murders$rate = (murders$total)/ (murders$population) * 100000
-murders$rank = rank (rate)
+## Define the rate and rank column
+murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
 # show the result and only include the state, rate, and rank columns, all in one line
 filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%  
@@ -335,7 +339,7 @@ success_msg("You're getting a pretty good hang of stuff now!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:1b45c7acac
-## 8. Combining functions 3 
+## mutate, filter and select  
 
 
 
@@ -348,7 +352,8 @@ Use `mutate`, `filter` and `select` combining them with `pipes`.
 *** =pre_exercise_code
 ```{r}
 library(dplyr)
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_3073/datasets/murders.rda"))
+library(dslabs)
+data(murders)
 ```
 
 *** =sample_code
@@ -366,10 +371,9 @@ data(murders)
 ```{r}
 # Create new data frame called `my_states` (with specifications in the instructions)
 my_states <- murders %>% 
-mutate(rate =  total / population * 100000, rank = rank(-rate)) %>%
-filter(region %in% c("Northeast", "West") & rate < 1) %>%
-select(state, rate, rank)
-
+    mutate(rate =  total / population * 100000, rank = rank(-rate)) %>%
+    filter(region %in% c("Northeast", "West") & rate < 1) %>%
+    select(state, rate, rank)
 ```
 
 *** =sct
@@ -380,26 +384,16 @@ success_msg("This is absolutely awesome! You now know how to use basic data mani
 ```
 
 ----
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
+
+
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
-
+----
