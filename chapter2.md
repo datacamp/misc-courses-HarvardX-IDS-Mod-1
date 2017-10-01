@@ -3,7 +3,7 @@ title       : Data Types
 description : We're going to get an overview, of the different types of variables that there are in R, and how to work with them. 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:8a1f23741a
 
-## `str`
+## str
 
 We're going to be using the following dataset for this module. 
 Run this code in the console. 
