@@ -12,7 +12,7 @@ cost <- c(50, 75, 90, 100, 150)
 ```
 
 *** =instructions
-Use the function `c()` to create a numeric vector with the average high temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto which are `35, 88, 42, 84, 81, and 30` degrees farenheit. Call the object `temp`.
+Use the function `c()` to create a numeric vector with the average high temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto which are `35, 88, 42, 84, 81, and 30` degrees Fahrenheit. Call the object `temp`.
 
 *** =hint
 Make sure your numbers are within parenthesis and have commas separating them. 
@@ -171,19 +171,22 @@ success_msg("Great job! We now know the temperatures of the respective cities.")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:2d2690ae69
-## Using Operators
+## Subsetting vectors
 
 If we want to display only selected values from the object, R can help us do that easily. 
 
 For example, if we want to see the cost of the last 3 items in our food list, we would type:
-`cost[3:5]`
 
-Note here, that we could also type `cost [c(3,4,5)]` and get the same result. The `:` operator helps us condense the code and get consecutive values. 
+```{r}
+cost[3:5]
+```
+
+Note here, that we could also type `cost[c(3,4,5)]` and get the same result. The `:` operator helps us condense the code and get consecutive values. 
 
 
 *** =instructions
 
-Use the [ and : operators to access the temperature of the first three cities in the list:
+Use the `[` and `:` operators to access the temperature of the first three cities in the list, which are already stored in `temp`.
 
 
 *** =hint
@@ -191,6 +194,10 @@ Square brackets and : are the important bits in this.
 
 *** =pre_exercise_code
 ```{r}
+cost <- c(50, 75, 90, 100, 150)
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+names(cost) <- food
+
 temp <- c(35, 88, 42, 84, 81, 30) 
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 names(temp) <- city
@@ -207,6 +214,9 @@ cost[3:5]
 
 *** =solution
 ```{r}
+# cost of the last 3 items in our food list:
+cost[3:5]
+
 # temperatures of the first three cities in the list:
 temp[1:3]
 
@@ -223,17 +233,19 @@ success_msg("Awesome! You`ve learnt how to make your work easier.")
 
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:2f3c6a9045
-## 5. Using Operators continued...
+## 5. Subsetting vectors continued...
 
-In the previous question, we accessed the temperature for consequtive cities (1st three). But what if we want to access the temperatures for any 2 specific cities. Well, let's see how we can do that in R! 
+In the previous question, we accessed the temperature for consecutive cities (1st three). But what if we want to access the temperatures for any 2 specific cities?
 
 An example:
 To access the cost of `pizza` (1st) and `pasta` (5th food item) in our list, the code would be:
- `cost [c(1,5)]` 
-
+ 
+ ```{r}
+ cost[c(1,5)]
+ ```
 
 *** =instructions
-Use the [ operator to access the temperature of Paris and San Juan.
+Use the [ operator to access the temperature of Paris and San Juan already stored in the `temp` object.
 
 *** =hint
 
@@ -247,17 +259,18 @@ names(temp) <- city
 *** =sample_code
 ```{r}
 # Access the cost of pizza and pasta from our food list 
-cost [c(1,5)]
+cost[c(1,5)]
 
 # Access the temperatures of Paris and San Juan
 ```
 
 *** =solution
 ```{r}
+# Access the cost of pizza and pasta from our food list 
+cost[c(1,5)]
 
 # Access the temperatures of Paris and San Juan
 temp[c(2,4)]
-
 ```
 
 *** =sct
@@ -271,8 +284,8 @@ success_msg("Isn`t that awesome! Let`s move to the next exercise!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:a96ba3d1b8
 ## 6. Sequences 
 
-The `:` operator helps us to create sequences of numbers. 
-For example, `32:99` would create a list of numbers from 32 to 99 (32,33,34...99). 
+The `:` operator helps us create sequences of numbers. 
+For example, `32:99` would create a list of numbers from 32 to 99. 
 
 Then, if we want to know the length of this sequence, all we need to do use the `length` command. 
 
@@ -321,11 +334,10 @@ success_msg("Good job! Let`s move to the next question!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:3e99eae115
-## 7. Sequences continued...
+## Sequences continued...
 
 We can also create different types of sequences in R. 
-For example, in `seq (7, 49, 7)`, the first argument defines the start, and the second the end. 
-The default is to go up in increments of 1, but a third argument let's us tell it how much to jump by.
+For example, in `seq(7, 49, 7)`, the first argument defines the start, and the second the end. The default is to go up in increments of 1, but a third argument let's us tell it how much to jump by.
 
 *** =instructions
 Create a vector containing all the positive odd numbers smaller than 100.
@@ -362,14 +374,12 @@ success_msg("Awesome! Let`s `jump` to the next exercise.")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:431627ebb5
-## 8. Sequences and length  
+## Sequences and length  
 
 Here, we're just looking to use 2 commands that we've just used in the previous questions. The `seq` command will generate the sequence and the `length` command will tell you how many numbers the list has. 
 
 *** =instructions
-Create a vector of numbers that starts at 6, does not cross 55, and adds numbers in increments of 4/7: 6, 6+4/7, 6+8/7, etc... 
-How many numbers does the list have? 
-Use only one line of code to answer both questions.
+Create a vector of numbers that starts at 6, does not go beyond 55, and adds numbers in increments of 4/7. So the first three numbers will be 6, 6+4/7, and 6+8/7. How many numbers does the list have? Use only one line of code to answer both questions.
 
 *** =hint
 Use length and then seq within parenthesis.
@@ -403,9 +413,9 @@ success_msg("Great job! Looks like you`re getting good with sequences!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:85a3446d33
-## 9. Sequences and Class 
+## Sequences and class 
 
-We've already learnt how to define the class of an object. Let`s do the same for a sequence we generate. 
+We've already learned how to define the class of an object. Let`s do the same for a sequence we generate. 
 
 *** =instructions
 What is the class of the following object `a <- seq(1, 10, 0.5)`?
@@ -423,7 +433,7 @@ Create the seq, store it in an object, then check the class.
 # Store the sequence in the object `a`
 
 
-# Define the class of `a`
+# Determine the class of `a`
 
 
 ```
@@ -433,7 +443,7 @@ Create the seq, store it in an object, then check the class.
 # Store the sequence in the object `a`
 a <- seq(1, 10, 0.5)
 
-# Define the class of `a`
+# Determine the class of `a`
 class(a)
 
 ```
@@ -448,13 +458,28 @@ success_msg("Good job! Let`s move on to the next exercise!")
 ----
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:dc9eba1213
-## 10. Sequences and Class continued...
+## Integers
 
-In this question, focus on the values that we are using in the sequence. They are integers. 
-R assumes that seq is producing indexes and therefor uses the integer class when possible. An advantage of integers over numerics is that they take up less space to store. Other than that there are few practical differences.
+We have discussed the numeric class. We just saw it in our previous exercise by examining 
+
+```{r}
+class(seq(1, 10, 0.5))
+```
+and noting the class is numeric. R has another type of vector we have not described, the integers. You can create an integer by adding the letter `L` after a whole number. If you type
+
+```{r}
+class(3L)
+```
+
+in the console, you see this is an integer and not a numeric. For most  practical purposes, integers and numerics are indistinguishable. For example 3, the integer, minus 3 the numeric is 0. To see this type this in the console
+
+```{r}
+3L - 3
+```
+The main difference is that integers occupy less space in the computer memory, so for big computations using integers can have a substantical impact.
 
 *** =instructions
-What is the class of the following object `a <- seq(1, 10)`?
+What is the class of the following object `a <- seq(1, 10)`? 
 
 *** =hint
 Note that there are only integer values within the seq parenthesis. 
@@ -496,24 +521,23 @@ success_msg("Good job! Let`s move on to the next exercise!")
 --- type:NormalExercise lang:r xp:100 skills:1 key:0f90522662
 ## 11. Class, Integers and Numerics
 
-Note that if you run the class of `class(a<-1)` it shows up as numeric and not integer. 
-R defaults to numeric and to force a number to be recognized as an integer, you need to add the letter L.
-
+Let's confirm that `1L` is an intenger not a numeric.
 *** =instructions
-Confirm that the class of 1L is integer.
+Confirm that the class of 1 is numeric and the class of 1L is integer.
 
 *** =hint
 Just type class and 1L. 
 
 *** =pre_exercise_code
 ```{r}
-class(a <-1)
+a <- 1
+class(a)
 ```
 
 *** =sample_code
 ```{r}
 # Check the class of `1`, assigned to the object `a`
-class(a<-1)
+class(1)
 
 # Confirm the class of 1L as an integer
 
@@ -535,20 +559,23 @@ success_msg("Great, now that you know how to force a number to become an integer
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:264e14dc1d
-## 12. Coercion 
+## Coercion 
 
-The concept of coercion is a very important one. Watching the video, we learnt that when an entry does not match the expected, R tries to guess what we meant before throwing an errors. That might get confusing at times. 
+The concept of coercion is a very important one. Watching the video, we learned that when an entry does not match what an R function is expecting, R tries to guess what we meant before throwing an error. This might get confusing at times. 
 
-As we've discussed in earlier questions, there are numbers and character vectors. The character vectors are placed within inverted commas, and the numeric aren't. 
+As we've discussed in earlier questions, there are numberic and character vectors. The character vectors are placed in quotes and the numerics are not. 
 
 We can coerce R into changing characters to integers and vice-versa. The code, `as.integer(x)` helps us do this. 
-Let's practice doing it!
+Let's practice doing this!
 
 *** =instructions
 Define the following vector:
 
-`x <- c("1", "3", "5")`
-And coerce it to get integers using code `as.integer(x)`. 
+```{r}
+x <- c("1", "3", "5")
+```
+
+And coerce it to get integers using the `as.integer()` function.
 
 *** =hint
 Make sure you put the numbers within "". 
@@ -584,27 +611,13 @@ test_object("x", undefined_msg = "Make sure to define x first.", incorrect_msg =
 test_output_contains("as.integer(x)", incorrect_msg = "Check the code again.")
 success_msg("Awesome!Doesn`t that feel wonderful. Now, you can try changing it back to character, using the code `as.character(x)`.")
 ```
--------
-type:MultipleChoiceExercise lang:r xp:0 skills:1 key:011b43bb92
+--- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1 key:011b43bb92
 ## End of Section
 
-This is the end of the programming assignment for this section. You can close this window and go back to the course, or you can keep working with the programming part for the next section.
 
+This is the end of the programming assignment for this section.
 
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
-*** =instructions
-- Wait wait..
-- Let's continue
-*** =hint
-
-
-*** =pre_exercise_code
-```{r}
-
-```
-
-*** =sct
-```{r}
-
-```
-
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
+----
