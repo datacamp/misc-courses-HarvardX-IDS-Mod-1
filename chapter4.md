@@ -442,6 +442,7 @@ success_msg("Awesome ! Now you're all set with vectors! Get practicing on your o
 ```
 ----
 --- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1 key:011b43bb92
+
 ## End of Section
 
 
@@ -450,4 +451,5 @@ This is the end of the programming assignment for this section.
 You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
+
 ----
