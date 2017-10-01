@@ -1,5 +1,5 @@
 ---
-title                : R-basics 
+title                : R Basics 
 author_field         : 
 description          : In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
 author_bio           : 
@@ -11,13 +11,12 @@ programming language : R
 
 ## Using variables
 
-What is the sum of the first $n$ positive integers? There is a formula that tells us that it is $n(n+1)/2$.
+What is the sum of the first $n$ positive integers? We can use the formula $n(n+1)/2$ to quickly compute this quantity.
 
 
 *** =instructions
  
-Define 'n=100' and then use R to compute the sum of 1 through 100 using the given formula. 
-What is the sum?
+Define 'n=100' and then use R to compute the sum of 1 through 100 using the given formula.What is the sum?
 
 
 *** =hint
@@ -51,17 +50,22 @@ n*(n+1)/2
 
 *** =solution
 ```{r}
+# Here is how you compute the sum for the first 20 integers
 
-# Define the first 20 integers 
+20*(20+1)/2 
+
+## However, we can define a variable and then use the same formula for other values of n
+
 n <- 20
+n*(n+1)/2
 
-# Calculate the sum of the first 20 positive integers
-n*(n+1)/2 
+n <- 25
+n*(n+1)/2
 
-# Define the first 100 integers 
+# Below, write your code to calculate the sum of the first 100 integers 
+
+# Define the n to be 100 then calculate the sum with the formula
 n <- 100
-
-# Calculate the sum of the first 100 positive integers
 n*(n+1)/2 
 ```
 
@@ -84,7 +88,7 @@ success_msg("Good job ! Let`s apply this to another question")
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:d1735adac6
 
-## Functions
+##  Using variables
 
 *** =instructions
 
@@ -107,10 +111,8 @@ Same formula as the last exercise
 
 *** =solution
 ```{r}
-# Define the first 1000 integers 
+# Below, write you code to calculate the sum of the first 1000 integers 
 n <- 1000
-
-# Calculate the sum of the first 1000 positive integers
 n*(n+1)/2
 
 ```
@@ -131,16 +133,17 @@ success_msg("Good job ! Let`s get to work on another question!")
 ----
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba448c1da3
 
-## 3. Sum and Seq
+## 3. Functions
 
-Look to the right and see the result of typing the following code into R (Run the code from the console): 
+Run the following code in the R console:
+
 ```{r, eval=FALSE}
 n <- 1000
 x <- seq(1,n)
 sum(x)
 ```
 
-Based on the result, what do you think the functions seq and sum do? You can use the help system:
+Based on the result, what do you think the functions `seq` and `sum` do? You can use the help system:
 
 *** =instructions
 - sum creates a list of numbers and seq adds them up. 
@@ -156,6 +159,13 @@ What do the words seq and sum mean generally?
 # no pec
 ```
 
+*** =sample_code
+```{r}
+n <- 1000
+x <- seq(1,n)
+sum(x)
+``` 
+
 *** =sct
 ```{r}
 msg1 = "Try again! Think about the meaning of the words."
@@ -166,17 +176,15 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:26f2e309a3
 
-## 4. Function inside a function
-In math and programming we say we evaluate a function when we replace the argument with a given number. 
-So if we type `sqrt(4)` we evaluate the `sqrt` function. 
-In R you can evaluate a function inside another function. 
+## 4. Nested function calls
+In math and programming we say we evaluate a function when we replace the argument with a given number. So if we type `sqrt(4)` we evaluate the `sqrt` function to get `2`. In R it is often useful to evaluate a function inside another function. 
 
-Example: `sqrt(log10(25))`, will calculate the square root of the log of 25, to the base 10. 
+Example: `sqrt(log2(16))`, will calculate the log to the base 2 of 16 and then compute the square root of that value. So the first evaluation  gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
 
 
 *** =instructions
 
-Use one line of code to compute the log, in base 10, of the square root of 100.
+Use one line of code to compute the log, to the base 10, of the square root of 100.
 
 
 *** =hint
@@ -190,9 +198,9 @@ The sqrt function comes before the log function in this case.
 *** =sample_code
 ```{r}
 # sqrt function 
-sqrt (25)
+sqrt (5)
 
-# sqrt of the log of 25, to the base 10
+# sqrt of the log to the base 2 of 25, to the base 10
 sqrt (log10(25))
 ## can also be written as, `sqrt (log 25, base = 10)`
 
