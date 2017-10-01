@@ -277,7 +277,7 @@ success_msg("That's awesome! You're getting so good at this!")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:02c5d3c4b6
-## 8. For loops
+## For loops
 
 *** =instructions
 
@@ -328,7 +328,7 @@ success_msg("This is great! You now know the basics of for loops in R.")
 ```
 ----
 --- type:NormalExercise lang:r xp:100 skills:1 key:81431dc1d4
-## 9. For Loops and Plotting  
+## For Loops and Plotting  
 
 `s_n` and `n` have already been defined in the previous question and are stored in memory for you!  
 
