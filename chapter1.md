@@ -45,7 +45,6 @@ n*(n+1)/2
 
 # Below, write your code to calculate the sum of the first 100 integers 
 
-
 ```
 
 *** =solution
@@ -57,11 +56,10 @@ n*(n+1)/2
 
 *** =sct
 ```{r}
-
 # first instruction  
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
 # second instruction
-test_output_contains ("n*(n+1)/2", incorrect_msg = "Take a look at your code for the second instruction.")
+test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
 
 # General 
 test_error() 
