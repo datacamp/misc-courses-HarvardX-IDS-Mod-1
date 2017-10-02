@@ -34,11 +34,9 @@ Follow the sample code in the editor.
 *** =sample_code
 ```{r}
 # Here is how you compute the sum for the first 20 integers
-
 20*(20+1)/2 
 
 ## However, we can define a variable to use the formula for other values of n
-
 n <- 20
 n*(n+1)/2
 
@@ -52,20 +50,6 @@ n*(n+1)/2
 
 *** =solution
 ```{r}
-# Here is how you compute the sum for the first 20 integers
-
-20*(20+1)/2 
-
-## However, we can define a variable and then use the same formula for other values of n
-
-n <- 20
-n*(n+1)/2
-
-n <- 25
-n*(n+1)/2
-
-# Below, write your code to calculate the sum of the first 100 integers 
-
 # Define the n to be 100 then calculate the sum with the formula
 n <- 100
 n*(n+1)/2 
@@ -75,10 +59,9 @@ n*(n+1)/2
 ```{r}
 
 # first instruction  
-test_object("n", incorrect_msg = "Something is wrong with `n`. Make sure you have assigned the correct value to `n`.")
-
+test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
 # second instruction
-test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
+test_output_contains ("n*(n+1)/2", incorrect_msg = "Take a look at your code for the second instruction.")
 
 # General 
 test_error() 
