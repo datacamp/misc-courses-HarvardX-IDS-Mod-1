@@ -5,7 +5,7 @@ description : The most basic unit to store data in R are vectors. We'll learn ab
 
 ## Numeric vectors
 
-A vectors is series of values all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
+A vector is series of values all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
 
 ```{r}
 cost <- c(50, 75, 90, 100, 150)
@@ -78,7 +78,7 @@ Be sure to place the names within double inverted commas.
 # here is an example of how to create a character vector
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# Create a numeric vector to store the temperatures listed above into temp
+# Create a character vector to store the names listed into city
 # Make sure to follow the same order as above
 
 ```
@@ -88,7 +88,7 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 # here is an example of how to create a character vector
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# Create a numeric vector to store the temperatures listed above into city
+# Create a character vector to store the temperatures listed above into city
 # Make sure to follow the same order as above
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 

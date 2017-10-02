@@ -29,7 +29,6 @@ Check the output that you see with the `str` function.
 
 *** =pre_exercise_code
 ```{r}
-
 library(dslabs)
 str(murders) 
 ```

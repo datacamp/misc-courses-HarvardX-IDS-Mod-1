@@ -11,7 +11,9 @@ programming language : R
 
 ## Using variables 1
 
-What is the sum of the first $n$ positive integers? We can use the formula $n(n+1)/2$ to quickly compute this quantity.
+What is the sum of the first $n$ positive integers? 
+
+We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 
 *** =instructions

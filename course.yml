@@ -1,6 +1,8 @@
 title            : Data Science R Basics
-description      : "Find the complete course on edx.org <a href='https://www.edx.org/course/data-science-r-basics-harvardx-ph125-1x' >here</a>."
+description      : "Find the complete course on edx.org <a href='https://www.edx.org/course/data-science-r-basics-harvardx-ph125-1x'>here</a>."
 university       : HarvardX
 difficulty_level : 2
 time_needed      : 8 hours
 from             : 'r-base-prod:28'
+programming language : R 
+
