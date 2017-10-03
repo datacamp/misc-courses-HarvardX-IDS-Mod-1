@@ -10,7 +10,7 @@ type: NormalExercise
 lang: r
 xp: 100
 skills: 1
-key: bd49675732
+key: d86cc990b4
 ```
 
 What is the sum of the first $n$ positive integers? 
@@ -73,4 +73,55 @@ n*(n+1)/2
 # General 
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
+```
+---
+## Using variables 2
+
+```yaml
+type: NormalExercise
+key: fd3f36c6ff
+lang: r
+xp: 100
+skills: 1
+```
+What is the sum of the first $n$ positive integers? 
+
+We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
+
+`@instructions`
+- Use the same formula as the last exercise but substitute `n`
+
+
+`@hint`
+Use the same R code as you used in the first question after changing the value of `n`.
+
+`@pre_exercise_code`
+```{r}
+# no pec
+```
+
+`@sample_code`
+```{r}
+# Below, write you code to calculate the sum of the first 1000 integers 
+
+```
+
+`@solution`
+```{r}
+# Below, write you code to calculate the sum of the first 1000 integers 
+n <- 1000
+n*(n+1)/2
+```
+
+`@sct`
+```{r}
+# test n 
+test_object("n", incorrect_msg = "Something is wrong with `n`. Make sure you have assigned the correct value to `n`.")
+
+# test correct output
+test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
+
+# General 
+test_error() 
+success_msg("Good job ! Let`s get to work on another question!")
 ```
