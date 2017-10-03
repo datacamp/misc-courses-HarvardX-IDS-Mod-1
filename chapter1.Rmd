@@ -10,8 +10,8 @@ type: NormalExercise
 lang: r
 xp: 100
 skills: 1
-key: 58b78420d4
-key: 364f201ece
+key: 9a729133f2
+key: 7ca2d3040a
 ```
 
 What is the sum of the first $n$ positive integers? 
@@ -80,13 +80,14 @@ success_msg("Good job ! Let`s apply this to another question")
 
 ```yaml
 type: NormalExercise
-key: fd3f36c6ff
+lang: r
+type: NormalExercise
 lang: r
 xp: 100
 skills: 1
-```
-What is the sum of the first $n$ positive integers? 
-
+key: a64f838d9b
+skills: 1
+key: e1794e3249
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 `@instructions`
@@ -125,47 +126,4 @@ test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code f
 # General 
 test_error() 
 success_msg("Good job ! Let`s get to work on another question!")
-```
----
-## Functions
-
-```yaml
-type: MultipleChoiceExercise
-lang: r
-type: MultipleChoiceExercise
-lang: r
-xp: 50
-skills: 1
-key: a664482068
-skills: 1
-key: 6fa987603e
-```
-n <- 1000
-x <- seq(1,n)
-sum(x)
-```
-
-Based on the result, what do you think the functions `seq` and `sum` do? You can use the help system.
-
-`@instructions`
-- sum creates a list of numbers and seq adds them up. 
-- seq creates a list of numbers and sum adds them up. 
-- seq computes the difference between two arguments and sum computes the sum of 1 through 1000. 
-- sum always returns the same number
-
-`@hint`
-Go to R console and type `seq(1,5)`. See what you get. Then got the R console again and type `sum(seq(1,5))`. Change the `5` to other numbers.
-
-`@pre_exercise_code`
-```{r}
-# no pec
-```
-
-`@sct`
-```{r}
-msg1 = "Try again! Read the choices carefully. Try again."
-msg2 = "Well done. Proceed to the next exercise."
-msg3 = "There`s no specificaton of 1 to 1000 for sum. Try again."
-msg4 = "Read the help file for sum by typing `?sum` in the R console."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
