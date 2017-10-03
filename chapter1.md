@@ -159,6 +159,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 --- type:NormalExercise lang:r xp:100 skills:1 key:26f2e309a3
 
 ## Nested function calls 1
+
 In math and programming we say we evaluate a function when we replace the argument with a given number. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
 
 In R it is often useful to evaluate a function inside another function. 
@@ -237,7 +238,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ---
 
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:8c8c0fbcdc
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:066d4da1cc
 
 
 ## End of Section
