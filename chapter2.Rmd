@@ -1,21 +1,51 @@
 ---
 title       : Data Types
 description : We're going to get an overview, of the different types of variables that there are in R, and how to work with them. 
+---
+## str
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:0f78ac0820
-## <<<New Exercise>>>
+```yaml
+type: MultipleChoiceExercise
+key: 0e2a0ce37a
+lang: r
+xp: 100
+skills: 1
+```
+We're going to be using the following dataset for this module. 
+Run this code in the console. 
 
-
-*** =instructions
-
-*** =hint
-
-*** =pre_exercise_code
 ```{r}
-
+library(dslabs)
+data(murders)
 ```
 
-*** =sct
-```{r}
+Next, use the function `str` to examine the structure of the murders object. We can see that this object is a data frame with 51 rows and five columns. 
 
+Which of the following best describes the variables represented in this data frame:
+
+
+`@instructions`
+- The 51 states 
+- The murder rates for all 50 states and DC 
+- The state name, the abbreviation of the state name, the state's region, and the state's population and the total number of murders for 2010.
+- `str` shows no relevant information
+
+`@hint`
+Check the output that you see with the `str` function.
+
+`@pre_exercise_code`
+```{r}
+library(dslabs)
+str(murders) 
 ```
+
+`@sct`
+```{r}
+msg1 = "Try again! Read the question again."
+msg2 = "Try again! Read the question carefully."
+msg3 = "Well done. Proceed to the next exercise"
+msg4 = "Try again! Check what the question is asking for"
+test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
+```
+
+
