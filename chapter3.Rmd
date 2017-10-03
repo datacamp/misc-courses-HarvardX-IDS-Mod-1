@@ -1,7 +1,11 @@
 ---
 title       : Vectors
 description : The most basic unit to store data in R are vectors. We'll learn about creating and working with them in this chapter. 
+---
+
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:7ffb66e63a
+
 
 ## Numeric vectors
 

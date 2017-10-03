@@ -1,6 +1,8 @@
 ---
 title       : Basic Plots
 description : We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.
+---
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:54f4b68ff9
 
 ## Scatterplots

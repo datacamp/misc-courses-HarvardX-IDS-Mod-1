@@ -3,14 +3,9 @@ title       : Programming Basics
 description : 
 ----
 
-----
-## Conditionals
+--- type:MultipleChoiceExercise xp:50 skills:1 key:2f3431cc84
 
-```yaml
-type:MultipleChoiceExercise 
-xp:50 
-skills:1 
-```
+## Conditionals
 
 What will this conditional expression return?
 Run it from the console. 
@@ -48,13 +43,10 @@ msg4 = "Check the values in x once more."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 --- 
+
+--- type:MultipleChoiceExercise xp:50 skills:1 key:8c0dd8aa35
 ## Conditional continued
 
-```yaml
-type:MultipleChoiceExercise 
-xp:50 
-skills:1 
-```
 
 Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`?
 
@@ -81,15 +73,10 @@ test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
 
----- 
+--- type:NormalExercise xp:100 skills:1 key:69aa071cbd
 
 ## ifelse
 
-```yaml
-type:NormalExercise 
-xp:100 
-skills:1 
-```
 
 The function nchar tells you how many characters long a character vector is. For example:
 
@@ -174,6 +161,7 @@ test_function("sum_n", incorrect_msg = "You need to check for the sum of 5000 in
 success_msg("This is awesome! Let's get to the next exercise.")
 ```
 ----
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:bc66a1fe8f
 ## Defining functions continued...
 
@@ -210,6 +198,7 @@ test_object("altman_plot", undefined_msg = "Be sure to define altman_plot first.
 success_msg("That's great! You can also play around with the variables and put in values for x and y.")
 ```
 ----
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:6544013f7c
 ## Lexical scope
 
@@ -296,7 +285,8 @@ test_object("compute_s_n", undefined_msg = "Store it in `compute_s_n`.", incorre
 test_output_contains("compute_s_n(10)", incorrect_msg = "Place 10 in stead of n in the function.")
 success_msg("That's awesome! You're getting so good at this!")
 ```
-----
+---
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:02c5d3c4b6
 ## For loops, 2
 
@@ -348,6 +338,7 @@ test_object("s_n", incorrect_msg = "Have you assigned values to n and x?")
 success_msg("This is great! You now know the basics of for loops in R.")
 ```
 ----
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:81431dc1d4
 ## For Loops and Plotting  
 
