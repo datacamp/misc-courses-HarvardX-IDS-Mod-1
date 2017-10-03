@@ -7,11 +7,10 @@ description          : In this course we introduce you to the basics of computin
 
 ```yaml
 type: NormalExercise
+key: 0cec712ce0
 lang: r
 xp: 100
 skills: 1
-key: 9a729133f2
-key: 7ca2d3040a
 ```
 
 What is the sum of the first $n$ positive integers? 
@@ -80,14 +79,13 @@ success_msg("Good job ! Let`s apply this to another question")
 
 ```yaml
 type: NormalExercise
-lang: r
-type: NormalExercise
+key: 213f198401
 lang: r
 xp: 100
 skills: 1
-key: a64f838d9b
-skills: 1
-key: e1794e3249
+```
+What is the sum of the first $n$ positive integers? 
+
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 `@instructions`
@@ -127,3 +125,5 @@ test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code f
 test_error() 
 success_msg("Good job ! Let`s get to work on another question!")
 ```
+
+---
