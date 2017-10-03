@@ -10,7 +10,10 @@ type: NormalExercise
 lang: r
 xp: 100
 skills: 1
-key: 9a950a6e06
+key: 1f95bd6384
+key: 48d59f7134
+key: 7c2954097b
+key: 472a33a97e
 ```
 
 What is the sum of the first $n$ positive integers? 
@@ -23,7 +26,7 @@ We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 - Then use R to compute the sum of 1 through 100 using the formula $ n(n+1)/2$. What is the sum?
 
 `@hint`
-- Define `n` to be 100 in one line and simply type the formula using R code in the second line. 
+- Define `n` to be 100 in one line and simply type the formula using R code in the second line.
 - Remember that in R you multiply using `*`.
 
 `@pre_exercise_code`
@@ -67,26 +70,28 @@ n*(n+1)/2
 `@sct`
 ```{r}
 # first instruction  
-test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
-test_object("x", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
-test_output_contains ("12332424", incorrect_msg = "Take a look at your code for the second instruction.")
+#test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
+#test_object("x", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
+#test_output_contains ("12332424", incorrect_msg = "Take a look at your code for the second instruction.")
 # General 
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
 ```
-
 ---
 ## Using variables 2
 
 ```yaml
 type: NormalExercise
-key: fd3f36c6ff
 lang: r
 xp: 100
 skills: 1
-```
-What is the sum of the first $n$ positive integers? 
-
+key: 62c89353e2
+skills: 1
+key: 01f64da766
+skills: 1
+key: 669b249f25
+skills: 1
+key: c7188f5a44
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 `@instructions`
@@ -126,22 +131,24 @@ test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code f
 test_error() 
 success_msg("Good job ! Let`s get to work on another question!")
 ```
-
 ---
 ## Functions
 
 ```yaml
 type: MultipleChoiceExercise
-key: b25fae21b0
 lang: r
 xp: 50
 skills: 1
-```
-Run the following code in the R console:
-
-```{r, eval=FALSE}
-n <- 1000
-x <- seq(1,n)
+key: 3200b8ee92
+xp: 50
+skills: 1
+key: a9699b6878
+xp: 50
+skills: 1
+key: 5bf1d32cab
+xp: 50
+skills: 1
+key: 2430174edf
 sum(x)
 ```
 
