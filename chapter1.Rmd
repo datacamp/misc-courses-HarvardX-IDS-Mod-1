@@ -128,7 +128,7 @@ success_msg("Good job ! Let`s get to work on another question!")
 
 
 ---
-## <<<New Exercise>>>
+## Functions
 
 ```yaml
 type: MultipleChoiceExercise
@@ -267,7 +267,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
-## <<<New Exercise>>>
+## End of Section 1
 
 ```yaml
 type: PlainMultipleChoiceExercise
