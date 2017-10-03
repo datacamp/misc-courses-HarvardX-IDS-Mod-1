@@ -188,7 +188,7 @@ Use one line of code to compute the log, to the base 10, of the square root of 1
 
 
 *** =hint
-The sqrt function comes before the log function in this case. 
+The `log10` function call should be the argument for the a`sqrt` function. 
 
 *** =pre_exercise_code
 ```{r}
