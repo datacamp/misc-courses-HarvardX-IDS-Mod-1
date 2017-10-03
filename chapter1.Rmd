@@ -10,8 +10,8 @@ type: NormalExercise
 lang: r
 xp: 100
 skills: 1
-key: b5283385f1
-key: 51952e80d5
+key: 58b78420d4
+key: 364f201ece
 ```
 
 What is the sum of the first $n$ positive integers? 
@@ -136,10 +136,10 @@ type: MultipleChoiceExercise
 lang: r
 xp: 50
 skills: 1
-key: 399f6ebd08
+key: a664482068
 skills: 1
-key: 09225f1a1a
-```{r, eval=FALSE}
+key: 6fa987603e
+```
 n <- 1000
 x <- seq(1,n)
 sum(x)
