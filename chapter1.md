@@ -7,7 +7,15 @@ university           : HarvardX
 difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
 ---
---- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
+
+--- key:45a0d2297b
+## Using variables 1
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+```
 
 ## Using variables 1
 
@@ -238,7 +246,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ---
 
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:066d4da1cc
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:9edd8d7908
 
 
 ## End of Section

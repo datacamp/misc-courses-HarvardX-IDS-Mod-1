@@ -2,11 +2,18 @@
 title       : Programming Basics 
 description : 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba015a0cbd
+--- 
 ## Conditionals
+
+```yaml
+type:MultipleChoiceExercise 
+xp:50 
+skills:1 
+```
 
 What will this conditional expression return?
 Run it from the console. 
+
 
 ```{r}
 x <- c(1,2,-3,4)
@@ -39,8 +46,14 @@ msg3 = "Check the question again."
 msg4 = "Check the values in x once more."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:3641a0ea21
+--- 
 ## Conditional continued
+
+```yaml
+type:MultipleChoiceExercise 
+xp:50 
+skills:1 
+```
 
 Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`?
 
@@ -66,9 +79,16 @@ msg4 = "Good job! Let's move to the next question."
 test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ----
---- type:NormalExercise lang:r xp:100 skills:1 key:9e33032243
+
+---- 
 
 ## ifelse
+
+```yaml
+type:NormalExercise 
+xp:100 
+skills:1 
+```
 
 The function nchar tells you how many characters long a character vector is. For example:
 
@@ -419,12 +439,15 @@ test_error()
 test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "Make sure you're checking your formula!")
 success_msg("This is great! We are done with this module. Time to move on to bigger things!")
 ```
---- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
 
+----
+
+
+--- type:MultipleChoiceExercise xp:0 skills:1 key:382b75fbff
 
 ## End of Section
 
-This is the end of the programming assignment for this section.
+This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
