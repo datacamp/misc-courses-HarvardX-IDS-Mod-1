@@ -48,4 +48,55 @@ msg4 = "Try again! Check what the question is asking for"
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
+---
+## Variable names
 
+```yaml
+type: NormalExercise
+key: 7455b7cb2b
+lang: r
+xp: 100
+skills: 1
+```
+In the previous question, we saw the different variables that are a part of this dataset from the output of the `src()` function. The  function `names()` is specifically designed to extract the column names from a data frame. 
+
+`@instructions`
+What are the column names used by the murders data frame for the five variables?
+
+`@hint`
+Make sure you put the name of the dataset - `murders` - in parenthesis after names. 
+
+`@pre_exercise_code`
+```{r}
+library(dslabs)
+data(murders)
+```
+
+`@sample_code`
+```{r}
+# Load package and data
+
+library(dslabs)
+data(murders)
+
+# Checking the column names 
+
+```
+
+`@solution`
+```{r}
+# Load package and data
+
+library(dslabs)
+data(murders)
+
+# Checking the column names 
+names(murders)
+```
+
+`@sct`
+```{r}
+test_error()
+test_function("names", incorrect_msg = "Make sure you've put in the name of the dataset.") 
+success_msg("Good job!")
+```
