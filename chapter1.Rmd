@@ -259,7 +259,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ---
 
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:9edd8d7908
+--- type:VideoExercise lang:r xp:0 skills:1 key:9edd8d7908
 
 ## End of Section
 
