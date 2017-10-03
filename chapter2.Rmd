@@ -1,9 +1,10 @@
 ---
 title       : Data Types
 description : We're going to get an overview, of the different types of variables that there are in R, and how to work with them. 
+difficulty level     : 1
 ----
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:8a1f23741a
+--- type:MultipleChoiceExercise xp:50 skills:1 key:8a1f23741a
 
 ## str
 
