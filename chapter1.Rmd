@@ -131,7 +131,7 @@ success_msg("Good job ! Let`s get to work on another question!")
 ## <<<New Exercise>>>
 
 ```yaml
-type: NormalExercise
+type: MultipleChoiceExercise
 key: 0e2a0ce37a
 lang: r
 xp: 100
