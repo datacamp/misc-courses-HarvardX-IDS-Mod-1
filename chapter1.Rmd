@@ -60,6 +60,7 @@ n*(n+1)/2
 # first instruction  
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
 test_object("x", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
+test_output_contains ("12332424", incorrect_msg = "Take a look at your code for the second instruction.")
 # General 
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
