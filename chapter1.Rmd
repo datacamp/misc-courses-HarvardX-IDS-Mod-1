@@ -163,10 +163,10 @@ sum(x)
 
 *** =sct
 ```{r}
-msg1 = "Try again! Think about the meaning of the words."
-msg2 = "Well done. Proceed to the next exercise"
+msg1 = "Try again! Read the choices carefully. Try again."
+msg2 = "Well done. Proceed to the next exercise."
 msg3 = "There`s no specificaton of 1 to 1000 for sum. Try again."
-msg4 = "Sum doesn't work with one number."
+msg4 = "Read the help file for sum by typing `?sum` in the R console."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ---
@@ -175,15 +175,16 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 
 ## Nested function calls 1
 
-In math and programming we say we evaluate a function when we replace the argument with a given number. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
+In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
 
 In R it is often useful to evaluate a function inside another function. 
-For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. So the first evaluation  gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
+For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. 
+So the first evaluation gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
 
 
 *** =instructions
 
-Use one line of code to compute the log, to the base 10, of the square root of 100.
+Use one line of code to compute the log, to the base 10, of the square root of 100. Make sure your code inclues the `log10` and `sqrt`functions.
 
 
 *** =hint
