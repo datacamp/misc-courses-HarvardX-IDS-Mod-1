@@ -11,7 +11,7 @@ time needed          : Approximately 1 hour for each section
 --- key:45a0d2297b
 ## Using variables 1
 
-```yaml
+--- key:4360ba27cf
 type: NormalExercise
 xp: 100
 skills: 1
