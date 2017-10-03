@@ -8,11 +8,7 @@ difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
 ---
 
---- type:NormalExercise xp:100 skills:1 key:9970d89592
-
-## Using variables 1
-
-```
+--- type:NormalExercise xp:100 skills:1 key:df4d7b307d
 
 ## Using variables 1
 
