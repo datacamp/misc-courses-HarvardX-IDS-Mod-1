@@ -209,9 +209,14 @@ sqrt(log2(16))
 
 *** =solution
 ```{r}
+# log to the base 2 
+log2(16)
+
+# sqrt of the log to the base 2 of 16:
+sqrt(log2(16))
+
 # Compute log to the base 10 of the sqrt of 100
 log10(sqrt(100))
-
 ```
 
 *** =sct
@@ -237,7 +242,7 @@ Which of the following will always return the numeric value stored in `x`? You c
 
 *** =hint
 
-The question asks you about the numeric value of `x`, not the log of anything. 
+You are looking for the case in which a function and it's inverse are called sequentially. You can also try out each one on the consule: assign a numeric value to `x` then try out each of the lines of code given in the choices.
 
 *** =pre_exercise_code
 ```{r}
@@ -246,10 +251,10 @@ The question asks you about the numeric value of `x`, not the log of anything.
 
 *** =sct
 ```{r}
-msg1 = "Try again! Read the question again."
-msg2 = "Try again! Read the question carefully."
+msg1 = "Try again! Note that `log(10^1)` is not 1 but the natural log of 10."
+msg2 = "Try again! Note that `log(1^10)` is 0 not 1."
 msg3 = "Well done. Proceed to the next exercise"
-msg4 = "Try again! Check what the question is asking for"
+msg4 = "Try again! Note that `exp(log(2, base = 2)` is 0 not 2."
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ---
