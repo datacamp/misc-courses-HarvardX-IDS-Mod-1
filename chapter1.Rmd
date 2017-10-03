@@ -1,12 +1,6 @@
 ---
 title                : R Basics 
-author_field         : 
 description          : In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
-author_bio           : 
-university           : HarvardX 
-difficulty level     : 1
-time needed          : Approximately 1 hour for each section 
----
 
 --- type:NormalExercise xp:100 skills:1 key:df4d7b307d
 
@@ -16,6 +10,8 @@ What is the sum of the first $n$ positive integers?
 
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
+
+`@instructions`
 
 *** =instructions
  
@@ -259,7 +255,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 ---
 
---- type:VideoExercise lang:r xp:0 skills:1 key:9edd8d7908
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:9edd8d7908
 
 ## End of Section
 
