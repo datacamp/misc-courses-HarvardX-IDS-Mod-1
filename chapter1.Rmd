@@ -8,13 +8,10 @@ difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
 ---
 
---- key:45a0d2297b
+--- type:NormalExercise xp:100 skills:1 key:9970d89592
+
 ## Using variables 1
 
---- key:4360ba27cf
-type: NormalExercise
-xp: 100
-skills: 1
 ```
 
 ## Using variables 1
@@ -74,7 +71,7 @@ success_msg("Good job ! Let`s apply this to another question")
 ----
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:d1735adac6
+--- type:NormalExercise xp:100 skills:1 key:d1735adac6
 
 ##  Using variables 2
 
@@ -247,7 +244,6 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ---
 
 --- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:9edd8d7908
-
 
 ## End of Section
 
