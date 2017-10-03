@@ -6,7 +6,7 @@ author_bio           :
 university           : HarvardX 
 difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
-programming language : R 
+---
 --- type:NormalExercise lang:r xp:100 skills:1 key:4360ba27cf
 
 ## Using variables 1
@@ -36,7 +36,7 @@ Follow the sample code in the editor.
 # Here is how you compute the sum for the first 20 integers
 20*(20+1)/2 
 
-## However, we can define a variable to use the formula for other values of n
+# However, we can define a variable to use the formula for other values of n
 n <- 20
 n*(n+1)/2
 
@@ -154,6 +154,8 @@ msg3 = "There`s no specificaton of 1 to 1000 for sum. Try again."
 msg4 = "Sum doesn't work with one number."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
+---
+
 --- type:NormalExercise lang:r xp:100 skills:1 key:26f2e309a3
 
 ## Nested function calls 1
@@ -190,12 +192,6 @@ sqrt(log2(16))
 
 *** =solution
 ```{r}
-# log to the base 2 
-log2(16)
-
-# sqrt of the log to the base 2 of 16:
-sqrt(log2(16))
-
 # Compute log to the base 10 of the sqrt of 100
 log10(sqrt(100))
 
@@ -210,6 +206,7 @@ success_msg("Very good!")
 
 ```
 ----
+
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:df508b6664
 ## Nested functions call 2
 
@@ -238,9 +235,9 @@ msg3 = "Well done. Proceed to the next exercise"
 msg4 = "Try again! Check what the question is asking for"
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
-----
+---
 
---- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:1 key:011b43bb92
+--- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:8c8c0fbcdc
 
 
 ## End of Section

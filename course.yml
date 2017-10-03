@@ -5,4 +5,3 @@ difficulty_level : 2
 time_needed      : 8 hours
 from             : 'r-base-prod:28'
 programming language : R 
-
