@@ -2,9 +2,16 @@
 title                : R Basics 
 description          : In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
 
---- type:NormalExercise xp:100 skills:1 key:df4d7b307d
-
+---
 ## Using variables 1
+
+```yaml
+type: NormalExercise
+lang: r
+xp: 100
+skills: 1
+key: 9a950a6e06
+```
 
 What is the sum of the first $n$ positive integers? 
 
@@ -12,22 +19,19 @@ We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 
 `@instructions`
+- Define 'n=100'
+- Then use R to compute the sum of 1 through 100 using the formula $ n(n+1)/2$. What is the sum?
 
-*** =instructions
- 
-Define 'n=100' and then use R to compute the sum of 1 through 100 using the formula $ n(n+1)/2$. What is the sum?
+`@hint`
+- Define `n` to be 100 in one line and simply type the formula using R code in the second line. 
+- Remember that in R you multiply using `*`.
 
-
-*** =hint
-
-Define `n` to be 100 in one line and simply type the formula using R code in the second line. Remember that in R you multiply using `*`.
-
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
-``` 
+```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Here is how you compute the sum for the first 20 integers
 20*(20+1)/2 
@@ -39,11 +43,11 @@ n*(n+1)/2
 n <- 25
 n*(n+1)/2
 
-# Below, write your code to calculate the sum of the first 100 integers 
+# Below, write your code to calculate the sum of the first 100 integers
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Here is how you compute the sum for the first 20 integers
 20*(20+1)/2 
@@ -60,7 +64,7 @@ n <- 100
 n*(n+1)/2 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 # first instruction  
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
@@ -70,61 +74,69 @@ test_output_contains ("12332424", incorrect_msg = "Take a look at your code for 
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
 ```
-----
 
+---
+## Using variables 2
 
---- type:NormalExercise xp:100 skills:1 key:d1735adac6
-
-##  Using variables 2
-
-*** =instructions
-
+```yaml
+type: NormalExercise
+key: fd3f36c6ff
+lang: r
+xp: 100
+skills: 1
+```
 What is the sum of the first $n$ positive integers? 
 
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
-*** =hint
+`@instructions`
+- Use the same formula as the last exercise but substitute `n`
 
+
+`@hint`
 Use the same R code as you used in the first question after changing the value of `n`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
-``` 
+```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Below, write you code to calculate the sum of the first 1000 integers 
 
-``` 
+```
 
-*** =solution
+`@solution`
 ```{r}
 # Below, write you code to calculate the sum of the first 1000 integers 
 n <- 1000
 n*(n+1)/2
-
 ```
 
-*** =sct
+`@sct`
 ```{r}
-
-# first instruction  
+# test n 
 test_object("n", incorrect_msg = "Something is wrong with `n`. Make sure you have assigned the correct value to `n`.")
 
-# second instruction
+# test correct output
 test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
 
 # General 
 test_error() 
 success_msg("Good job ! Let`s get to work on another question!")
 ```
-----
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba448c1da3
-
+---
 ## Functions
 
+```yaml
+type: MultipleChoiceExercise
+key: b25fae21b0
+lang: r
+xp: 50
+skills: 1
+```
 Run the following code in the R console:
 
 ```{r, eval=FALSE}
@@ -133,31 +145,23 @@ x <- seq(1,n)
 sum(x)
 ```
 
-Based on the result, what do you think the functions `seq` and `sum` do? You can use the help system:
+Based on the result, what do you think the functions `seq` and `sum` do? You can use the help system.
 
-*** =instructions
+`@instructions`
 - sum creates a list of numbers and seq adds them up. 
 - seq creates a list of numbers and sum adds them up. 
 - seq computes the difference between two arguments and sum computes the sum of 1 through 1000. 
 - sum always returns the same number
 
-*** =hint
-
+`@hint`
 Go to R console and type `seq(1,5)`. See what you get. Then got the R console again and type `sum(seq(1,5))`. Change the `5` to other numbers.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 # no pec
 ```
 
-*** =sample_code
-```{r}
-n <- 1000
-x <- seq(1,n)
-sum(x)
-``` 
-
-*** =sct
+`@sct`
 ```{r}
 msg1 = "Try again! Read the choices carefully. Try again."
 msg2 = "Well done. Proceed to the next exercise."
@@ -165,104 +169,3 @@ msg3 = "There`s no specificaton of 1 to 1000 for sum. Try again."
 msg4 = "Read the help file for sum by typing `?sum` in the R console."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
----
-
---- type:NormalExercise lang:r xp:100 skills:1 key:26f2e309a3
-
-## Nested function calls 1
-
-In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
-
-In R it is often useful to evaluate a function inside another function. 
-For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. 
-So the first evaluation gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
-
-
-*** =instructions
-
-Use one line of code to compute the log, to the base 10, of the square root of 100. Make sure your code inclues the `log10` and `sqrt`functions.
-
-
-*** =hint
-The `log10` function call should be the argument for the a`sqrt` function. 
-
-*** =pre_exercise_code
-```{r}
-#no pec
-```
-
-*** =sample_code
-```{r}
-# log to the base 2 
-log2(16)
-
-# sqrt of the log to the base 2 of 16:
-sqrt(log2(16))
-
-# Compute log to the base 10 (log10) of the sqrt of 100
-
-```
-
-*** =solution
-```{r}
-# log to the base 2 
-log2(16)
-
-# sqrt of the log to the base 2 of 16:
-sqrt(log2(16))
-
-# Compute log to the base 10 of the sqrt of 100
-log10(sqrt(100))
-```
-
-*** =sct
-```{r}
-
-test_output_contains ("log10(sqrt(100))", times = 1, incorrect_msg = "Make sure you mentioned the base and put the sqrt function in parenthesis.")
-test_error() 
-success_msg("Very good!")
-
-```
-----
-
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:df508b6664
-## Nested functions call 2
-
-Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
-
-*** =instructions
-- `log(10^x)`
-- `log10(x^10)`
-- `log(exp(x))`
-- `exp(log(x, base = 2))`
-
-*** =hint
-
-You are looking for the case in which a function and it's inverse are called sequentially. You can also try out each one on the consule: assign a numeric value to `x` then try out each of the lines of code given in the choices.
-
-*** =pre_exercise_code
-```{r}
-#no pec
-```
-
-*** =sct
-```{r}
-msg1 = "Try again! Note that `log(10^1)` is not 1 but the natural log of 10."
-msg2 = "Try again! Note that `log(1^10)` is 0 not 1."
-msg3 = "Well done. Proceed to the next exercise"
-msg4 = "Try again! Note that `exp(log(2, base = 2)` is 0 not 2."
-test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
----
-
---- type:MultipleChoiceExercise lang:r xp:0 skills:1 key:9edd8d7908
-
-## End of Section
-
-This is the end of the programming assignment for this section. 
-
-You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
-
-If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
-
-----
