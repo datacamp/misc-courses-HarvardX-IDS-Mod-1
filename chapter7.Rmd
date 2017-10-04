@@ -82,7 +82,7 @@ Use the function rank and remember by default it ranks form lowest to highest.
 library(dplyr)
 library(dslabs)
 data(murders)
-rate =  murders$total)/ (murders$population) * 100000
+rate =  (murders$total)/ (murders$population) * 100000
 ```
 
 `@sample_code`
@@ -247,7 +247,7 @@ Use filter and the `%in%` operator. You can use nrow to quickly get the number o
 `@pre_exercise_code`
 ```{r}
 library(dplyr)
-libary(dslabs)
+library(dslabs)
 data(murders)
 ```
 
@@ -325,6 +325,13 @@ murders <- mutate(murders, rate =  total / population * 100000)
 
 `@solution`
 ```{r}
+# Loading the libraries
+library(dplyr)
+data(murders)
+
+# add the rate column
+murders <- mutate(murders, rate =  total / population * 100000)
+
 # Create a table, call it `my_states`, that satisfies both the conditions 
 my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)
 
