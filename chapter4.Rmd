@@ -11,12 +11,12 @@ lang: r
 xp: 100
 skills: 1
 ```
-When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the  `murders` as an example. 
+When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the `murders` dataset as an example. 
 
 `@instructions`
 - Use the `$` operator to access the population size data and store it the object `pop`. 
 - Then use the `sort` function to redefine `pop` so that it is sorted. 
-Finally use the `[` operator to report the smallest population size.
+- Finally use the `[` operator to report the smallest population size.
 
 `@hint`
 Make sure to use the `sort` function to redefine `pop` so that it is sorted.
@@ -29,16 +29,16 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Access a total murders and store it in an object 
-total <- murders$state 
+# Access the `state` variable and store it in an object 
+states <- murders$state 
 
-# Sort the object  and redefine the object 
-total <- sort(total) 
+# Sort the object and redefine the object 
+states <- sort(states) 
 
-# Report the smallers total of murders 
-total[1]
+# Report the first alphabetical value  
+states[1]
 
-# Access `population` from the dataset and store it in `pop`
+# Access `population` values from the dataset and store it in `pop`
 
 # Sort the object and save it in the same object 
 
@@ -50,16 +50,16 @@ total[1]
 
 `@solution`
 ```{r}
-# Access a total murders and store it in an object 
-total <- murders$state 
+# Access the `state` variable and store it in an object 
+states <- murders$state 
 
-# Sort the object  and redefine the object 
-total <- sort(total) 
+# Sort the object and redefine the object 
+states <- sort(states) 
 
-# Report the smallers total of murders 
-total[1]
+# Report the first alphabetical value  
+states[1]
 
-# Access population from the dataset and store it in pop
+# Access `population` values from the dataset and store it in `pop`
 pop <- murders$population
 
 # Sort the object and save it in the same object
@@ -71,8 +71,11 @@ pop[1]
 
 `@sct`
 ```{r}
-test_object("pop", undefined_msg = "Make sure you define the object pop.", incorrect_msg = "Check whether you have redefined it or not.")
-test_output_contains("pop[1]", incorrect_msg = "Use the square brackets [] to report the smallest population value.")
 test_error()
+test_object("pop", undefined_msg = "Make sure you define the object pop.", 
+              incorrect_msg = "Check whether you have redefined pop using the sort function or not.")
+test_function("sort", args = "pop", index = 2,eval = TRUE,eq_condition = "equivalent", not_called_msg = "Make sure to call the sort function",
+              args_not_specified_msg = NULL, incorrect_msg = "Make sure to call it on the object `pop`.")
+test_output_contains("pop[1]", incorrect_msg = "Use the square brackets [] to report the smallest population value.")
 success_msg("Good job! Now you know how to sort data in an ascending order.")
 ```
