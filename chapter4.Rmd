@@ -343,7 +343,7 @@ skills: 1
 This exercise is somewhat more challenging. We are going to 
 repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
 Create an object ind that stores the indexes needed to order the population values, using the `order` command.  For example we could define `o <- order(murders$population)`
-Then use the bracket operator `[` to re-order each column in the data frame. For example, example, `abb[o]` orders the abbreviations based by population size. 
+Then use the bracket operator `[` to re-order each column in the data frame. For example, `abb[o]` orders the abbreviations based by population size. 
 
 `@hint`
 
@@ -380,7 +380,7 @@ ranks <- rank(murders$population)
 ind <- order(states)
 
 # Create a dataframe `my_df` with the state name and its rank and ordered from least populous to most 
-my_df <- data.frame(states = states[o], ranks = ranks[o])
+my_df <- data.frame(states = states[ind], ranks = ranks[ind])
 
 ```
 
@@ -494,6 +494,7 @@ Remember the `!` operator. Use code `mean(na_example[!ind])`.
 ```{r}
 library(dslabs)
 data(na_example)
+ind <- is.na(na_example)
 ```
 
 `@sample_code`
