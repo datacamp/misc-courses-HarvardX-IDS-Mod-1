@@ -69,7 +69,6 @@ n*(n+1)/2
 # first instruction
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
 test_student_typed("n*(n+1)/2", not_typed_msg = "Make sure you type the equation. Look at the example code.")
-test_output_contains("5050", incorrect_msg = "That formula does not give the correct answer. Look at the example code.")
 success_msg("Good job! Let`s apply this to another question.")
 ```
 ---
