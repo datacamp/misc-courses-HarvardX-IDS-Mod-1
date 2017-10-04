@@ -608,7 +608,7 @@ success_msg("Good job! Let's move on to the next exercise!")
 ---
 ## Integers and Numerics
 
-Let's confirm that `1L` is an *intenger* not a *numeric*.
+Let's confirm that `1L` is an *integer* not a *numeric*.
 
 ```yaml
 type: NormalExercise
@@ -635,13 +635,13 @@ Just type `class` and `1L`.
 # Check the class of `1`, assigned to the object `a`
 class(1)
 
-# Confirm the class of 1L as an integer
+# Confirm the class of 1L is integer
 
 ```
 
 `@solution`
 ```{r}
-# Confirm the class of 1L as an integer
+# Confirm the class of 1L is integer
 class(1L)
 
 ```
@@ -658,7 +658,7 @@ success_msg("Great, now that you know how to force a number to become an integer
 
 The concept of coercion is a very important one. Watching the video, we learned that when an entry does not match what an R function is expecting, R tries to guess what we meant before throwing an error. This might get confusing at times. 
 
-As we've discussed in earlier questions, there are numberic and character vectors. The character vectors are placed in quotes and the numerics are not. 
+As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
 
 We can coerce R into changing characters to integers and vice-versa. The code, `as.integer(x)` helps us do this. 
 Let's practice doing this!
@@ -713,7 +713,7 @@ as.integer(x)
 test_error()
 test_object("x", undefined_msg = "Make sure to define x first.", incorrect_msg = "Check the values stored in `x`.")
 test_output_contains("as.integer(x)", incorrect_msg = "Check the code again.")
-success_msg("Awesome!Doesn`t that feel wonderful. Now, you can try changing it back to character, using the code `as.character(x)`.")
+success_msg("Awesome! Doesn't that feel wonderful? Now, you can try changing it back to character, using the code `as.character(x)`.")
 
 
 ```
