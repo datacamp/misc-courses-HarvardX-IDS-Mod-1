@@ -54,7 +54,7 @@ success_msg("Great job!")
 ---
 ## which
 
-The function`which()` help us know directly, which values are low or high etc. Let's use it in this question. 
+The function `which()` help us know directly, which values are low or high, etc. Let's use it in this question. 
 
 ```yaml
 type: NormalExercise
@@ -354,7 +354,7 @@ x <- c(2, 3, 5)
 y <- c(1, 2, 3, 4)
 x%in%y
 ```
-Gives us a two `TRUE` followed by a `FALSE` becuase 2 and 3 are in `y`.  
+Gives us a two `TRUE` followed by a `FALSE` because 2 and 3 are in `y`.  
 
 ```yaml
 type: NormalExercise
@@ -465,7 +465,7 @@ success_msg("Awesome!")
 
 ---
 
-## End of Section 6
+## End of Assessment 6
 
 ```yaml
 type: PlainMultipleChoiceExercise
