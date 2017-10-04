@@ -199,8 +199,8 @@ For example, if we want to see the cost of the last 3 items in our food list, we
 cost[3:5]
 ```
 
-Note here, that we could also type `cost[c(3,4,5)]` and get the same result. The `:` operator helps us condense the code and get consecutive values. 
-
+Note here, that we could also type `cost[c(3,4,5)]` and get the same result. 
+The `:` operator helps us condense the code and get consecutive values. 
 
 ```yaml
 type: NormalExercise
