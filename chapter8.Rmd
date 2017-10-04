@@ -11,7 +11,7 @@ lang: r
 xp: 100
 skills: 1
 ```
-We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get plot.)
+We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get the plot.)
 
 ```{r}
 library(dslabs)
@@ -169,7 +169,7 @@ success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 
 ---
 
-## End of Section 8
+## End of Assessment 8
 
 ```yaml
 type: PlainMultipleChoiceExercise
