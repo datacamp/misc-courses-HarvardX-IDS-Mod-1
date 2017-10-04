@@ -284,6 +284,10 @@ Don't forget about the combine, `c()`, function.
 
 `@pre_exercise_code`
 ```{r}
+cost <- c(50, 75, 90, 100, 150)
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+names(cost) <- food
+
 temp <- c(35, 88, 42, 84, 81, 30)
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 names(temp) <- city
@@ -304,14 +308,14 @@ cost[c(1,5)]
 cost[c(1,5)]
 
 # Access the temperatures of Paris and San Juan
-temp[c(2,4)]
+temp[c(3,5)]
 
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_output_contains("temp[c(2,4)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets.")
+test_output_contains("temp[c(3,5)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets.")
 success_msg("Isn't that awesome! Let's move to the next exercise!")
 ```
 

@@ -114,7 +114,6 @@ n*(n+1)/2
 `@sct`
 ```{r}
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
-test_output_contains("500500","You are not providing a formula that gives the correct answer. Look at the example code.")
 test_student_typed("n*(n+1)/2", times = 1, not_typed_msg = "Make sure you define the equation.")
 success_msg("Good job! Let`s get to work on another question!")
 ```
