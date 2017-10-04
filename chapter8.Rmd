@@ -62,6 +62,7 @@ log10_total_gun_murders <- log10(murders$total)
 
 # Create a scatterplot with population and murders 
 plot(log10_population, log10_total_gun_murders)
+
 ```
 
 `@sct`
@@ -71,4 +72,98 @@ test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_m
 test_function("plot", incorrect_msg = "Scatter population on murders.")
 test_error()
 success_msg("Doesn't that plot look neat!")
+```
+
+---
+## Histograms
+
+```yaml
+type: NormalExercise
+key: 6d782c33a3
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+Create a histogram of the state populations.
+
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+library(dslabs)
+data(murders)
+```
+
+`@sample_code`
+```{r}
+# Store the population in millions (same as previous question)
+population_in_millions <- murders$population/10^6
+
+
+# Create a histogram of the population 
+
+```
+
+`@solution`
+```{r}
+# Store the population in millions (same as previous question)
+population_in_millions <- murders$population/10^6
+
+# Create a histogram of the population 
+hist(population_in_millions)
+
+```
+
+`@sct`
+```{r}
+test_error()
+test_object("population_in_millions", undefined_msg = "Define the population first.", incorrect_msg = "Check code!")
+test_function("hist", incorrect_msg = "Check code again.")
+success_msg("We got a histogram! Awesome!")
+```
+
+---
+## Boxplots
+
+```yaml
+type: NormalExercise
+key: 41b5550054
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+Stratify the state populations by region, the generate boxplots for the strate.  You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
+
+`@hint`
+Make sure you specify the dataset.
+
+`@pre_exercise_code`
+```{r}
+library(dslabs)
+```
+
+`@sample_code`
+```{r}
+# Create a boxplot of state populations by region and specify dataset 
+
+```
+
+`@solution`
+```{r}
+# Create a boxplot of state populations by region and specify dataset 
+boxplot(population~region, data = murders)
+
+```
+
+`@sct`
+```{r}
+test_error()
+test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dataset.")
+success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
