@@ -206,7 +206,7 @@ skills: 1
 
 
 `@instructions`
-Define a variable `states` to hold the state names from the murders data frame. Find the index of the smalles state using `which.min(murders$population)]`. Then combine these to find the state name for the smallest state.
+Define a variable `states` to hold the state names from the murders data frame. Find the index of the smallest state using `which.min(murders$population)]`. Then combine these to find the state name for the smallest state.
 
 `@hint`
 Index the list of variables
@@ -514,12 +514,12 @@ mean(na_example[!ind])
 ```{r}
 test_error()
 test_output_contains("mean(na_example[!ind])", incorrect_msg = "Check your code from the instructions again.")
-success_msg("Awesome ! Now you're all set with vectors! Get practicing on your own!")
+success_msg("Awesome! Now you're all set with vectors! Get practicing on your own!")
 ```
 
 ---
 
-## End of Section 4
+## End of Assessment 4
 
 ```yaml
 type: PlainMultipleChoiceExercise
