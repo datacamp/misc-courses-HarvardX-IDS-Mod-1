@@ -66,7 +66,10 @@ n*(n+1)/2
 
 `@sct`
 ```{r}
+test_error()
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
+test_output_contains("5050", incorrect_msg = "You are not providing a formula that gives the correct answer. Look at the example code.")
+test_student_typed("n*(n+1)/2", times = 3, not_typed_msg = "Make sure you type the equation. Look at the example code. And don't erase the example code.")
 success_msg("Good job! Let`s apply this to another question.")
 ```
 ---
@@ -110,15 +113,10 @@ n*(n+1)/2
 
 `@sct`
 ```{r}
-# test n 
-test_object("n", incorrect_msg = "Something is wrong with `n`. Make sure you have assigned the correct value to `n`.")
-
-# test correct output
-test_output_contains ("(n*(n+1)/2)", incorrect_msg = "Take a look at your code for the second instruction.")
-
-# General 
-test_error() 
-success_msg("Good job ! Let`s get to work on another question!")
+test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
+test_output_contains("500500","You are not providing a formula that gives the correct answer. Look at the example code.")
+test_student_typed("n*(n+1)/2", times = 1, not_typed_msg = "Make sure you define the equation.")
+success_msg("Good job! Let`s get to work on another question!")
 ```
 
 
