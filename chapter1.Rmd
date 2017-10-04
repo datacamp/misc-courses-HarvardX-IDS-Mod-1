@@ -217,7 +217,7 @@ log10(sqrt(100))
 
 `@sct`
 ```{r}
-test_output_contains ("log10(sqrt(100))", times = 1, incorrect_msg = "Make sure you mentioned the base and put the sqrt function in parenthesis.")
+test_output_contains (c("log10(sqrt(100))", "log(sqrt(100), base=10)"), times = 1, incorrect_msg = "Make sure you use the right base for the log the base and put the sqrt function in parenthesis.")
 test_error() 
 success_msg("Very good!")
 ```
