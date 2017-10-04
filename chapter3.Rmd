@@ -11,7 +11,7 @@ lang: r
 xp: 100
 skills: 1
 ```
-A vector is series of values all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
+A vector is a series of values, all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
 
 ```{r}
 cost <- c(50, 75, 90, 100, 150)
@@ -51,6 +51,6 @@ temp <- c(35, 88, 42, 84, 81, 30)
 `@sct`
 ```{r}
 test_error()
-test_object("temp", incorrect_msg = "Check to match the numbers from the question!")
+test_object("temp", incorrect_msg = "Check to match the numbers from the question.")
 success_msg("Good job! Do you want to now try creating a character vector")
 ```
