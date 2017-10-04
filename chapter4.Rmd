@@ -236,17 +236,17 @@ pop <- murders$population
 # Define the variable `i` to be the index of the smallest state
 i <- which.min(pop)
 
-# Define variable `state` to hold the states
-state <- murders$state
+# Define variable `states` to hold the states
+states <- murders$state
 
 # Use the index you define to find the state with the smallest population
-state[i]
+states[i]
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_object("state", undefined_msg = "Define states first!", incorrect_msg = "Assign state values from dataset to object.")
+test_object("states", undefined_msg = "Define states first!", incorrect_msg = "Assign state values from dataset to states.")
 test_output_contains("states[which.min(murders$population)]", incorrect_msg = "Copy code from instructions.")
 success_msg("Awesome! Now we have the names of the states as well!")
 ```
@@ -422,8 +422,7 @@ skills: 1
 
 `@instructions`
 The `is.na` returns a logical vector that tells us which entries are `NA`.
-
-Assign this logical vector to an object called `ind`, using `is.na(na_example)` and determine how many NA does na_example have, using the `sum` command.
+Assign this logical vector to an object called `ind`, using `is.na(na_example)` and determine how many NA does `na_example` have, using the `sum` command.
 
 `@hint`
 Sum the indices
@@ -438,7 +437,7 @@ data(na_example)
 ```{r}
 # Using new dataset 
 library(dslabs)
-data(na_example)  
+data(na_example)
 
 # Checking the structure 
 str(na_example)
