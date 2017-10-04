@@ -355,7 +355,7 @@ success_msg("You got this! Now you're a pro at making tables in R!")
 ```
 
 ---
-## End of Section 2
+## End of Assessment 2
 
 ```yaml
 type: PlainMultipleChoiceExercise
