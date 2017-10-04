@@ -20,10 +20,10 @@ city_temps <- data.frame(name = city, temperature = temp)
 ```
 
 `@instructions`
-- Remake the data frame using the code above but add a line that converts the temperature from farenheit to celsius. 
+- Remake the data frame using the code above but add a line that converts the temperature from fahrenheit to celsius. 
 
 `@hint`
-The conversion rate is: `degree Farenheit* 9/5 + 32 = degree celsius` 
+The conversion rate is: `degree Fahrenheit* 9/5 + 32 = degree celsius` 
 
 `@pre_exercise_code`
 ```{r}
@@ -64,7 +64,7 @@ city_temps <- data.frame(name = city, temperature = temp)
 `@sct`
 ```{r}
 test_object("temp", undefined_msg = "Define temp first.", incorrect_msg = "Store values of temperature!")
-test_object("temp", incorrect_msg = "Change from Farenheit to Celsius using `temp <- (temp - 32)*5/9`.")
+test_object("temp", incorrect_msg = "Change from Fahrenheit to Celsius using `temp <- (temp - 32)*5/9`.")
 test_object("city", incorrect_msg = "Store names of cities.")
 test_object("city_temps", incorrect_msg = "Create a dataframe following the same example.")
 test_error()
@@ -184,7 +184,7 @@ success_msg("Awesome!")
 
 ---
 
-## End of Section 5
+## End of Assessment 5
 
 ```yaml
 type: PlainMultipleChoiceExercise
