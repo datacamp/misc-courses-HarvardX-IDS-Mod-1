@@ -6,7 +6,7 @@ description : We engage in the basics of plot-making in R, with scatterplots, hi
 
 ```yaml
 type: NormalExercise
-key: 8c7e07ec27
+key: c535f6f10b
 lang: r
 xp: 100
 skills: 1
