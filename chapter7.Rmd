@@ -75,7 +75,7 @@ skills: 1
 Use the function `mutate` again to add a column `rank` containing the rank, from highest to lowest murder rate. Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
 
 `@hint`
-Use the function rank and remember by default it ranks form lowest to highest.
+Use the function rank and remember by default it ranks from lowest to highest.
 
 `@pre_exercise_code`
 ```{r}
@@ -201,7 +201,7 @@ data(murders)
 library(dplyr)
 data(murders)
 
-# Use filter Creat a new dataframe `no_south`
+# Use filter to create a new dataframe `no_south`
 
 # Use nrow() to calculate the number of rows
 ```
@@ -360,7 +360,7 @@ skills: 1
 
 
 `@instructions`
-Repeat exercise 5, but now instead of creating a new obejct, show the result and only include the state, rate, and rank columns. Use a pipe (`%>%`) to do this in just one line.
+Repeat exercise 5, but now instead of creating a new object, show the result and only include the state, rate, and rank columns. Use a pipe (`%>%`) to do this in just one line.
 
 `@hint`
 Use code: `filter(murders, region %in% c("Northeast", "West") & rate < 1) %>% 
@@ -411,7 +411,7 @@ skills: 1
 
 
 `@instructions`
-Now reload the original murders data frame using `data(murders)`. Then use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consideres only states in the Northeast or West, has a murder rate lower than 1 and contains only the state, rate, and rank columns. 
+Now reload the original murders data frame using `data(murders)`. Then use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consider only states in the Northeast or West, which have a murder rate lower than 1 and contain only the state, rate, and rank columns. 
 
 `@hint`
 Use `mutate`, `filter` and `select` combining them with `pipes`.
@@ -453,7 +453,7 @@ success_msg("This is absolutely awesome! You now know how to use basic data mani
 
 ---
 
-## End of Section 7
+## End of Assessment 7
 
 ```yaml
 type: PlainMultipleChoiceExercise
