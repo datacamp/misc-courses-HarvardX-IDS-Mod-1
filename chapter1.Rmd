@@ -157,7 +157,7 @@ Go to R console and type `seq(1,5)`. See what you get. Then got the R console ag
 ```{r}
 msg1 = "Try again! Read the choices carefully. Try again."
 msg2 = "Well done. Proceed to the next exercise."
-msg3 = "There`s no specificaton of 1 to 1000 for sum. Try again."
+msg3 = "There`s no specification of 1 to 1000 for sum. Try again."
 msg4 = "Read the help file for sum by typing `?sum` in the R console."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
@@ -181,11 +181,11 @@ So the first evaluation gives a 4 and this gets evaluated by `sqrt` to give the 
 
 `@instructions`
 - Use one line of code to compute the log, to the base 10, of the square root of 100. 
-- Make sure your code inclues the `log10` and `sqrt`functions.
+- Make sure your code includes the `log10` and `sqrt` functions.
 
 
 `@hint`
-The `log10` function call should be the argument for the a`sqrt` function. 
+The `log10` function call should be the argument for the `sqrt` function. 
 
 `@pre_exercise_code`
 ```{r}
@@ -242,7 +242,7 @@ Which of the following will always return the numeric value stored in `x`? You c
 - `exp(log(x, base = 2))`
 
 `@hint`
-You are looking for the case in which a function and it's inverse are called sequentially. You can also try out each one on the consule: assign a numeric value to `x` then try out each of the lines of code given in the choices.
+You are looking for the case in which a function and its inverse are called sequentially. You can also try out each one on the console: assign a numeric value to `x` then try out each of the lines of code given in the choices.
 
 `@pre_exercise_code`
 ```{r}
