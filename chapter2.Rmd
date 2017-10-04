@@ -64,7 +64,7 @@ In the previous question, we saw the different variables that are a part of this
 What are the column names used by the *murders* data frame for the five variables?
 
 `@hint`
-Make sure you put the name of the dataset - `murders` - in parenthesis after names. 
+Make sure you put the name of the dataset - `murders` - in parentheses after names. 
 
 `@pre_exercise_code`
 ```{r}
@@ -134,7 +134,7 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# To access the population variable from the murers dataset use this code:
+# To access the population variable from the murders dataset use this code:
 p <- murders$population 
 
 # To determine the class of object `p` we use this code:
@@ -247,7 +247,7 @@ success_msg("You've now learned different ways of doing the same thing in R! You
 ---
 ## Factors
 
-Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class` command on the *region* column. 
+Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class`  command on the *region* column. 
 
 The function `levels` shows us the categories for the factor. 
 
