@@ -18,7 +18,7 @@ Run it from the console.
 ```{r}
 x <- c(1,2,-3,4)
 if(all(x>0)){
-    print("All Postives")
+    print("All Positives")
   } else{
      print("Not All Positives")
   }
@@ -31,7 +31,7 @@ if(all(x>0)){
 - None of the above 
 
 `@hint`
-Are the numbers stored in x positive or not?
+Are the numbers stored in `x` positive or not?
 
 `@pre_exercise_code`
 ```{r}
@@ -75,7 +75,7 @@ Which of the following expressions is always `FALSE` when at least one entry of 
 
 `@sct`
 ```{r}
-msg1 = "Try again!Try an example on the R console."
+msg1 = "Try again! Try an example on the R console."
 msg2 = "Re-read the question! Try an example on the R console."
 msg3 = "Check the question again. Try an example on the R console."
 msg4 = "Good job! Let's move to the next question."
@@ -127,7 +127,7 @@ new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 ```{r}
 test_error()
 test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse.")
-success_msg("Whoohoo! You're becoming a pro at this!")
+success_msg("Woohoo! You're becoming a pro at this!")
 ```
 ---
 ## Defining functions
@@ -236,7 +236,7 @@ skills: 1
 `@instructions`
 ```{r}
 
-The lexical scoping is a convention used by many languages that determins when an object is available by its name. When you run the code below you will see which x is available when. After running the code below, what is the value of x?
+The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which x is available when. After running the code below, what is the value of x?
 
 ```
 `@hint`
@@ -333,7 +333,7 @@ skills: 1
 ```
 `@instructions`
 
-Now define an empty numerical vector `s_n` of size 25 using `s_n <- vector("numeric", 25)` and store in the results of `S_1, S_2,...,S_25`.
+Now define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)` and store in the results of `S_1, S_2,...,S_25`.
 
 `@hint`
 Check the chapter on for loops for the codes!
@@ -486,7 +486,7 @@ success_msg("This is great! We are done with this module. Time to move on to big
 
 ---
 
-## End of Section 9
+## End of Assessment 9
 
 ```yaml
 type: PlainMultipleChoiceExercise
