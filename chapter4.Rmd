@@ -73,9 +73,9 @@ pop[1]
 ```{r}
 test_error()
 test_object("pop", undefined_msg = "Make sure you define the object pop.", 
-              incorrect_msg = "Check whether you have redefined pop using the sort function or not.")
-test_function("sort", args = "pop", index = 2,eval = TRUE,eq_condition = "equivalent", not_called_msg = "Make sure to call the sort function",
-              args_not_specified_msg = NULL, incorrect_msg = "Make sure to call it on the object `pop`.")
+              incorrect_msg = "Check pop is properly defined and that you have redefined pop using the sort function.")
+test_function("sort", index = 2,eval = TRUE,eq_condition = "equivalent", not_called_msg = "Make sure to call the sort function",
+              incorrect_msg = "Make sure to call it on the object `pop`.")
 test_output_contains("pop[1]", incorrect_msg = "Use the square brackets [] to report the smallest population value.")
 success_msg("Good job! Now you know how to sort data in an ascending order.")
 ```
