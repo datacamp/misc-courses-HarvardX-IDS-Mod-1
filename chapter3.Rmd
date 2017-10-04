@@ -717,3 +717,38 @@ success_msg("Awesome! Doesn't that feel wonderful? Now, you can try changing it 
 
 
 ```
+## End of Assessment 3
+
+```yaml
+type: PlainMultipleChoiceExercise
+lang: r
+xp: 0
+skills: 1
+```
+This is the end of the programming assignment for this section. 
+
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/2a638f36b59f4897b1bd6867ad58f63e/25784d8d534443cdacc07cb670376dff/?activate_block_id=block-v1%3AHarvardX%2BPH125.1x%2B2T2017%2Btype%40sequential%2Bblock%4025784d8d534443cdacc07cb670376dff'>course</a>.
+
+If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
+
+`@instructions`
+- Awesome
+- Nope
+
+`@hint`
+- No hint necessary!
+
+`@pre_exercise_code`
+```{r}
+# no pec
+```
+
+`@sct`
+```{r}
+msg1 = "Great! Now navigate back to the course on edX!"
+msg2 = "Now navigate back to the course on edX!"
+test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
+```
+
+
+```
