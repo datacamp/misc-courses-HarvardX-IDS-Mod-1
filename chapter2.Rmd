@@ -98,5 +98,6 @@ names(murders)
 ```{r}
 test_error()
 test_function("names", incorrect_msg = "Make sure you've put in the name of the dataset.") 
+test_output_contains ("names(murders)",times=1,incorrect_msg="Make sure you use the `names` function on the `murders` dataset")
 success_msg("Good job!")
 ```
