@@ -271,7 +271,7 @@ For this question we will combine two functions to determine the number of uniqu
 Use the functions `levels` and `length` to determine the number of regions defined by this dataset. 
 
 `@hint`
-Make sure you're using both commands - `length` and `levels`, to get the number of regions.  
+Make sure you're using nested functions: `levels` inside of `length`. 
 
 `@pre_exercise_code`
 ```{r}
