@@ -20,12 +20,13 @@ city_temps <- data.frame(name = city, temperature = temp)
 ```
 
 `@instructions`
-We are interested in specifying celsius instead of Fahrenheit.
-Remake the data frame using the code above, but add a line that converts the temperature from Fahrenheit to Celsius.
+We are interested in specifying Celsius instead of Fahrenheit. Remember that to covert from Fahrenheit to Celsius we use $C = 5/9 \times (F-32)$.
 
+- Use vector arithmentics to convert `temp` to Celsius
+- Create a data frame called `city_temps` with the city names and temperatures in Celsius.
 
 `@hint`
-The conversion rate is: `degree Fahrenheit* 9/5 + 32 = degree Celsius` 
+To subtract a constant `a` to each entry of a vector `x` and then multiply each by `b` to each use `(x-a)*b`
 
 `@pre_exercise_code`
 ```{r}
@@ -34,14 +35,13 @@ The conversion rate is: `degree Fahrenheit* 9/5 + 32 = degree Celsius`
 
 `@sample_code`
 ```{r}
+# Assign city names to `city` 
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+
 # Store temperature values in `temp`
 temp <- c(35, 88, 42, 84, 81, 30)
 
 # Convert temperature into Celsius and restore in `temp`
-
-
-# Assign city names to `city` 
-
 
 # Create a data frame `city_temps` 
 
@@ -49,14 +49,14 @@ temp <- c(35, 88, 42, 84, 81, 30)
 
 `@solution`
 ```{r}
+# Assign city names to `city` 
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+
 # Store temperature values in `temp`
 temp <- c(35, 88, 42, 84, 81, 30)
 
 # Convert temperature into Celsius and restore in `temp`
 temp <- (temp - 32)*5/9
-
-# Assign city names to `city` 
-city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
 # Create data frame `city_temps` 
 city_temps <- data.frame(name = city, temperature = temp)
@@ -89,11 +89,14 @@ skills: 1
 
 
 `@instructions`
-What is the sum of the following equation: `1 + 1/2^2 + 1/3^2 + ... + 1/100^2`? Use command `sum(1/x^2)`.
-Thanks to Euler we know it should be close to $\pi^2/6$. 
+
+What is the sum of the following equation: `1 + 1/2^2 + 1/3^2 + ... + 1/100^2`? Thanks to Euler we know it should be close to $\pi^2/6$. 
+
+- Define an object `x` that contains the numbers 1 through 100
+- Compute the sum `1 + 1/2^2 + 1/3^2 + ... + 1/100^2`.
 
 `@hint`
-This is a series.
+Remember that you can use vectorization to get the series using `1/x^2`. You can just sum these vectors.
 
 `@pre_exercise_code`
 ```{r}
@@ -104,7 +107,7 @@ This is a series.
 ```{r}
 # Define an object `x` with the numbers 1 through 100
 
-# Sum the equation 
+# Compute the sum 
 
 ```
 
@@ -139,10 +142,11 @@ skills: 1
 
 
 `@instructions`
-Compute the per 100,000 murder rate for each state and store it in the object `murder_rate`. 
-Then compute the average murder rate for the US using the function `mean`. What is the average?
+- Compute the per 100,000 murder rate for each state and store it in the object `murder_rate`. 
+- Then compute the average murder rate for the US using the function `mean`. What is this average?
 
 `@hint`
+You can use vectorization to compute the rate. If `tot` has the total murders and `pop` has the population for each state, then `tot/pop*100000` has the rate each state. Then you can simply compute the average using `mean`.
 
 `@pre_exercise_code`
 ```{r}
@@ -156,7 +160,7 @@ data(murders)
 library(dslabs)
 data(murders)
 
-# Store the per 100,000 murder rate for each state in `murder_rate`
+# Store the per 100,000 murder rate for each state in murder_rate
 
 # Calculate the average murder rate in the US 
 
@@ -168,7 +172,7 @@ data(murders)
 library(dslabs)
 data(murders)
 
-# Store the per 100,000 murder rate for each state in `murder_rate`
+# Store the per 100,000 murder rate for each state in murder_rate
 murder_rate <- murders$total/murders$population*100000
 
 # Calculate the average murder rate in the US
