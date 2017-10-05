@@ -67,6 +67,7 @@ skills: 1
 
 
 `@instructions`
+We've stored the *murders* object in memory.
 Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
 
 `@hint`
@@ -180,7 +181,8 @@ skills: 1
 
 
 `@instructions`
-Now extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1. We will use the `&` operator.
+Now extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1.
+We will use the `&` operator.
 
 `@hint`
 Use the previously defined logical vector low and the logical operator &.
@@ -242,7 +244,8 @@ skills: 1
 
 
 `@instructions`
-In a previous exercise we computed the murder rate for each state and the average of these numbers. How many states are below the average?
+In a previous exercise we computed the murder rate for each state and the average of these numbers.
+How many states are below the average?
 
 `@hint`
 
@@ -301,7 +304,6 @@ skills: 1
 `@instructions`
 Use the `match` function to identify the states with abbreviations AK, MI, and IA. 
 Start by defining an index of the entries of `murders$abb` that match the three abbreviations, then use the `[` operator to extract the states.
-
 
 `@hint`
 
@@ -366,7 +368,8 @@ skills: 1
 
 
 `@instructions`
-Use the %in% operator to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU ?
+Use the `%in%` operator to create a logical vector that answers the following question.
+Which of the following are actual abbreviations: MA, ME, MI, MO, MU?
 
 `@hint`
 Use code `abbs%in%murders$abb`. 

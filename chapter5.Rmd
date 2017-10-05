@@ -20,10 +20,12 @@ city_temps <- data.frame(name = city, temperature = temp)
 ```
 
 `@instructions`
-- Remake the data frame using the code above but add a line that converts the temperature from fahrenheit to celsius. 
+We are interested in specifying celsius instead of Fahrenheit.
+Remake the data frame using the code above, but add a line that converts the temperature from Fahrenheit to Celsius.
+
 
 `@hint`
-The conversion rate is: `degree Fahrenheit* 9/5 + 32 = degree celsius` 
+The conversion rate is: `degree Fahrenheit* 9/5 + 32 = degree Celsius` 
 
 `@pre_exercise_code`
 ```{r}
@@ -35,7 +37,7 @@ The conversion rate is: `degree Fahrenheit* 9/5 + 32 = degree celsius`
 # Store temperature values in `temp`
 temp <- c(35, 88, 42, 84, 81, 30)
 
-# Convert temperature into celsius and restore in `temp`
+# Convert temperature into Celsius and restore in `temp`
 
 
 # Assign city names to `city` 
@@ -50,7 +52,7 @@ temp <- c(35, 88, 42, 84, 81, 30)
 # Store temperature values in `temp`
 temp <- c(35, 88, 42, 84, 81, 30)
 
-# Convert temperature into celsius and restore in `temp`
+# Convert temperature into Celsius and restore in `temp`
 temp <- (temp - 32)*5/9
 
 # Assign city names to `city` 

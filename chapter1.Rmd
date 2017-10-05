@@ -88,6 +88,7 @@ We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 `@instructions`
 - Use the same formula as the last exercise but substitute `n`
+- Instead of typing the result, use the formula and defined variable.
 
 
 `@hint`

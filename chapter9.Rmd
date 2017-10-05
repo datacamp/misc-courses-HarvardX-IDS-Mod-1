@@ -67,6 +67,7 @@ Which of the following expressions is always `FALSE` when at least one entry of 
 - all(!x)
 
 `@hint`
+Define a logical vector x and test them.
 
 `@pre_exercise_code`
 ```{r}
@@ -100,6 +101,7 @@ char_len <- nchar(murders$state)
 char_len[1:5]
 ```
 `@instructions`
+We will combine a number of functions for this exercise.
 Use the `ifelse` function to write a line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters.
 
 `@hint`
@@ -145,6 +147,7 @@ skills: 1
 You will encounter situations in which the function you need does not already exist. R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
 
 `@instructions`
+We will define a function `sum_n` for this exercise.
 Create a function `sum_n` that for any given value, say `n`, computes the sum of the integers from 1 to n. Use the function to determine the sum of integers from 1 to 5,000.
 
 `@hint`
@@ -197,7 +200,7 @@ skills: 1
 ```
 
 `@instructions`
-
+We will make another function for this exercise.
 Create a function `altman_plot` that takes two arguments x and y and plots the difference(y-axis) against the sum(x-axis).
 
 
@@ -242,12 +245,10 @@ skills: 1
 ```
 
 `@instructions`
-```{r}
-
 The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when. After running the code below, what is the value of `x`?
 
-```
 `@hint`
+Run the code.
 
 `@pre_exercise_code`
 ```{r}
@@ -295,6 +296,7 @@ Write a function `compute_s_n` that for any given $n$ computes the sum `S_n = 1^
 Report the value of the sum when `n=10`.
 
 `@hint`
+What is it when you calculate by hand, does your function agree?
 
 `@pre_exercise_code`
 ```{r}
@@ -344,8 +346,9 @@ xp: 100
 skills: 1
 ```
 `@instructions`
-
+Storing values by for loops can be very useful.
 Now define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)` and store in the results of `S_1, S_2,...,S_25`.
+
 
 `@hint`
 Check the chapter on for loops for the codes!
@@ -414,7 +417,8 @@ skills: 1
 `s_n` and `n` have already been defined in the previous question and are stored in memory for you!  
 
 `@instructions`
-Plot `s_n` versus `n`. Using points defined by `n=1,...,25`.
+Using points defined by `n=1,...,25`.
+Plot `s_n` versus `n`.
 
 `@hint`
 In the plot code, n is the x, and s_n is the y. 
@@ -468,6 +472,7 @@ skills: 1
 Confirm that `s_n = n(n+1)(2n+1)/6` using the `identical` command.
 
 `@hint`
+`identical(s_n,n(n+1)(2n+1)/6)`
 
 `@pre_exercise_code`
 ```{r}

@@ -92,6 +92,7 @@ skills: 1
 
 `@instructions`
 Now instead of the smallest population size, let's find out the index number of the state with the smallest population size, using the command `order`. 
+This time we need to replace the `sort()` function with a different one.
 
 `@hint`
 Replace sort with order
@@ -151,7 +152,8 @@ skills: 1
 
 
 `@instructions`
-Write one line of code that gives the index of the lowest population entry, using the `which.min` command.
+Write one line of code that gives the index of the lowest population entry.
+Use the `which.min` command.
 
 `@hint`
 Use `which.min` directly. 
@@ -206,7 +208,9 @@ skills: 1
 
 
 `@instructions`
-Define a variable `states` to hold the state names from the murders data frame. Find the index of the smallest state using `which.min(murders$population)]`. Then combine these to find the state name for the smallest state.
+Define a variable `states` to hold the state names from the murders data frame.
+Find the index of the smallest state using `which.min(murders$population)]`. 
+Then combine these to find the state name for the smallest state.
 
 `@hint`
 Index the list of variables

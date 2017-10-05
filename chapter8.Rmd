@@ -11,7 +11,7 @@ lang: r
 xp: 100
 skills: 1
 ```
-We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get the plot.)
+We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. Run the code in the console to get the plot.
 
 ```{r}
 library(dslabs)
@@ -24,6 +24,7 @@ plot(population_in_millions, total_gun_murders)
 Note that many states have populations below 5 million and are bunched up. We may gain further insights from making this plot in the log scale. 
 
 `@instructions`
+We will make several plots now.
 Transform the variables using the log10 transformation and then plot the total murders versus population.
 
 `@hint`
@@ -94,6 +95,7 @@ skills: 1
 
 
 `@instructions`
+One type of plot is a `hist`ogram.
 Create a histogram of the state populations.
 
 `@hint`
@@ -145,7 +147,8 @@ skills: 1
 
 
 `@instructions`
-Stratify the state populations by region, the generate boxplots for the strate.  You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
+Stratify the state populations by region, the generate boxplots for the strate.
+You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
 
 `@hint`
 Make sure you specify the dataset.
@@ -173,9 +176,8 @@ boxplot(population~region, data = murders)
 test_error()
 test_function("boxplot",args=c("formula","data"), incorrect_msg = "Check code. use ~ sign and include dataset.")
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
-
+```
 ---
-
 ## End of Assessment 8
 
 ```yaml
@@ -183,12 +185,15 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
+key: bd1aeba6dc
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/79c873ff79ea4680a67d98b169d2f2fc/21a56d47549740af97c3ef1ee0f868a6/2?activate_block_id=block-v1%3AHarvardX%2BPH125.1x%2B2T2017%2Btype%40vertical%2Bblock%40f9b9325c9f1f4f93b6bc8f557d8b0762'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
+
 
 `@instructions`
 - Awesome
@@ -207,7 +212,4 @@ If you want to continue the assessments without watching the videos, you can cli
 msg1 = "Great! Now navigate back to the course on edX!"
 msg2 = "Now navigate back to the course on edX!"
 test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
-```
-
-
 ```

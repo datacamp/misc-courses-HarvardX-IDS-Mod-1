@@ -18,7 +18,8 @@ cost <- c(50, 75, 90, 100, 150)
 ```
 
 `@instructions`
-Use the function `c()` to create a numeric vector with the average high temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto which are `35, 88, 42, 84, 81, and 30` degrees Fahrenheit. Call the object `temp`.
+Use the function `c()` to create a numeric vector with the average high temperatures in January for Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
+The average high temperatures are `35, 88, 42, 84, 81, and 30` degrees Fahrenheit. Call the object `temp`.
 
 `@hint`
 Make sure your numbers are within parenthesis and have commas separating them. 
@@ -75,7 +76,8 @@ skills: 1
 
 
 `@instructions`
-Using the same cities as in the previous question (Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto), create a vector with the city names and call the object `city`. 
+We will use the same cities as in the previous question (Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto).
+Create a vector with the city names and call the object `city`. 
 
 `@hint`
 Be sure to place the names within double quotes. 
@@ -212,6 +214,7 @@ skills: 1
 
 
 `@instructions`
+We will learn to subset using several special operators.
 Use the `[` and `:` operators to access the temperature of the first three cities in the list, which are already stored in `temp`.
 
 `@hint`
@@ -277,6 +280,7 @@ skills: 1
 
 
 `@instructions`
+This time we will access our object using just the `[` operator.
 Use the `[` operator to access the temperature of Paris and San Juan already stored in the `temp` object.
 
 `@hint`
@@ -338,6 +342,7 @@ skills: 1
 
 
 `@instructions`
+This time we will use just the `:` operator.
 Use the `:` operator to create a sequence of numbers `12,13,14....73` and save it in an object `x`.
 
 `@hint`
@@ -405,6 +410,7 @@ skills: 1
 
 
 `@instructions`
+We will learn how to use the `seq()` function in this question.
 Create a vector containing all the positive odd numbers smaller than 100.
 
 `@hint`
@@ -453,7 +459,8 @@ skills: 1
 
 
 `@instructions`
-Create a vector of numbers that starts at 6, does not go beyond 55, and adds numbers in increments of 4/7. So the first three numbers will be 6, 6+4/7, and 6+8/7. How many numbers does the list have? Use only one line of code to answer both questions.
+Create a vector of numbers that starts at 6, does not go beyond 55, and adds numbers in increments of 4/7.
+So the first three numbers will be 6, 6+4/7, and 6+8/7. How many numbers does the list have? Use only one line of code to answer both questions.
 
 `@hint`
 Use `length` and then `seq` within parentheses.
@@ -498,7 +505,8 @@ skills: 1
 
 
 `@instructions`
-What is the class of the following object `a <- seq(1, 10, 0.5)`?
+We will define the class of a particular object. 
+Specifically, what is the class of the following object `a <- seq(1, 10, 0.5)`?
 
 `@hint`
 Create the sequence, store it in an object, then check the class.
@@ -568,6 +576,7 @@ skills: 1
 
 
 `@instructions`
+Does this change depending on what we store in an object?
 What is the class of the following object `a <- seq(1, 10)`? 
 
 `@hint`
@@ -620,6 +629,7 @@ skills: 1
 
 
 `@instructions`
+Does this change depending on what we store in an object?
 Confirm that the `class` of `1` is *numeric* and the `class` of `1L` is *integer*.
 
 `@hint`
@@ -725,7 +735,6 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
-key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 

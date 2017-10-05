@@ -20,6 +20,7 @@ data(murders)
 ```
 
 `@instructions`
+We will make use of the `dplyr` package now.
 Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate.
 
 `@hint`
@@ -132,10 +133,11 @@ skills: 1
 
 `@instructions`
 
-The `dplyr` function `filter` is used to select specific rows of the data frame to keep. Show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result.
+The `dplyr` function `filter` is used to select specific rows of the data frame to keep.
+Show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result.
 
 `@hint`
-
+?filter
 
 `@pre_exercise_code`
 ```{r}
@@ -191,7 +193,8 @@ skills: 1
 
 
 `@instructions`
-Create a new data frame called `no_south` that removes states from the south. How many states are in this category? 
+Create a new data frame called `no_south` that removes states from the south.
+How many states are in this category? 
 
 `@hint`
 Use filter and the != operator. You can use nrow to quickly get the number of rows of a data frame.
@@ -380,7 +383,8 @@ skills: 1
 
 
 `@instructions`
-Repeat exercise 5, but now instead of creating a new object, show the result and only include the state, rate, and rank columns. Use a pipe (`%>%`) to do this in just one line.
+Repeat exercise 5, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
+Use a pipe (`%>%`) to do this in just one line.
 
 `@hint`
 Use code: `filter(murders, region %in% c("Northeast", "West") & rate < 1) %>% 
@@ -432,7 +436,8 @@ skills: 1
 
 
 `@instructions`
-Now reload the original murders data frame using `data(murders)`. Then use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consider only states in the Northeast or West, which have a murder rate lower than 1 and contain only the state, rate, and rank columns. 
+Now reload the original murders data frame using `data(murders)`. 
+Then use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consider only states in the Northeast or West, which have a murder rate lower than 1 and contain only the state, rate, and rank columns. 
 
 `@hint`
 Use `mutate`, `filter` and `select` combining them with `pipes`.

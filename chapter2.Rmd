@@ -61,6 +61,7 @@ skills: 1
 In the previous question, we saw the different variables that are a part of this dataset from the output of the `str()` function. The  function `names()` is specifically designed to extract the column names from a data frame. 
 
 `@instructions`
+For this question, we will use the `names()` function to extract the column names of the *murders* data frame.
 What are the column names used by the *murders* data frame for the five variables?
 
 `@hint`
@@ -121,7 +122,8 @@ skills: 1
 
 
 `@instructions`
-Use the accessor `$` to extract the state abbreviations and assign them to the object `a`. What is the class of this object?
+Use the accessor `$` to extract the state abbreviations and assign them to the object `a`.
+What is the class of this object?
 
 `@hint`
 Remember to assign the state abbreviations to the object `a`. 
@@ -190,7 +192,8 @@ skills: 1
 
 
 `@instructions`
-Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. Then use the identical function to determine if `a`, as defined in the previous exercises, and `b` are the same.
+Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 
+Then use the identical function to determine if `a`, as defined in the previous exercises, and `b` are the same.
 
 `@hint`
 You need to use 2 sets of square brackets. 
@@ -263,6 +266,7 @@ skills: 1
 
 
 `@instructions`
+For this question we will combine two functions to determine the number of unique categories.
 Use the function `levels` and `length` to determine the number of regions defined by this dataset. 
 
 `@hint`
@@ -317,6 +321,7 @@ skills: 1
 
 
 `@instructions`
+We will use the `table` function to answer this question.
 Use this function in one line of code to create a table showing the number of states per region.
 
 `@hint`
