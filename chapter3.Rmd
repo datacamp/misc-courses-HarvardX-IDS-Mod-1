@@ -53,7 +53,7 @@ temp <- c(35, 88, 42, 84, 81, 30)
 `@sct`
 ```{r}
 test_error()
-test_object("temp", incorrect_msg = "Check to match the numbers from the question.")
+test_object("temp", incorrect_msg = "Make sure the numbers you entered match the numbers in the instructions.")
 success_msg("Good job! Do you want to now try creating a character vector")
 ```
 
@@ -736,7 +736,6 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
-key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 
