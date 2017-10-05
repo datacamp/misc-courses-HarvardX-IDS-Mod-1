@@ -302,7 +302,7 @@ city_temps <- data.frame(name = city, temperature = temp)
 # Define a variable `ranks` to determine the population size ranks 
 
 
-# Create a dataframe `my_df` with the state name and its rank
+# Create a data frame `my_df` with the state name and its rank
 
 ```
 
@@ -314,7 +314,7 @@ states <- murders$state
 # Define a variable `ranks` to determine the population size ranks 
 ranks <- rank(murders$population)
 
-# Create a dataframe `my_df` with the state name and its rank
+# Create a data frame `my_df` with the state name and its rank
 my_df <- data.frame(states = states, ranks = ranks)
 ```
 
@@ -323,7 +323,7 @@ my_df <- data.frame(states = states, ranks = ranks)
 test_error()
 test_object("states", incorrect_msg = "Store the state names in states!")
 test_object("ranks", undefined_msg = "Define ranks first!", incorrect_msg = "Define the rank of the population values!")
-test_object("my_df", undefined_msg = "Define the dataframe first.", incorrect_msg = "Use the command similar to the example.")
+test_object("my_df", undefined_msg = "Define the data frame first.", incorrect_msg = "Use the command similar to the example.")
 success_msg("That's awesome! You got this!")
 ```
 
@@ -364,7 +364,7 @@ data(murders)
 # Define a variable `ind` to store the indexes needed to order the population values
 
 
-# Create a dataframe `my_df` with the state name and its rank and ordered from least populous to most 
+# Create a data frame `my_df` with the state name and its rank and ordered from least populous to most 
 
 ```
 
@@ -379,7 +379,7 @@ ranks <- rank(murders$population)
 # Define a variable `ind` to store the indexes needed to order the population values
 ind <- order(states)
 
-# Create a dataframe `my_df` with the state name and its rank and ordered from least populous to most 
+# Create a data frame `my_df` with the state name and its rank and ordered from least populous to most 
 my_df <- data.frame(states = states[ind], ranks = ranks[ind])
 
 ```
