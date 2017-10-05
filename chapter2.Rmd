@@ -268,7 +268,7 @@ skills: 1
 
 `@instructions`
 For this question we will combine two functions to determine the number of unique categories.
-Use the function `levels` and `length` to determine the number of regions defined by this dataset. 
+Use the functions `levels` and `length` to determine the number of regions defined by this dataset. 
 
 `@hint`
 Make sure you're using both commands - `length` and `levels`, to get the number of regions.  
