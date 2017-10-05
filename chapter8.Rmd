@@ -128,7 +128,7 @@ hist(population_in_millions)
 ```{r}
 test_error()
 test_object("population_in_millions", undefined_msg = "Define the population first.", incorrect_msg = "Check code!")
-test_function("hist", incorrect_msg = "Check code again.")
+test_function("hist",args=c("x"), incorrect_msg = "Check code again.")
 success_msg("We got a histogram! Awesome!")
 ```
 
@@ -171,7 +171,7 @@ boxplot(population~region, data = murders)
 `@sct`
 ```{r}
 test_error()
-test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dataset.")
+test_function("boxplot",args=c("formula","data"), incorrect_msg = "Check code. use ~ sign and include dataset.")
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 
 ---
