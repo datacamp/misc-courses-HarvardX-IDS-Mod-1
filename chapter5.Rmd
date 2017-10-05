@@ -179,7 +179,7 @@ mean(murder_rate)
 test_error()
 test_object("murder_rate", incorrect_msg = "")
 test_function("mean", incorrect_msg = "")
-test_output_contains("mean(murder_rate",incorrect_msg = "Make sure to multiply the population by 100,000")
+test_output_contains("mean(murder_rate)",incorrect_msg = "Make sure to multiply the population by 100,000")
 success_msg("Awesome!")
 ```
 

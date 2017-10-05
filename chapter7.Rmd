@@ -54,8 +54,8 @@ murders <- mutate(murders, rate =  total / population * 100000)
 
 `@sct`
 ```{r}
-test_object("murders", undefined_msg = "Define murder first.", incorrect_msg = "Check the code again.")
 test_error()
+test_object("murders", undefined_msg = "Define murder first.", incorrect_msg = "Check the code again.")
 success_msg("Awesome! Let's learn another command with mutate.")
 ```
 
