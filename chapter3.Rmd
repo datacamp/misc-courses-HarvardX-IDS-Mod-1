@@ -330,7 +330,7 @@ temp[c(3,5)]
 `@sct`
 ```{r}
 test_error()
-test_output_contains("temp[c(3,5)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets. Look at how temp is defined in the sample code to determine the entires associated with Paris and San Juan")
+test_output_contains("temp[c(3,5)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets. Look at how `temp` is defined in the sample code to determine the entires associated with Paris and San Juan")
 success_msg("Isn't that awesome! Let's move to the next exercise!")
 ```
 
@@ -746,7 +746,6 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
-key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 
