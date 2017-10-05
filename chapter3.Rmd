@@ -366,31 +366,31 @@ Save the sequence in an object called `x`.
 
 `@sample_code`
 ```{r}
-# To store a sequence in the object `m` that starts at 32 and ends at 99 we type:
+# Create a vector m of integers that starts at 32 and ends at 99.
 m <- 32:99
 
-# To determine the length of object `m` we type:
+# Determine the length of object m:
 length(m)
 
-# Store a sequence in the object `x` that starts at 12 and ends at 73:
+# Create a vector x of integers that starts 12 and ends at 73:
 
-# Determining the length of object `x`
+# Determine the length of object x:
 
 
 ```
 
 `@solution`
 ```{r}
-# To store a sequence in the object `m` that starts at 32 and ends at 99 we type:
+# Create a vector m of integers that starts at 32 and ends at 99.
 m <- 32:99
 
-# Determining the length of object `m`
+# Determine the length of object m:
 length(m)
 
-# Store a sequence in the object `x` that starts at 12 and ends at 73:
+# Create a vector x of integers that starts 12 and ends at 73:
 x <- 12:73
 
-# Determining the length of object `x`
+# Determine the length of object x:
 length(x)
 
 ```
@@ -745,7 +745,6 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
-key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 
