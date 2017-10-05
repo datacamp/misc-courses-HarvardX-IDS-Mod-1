@@ -170,6 +170,7 @@ test_error()
 test_object ("a", undefined_msg = "You need to define the object `a`.", incorrect_msg = "Make sure to save the variable `abb` in the object `a`.")
 test_function("class",index=2,incorrect_msg = "Keep the sample code when submitting your solution.")
 test_function_result("class",index=2,incorrect_msg = "Try again!")
+test_student_typed("$", times = 2, not_typed_msg = "Make sure you use the $ accessor.")
 success_msg("That's great! Now, you know what the class of `abb` is. Play around to check the class of the other variables in the dataset!")
 ```
 
