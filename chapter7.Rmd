@@ -43,7 +43,7 @@ data(murders)
 `@sample_code`
 ```{r}
 # Loading data
-library(murders)
+library(dslabs)
 data(murders)
 
 # Loading dplyr
@@ -56,7 +56,7 @@ library(dplyr)
 `@solution`
 ```{r}
 # Loading data
-library(murders)
+library(dslabs)
 data(murders)
 
 # Loading dplyr
