@@ -267,8 +267,8 @@ skills: 1
 
 
 `@instructions`
-For this question we will combine two functions to determine the number of unique categories.
-Use the functions `levels` and `length` to determine the number of regions defined by this dataset. 
+For this question we will combine two functions, in nested way, to determine the number of unique categories.
+Use the functions `levels` and `length` to determine the number of regions defined by this dataset and contained in `murders$region`. 
 
 `@hint`
 Make sure you're using nested functions: `levels` inside of `length`. 
