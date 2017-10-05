@@ -74,7 +74,7 @@ test_object("pop", undefined_msg = "Make sure you define the object pop.",
               incorrect_msg = "Check pop is properly defined and that you have redefined pop using the sort function.")
 test_function("sort", index = 2,eval = TRUE,eq_condition = "equivalent", not_called_msg = "Make sure to call the sort function.",
               incorrect_msg = "Make sure to call it on the object `pop`.")
-test_output_contains("pop[1]", incorrect_msg = "Use the square brackets [] to report the smallest population value.")
+test_output_contains("pop[1]", incorrect_msg = "Use the square brackets, [, to report the smallest population value.")
 success_msg("Good job! Now you know how to sort data in an ascending order.")
 ```
 
@@ -188,7 +188,7 @@ test_output_contains("which.min(murders$population)", incorrect_msg = "Make sure
 test_function("which.min",index=2)
 test_student_typed("which.min(murders$population)",
                    fixed = TRUE,times = 1,not_typed_msg ="Use the $ simultaneously with the which.min function.")
-success_msg("Great ! You've learnt another code in R!")
+success_msg("Great! You learned another function in R!")
 ```
 
 ---
@@ -223,7 +223,7 @@ data(murders)
 
 # Define the variable `i` to be the index of the smallest state
 
-# Define variable `state` to hold the states
+# Define variable `states` to hold the states
 
 # Use the index you define to find the state with the smallest population
 ```
@@ -246,6 +246,7 @@ states[i]
 `@sct`
 ```{r}
 test_error()
+test_function("which.min")
 test_object("states", undefined_msg = "Define states first!", incorrect_msg = "Assign state values from dataset to states.")
 test_output_contains("states[which.min(murders$population)]", incorrect_msg = "Copy code from instructions.")
 success_msg("Awesome! Now we have the names of the states as well!")
@@ -308,6 +309,15 @@ city_temps <- data.frame(name = city, temperature = temp)
 
 `@solution`
 ```{r}
+# Store temperatures in an object 
+temp <- c(35, 88, 42, 84, 81, 30)
+
+# Store city names in an object 
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+
+# Create data frame with city names and temperature 
+city_temps <- data.frame(name = city, temperature = temp)
+
 # Define a variable states to be the state names from the murders data frame
 states <- murders$state
 
@@ -321,6 +331,8 @@ my_df <- data.frame(states = states, ranks = ranks)
 `@sct`
 ```{r}
 test_error()
+test_function("rank")
+test_function("data.frame",index=2,incorrect_msg = "Don't delete the sample code.")
 test_object("states", incorrect_msg = "Store the state names in states!")
 test_object("ranks", undefined_msg = "Define ranks first!", incorrect_msg = "Define the rank of the population values!")
 test_object("my_df", undefined_msg = "Define the data frame first.", incorrect_msg = "Use the command similar to the example.")
@@ -389,6 +401,8 @@ my_df <- data.frame(states = states[ind], ranks = ranks[ind])
 test_error()
 test_object("states", undefined_msg = "Define states first.", incorrect_msg = "")
 test_object("ranks",undefined_msg = "Define ranks first.", incorrect_msg = "")
+test_function("order")
+test_function("rank")
 test_object("ind",undefined_msg = "Define ind first.", incorrect_msg = "Use the order command as well.")
 test_object("my_df", undefined_msg = "Define my_df first", incorrect_msg = "Check code")
 success_msg("Great job! See how well you're building on your knowledge of R!")
@@ -453,10 +467,20 @@ mean(na_example)
 
 `@solution`
 ```{r}
-# Assign `is.na` to logical vector `ind` 
+# Using new dataset 
+library(dslabs)
+data(na_example)
+
+# Checking the structure 
+str(na_example)
+
+# Find out the mean of the entire dataset 
+mean(na_example)
+
+# Use `is.na` to create an logical index `ind` that tells which entries are NA
 ind <- is.na(na_example)
 
-# Determine how many NA does `ind` have? 
+# Determine how many NA does `ind` have
 sum(ind)
 
 ```
