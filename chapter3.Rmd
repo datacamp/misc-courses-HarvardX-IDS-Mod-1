@@ -745,6 +745,7 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
+key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 
