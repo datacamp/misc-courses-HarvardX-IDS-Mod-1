@@ -166,7 +166,8 @@ class(a)
 ```{r}
 test_error()
 test_object ("a", undefined_msg = "You need to define the object `a`.", incorrect_msg = "Make sure to save the variable `abb` in the object `a`.")
-test_function("class",index=2)
+test_function("class",index=2,incorrect_msg = "Keep the sample code when submitting your solution.")
+test_function_result("class",index=2,incorrect_msg = "Try again!")
 success_msg("That's great! Now, you know what the class of `abb` is. Play around to check the class of the other variables in the dataset!")
 ```
 
@@ -241,6 +242,7 @@ identical(a,b)
 test_error()
 test_object ("b", undefined_msg = "You need to define the object `b`.", incorrect_msg = "Make sure to save the variable `abb` in the object `b`.")
 test_function("identical",index=2)
+test_student_typed("b<-murders[['abb']]",not_typed_msg = "Make sure to use the brackets instead of a the $ operator")
 success_msg("You've now learned different ways of doing the same thing in R! You're making great progress!")
 ```
 
@@ -261,7 +263,7 @@ skills: 1
 
 
 `@instructions`
-With one line of code, use the function `levels` and `length` to determine the number of regions defined by this dataset. 
+Use the function `levels` and `length` to determine the number of regions defined by this dataset. 
 
 `@hint`
 Make sure you're using both commands - `length` and `levels`, to get the number of regions.  
@@ -350,7 +352,8 @@ table(murders$region)
 `@sct`
 ```{r}
 test_error()
-test_function("table",index=2, incorrect_msg = "Make sure you extract the variable region from the dataset.")
+test_function("table",index=2, incorrect_msg = "Make sure you extract the variable region from the dataset.",not_called_msg = "Keep the sample code.")
+test_output_contains("table(murders$region)",incorrect_msg = "Use table on the murders$region variable.")
 success_msg("You got this! Now you're a pro at making tables in R!")
 ```
 
