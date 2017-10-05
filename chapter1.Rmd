@@ -101,13 +101,13 @@ Use the same R code as you used in the first question after changing the value o
 
 `@sample_code`
 ```{r}
-# Below, write you code to calculate the sum of the first 1000 integers 
+# Below, write code to calculate the sum of the first 1000 integers 
 
 ```
 
 `@solution`
 ```{r}
-# Below, write you code to calculate the sum of the first 1000 integers 
+# Below, write code to calculate the sum of the first 1000 integers 
 n <- 1000
 n*(n+1)/2
 ```
