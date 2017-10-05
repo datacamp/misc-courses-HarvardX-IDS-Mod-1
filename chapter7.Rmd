@@ -20,7 +20,7 @@ data(murders)
 ```
 
 `@instructions`
-Use the function `mutate` to add a murders rate column with the per 100,000 murder rate.
+Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate.
 
 `@hint`
 Use code `murders <- mutate(murders, rate =  total / population * 100000)`.  
@@ -100,6 +100,12 @@ rate <-  murders$total/ murders$population * 100000
 
 `@solution`
 ```{r}
+# Loading the libraries
+library(dplyr)
+data(murders)
+
+# Defining rate
+rate <-  murders$total/ murders$population * 100000
 
 # Use mutate to add a rate column, rank from highest to lowest and store in `murders`
 murders <- mutate(murders, rank = rank(-rate))
@@ -108,6 +114,7 @@ murders <- mutate(murders, rank = rank(-rate))
 `@sct`
 ```{r}
 test_error()
+test_function("mutate")
 test_object("murders", incorrect_msg = "Remember, rank from highest to lowest.")
 success_msg("Good job!")
 ```
@@ -167,6 +174,7 @@ filter(murders, rank <= 5)
 `@sct`
 ```{r}
 test_error()
+test_function("filter")
 test_output_contains("filter(murders, rank <= 5)", incorrect_msg = "Make sure you've written murders in your code.")
 success_msg("Great job!")
 ```
@@ -208,7 +216,11 @@ data(murders)
 
 `@solution`
 ```{r}
-# Creating a new data frame `no_south`
+# Loading the libraries
+library(dplyr)
+data(murders)
+
+# Use filter to create a new data frame `no_south`
 no_south <- filter(murders, region != "South" )
 
 # Number of states (rows) in this category 
@@ -220,6 +232,7 @@ nrow(no_south)
 ```{r}
 test_error()
 test_object("no_south", undefined_msg = "Define no_south first!", incorrect_msg = "Make sure you`re excluding the ones not in the South.")
+test_function("nrow")
 test_output_contains("nrow(no_south)", incorrect_msg = "You need the number of rows for the number of states.")
 success_msg("That's great! Let's move to the next exercise.")
 ```
@@ -259,13 +272,16 @@ data(murders)
 
 # Create a new data frame called `murders_nw` with only the states from the northeast and the west
 
-
 # Number of states (rows) in this category 
 
 ```
 
 `@solution`
 ```{r}
+# Loading the libraries
+library(dplyr)
+data(murders)
+
 # Create a new data frame called `murders_nw` with only the states from the northeast and the west
 murders_nw <- filter(murders, region %in% c("Northeast", "West") )
 
@@ -277,6 +293,8 @@ nrow(murders_nw)
 `@sct`
 ```{r}
 test_error()
+test_function("filter")
+test_function("nrow")
 test_object("murders_nw", undefined_msg = "Define murders_nw first.", incorrect_msg = "Make sure you're using the %in% command.")
 test_output_contains("nrow(murders_nw)", incorrect_msg = "You need the number of rows again, same as previous question.")
 success_msg("This is great!")
@@ -317,7 +335,7 @@ data(murders)
 # add the rate column
 murders <- mutate(murders, rate =  total / population * 100000)
 
-# Create a table, call it my_states, that satisfies both the conditions 
+# Create a table, call it `my_states`, that satisfies both the conditions 
 
 # Number of states (rows) in this category
 
@@ -343,6 +361,8 @@ nrow(my_states)
 `@sct`
 ```{r}
 test_error()
+test_function("mutate")
+test_function("filter")
 test_object("my_states", undefined_msg = "Define my_states first!", incorrect_msg = "Use the filter, %in% and < commands.")
 test_output_contains("nrow(my_states)", incorrect_msg = "You need the number of rows again, same as previous question.")
 success_msg("Now you know how to combine functions and use them to get specific answers. Let's try it one more time!")
@@ -396,6 +416,7 @@ filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%
 ```{r}
 test_error()
 test_function("filter", incorrect_msg = "Everything needs to be in one line! Use a pipe to help!")
+test_output_contains("filter(murders, region %in% c('Northeast', 'West') & rate < 1) %>%  select(state, rate, rank)")
 success_msg("You're getting a pretty good hang of stuff now!")
 ```
 ---
@@ -435,6 +456,10 @@ data(murders)
 
 `@solution`
 ```{r}
+# Loading the libraries
+library(dplyr)
+data(murders)
+
 # Create new data frame called `my_states` (with specifications in the instructions)
 my_states <- murders %>% 
     mutate(rate =  total / population * 100000, rank = rank(-rate)) %>%
@@ -446,6 +471,9 @@ my_states <- murders %>%
 `@sct`
 ```{r}
 test_error()
+test_function("mutate")
+test_function("filter")
+test_function("select")
 test_object("my_states", undefined_msg = "Define my_states!", incorrect_msg = "Make sure you put pipes to put everything in one line.")
 success_msg("This is absolutely awesome! You now know how to use basic data manipulation techniques in R.")
 ```
