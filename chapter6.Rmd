@@ -1,40 +1,41 @@
 ---
-title       : Indexing 
+title       : Indexing
 description : R provides a powerful and convenient way of indexing vectors. We're going to learn some ways of doing that!
 ---
-
---- type:NormalExercise lang:r xp:100 skills:1 key:6bb68b8400
 ## Logical Vectors
 
-*** =instructions
-Compute the per 100,000 murder rate for each state and store it in an object called `murder_rate`. 
-Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of murder_rate are lower than 1.
+```yaml
+type: NormalExercise
+key: 010704f684
+lang: r
+xp: 100
+skills: 1
+```
+Here we will be using logical operators to create a logical vector.
 
+`@instructions`
+- Compute the per 100,000 murder rate for each state and store it in an object called `murder_rate`. 
+- Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of murder_rate are lower than 1.
 
-*** =hint
+`@hint`
 The code for calculating the murder rate is: `murders$total/murders$population*100000`. 
 
-
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-
 # Store the murder rate per 100,000 for each state, in `murder_rate`
-
+murder_rate <- murders$total / murders$population * 100000
 
 # Store the `murder_rate < 1` in `low` 
-
-
 ```
 
-*** =solution
+`@solution`
 ```{r}
-
 # Store the murder rate per 100,000 for each state, in `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
@@ -42,96 +43,115 @@ murder_rate <- murders$total/murders$population*100000
 low <- murder_rate < 1
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
-test_object("murder_rate", undefined_msg = "Define the murder rate first!", incorrect_msg = "Check the formula.")
 test_object("low", undefined_msg = "Define low!", incorrect_msg = "It should be murder rates less than 1.")
 success_msg("Great job!")
-
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:a76be07302
+---
 ## which
 
-The function`which()` help us know directly, which values are low or high etc. Let's use it in this question. 
+The function `which()` help us know directly, which values are low or high, etc. Let's use it in this question. 
 
-*** =instructions
-Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
+```yaml
+type: NormalExercise
+key: 6830d22730
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =hint
+`@instructions`
+- Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
 
+`@hint`
+`which` will return the TRUE logicals.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
-
-# Store the murder_rate < 1 in low 
-
-# Use which(), to get the lowest value
-
-```
-
-*** =solution
-```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Store the murder rate per 100,000 for each state, in murder_rate
 murder_rate <- murders$total/murders$population*100000
 
-# Store the `murder_rate < 1` in `low` 
+# Store the murder_rate < 1 in low 
 low <- murder_rate < 1
 
-# Use which(), to get the lowest value
-which(low)
+# Get the indeces of entries that are below 1
+
 ```
 
-*** =sct
+`@solution`
+```{r}
+# Store the murder rate per 100,000 for each state, in murder_rate
+murder_rate <- murders$total/murders$population*100000
+
+# Store the murder_rate < 1 in low 
+low <- murder_rate < 1
+
+# Get the indeces of entries that are below 1
+which(low)
+
+```
+
+`@sct`
 ```{r}
 test_error()
-test_object("murder_rate", undefined_msg = "Define the murder rate first!", incorrect_msg = "Formula is the same as the last question's.")
-test_object("low", undefined_msg = "Define low!", incorrect_msg = "Murder rates lower than 1.")
 test_function("which", incorrect_msg = "Use the command from the instructions.")
 success_msg("Awesome!")
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:43f34535d7
-
+---
 ## Ordering vectors
 
-*** =instructions
-Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the name of the states from the dataset. 
-For example: `food$cost[low]`, would give us the cost of food lower than 1. 
+Note that if we want to know which entries of a vector are lower than some values we can use code like this:
 
-*** =hint
+```{r}
+small <- murders$population < 1000000
+murders$state[small]
+```
+
+The code above shows us the states with populations smaller than one million. 
+
+```yaml
+type: NormalExercise
+key: d40747abe4
+lang: r
+xp: 100
+skills: 1
+```
+
+`@instructions`
+- Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the name of the states from the dataset. 
+
+`@hint`
 
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(dslabs)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Store the murder rate per 100,000 for each state, in murder_rate
+murder_rate <- murders$total/murders$population*100000
 
-
-# Store the `murder_rate < 1` in `low` 
-
+# Store the murder_rate < 1 in low 
+low <- murder_rate < 1
 
 # Names of states with murder rates lower than 1
 
-
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Store the murder rate per 100,000 for each state, in `murder_rate`
 murder_rate <- murders$total/murders$population*100000
@@ -140,52 +160,62 @@ murder_rate <- murders$total/murders$population*100000
 low <- murder_rate < 1
 
 # Names of states with murder rates lower than 1 
-murders$state[low] 
+murders$state[low]
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
-test_object("murder_rate", undefined_msg = "Define the murder rate first!", incorrect_msg = "Check the formula.")
-test_object("low", undefined_msg = "Define low!", incorrect_msg = "Same as last question.")
 test_output_contains("murders$state[low]", incorrect_msg = "Follow code from example given!")
 success_msg("Good job!")
 ```
-----
-
---- type:NormalExercise lang:r xp:100 skills:1 key:a15f758c03
+---
 ## Filtering
 
+```yaml
+type: NormalExercise
+key: 68370abd10
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =instructions
 
-Now extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1. We will use the `&` operator.
+`@instructions`
+Now we will extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1.
+- Define `low` as before.
+- Use the `&` operator to create a new object `ind` that is true when `low` is true and the state is in the Northeast
+- Use the brackets `[` and `ind` to show the state names that satisfy this condition
 
 
+`@hint`
+Use the previously defined logical vector `low` and the logical operator `&`. For states with less than 1 million it will be like this: 
 
-*** =hint
-Use the previously defined logical vector low and the logical operator &.
+```{r}
+ind <- low & murders$population < 1000000
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Store the murder rate per 100,000 for each state, in `murder_rate`
 murder_rate <- murders$total/murders$population*100000
 
 # Store the `murder_rate < 1` in `low` 
+low <- murder_rate < 1
 
-# States in the Northeast with murder rates lower than 1; store in 'ind'
+# Create a vector ind for states in the Northeast and with murder rates lower than 1. 
 
 # Names of states in `ind` 
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Store the murder rate per 100,000 for each state, in `murder_rate`
 murder_rate <- murders$total/murders$population*100000
@@ -198,54 +228,62 @@ ind <- low & murders$region=="Northeast"
 
 # Names of states in `ind`
 murders$state[ind]
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("murder_rate", undefined_msg = "Define murder rate", incorrect_msg = "Don't change anything, just run the code.")
 test_object("low", undefined_msg = "Define low!", incorrect_msg = "Same as previous exercise.")
-test_object("ind", undefined_msg = "Make sure to define ind first!", incorrect_msg = "Use code ind <- low & murders$region==Northeast.")
+test_object("ind", undefined_msg = "Make sure to define ind first!", incorrect_msg = 'Use code ind <- low & murders$region=="Northeast".')
 test_output_contains("murders$state[ind]", incorrect_msg = "Use [] to retrieve names.")
 success_msg("Wasn't that good! Let's move to the next one.")
 ```
-----
-
---- type:NormalExercise lang:r xp:100 skills:1 key:f2004ac34f
-
+---
 ## Filtering continued
 
-*** =instructions
-In a previous exercise we computed the murder rate for each state and the average of these numbers. How many states are below the average?
+```yaml
+type: NormalExercise
+key: 11c3753c9c
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =hint
+
+`@instructions`
+In a previous exercise we computed the murder rate for each state and the average of these numbers.
+- How many states are below the average?
+
+`@hint`
 
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Store the murder rate per 100,000 for each state, in murder_rate
+murder_rate <- murders$total/murders$population*100000
 
 
-# Compute average murder rate and store in `avg` using `mean` 
+# Compute average murder rate and store in avg using `mean` 
 
 
-# How many states are < avg ? Check using sum 
-
+# How many states have murder rates below avg ? Check using sum 
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Store the murder rate per 100,000 for each state, in `murder_rate`
+# Store the murder rate per 100,000 for each state, in murder_rate
 murder_rate <- murders$total/murders$population*100000
 
-# Compute average murder rate and store in `avg` using `mean` 
+# Compute average murder rate and store in avg using mean
 avg <-mean(murder_rate)
 
 # How many states are < avg ? Check using sum 
@@ -253,7 +291,7 @@ sum(murder_rate < avg)
 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("murder_rate", undefined_msg = "Define the murder rate first!", incorrect_msg = "Same formula as before.")
@@ -261,41 +299,47 @@ test_object("avg", undefined_msg = "", incorrect_msg = "Compute the mean and sto
 test_function("sum", incorrect_msg = "Check the number of states below average murder rate.")
 success_msg("Awesome!")
 ```
-----
+---
+## Match
 
---- type:NormalExercise lang:r xp:100 skills:1 key:19320f72ab
-## Match 
+In this exercise we use the `match` function to identify the states with abbreviations AK, MI, and IA. 
+
+```yaml
+type: NormalExercise
+key: 26843a3448
+lang: r
+xp: 100
+skills: 1
+```
 
 
-*** =instructions
+`@instructions`
+- Define a character vector with the abbreviations.
+- Start by defining an index of the entries of `murders$abb` that match the three abbreviations.
+- Use the `[` operator to extract the states.
 
-Use the `match` function to identify the states with abbreviations AK, MI, and IA. 
-Start by defining an index of the entries of `murders$abb` that match the three abbreviations, then use the `[` operator to extract the states.
+`@hint`
+Once you define `abbs <- c("AK", "MI", "IA")` you can then use match to figure out the indexes of where these appear with `ind <- match(abbs , murders$abb)`
 
-
-*** =hint
-
-
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Store the 3 abbreviations in abbs. (remember that they are character vectors)
+# Store the 3 abbreviations in abbs in a vector (remember that they are character vectors and need quotes)
 
 # Match the abbs to the murders$abb and store in ind
 
 # Print state names from ind
 
-
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Store the 3 abbreviations in `abbs`. (remember that they are character vectors)
+# Store the 3 abbreviations in abbs in a vector (remember that they are character vectors and need quotes)
 abbs <- c("AK", "MI", "IA")
 
 # Match the abbs to the murders$abb and store in `ind`
@@ -303,9 +347,10 @@ ind <- match(abbs , murders$abb)
 
 # Print state names from `ind`
 murders$state[ind]
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("abbs", undefined_msg = "Define abbs!", incorrect_msg = "Check the abbreviations stored.")
@@ -313,10 +358,8 @@ test_object("ind", undefined_msg = "Define ind!", incorrect_msg = "Make sure to 
 test_output_contains("murders$state[ind]", incorrect_msg = "Use square brackets.")
 success_msg("Awesome!")
 ```
-----
-
---- type:NormalExercise lang:r xp:100 skills:1 key:beea127137
-## %in% 
+---
+## %in%
 
 If rather than an index we want a logical that tells us whether or not each element of a first vector is in we can use the function `%in%`.
 For example: 
@@ -326,82 +369,100 @@ x <- c(2, 3, 5)
 y <- c(1, 2, 3, 4)
 x%in%y
 ```
-Gives us a two `TRUE` followed by a `FALSE` becuase 2 and 3 are in `y`.  
-*** =instructions
+Gives us a two `TRUE` followed by a `FALSE` because 2 and 3 are in `y`.  
 
-Use the %in% operator to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU ?
+```yaml
+type: NormalExercise
+key: 8f682dcf90
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =hint
-Use code `abbs%in%murders$abb`. 
 
-*** =pre_exercise_code
+`@instructions`
+Which of the following are actual abbreviations: MA, ME, MI, MO, MU?
+- Define a character vector with the abbreviations MA, ME, MI, MO, MU.
+- Use the `%` operator to create a logical vectors that is TRUE when the abbreviation is in `murders$abb`.
+
+`@hint`
+Look at what this does: 
+```{r}
+states <- c("New York", "Houston")
+states%in%murders$state 
+```
+
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
 
 
-# Use the %in% command to compare to murders$abb
-
+# Use the %in% command to check if the entries of abbs are abbreviations in the the murders data frame
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
+# Store the 5 abbreviations in abbs. (remember that they are character vectors)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the %in% command 
+# Use the %in% command to check if the entries of abbs are abbreviations in the the murders data frame
 abbs%in%murders$abb
 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("abbs", undefined_msg = "Define abbs!", incorrect_msg = "Make sure to store the 5 abbreviations in abbs.")
 test_output_contains("abbs%in%murders$abb", incorrect_msg = "Check the code. ")
-success_msg("Awesome!")
+success_msg("Great job!")
 ```
-----
+---
+## Logical operator
 
---- type:NormalExercise lang:r xp:100 skills:1 key:65a74691fd
-## Logical operator 
+```yaml
+type: NormalExercise
+key: bad79337d1
+lang: r
+xp: 100
+skills: 1
+```
 
 
-*** =instructions
+`@instructions`
+We are again working with the characters `abbs <- c("MA", "ME", "MI", "MO", "MU")`
 
-Extend the code you used in exercise seven to report the one entry that is not an actual abbreviation. 
-Use the `!` operator, which turns `FALSE` into `TRUE` and vice-versa, then which to obtain an index.
+- In a previous exercise we computed the index `abbs%in%murders$abb`. Use `which` and the `!` operator to get the index of the entries of `abbs` that are **not** abbreviations.
+- Show the entries of `abbs` that are not actual abbreviations.
 
-*** =hint
-Use the code `ind <- which(!abbs%in%murders$abb)`. 
+`@hint`
+Use the code `ind <- which(!abbs%in%murders$abb)` to get the index. Then you can use the `[` to extract the correct values of `abs`.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
+# Store the 5 abbreviations in abbs. (remember that they are character vectors)
+abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
+# Use the `which` command and `!` operator to find out which abbreviation are not actually part of the dataset and store in ind
 
-# Use the `which` command and `!` operator to find out which abbreviation is not actually part of the dataset and store in 'ind' 
-
-
-# Names of abbs in `ind`
-
-
+# What are the entries of abbs that are not actual abbreviations
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
@@ -411,27 +472,51 @@ ind <- which(!abbs%in%murders$abb)
 
 # Names of abbs in `ind`
 abbs[ind]
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
-test_object("abbs", undefined_msg = "Define abbs!", incorrect_msg = "Check the 5 abbreviations from the instructions.")
 test_object("ind", undefined_msg = "Make sure you define ind first! ", incorrect_msg = "Use the which and ! codes." )
 test_output_contains("abbs[ind]", incorrect_msg = "Have you used square brackets?")
 success_msg("Awesome!")
 ```
-----
-
---- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
 
 
-## End of Section
+---
 
-This is the end of the programming assignment for this section.
+## End of Assessment 6
+
+```yaml
+type: PlainMultipleChoiceExercise
+lang: r
+xp: 0
+skills: 1
+key: 693e3e8928
+```
+This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-----
+`@instructions`
+- Awesome
+- Nope
+
+`@hint`
+- No hint necessary!
+
+`@pre_exercise_code`
+```{r}
+# no pec
+```
+
+`@sct`
+```{r}
+msg1 = "Great! Now navigate back to the course on edX!"
+msg2 = "Now navigate back to the course on edX!"
+test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
+```
+

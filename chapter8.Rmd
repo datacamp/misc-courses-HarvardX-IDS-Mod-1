@@ -2,12 +2,16 @@
 title       : Basic Plots
 description : We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.
 ---
-
---- type:NormalExercise lang:r xp:100 skills:1 key:54f4b68ff9
-
 ## Scatterplots
 
-We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. (Run the code in the console to get plot.)
+```yaml
+type: NormalExercise
+key: c535f6f10b
+lang: r
+xp: 100
+skills: 1
+```
+We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. Run the code in the console to get the plot.
 
 ```{r}
 library(dslabs)
@@ -18,19 +22,21 @@ plot(population_in_millions, total_gun_murders)
 ```
 
 Note that many states have populations below 5 million and are bunched up. We may gain further insights from making this plot in the log scale. 
-*** =instructions
+
+`@instructions`
+We will make several plots now.
 Transform the variables using the log10 transformation and then plot the total murders versus population.
 
+`@hint`
 
-*** =hint
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Load the datasets and define some variables
 library(dslabs)
@@ -47,8 +53,14 @@ plot(population_in_millions, total_gun_murders)
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
+# Load the datasets and define some variables
+library(dslabs)
+data(murders)
+population_in_millions <- murders$population/10^6
+total_gun_murders <- murders$total
+plot(population_in_millions, total_gun_murders)
 
 # Transform population using `log10` transformation
 log10_population<- log10(murders$population)
@@ -58,104 +70,146 @@ log10_total_gun_murders <- log10(murders$total)
 
 # Create a scatterplot with population and murders 
 plot(log10_population, log10_total_gun_murders)
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Transform variable using log10.")
 test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_murders first.", incorrect_msg = "Transform variable using log10.")
-test_function("plot", incorrect_msg = "Scatter population on murders.")
+test_function("plot",args=c("x","y"), incorrect_msg = "Scatter population on murders.",index=2)
 success_msg("Doesn't that plot look neat!")
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:08c2ba4a0f
-## Histograms 
+---
+## Histograms
+
+```yaml
+type: NormalExercise
+key: 6d782c33a3
+lang: r
+xp: 100
+skills: 1
+```
 
 
-*** =instructions
+`@instructions`
+One type of plot is a `hist`ogram.
 Create a histogram of the state populations.
 
-*** =hint
+`@hint`
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Store the population in millions (same as previous question)
 population_in_millions <- murders$population/10^6
 
 
 # Create a histogram of the population 
+
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Store the population in millions (same as previous question)
 population_in_millions <- murders$population/10^6
 
 # Create a histogram of the population 
 hist(population_in_millions)
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("population_in_millions", undefined_msg = "Define the population first.", incorrect_msg = "Check code!")
-test_function("hist", incorrect_msg = "Check code again.")
+test_function("hist",args=c("x"), incorrect_msg = "Check code again.")
 success_msg("We got a histogram! Awesome!")
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e81739b658
+---
 ## Boxplots
 
+```yaml
+type: NormalExercise
+key: 41b5550054
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =instructions
-Stratify the state populations by region, the generate boxplots for the strate.  You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
 
-*** =hint
+`@instructions`
+Stratify the state populations by region, the generate boxplots for the strate.
+You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
+
+`@hint`
 Make sure you specify the dataset.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dslabs)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Create a boxplot of state populations by region and specify dataset 
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
 # Create a boxplot of state populations by region and specify dataset 
 boxplot(population~region, data = murders)
 
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
-test_function("boxplot", incorrect_msg = "Check code. use ~ sign and include dataset.")
+test_function("boxplot",args=c("formula","data"), incorrect_msg = "Check code. use ~ sign and include dataset.")
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
-----
---- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
+---
+## End of Assessment 8
 
+```yaml
+type: PlainMultipleChoiceExercise
+lang: r
+xp: 0
+skills: 1
+key: bd1aeba6dc
+```
 
-## End of Section
+This is the end of the programming assignment for this section. 
 
-This is the end of the programming assignment for this section.
-
-You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/79c873ff79ea4680a67d98b169d2f2fc/21a56d47549740af97c3ef1ee0f868a6/2?activate_block_id=block-v1%3AHarvardX%2BPH125.1x%2B2T2017%2Btype%40vertical%2Bblock%40f9b9325c9f1f4f93b6bc8f557d8b0762'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-----
+
+`@instructions`
+- Awesome
+- Nope
+
+`@hint`
+- No hint necessary!
+
+`@pre_exercise_code`
+```{r}
+# no pec
+```
+
+`@sct`
+```{r}
+msg1 = "Great! Now navigate back to the course on edX!"
+msg2 = "Now navigate back to the course on edX!"
+test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
+```

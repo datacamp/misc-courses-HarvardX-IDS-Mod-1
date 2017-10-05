@@ -1,10 +1,7 @@
 ---
 title       : Basic Data Manipulation 
 description : Just as the name suggests, we're going to practice the basics of data manipulation here.
-----
-
---- type:NormalExercise lang:r xp:100 skills:1 key:fa7b6092fb
-
+---
 ## dplyr
 
 Load the `dplyr` package and the murders dataset.
@@ -15,101 +12,214 @@ library(dslabs)
 data(murders)
 ```
 
-*** =instructions
+You can add columns using the `dplyr` function `mutate`. This function is aware of the column names and insider the function call you can them unquoted. Like this:
 
-Use the function `mutate` to add a murders rate column with the per 100,000 murder rate.
+```{r}
+murders <- mutate(murders, population_in_millions = population / 10^6)
+```
 
-*** =hint
-Use code `murders <- mutate(murders, rate =  total / population * 100000)`. 
+```yaml
+type: NormalExercise
+key: 766d9c4eab
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =pre_exercise_code
+`@instructions`
+
+- Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate. Make sure you redefine `murders` as done in the example code above.
+
+`@hint`
+Use code `murders <- mutate(murders, rate =  total / population * 100000)`.  
+
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
+# Loading data
+library(murders)
 data(murders)
+
+# Loading dplyr
+library(dplyr)
 
 # Use mutate to add a column named rate and store in murders
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Use mutate to add a rate column and store in `murders`
+# Loading data
+library(murders)
+data(murders)
+
+# Loading dplyr
+library(dplyr)
+
+# Use mutate to add a column named rate and store in murders
 murders <- mutate(murders, rate =  total / population * 100000)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("murders", undefined_msg = "Define murder first.", incorrect_msg = "Check the code again.")
 success_msg("Awesome! Let's learn another command with mutate.")
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:545fbadeea
-## Mutate 
+---
+## mutate
+
+Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
+
+```yaml
+type: NormalExercise
+key: 79bec8ece0
+lang: r
+xp: 100
+skills: 1
+```
 
 
-*** =instructions
-Use the function `mutate` again to add a column `rank` containing the rank, from highest to lowest murder rate. Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
+`@instructions`
+- Use the function `mutate` to add a column `rank` containing the rank, from highest to lowest murder rate. Make sure you redeinfe murders.
 
-*** =hint
-Use the function rank and remember by default it ranks form lowest to highest.
+`@hint`
+Use the function rank and remember by default it ranks from lowest to highest.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
 data(murders)
-rate =  murders$total)/ (murders$population) * 100000
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
+# Note that if you want ranks from highest to lowest you can take the negative and then compute the ranks 
+x <- c(88, 100, 83, 92, 94)
+rank(-x)
 
 # Defining rate
 rate <-  murders$total/ murders$population * 100000
 
-# Use mutate to add a rate column, rank from highest to lowest and store in `murders`
+# Use mutate to add a rank column with the ranks of rate from highest to lowest and store in `murders`
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
+# Note that if you want ranks from highest to lowest you can take the negative and ten compute the ranks 
+x <- c(88, 100, 83, 92, 94)
+rank(-x)
 
-# Use mutate to add a rate column, rank from highest to lowest and store in `murders`
+# Defining rate
+rate <-  murders$total/ murders$population * 100000
+
+# Use mutate to add a rank column with the ranks of rate from highest to lowest and store in `murders`
 murders <- mutate(murders, rank = rank(-rate))
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
+test_function("mutate")
 test_object("murders", incorrect_msg = "Remember, rank from highest to lowest.")
 success_msg("Good job!")
 ```
-----
---- type:NormalExercise lang:r xp:100 skills:1 key:555ca41873
-## filter 
+
+---
+## select
+
+With `dplyr` we can use `select` to show only certain columns. For example with this code we would only show the states and population sizes:
+
+```{r}
+select(murders, state, population)
+```
 
 
-*** =instructions
+```yaml
+type: NormalExercise
+key: 0e7a94d0a3
+lang: r
+xp: 100
+skills: 1
+```
 
-The `dplyr` function `filter` is used to select specific rows of the data frame to keep. Show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result.
 
-*** =hint
+`@instructions`
+- Use `filter` to define a new data frame `murders_south` with only states from the South. 
+- Use `select` to show the state names and abbreviations. Just show it, do not define a new object.
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+library(dplyr)
+library(dslabs)
+data(murders)
+```
+
+`@sample_code`
+```{r}
+# Load dplyr
+library(dplyr)
+
+# Use filter to define a new data frame `murders_south` with only states from the South. 
+murders_south <- filter(murders, region == "South")
+
+# Use select to only show state names and abbreviations from murders_south
+
+```
+
+`@solution`
+```{r}
+# Load dplyr
+library(dplyr)
+
+# Use filter to define a new data frame `murders_south` with only states from the South. 
+murders_south <- filter(murders, region == "South")
+
+# Use select to only show state names and abbreviations from murders_south
+select(murders_south, state, abb)
+```
+
+`@sct`
+```{r}
+test_error()
+test_function("select")
+test_output_contains("select(murders_south, state, abb)", incorrect_msg = "You need to use select. The columns you want are state and abb.")
+success_msg("Now you know how to use select! Let's move on to filter")
+```
 
 
-*** =pre_exercise_code
+---
+## filter
+
+The `dplyr` function `filter` is used to choose specific rows of the data frame to keep.
+
+```yaml
+type: NormalExercise
+key: 9a56fa2057
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+
+- Use `filter` to show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result. Note that you can filter based on the `rank` column.
+
+`@hint`
+?filter
+
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
@@ -117,12 +227,8 @@ data(murders)
 
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
 # Add the necessary columns
 murders <- mutate(murders, rate = total/population * 100000, rank = rank(-rate))
 
@@ -130,12 +236,8 @@ murders <- mutate(murders, rate = total/population * 100000, rank = rank(-rate))
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
 # Add the necessary columns
 murders <- mutate(murders, rate = total/population * 100000, rank = rank(-rate))
 
@@ -143,188 +245,264 @@ murders <- mutate(murders, rate = total/population * 100000, rank = rank(-rate))
 filter(murders, rank <= 5)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
+test_function("filter")
 test_output_contains("filter(murders, rank <= 5)", incorrect_msg = "Make sure you've written murders in your code.")
 success_msg("Great job!")
 ```
-----
-
---- type:NormalExercise lang:r xp:100 skills:1 key:42352c70c5
+---
 ## filter with !=
 
-*** =instructions
-Create a new data frame called `no_south` that removes states from the south. How many states are in this category? 
+We can remove rows using the `!=` operator. For example to remove Florida we would do this:
 
-*** =hint
-Use filter and the != operator. You can use nrow to quickly get the number of rows of a data frame.
+```{r}
+no_florida <- filter(murders, state != "Florida")
+```
 
-*** =pre_exercise_code
+```yaml
+type: NormalExercise
+key: 846dd29c6c
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+- Create a new data frame called `no_south` that removes states from the South region.
+- How many states are in this category? You can use the function `nrow` for this.
+
+`@hint`
+Use filter and the `!=` operator. You can use `nrow` to quickly get the number of rows of a data frame.
+
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
-# Use filter Creat a new dataframe `no_south`
+# Use filter to create a new data frame no_south
 
 # Use nrow() to calculate the number of rows
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Creating a new dataframe `no_south`
+# Use filter to create a new data frame no_south
 no_south <- filter(murders, region != "South" )
 
 # Number of states (rows) in this category 
 nrow(no_south)
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_object("no_south", undefined_msg = "Define no_south first!", incorrect_msg = "Make sure you`re excluding the ones not in the South.")
+test_function("nrow")
 test_output_contains("nrow(no_south)", incorrect_msg = "You need the number of rows for the number of states.")
 success_msg("That's great! Let's move to the next exercise.")
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:18111c7bfd
+---
 ## filter with %in%
 
+We can also use the `%in%` to filter with `dplyr`. For example you can see the data from New York and Texas like this:
 
-*** =instructions
-Create a new dataframe called murders_nw with only the states from the northeast and the west. 
-How many states are in this category? 
+```{r}
+filter(murders, state %in% c("New York", "Texas"))
+```
 
 
-*** =hint
+```yaml
+type: NormalExercise
+key: 4e5d7ac60f
+lang: r
+xp: 100
+skills: 1
+```
+
+`@instructions`
+- Create a new data frame called `murders_nw` with only the states from the northeast and the west. 
+- How many states are in this category? 
+
+
+`@hint`
 Use filter and the `%in%` operator. You can use nrow to quickly get the number of rows of a data frame.
 
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
-libary(dslabs)
+library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
-# Create a new dataframe called `murders_nw` with only the states from the northeast and the west
-
+# Create a new data frame called murders_nw with only the states from the northeast and the west
 
 # Number of states (rows) in this category 
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Create a new dataframe called `murders_nw` with only the states from the northeast and the west
-murders_nw <- filter(murders, region %in% c("Northeast", "West") )
+# Create a new data frame called murders_nw with only the states from the northeast and the west
+murders_nw <- filter(murders, region %in% c("Northeast", "West"))
 
 # Number of states (rows) in this category
 nrow(murders_nw)
+
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
+test_function("filter")
+test_function("nrow")
 test_object("murders_nw", undefined_msg = "Define murders_nw first.", incorrect_msg = "Make sure you're using the %in% command.")
 test_output_contains("nrow(murders_nw)", incorrect_msg = "You need the number of rows again, same as previous question.")
 success_msg("This is great!")
 ```
-----
+---
+
+## filtering by two conditions
+
+Suppose you want to live in the Northeast or West **and** want the murder rate to be less than 1. We want to see the data for the states satisfying these options. Note that you can use logical operators with `filter`:
+
+```{r}
+filter(murders, population < 5000000 & region == "Northeast")
+```
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:e572c8806a
-## filtering by two conditions 
+```yaml
+type: NormalExercise
+key: 6e8611adb6
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =instructions
-Suppose you want to live in the Northeast or West and want the murder rate to be less than 1. 
-Create a table, call it `my_states`, that satisfies both these. 
-How many states satisfy this?
 
-*** =hint
-Use the `my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)` code. 
+`@instructions`
+- Add a murder rate and rate column as done before
+- Create a table, call it `my_states`, that satisfies both the conditions: it is in the Northeast or West and the murder rate is less than 1. 
+- Use select to show only the state name, the rank and the rate 
 
-*** =pre_exercise_code
+`@hint`
+Use the `my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)` code. Then use `select`. The columns you want are state, rate and rank.
+
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
 # add the rate column
-murders <- mutate(murders, rate =  total / population * 100000)
+murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
 
 # Create a table, call it my_states, that satisfies both the conditions 
 
-# Number of states (rows) in this category
-
-
+# Use select to show only the state name, the murder rate and the rank
 ```
 
-*** =solution
+`@solution`
 ```{r}
+# add the rate column
+murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
+
 # Create a table, call it `my_states`, that satisfies both the conditions 
 my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)
 
-# Number of states (rows) in this category
-nrow(my_states)
+# Use select to show only the state name, the murder rate and the rank
+select(my_states, state, rate, rank)
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
+test_function("filter")
 test_object("my_states", undefined_msg = "Define my_states first!", incorrect_msg = "Use the filter, %in% and < commands.")
-test_output_contains("nrow(my_states)", incorrect_msg = "You need the number of rows again, same as previous question.")
+test_output_contains("select(my_states, state, rate, rank)", incorrect_msg = "You need the use the select function. You want to see state, rate, and rank.")
 success_msg("Now you know how to combine functions and use them to get specific answers. Let's try it one more time!")
 ```
-----
 
---- type:NormalExercise lang:r xp:100 skills:1 key:3d4de3a34a
+
+
+---
+
 ## Using the pipe %>%
 
-*** =instructions
-Repeat exercise 5, but now instead of creating a new obejct, show the result and only include the state, rate, and rank columns. Use a pipe (`%>%`) to do this in just one line.
+```yaml
+type: NormalExercise
+key: 72305c532e
+lang: r
+xp: 100
+skills: 1
+```
 
-*** =hint
+The pipe `%>%` can be used to perform operations sequentially without having to define intermediate objects. After redefining murder to include rate and rank
+
+```{r}
+library(dplyr)
+murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
+```
+
+in the solution to the previous exercise we did the following:
+```{r}
+# Created a table, call it `my_states`, that satisfies both the required conditions 
+my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)
+
+# Used select to show only the state name, the murder rate and the rank
+select(my_states, state, rate, rank)
+```
+
+The pipe permits us to performm both operation sequentially and without having to define a intermediate variable `my_states`
+
+For exmple we could have mutated and selected in the same line like this:
+
+```{r}
+mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>% select(state, rate, rank)
+```
+
+Note that `select` no longer has a data frame as the first argument. The first argument is assumed to be the result of the operation before the `%>%`
+
+`@instructions`
+Repeat the previous exercice, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
+- Use a pipe `%>%` to do this in just one line.
+
+`@hint`
 Use code: `filter(murders, region %in% c("Northeast", "West") & rate < 1) %>% 
     select(state, rate, rank)` 
     
-*** =pre_exercise_code
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
 data(murders)
-rate =  (murders$total)/ (murders$population) * 100000
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
+# Load library
+library(dplyr)
+
 ## Define the rate column
 murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
 # show the result and only include the state, rate, and rank columns, all in one line
+
 ```
-*** =solution
+`@solution`
 ```{r}
 ## Define the rate and rank column
 murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
@@ -332,70 +510,120 @@ murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rat
 # show the result and only include the state, rate, and rank columns, all in one line
 filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%  
    select(state, rate, rank)
+   
 ```
-*** =sct
+`@sct`
 ```{r}
 test_error()
 test_function("filter", incorrect_msg = "Everything needs to be in one line! Use a pipe to help!")
+test_output_contains("filter(murders, region %in% c('Northeast', 'West') & rate < 1) %>%  select(state, rate, rank)")
 success_msg("You're getting a pretty good hang of stuff now!")
 ```
-----
---- type:NormalExercise lang:r xp:100 skills:1 key:1b45c7acac
-## mutate, filter and select  
+---
+## mutate, filter and select
+
+```yaml
+type: NormalExercise
+key: 60fa0dbe3a
+lang: r
+xp: 100
+skills: 1
+```
 
 
+`@instructions`
+Now we will make murders the original table one gets when loading using `data(murders)`. 
+Use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consider only states in the Northeast or West, which have a murder rate lower than 1 and contain only the state, rate, and rank columns. The line should have four components
+separated by three `%>%`. 
+- The orginal dataset `murders`
+- A call to `mutate` to add the murder rate and the rank.
+- A call to `filter` to keep only the states from the Northeast or West and that have a murder rate below 1
+- A call to `select` that keeps only the columns with the stata name, the murder rate and the rank. 
 
-*** =instructions
-Now reload the original murders data frame using `data(murders)`. Then use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consideres only states in the Northeast or West, has a murder rate lower than 1 and contains only the state, rate, and rank columns. 
+The line should look something like this `my_states <- murders %>%` mutate something `%>%` filter something `%>%` select something.
 
-*** =hint
-Use `mutate`, `filter` and `select` combining them with `pipes`.
 
-*** =pre_exercise_code
+`@hint`
+The following pieces of code should be joined by pipes:
+- `mutate(rate =  total / population * 100000, rank = rank(-rate))`
+- `filter(region %in% c("Northeast", "West") & rate < 1)`
+-  `select(state, rate, rank)`
+
+`@pre_exercise_code`
 ```{r}
 library(dplyr)
 library(dslabs)
 data(murders)
 ```
 
-*** =sample_code
+`@sample_code`
 ```{r}
 # Loading the libraries
 library(dplyr)
 data(murders)
 
-# Create new data frame called `my_states` (with specifications in the instructions)
-
+# Create new data frame called my_states (with specifications in the instructions)
 
 ```
 
-*** =solution
+`@solution`
 ```{r}
-# Create new data frame called `my_states` (with specifications in the instructions)
+# Loading the libraries
+library(dplyr)
+data(murders)
+
+# Create new data frame called my_states (with specifications in the instructions)
 my_states <- murders %>% 
     mutate(rate =  total / population * 100000, rank = rank(-rate)) %>%
     filter(region %in% c("Northeast", "West") & rate < 1) %>%
     select(state, rate, rank)
+    
 ```
 
-*** =sct
+`@sct`
 ```{r}
 test_error()
+test_function("mutate")
+test_function("filter")
+test_function("select")
 test_object("my_states", undefined_msg = "Define my_states!", incorrect_msg = "Make sure you put pipes to put everything in one line.")
 success_msg("This is absolutely awesome! You now know how to use basic data manipulation techniques in R.")
 ```
 
-----
 
---- type:VideoExercise lang:r aspect_ratio:0 xp:0 skills:0 key:011b43bb92
+---
 
+## End of Assessment 7
 
-## End of Section
+```yaml
+type: PlainMultipleChoiceExercise
+lang: r
+xp: 0
+skills: 1
+key: 54b0aa0655
+```
+This is the end of the programming assignment for this section. 
 
-This is the end of the programming assignment for this section.
-
-You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/cfded5c208bc4e379606cb712cc54f25/5ba06674d0be41b99185b947e09e889b/?child=first'>course</a>.
+You can now close this window to go back to the <a href='https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+2T2017/courseware/79c873ff79ea4680a67d98b169d2f2fc/8965ae6e5f6748c480a72e5389680cbd/3?activate_block_id=block-v1%3AHarvardX%2BPH125.1x%2B2T2017%2Btype%40vertical%2Bblock%409a5f32e780a5416b89619b0e8c6df2e9'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K.
 
-----
+`@instructions`
+- Awesome
+- Nope
+
+`@hint`
+- No hint necessary!
+
+`@pre_exercise_code`
+```{r}
+# no pec
+```
+
+`@sct`
+```{r}
+msg1 = "Great! Now navigate back to the course on edX!"
+msg2 = "Now navigate back to the course on edX!"
+test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
+```
+
