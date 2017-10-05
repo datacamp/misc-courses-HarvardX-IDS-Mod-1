@@ -326,7 +326,7 @@ We will use the `table` function to answer this question.
 Use this function in one line of code to create a table showing the number of states per region.
 
 `@hint`
-Extract the variable *region* from the `murders` dataset and then use the `table` function to create the table. 
+Extract the variable *region* from the `murders` dataset using `murders$region`. If you apply the function `table` function to this object it will count the number it times each region appears. 
 
 `@pre_exercise_code`
 ```{r}
