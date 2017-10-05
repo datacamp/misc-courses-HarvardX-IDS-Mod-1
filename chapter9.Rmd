@@ -100,9 +100,10 @@ char_len <- nchar(murders$state)
 char_len[1:5]
 ```
 `@instructions`
-Use the `ifelse` function to write a line of code that assigns to the object new_names the state abbreviation when the state name is longer than 8 characters.
+Use the `ifelse` function to write a line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters.
 
 `@hint`
+Use the `nchar` function to calculate how many characters are in a string.
 
 `@pre_exercise_code`
 ```{r}
@@ -126,6 +127,7 @@ new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 `@sct`
 ```{r}
 test_error()
+test_function("ifelse")
 test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse.")
 success_msg("Woohoo! You're becoming a pro at this!")
 ```
@@ -143,7 +145,7 @@ skills: 1
 You will encounter situations in which the function you need does not already exist. R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
 
 `@instructions`
-Create a function `sum_n` that for any given value, say `$n$`, computes the sum of the integers from 1 to n. Use the function to determine the sum of integers from 1 to 5,000.
+Create a function `sum_n` that for any given value, say `n`, computes the sum of the integers from 1 to n. Use the function to determine the sum of integers from 1 to 5,000.
 
 `@hint`
 - To make it inclusive, use {}. 
@@ -177,6 +179,10 @@ sum_n(5000)
 test_error()
 test_object("sum_n", undefined_msg = "Make sure you define sum_n!", incorrect_msg = "Use commands function(n) and sum.")
 test_function("sum_n", incorrect_msg = "You need to check for the sum of 5000 integers!")
+fun_def <- ex() %>% check_fun_def("sum_n")
+fun_def %>% check_arguments()
+fun_def %>% check_call(5000) %>% check_call(100) %>% check_call(1000)
+fun_def %>% check_body()
 success_msg("This is awesome! Let's get to the next exercise.")
 ```
 ---
@@ -220,6 +226,8 @@ altman_plot <- function(x, y){plot(x+y, y-x)}
 ```{r}
 test_error()
 test_object("altman_plot", undefined_msg = "Be sure to define altman_plot first.", incorrect_msg = "Make sure you are plotting (x,y) and calling the function that as well.")
+fun_def <- ex() %>% check_fun_def("altman_plot")
+fun_def %>% check_arguments()
 success_msg("That's great! You can also play around with the variables and put in values for x and y.")
 ```
 ---
@@ -236,7 +244,7 @@ skills: 1
 `@instructions`
 ```{r}
 
-The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which x is available when. After running the code below, what is the value of x?
+The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when. After running the code below, what is the value of `x`?
 
 ```
 `@hint`
@@ -318,7 +326,11 @@ compute_s_n(10)
 ```{r}
 test_error()
 test_object("compute_s_n", undefined_msg = "Store it in `compute_s_n`.", incorrect_msg = "Make sure you include both arguments in the function command.")
-test_output_contains("compute_s_n(10)", incorrect_msg = "Place 10 in stead of n in the function.")
+test_output_contains("compute_s_n(10)", incorrect_msg = "Place 10 instead of n in the function.")
+fun_def <- ex() %>% check_fun_def("compute_s_n")
+fun_def %>% check_arguments()
+fun_def %>% check_call(10) %>% check_call(100) %>% check_call(1000)
+fun_def %>% check_body()
 success_msg("That's awesome! You're getting so good at this!")
 ```
 ---
@@ -347,7 +359,6 @@ Check the chapter on for loops for the codes!
 ```{r}
 # Define a function and store it in `compute_s_n`
 
-
 # Assign values to n and x 
 
 ```
@@ -375,6 +386,17 @@ test_error()
 test_object("compute_s_n", undefined_msg = "Make sure to define compute_s_n first.", incorrect_msg = "Are you assigning the correct values to x? ")
 test_object("n", incorrect_msg = "Check code.")
 test_object("s_n", incorrect_msg = "Have you assigned values to n and x?")
+test_function("vector")
+fun_def <- ex() %>% check_fun_def("compute_s_n")
+fun_def %>% check_arguments()
+fun_def %>% check_call(10) %>% check_call(100) %>% check_call(1000)
+fun_def %>% check_body()
+for_loop <- ex() %>% check_for()
+# check condition ("i in 1:5" in the solution)
+# note that check_code might be too stringent, since someone could
+# create a variable, e.g. a <- 1:5, and give that to the for loop
+for_loop %>% check_cond() %>%
+             check_code("in n", fixed = TRUE)
 success_msg("This is great! You now know the basics of for loops in R.")
 ```
 ---
@@ -428,7 +450,7 @@ plot(n, s_n)
 `@sct`
 ```{r}
 test_error()
-test_function("plot", incorrect_msg = "Did you plot the x and y axis correctly?")
+test_function("plot",args=c("x","y"), incorrect_msg = "Did you plot the x and y axis correctly?")
 success_msg("Awesome! Let's go to the last exercise in this chapter!")
 ```
 ---
@@ -478,6 +500,7 @@ identical(s_n, n*(n+1)*(2*n+1)/6)
 `@sct`
 ```{r}
 test_error()
+test_function("identical")
 test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "Make sure you're checking your formula!")
 success_msg("This is great! We are done with this module. Time to move on to bigger things!")
 ```
