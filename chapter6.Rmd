@@ -439,7 +439,7 @@ skills: 1
 `@instructions`
 We are again working with the characters `abbs <- c("MA", "ME", "MI", "MO", "MU")`
 
-- In a previous exercise we computed the index `abbs%in%murders$abbs`. Use `which` and the `!` operator to get the index of the entries of `abbs` that are **not** abbreviations.
+- In a previous exercise we computed the index `abbs%in%murders$abb`. Use `which` and the `!` operator to get the index of the entries of `abbs` that are **not** abbreviations.
 - Show the entries of `abbs` that are not actual abbreviations.
 
 `@hint`
