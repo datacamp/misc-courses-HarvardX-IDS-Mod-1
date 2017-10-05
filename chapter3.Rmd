@@ -369,12 +369,12 @@ Save the sequence in an object called `x`.
 # Create a vector m of integers that starts at 32 and ends at 99.
 m <- 32:99
 
-# Determine the length of object m:
+# Determine the length of object m.
 length(m)
 
 # Create a vector x of integers that starts 12 and ends at 73:
 
-# Determine the length of object x:
+# Determine the length of object x.
 
 
 ```
@@ -384,13 +384,13 @@ length(m)
 # Create a vector m of integers that starts at 32 and ends at 99.
 m <- 32:99
 
-# Determine the length of object m:
+# Determine the length of object m.
 length(m)
 
-# Create a vector x of integers that starts 12 and ends at 73:
+# Create a vector x of integers that starts 12 and ends at 73.
 x <- 12:73
 
-# Determine the length of object x:
+# Determine the length of object x.
 length(x)
 
 ```
@@ -528,20 +528,20 @@ Create the sequence, store it in an object, then check the class.
 
 `@sample_code`
 ```{r}
-# Store the sequence in the object `a`
+# Store the sequence in the object a
 
 
-# Determine the class of `a`
+# Determine the class of a
 
 
 ```
 
 `@solution`
 ```{r}
-# Store the sequence in the object `a`
+# Store the sequence in the object a
 a <- seq(1, 10, 0.5)
 
-# Determine the class of `a`
+# Determine the class of a
 class(a)
 
 ```
@@ -599,19 +599,19 @@ Note that there are only integer values within the seq parenthesis.
 
 `@sample_code`
 ```{r}
-# Store the sequence in the object `a`
+# Store the sequence in the object a
 
 
-# Define the class of `a`
+# Define the class of a
 
 ```
 
 `@solution`
 ```{r}
-# Store the sequence in the object `a`
+# Store the sequence in the object a
 a <- seq(1, 10)
 
-# Define the class of `a`
+# Define the class of a
 class(a)
 
 ```
@@ -652,7 +652,7 @@ Just type `class` and `1L`.
 
 `@sample_code`
 ```{r}
-# Check the class of `1`, assigned to the object `a`
+# Check the class of 1, assigned to the object a
 class(1)
 
 # Confirm the class of 1L is integer
@@ -711,7 +711,7 @@ Make sure you put the numbers within "".
 
 `@sample_code`
 ```{r}
-# Define the vector `x`
+# Define the vector x
 
 
 # Coerce it to get an integer 
@@ -720,7 +720,7 @@ Make sure you put the numbers within "".
 
 `@solution`
 ```{r}
-# Define the vector `x`
+# Define the vector x
 x <- c("1", "3", "5")
 
 # Coerce it to get an integer 
@@ -745,7 +745,6 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
-key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 
