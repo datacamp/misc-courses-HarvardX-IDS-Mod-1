@@ -63,16 +63,15 @@ city_temps <- data.frame(name = city, temperature = temp)
 
 `@sct`
 ```{r}
-test_object("temp", undefined_msg = "Define temp first.", incorrect_msg = "Store values of temperature!")
+test_error()
 test_object("temp", incorrect_msg = "Change from Fahrenheit to Celsius using `temp <- (temp - 32)*5/9`.")
 test_object("city", incorrect_msg = "Store names of cities.")
 test_object("city_temps", incorrect_msg = "Create a data frame following the same example.")
-test_error()
 success_msg("Great job!")
 ```
 
 ---
-## Vectorized operations continued
+## Vectorized operations continued...
 
 We can use some of what we have learned to perform calculations that 
 would otherwise be quite complicated. Let's see an example.
@@ -121,11 +120,12 @@ sum(1/x^2)
 test_error()
 test_object("x", undefined_msg = "Define x first!", incorrect_msg = "Use the sequence command to store 1,100 in x.")
 test_function("sum", incorrect_msg = "Use the code given in the instructions.")
+test_output_contains("sum(1/x^2)")
 success_msg("Good job!")
 ```
 
 ---
-## Vectorized operation continued
+## Vectorized operation continued...
 
 ```yaml
 type: NormalExercise
@@ -179,6 +179,7 @@ mean(murder_rate)
 test_error()
 test_object("murder_rate", incorrect_msg = "")
 test_function("mean", incorrect_msg = "")
+test_output_contains("mean(murder_rate",incorrect_msg = "Make sure to multiply the population by 100,000")
 success_msg("Awesome!")
 ```
 
