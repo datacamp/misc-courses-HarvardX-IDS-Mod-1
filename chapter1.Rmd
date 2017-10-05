@@ -202,7 +202,7 @@ log2(16)
 # sqrt of the log to the base 2 of 16:
 sqrt(log2(16))
 
-# Compute log to the base 10 (log10) of the sqrt of 100
+# Compute log to the base 10 (log10) of the sqrt of 100. Do not use variables.
 ```
 
 `@solution`
@@ -213,14 +213,14 @@ log2(16)
 # sqrt of the log to the base 2 of 16:
 sqrt(log2(16))
 
-# Compute log to the base 10 (log10) of the sqrt of 100
+# Compute log to the base 10 (log10) of the sqrt of 100. Do not use variables.
 log10(sqrt(100))
 ```
 
 `@sct`
 ```{r}
 test_error() 
-test_student_typed (c("log10(sqrt(100))", "log(sqrt(100), base=10)"), times = 1, not_typed_msg = "Make sure you use the right base for the log and put the sqrt function in parenthesis.")
+test_student_typed (c("log10(sqrt(100))", "log(sqrt(100), base=10)"), times = 1, not_typed_msg = "Make sure you use the right base for the log and put the sqrt function in parenthesis. Remember not to use variables.")
 success_msg("Very good!")
 ```
 
