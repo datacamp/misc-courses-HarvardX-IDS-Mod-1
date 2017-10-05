@@ -303,6 +303,11 @@ names(temp) <- city
 # Access the cost of pizza and pasta from our food list 
 cost[c(1,5)]
 
+# Define temp
+temp <- c(35, 88, 42, 84, 81, 30)
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+names(temp) <- city
+
 # Access the temperatures of Paris and San Juan
 
 ```
@@ -312,6 +317,11 @@ cost[c(1,5)]
 # Access the cost of pizza and pasta from our food list 
 cost[c(1,5)]
 
+# Define temp
+temp <- c(35, 88, 42, 84, 81, 30)
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+names(temp) <- city
+
 # Access the temperatures of Paris and San Juan
 temp[c(3,5)]
 
@@ -320,7 +330,7 @@ temp[c(3,5)]
 `@sct`
 ```{r}
 test_error()
-test_output_contains("temp[c(3,5)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets.")
+test_output_contains("temp[c(3,5)]", incorrect_msg = "You need to use `c` and parenthesis inside the square brackets. Look at how temp is defined in the sample code to determine the entires associated with Paris and San Juan")
 success_msg("Isn't that awesome! Let's move to the next exercise!")
 ```
 
@@ -736,7 +746,6 @@ type: PlainMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
-key: d596636416
 ```
 This is the end of the programming assignment for this section. 
 
