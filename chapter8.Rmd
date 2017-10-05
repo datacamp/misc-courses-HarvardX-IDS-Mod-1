@@ -54,6 +54,13 @@ plot(population_in_millions, total_gun_murders)
 
 `@solution`
 ```{r}
+# Load the datasets and define some variables
+library(dslabs)
+data(murders)
+population_in_millions <- murders$population/10^6
+total_gun_murders <- murders$total
+plot(population_in_millions, total_gun_murders)
+
 # Transform population using `log10` transformation
 log10_population<- log10(murders$population)
 
@@ -67,10 +74,10 @@ plot(log10_population, log10_total_gun_murders)
 
 `@sct`
 ```{r}
+test_error()
 test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Transform variable using log10.")
 test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_murders first.", incorrect_msg = "Transform variable using log10.")
-test_function("plot", incorrect_msg = "Scatter population on murders.")
-test_error()
+test_function("plot",args=c("x","y"), incorrect_msg = "Scatter population on murders.",index=2)
 success_msg("Doesn't that plot look neat!")
 ```
 
