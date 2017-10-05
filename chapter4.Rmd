@@ -81,6 +81,13 @@ success_msg("Good job! Now you know how to sort data in an ascending order.")
 ---
 ## order
 
+
+The function `order()` returns the index vector needed to sort the vector. This implies that `sort(x)` and `x[order(x)]` give the same result.
+
+This can be useful for finding row numbers with certain properties such as "the row for the state with the smallest population". 
+Remember that when we extract a varibale from a data frame the order of the resulting vector is the same as the order of the rows of the data frame. 
+So for example, the entries of the vector `murders$state` are ordered in the same way as the states if you go down the rows of `murders`.
+
 ```yaml
 type: NormalExercise
 key: 9bf4a9a8ca
@@ -91,12 +98,14 @@ skills: 1
 
 
 `@instructions`
-Now instead of the smallest population size, let's find out the index number of the state with the smallest population size, using the command `order`. 
-This time we need to replace the `sort()` function with a different one.
+- Now instead of the smallest population size, let's find out the row number, in the data frame `murders`, of the state with the smallest population size.
+- This time we need to replace the `order()` instead of `sort()`. 
+- Remember that the entries in the vector `murders$population` follow the order of the rows of `murders`. 
+
+
 
 `@hint`
-Replace sort with order
-
+Once you define `pop` with the population variable, get all the indexes using `o <- order(pop)`. The first index relates to the row with the smallest population.
 `@pre_exercise_code`
 ```{r}
 library(dslabs)
@@ -186,7 +195,7 @@ which.min(murders$population)
 `@sct`
 ```{r}
 test_error()
-test_output_contains("which.min(murders$population)", incorrect_msg = "Make sure you to use $ to get the population data and simultaneously use which.min.")
+test_output_contains("which.min(murders$population)", incorrect_msg = "Make sure you use $ to get the population data and simultaneously use which.min. And remember not to assign it to a variable.")
 test_function("which.min",index=2)
 test_student_typed("which.min(murders$population)",
                    fixed = TRUE,times = 1,not_typed_msg ="Use the $ simultaneously with the which.min function.")
@@ -208,9 +217,9 @@ skills: 1
 
 
 `@instructions`
-Define a variable `states` to hold the state names from the murders data frame.
-Find the index of the smallest state using `which.min(murders$population)]`. 
-Then combine these to find the state name for the smallest state.
+- Find the index of the smallest state using `which.min(murders$population)`. 
+- Define a variable `states` to hold the state names from the murders data frame.
+- Combine these to find the state name for the smallest state.
 
 `@hint`
 Index the list of variables
@@ -223,27 +232,23 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Define the variable `pop` to hold the population sizes
-
 # Define the variable `i` to be the index of the smallest state
+i <- which.min(murders$population)
 
 # Define variable `states` to hold the states
 
-# Use the index you define to find the state with the smallest population
+# Use the index you just defined to find the state with the smallest population
 ```
 
 `@solution`
 ```{r}
-# Define the variable `pop` to hold the population sizes
-pop <- murders$population
-
 # Define the variable `i` to be the index of the smallest state
-i <- which.min(pop)
+i <- which.min(murders$population)
 
 # Define variable `states` to hold the states
 states <- murders$state
 
-# Use the index you define to find the state with the smallest population
+# Use the index you just defined to find the state with the smallest population
 states[i]
 ```
 
@@ -277,9 +282,10 @@ skills: 1
 
 
 `@instructions`
-Use the `rank(murders$population)` function to determine the population size rank (from smallest to biggest) of each state. 
-Save these ranks in an object called `ranks`.
-Then create a data frame with the state name and its rank. Call the data frame `my_df`. 
+- Define a variable `states` to be the state names from `murders`
+- Use `rank(murders$population)` to determine the population size rank (from smallest to biggest) of each state. 
+- Save these ranks in an object called `ranks`.
+- Create a data frame with the state name and its rank. Call the data frame `my_df`. 
 
 
 `@hint`
@@ -346,6 +352,9 @@ success_msg("That's awesome! You got this!")
 ---
 ## Data Frames, Ranks and Orders 
 
+This exercise is somewhat more challenging. We are going to 
+repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
+
 ```yaml
 type: NormalExercise
 key: 62209cebec
@@ -356,12 +365,17 @@ skills: 1
 
 
 `@instructions`
-This exercise is somewhat more challenging. We are going to 
-repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
-Create an object ind that stores the indexes needed to order the population values, using the `order` command.  For example we could define `o <- order(murders$population)`
-Then use the bracket operator `[` to re-order each column in the data frame. For example, `abb[o]` orders the abbreviations based by population size. 
+- Create variables `states` and `ranks` to store the state names and ranks by population size respectively.
+- Create an object `ind` that stores the indexes needed to order the population values, using the `order` command. For example we could define `o <- order(murders$population)`
+- Create a data frame with both variables following the correct order. Use the bracket operator `[` to re-order each column in the data frame. For example, `states[o]` orders the abbreviations based by population size. 
 
 `@hint`
+
+When you define `my_df`, each column will be ordered using the `ind`. It will look something like this 
+
+```{r}
+my_df <- data.frame(name_1 = var_1[o], name_2 = var_2[o])
+```
 
 `@pre_exercise_code`
 ```{r}
@@ -405,17 +419,17 @@ my_df <- data.frame(states = states[ind], ranks = ranks[ind])
 test_error()
 test_object("states", undefined_msg = "Define states first.", incorrect_msg = "")
 test_object("ranks",undefined_msg = "Define ranks first.", incorrect_msg = "")
-test_function("order")
 test_function("rank")
 test_object("ind",undefined_msg = "Define ind first.", incorrect_msg = "Use the order command as well.")
-test_object("my_df", undefined_msg = "Define my_df first", incorrect_msg = "Check code")
+test_function("order")
+test_object("my_df", undefined_msg = "Define my_df first", incorrect_msg = "Check code.")
 success_msg("Great job! See how well you're building on your knowledge of R!")
 ```
 
 ---
 ## NA
 
-The `na_example` dataset represents a series of counts. You can quickly examine the object using
+The `na_example` dataset represents a series of counts. It is included in the *dslabs* package. You can quickly examine the object using
 
 ```{r}
 library(na_example)
@@ -439,11 +453,11 @@ skills: 1
 
 
 `@instructions`
-The `is.na` returns a logical vector that tells us which entries are `NA`.
-Assign this logical vector to an object called `ind`, using `is.na(na_example)` and determine how many NA does `na_example` have, using the `sum` command.
+- The `is.na` returns a logical vector that tells us which entries are `NA`. Assign the logical vector that is returned by `is.na(na_example)` to an object called `ind`.
+- Determine how many `NA`s  `na_example` has, using the `sum` command.
 
 `@hint`
-Sum the indices
+If `x` is logical, `sum(x)` converts the `TRUE` to 1 and the `FALSE` to 0 before summing. So the sum is the number of `TRUE` entries.
 
 `@pre_exercise_code`
 ```{r}
@@ -463,9 +477,9 @@ str(na_example)
 # Find out the mean of the entire dataset 
 mean(na_example)
 
-# Use `is.na` to create an logical index `ind` that tells which entries are NA
+# Use `is.na` to create a logical index ind that tells which entries are NA
 
-# Determine how many NA does `ind` have
+# Determine how many NA ind has using the sum function
 
 ```
 
@@ -481,10 +495,10 @@ str(na_example)
 # Find out the mean of the entire dataset 
 mean(na_example)
 
-# Use `is.na` to create an logical index `ind` that tells which entries are NA
+# Use `is.na` to create an logical index ind that tells which entries are NA
 ind <- is.na(na_example)
 
-# Determine how many NA does `ind` have
+# Determine how many NA ind has using the sum function
 sum(ind)
 
 ```
@@ -500,7 +514,8 @@ success_msg("Great job! Now let's move to one last thing in this chapter.")
 ---
 ## Removing NAs 
 
-A common operation we perform is removing the entries that are NA and do operations on the rest. 
+We previously computed the avearge of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
+A common operation is therefore emoving the entries that are NA and after that perform operations on the rest. 
 
 
 ```yaml
@@ -513,10 +528,12 @@ skills: 1
 
 
 `@instructions`
-Compute the average again but only for the entries that are not NA making use of the `!` operator before `ind`. 
+
+Write one line of code to compute the average, but only for the entries that are not NA making use of the `!` operator before `ind`. 
+
 
 `@hint`
-Remember the `!` operator. Use code `mean(na_example[!ind])`. 
+Remember the `!` operator. Note that `na_example[!ind]` returns the entries that are not NA. 
 
 `@pre_exercise_code`
 ```{r}
@@ -527,13 +544,39 @@ ind <- is.na(na_example)
 
 `@sample_code`
 ```{r}
-# Compute the average, for entries that are not NA 
+# Note what we can do with the ! operator
+x <- c(1, 2, 3)
+ind <- c(FALSE, TRUE, FALSE)
+x[!ind]
+
+# Create the ind vector
+library(dslabs)
+data(na_example)
+ind <- is.na(na_example)
+
+# We saw that this gives an NA
+mean(na_example)
+
+# Compute the average, for entries of na_example that are not NA 
 
 ```
 
 `@solution`
 ```{r}
-# Compute the average, for entries that are not NA 
+# Note what we can do with the ! operator
+x <- c(1, 2, 3)
+ind <- c(FALSE, TRUE, FALSE)
+x[!ind]
+
+# Create the ind vector
+library(dslabs)
+data(na_example)
+ind <- is.na(na_example)
+
+# We saw that this gives an NA
+mean(na_example)
+
+# Compute the average, for entries of na_example that are not NA 
 mean(na_example[!ind])
 
 ```
