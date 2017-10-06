@@ -752,7 +752,7 @@ skills: 1
 x <- c(1, 3, 5,"a")
 ```
 
-- Notice that `x` has been coerved into a character string.
+- Notice that `x` has been coerced into a character string.
 - Convert `x` to a vector of integers using the `as.integer()` function.
 
 `@hint`
