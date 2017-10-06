@@ -4,14 +4,7 @@ description : We engage in the basics of plot-making in R, with scatterplots, hi
 ---
 ## Scatterplots
 
-```yaml
-type: NormalExercise
-key: c535f6f10b
-lang: r
-xp: 100
-skills: 1
-```
-We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. Run the code in the console to get the plot.
+We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. You can run the code in the console to get the plot.
 
 ```{r}
 library(dslabs)
@@ -21,14 +14,25 @@ total_gun_murders <- murders$total
 plot(population_in_millions, total_gun_murders)
 ```
 
-Note that many states have populations below 5 million and are bunched up. We may gain further insights from making this plot in the log scale. 
+Note that many states have populations below 5 million and are bunched up in the plot. We may gain further insights from making this plot in the log scale. 
+
+```yaml
+type: NormalExercise
+key: c535f6f10b
+lang: r
+xp: 100
+skills: 1
+```
 
 `@instructions`
-We will make several plots now.
-Transform the variables using the log10 transformation and then plot the total murders versus population.
+- Transform the variables using the log, to the base 10, transformation
+- Plot the log transformed total murders versus population
 
 `@hint`
+Once you define the objects `log10_population` and `log10_total_gun_murders` you plot them against each other using
+`plot(log10_population, log10_total_gun_murders)`
 
+```
 
 `@pre_exercise_code`
 ```{r}
@@ -45,11 +49,11 @@ population_in_millions <- murders$population/10^6
 total_gun_murders <- murders$total
 plot(population_in_millions, total_gun_murders)
 
-# Transform population using `log10` transformation
+# Transform population using the log10 transformation and save to object log10_population
 
-# Transform total gun murders using `log10` transformation
+# Transform total gun murders using log10 transformation and save to object log10_total_gun_murders
 
-# Create a scatterplot with population and murders 
+# Create a scatterplot with the log scale transformed population and murders 
 
 ```
 
@@ -62,13 +66,13 @@ population_in_millions <- murders$population/10^6
 total_gun_murders <- murders$total
 plot(population_in_millions, total_gun_murders)
 
-# Transform population using `log10` transformation
+# Transform population using the log10 transformation and save to object log10_population
 log10_population<- log10(murders$population)
 
-# Transform total gun murders using `log10` transformation
+# Transform total gun murders using log10 transformation and save to object log10_total_gun_murders
 log10_total_gun_murders <- log10(murders$total)
 
-# Create a scatterplot with population and murders 
+# Create a scatterplot with the log scale transformed population and murders 
 plot(log10_population, log10_total_gun_murders)
 
 ```
@@ -79,11 +83,13 @@ test_error()
 test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Transform variable using log10.")
 test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_murders first.", incorrect_msg = "Transform variable using log10.")
 test_function("plot",args=c("x","y"), incorrect_msg = "Scatter population on murders.",index=2)
-success_msg("Doesn't that plot look neat!")
+success_msg("Doesn't that plot look better!")
 ```
 
 ---
 ## Histograms
+
+Now we are going to make a histogram.
 
 ```yaml
 type: NormalExercise
@@ -95,8 +101,8 @@ skills: 1
 
 
 `@instructions`
-One type of plot is a `hist`ogram.
-Create a histogram of the state populations.
+- Compute the population in millions and save it to the object `population_in_millions`
+- Create a histogram of the state populations using the function `hist`
 
 `@hint`
 
@@ -108,11 +114,11 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the population in millions (same as previous question)
+# Store the population in millions and save to population_in_millions 
 population_in_millions <- murders$population/10^6
 
 
-# Create a histogram of the population 
+# Create a histogram of this variable
 
 ```
 
@@ -121,7 +127,7 @@ population_in_millions <- murders$population/10^6
 # Store the population in millions (same as previous question)
 population_in_millions <- murders$population/10^6
 
-# Create a histogram of the population 
+# Create a histogram of this variable
 hist(population_in_millions)
 
 ```
@@ -137,6 +143,8 @@ success_msg("We got a histogram! Awesome!")
 ---
 ## Boxplots
 
+Now we are going to make boxplots. Boxplots are useful when we want a summary of several variables or several strata of the same variables. Making too many histograms can become too cumbersome. 
+
 ```yaml
 type: NormalExercise
 key: 41b5550054
@@ -147,11 +155,15 @@ skills: 1
 
 
 `@instructions`
-Stratify the state populations by region, the generate boxplots for the strate.
-You can achieve this using this `population~region` inside boxplot to generate the strata and specify the dataset with the `data` argument.
+In one line of code:
+
+- Stratify the state populations by region.
+- Generate boxplots for the strate.
+
+Note that you can achieve this using this `population~region` inside `boxplot` to generate the strata and specify the dataset with the `data` argument.
 
 `@hint`
-Make sure you specify the dataset.
+Make sure you specify the dataset. In the `boxplot` function specify the argument `data = murders`.
 
 `@pre_exercise_code`
 ```{r}
