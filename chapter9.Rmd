@@ -444,6 +444,7 @@ Now we are going to compute the sum of the squares for several values of $n$. We
 
 ```{r}
 results <- vector("numeric", 10)
+n <- 10
 for(i in 1:10){
     x <- 1:i
     results[i] <- sum(x)
@@ -461,7 +462,7 @@ skills: 1
 ```
 `@instructions`
 - Define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)`.
-- Compute the of `S_1, S_2,...,S_25` using the function we defined in the previous exercise: `compute_s_n`
+- Compute the of sums for each nusing the function we defined in the previous exercise: `compute_s_n`
 - Save the results in `s_n`
 
 
@@ -519,8 +520,8 @@ for_loop <- ex() %>% check_for()
 # check condition ("i in 1:5" in the solution)
 # note that check_code might be too stringent, since someone could
 # create a variable, e.g. a <- 1:5, and give that to the for loop
-for_loop %>% check_cond() %>%
-             check_code("in n", fixed = TRUE)
+for_loop %>% check_cond() 
+#%>% check_code("in n", fixed = TRUE)
 success_msg("This is great! You now know the basics of for loops in R.")
 ```
 ---
