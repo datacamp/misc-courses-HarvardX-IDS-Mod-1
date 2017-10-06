@@ -41,7 +41,7 @@ Are the numbers stored in `x` all positive? If not the `print` after the `else` 
 ```{r}
 msg1 = "Are all the entries in `x` positive?"
 msg2 = "Awesome! That is correct."
-msg3 = "In R you can vectorize logical relantions like this. There is no reason to have `NA`s"
+msg3 = "In R you can vectorize logical relations like this. There is no reason to have `NA`s"
 msg4 = "If `all(x>0)` is `TRUE` or `FALSE` something is returned."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
@@ -98,7 +98,7 @@ char_len <- nchar(murders$state)
 head(char_len)
 ```
 
-The function `ifelse` is useful because you convert a vectors of logicals into something else. For example, some datasets use the number -999 to denote NA. A bad practice! You can covert the -999 in a vector to NA using the following `ifelse` call:
+The function `ifelse` is useful because you convert a vector of logicals into something else. For example, some datasets use the number -999 to denote NA. A bad practice! You can convert the -999 in a vector to NA using the following `ifelse` call:
 ```{r}
 x <- c(2, 3, -999, 1, 4, 5, -999, 3, 2, 9)
 ifelse(x == -999, NA, x)
@@ -226,7 +226,7 @@ success_msg("This is awesome! Let's get to the next exercise.")
 
 We will make another function for this exercise. We will define a function `altman_plot` that takes two arguments `x` and `y` and plots the difference `y-x` in the y-axis against the sum `x+y` in the x-axis. 
 
-You can define functions with as many variables as you want. For example, here we need at least two, `x` and `y`. The following function plot log transformed values:
+You can define functions with as many variables as you want. For example, here we need at least two, `x` and `y`. The following function plots log transformed values:
 
 ```{r}
 log_plot <- function(x, y){
@@ -245,7 +245,7 @@ skills: 1
 
 `@instructions`
 We will make another function for this exercise.
-- Create a function `altman_plot` that takes two arguments `x` and `y` and plots `y-x` versus `x+y`.
+- Create a function `altman_plot` that takes two arguments `x` and `y` and plots `y-x` (on the y-axis) against `x+y` (on the x-axis).
 
 `@hint`
 The command inside the function should be: `plot(x + y, y - x)`. Remember to define a function you use
@@ -278,7 +278,7 @@ altman_plot <- function(x, y){
 `@sct`
 ```{r}
 test_error()
-test_object("altman_plot", undefined_msg = "Be sure to define altman_plot first.", incorrect_msg = "Make sure you are plotting (x,y) and calling the function that as well.")
+test_object("altman_plot", undefined_msg = "Be sure to define altman_plot first.", incorrect_msg = "Make sure you are plotting (x,y) and calling the function `altman_plot` as well.")
 fun_def <- ex() %>% check_fun_def("altman_plot")
 fun_def %>% check_arguments()
 success_msg("That's great! You can also play around with the variables and put in values for x and y.")
@@ -298,7 +298,7 @@ my_func <- function(y){
 my_funct(x)
 print(x)
 ```
-Note that we `x` is 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside. 
+Note that when we define `x` as 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside. 
 
 ```yaml
 type: NormalExercise
@@ -462,7 +462,7 @@ skills: 1
 ```
 `@instructions`
 - Define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)`.
-- Compute the of sums for each nusing the function we defined in the previous exercise: `compute_s_n`
+- Compute the the sum when n is equal to each integer from 1 to 25 using the function we defined in the previous exercise: `compute_s_n`
 - Save the results in `s_n`
 
 
@@ -547,7 +547,7 @@ skills: 1
 `@instructions`
 - Define `n <- 1:25`. Note that with this we can use `for(i in n)`
 - Use a for loop to save the sums into a vector `s_n <- vector("numeric", 25)`
-- Plot `s_n` versus `n`.
+- Plot `s_n` (on the y-axis) against `n` (on the x-axis).
 
 `@hint`
 In the plot code, `n` is the x-axis, and `s_n` is the y-axis.
