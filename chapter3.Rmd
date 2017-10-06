@@ -563,7 +563,7 @@ skills: 1
 
 
 `@instructions`
-- We will define the class of a vector generated with `seq` using the *length.out* argument. 
+- Determine the class of a vector generated with `seq` using the *length.out* argument. 
 - Specifically, what is the class of the following object `a <- seq(1, 10, length.out = 100)`?
 
 `@hint`
@@ -651,7 +651,7 @@ Note that there are only integer values within the seq parenthesis.
 # Store the sequence in the object a
 
 
-# Define the class of a
+# Determine the class of a
 
 ```
 
@@ -660,7 +660,7 @@ Note that there are only integer values within the seq parenthesis.
 # Store the sequence in the object a
 a <- seq(1, 10)
 
-# Define the class of a
+# Determine the class of a
 class(a)
 
 ```
