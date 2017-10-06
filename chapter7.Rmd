@@ -12,11 +12,13 @@ library(dslabs)
 data(murders)
 ```
 
-You can add columns using the `dplyr` function `mutate`. This function is aware of the column names and insider the function call you can them unquoted. Like this:
+You can add columns using the `dplyr` function `mutate`. This function is aware of the column names and inside the function you can call them unquoted. Like this:
 
 ```{r}
 murders <- mutate(murders, population_in_millions = population / 10^6)
 ```
+
+Note that we car write `population` rather than `murders$population`. The function `mutate` knows we are grabing columns from `murders`.
 
 ```yaml
 type: NormalExercise
@@ -28,11 +30,19 @@ skills: 1
 
 `@instructions`
 
-- Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate. Make sure you redefine `murders` as done in the example code above.
+- Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate. 
+- Make sure you redefine `murders` as done in the example code above.
+
+Remember the murder rate is defined the total divided by the population size times 100,000
+
+
 
 `@hint`
-Use code `murders <- mutate(murders, rate =  total / population * 100000)`.  
-
+You can define a new function based on existing ones like this:
+```{r}
+mutate(murders, raw_rate =  total / population) 
+```
+Note that we use the column names `total` and `population` without having the use the accessor.
 `@pre_exercise_code`
 ```{r}
 library(dplyr)
@@ -49,7 +59,7 @@ data(murders)
 # Loading dplyr
 library(dplyr)
 
-# Use mutate to add a column named rate and store in murders
+# Redefine murders so that it includes column named rate with the per 100,000 murder rates
 
 ```
 
@@ -62,7 +72,7 @@ data(murders)
 # Loading dplyr
 library(dplyr)
 
-# Use mutate to add a column named rate and store in murders
+# Redefine murders so that it includes column named rate with the per 100,000 murder rates
 murders <- mutate(murders, rate =  total / population * 100000)
 ```
 
@@ -91,8 +101,7 @@ skills: 1
 - Use the function `mutate` to add a column `rank` containing the rank, from highest to lowest murder rate. Make sure you redeinfe murders.
 
 `@hint`
-Use the function rank and remember by default it ranks from lowest to highest.
-
+Note that `rate` is already defined and that `rank(-rate)` gives you the ranks you want. Now just add that column and name the column `rank`
 `@pre_exercise_code`
 ```{r}
 library(dplyr)
@@ -109,7 +118,8 @@ rank(-x)
 # Defining rate
 rate <-  murders$total/ murders$population * 100000
 
-# Use mutate to add a rank column with the ranks of rate from highest to lowest and store in `murders`
+# Redefine mutate to include a column named rank
+# with the ranks of rate from highest to lowest
 
 ```
 
@@ -122,7 +132,8 @@ rank(-x)
 # Defining rate
 rate <-  murders$total/ murders$population * 100000
 
-# Use mutate to add a rank column with the ranks of rate from highest to lowest and store in `murders`
+# Redefine mutate to include a column named rank
+# with the ranks of rate from highest to lowest
 murders <- mutate(murders, rank = rank(-rate))
 ```
 
@@ -154,9 +165,15 @@ skills: 1
 
 
 `@instructions`
-- Use `filter` to define a new data frame `murders_south` with only states from the South. 
-- Use `select` to show the state names and abbreviations. Just show it, do not define a new object.
+- Use `select` to show the state names and abbreviations in `murders`. Just show it, do not define a new object.
+
 `@hint`
+You can use select to just show one or more columns like this
+
+```{r}
+select(data_frame, column_name_1, column_name_2)
+```
+The columns you want are `state` and `abb`. The data frame you want is `murders`.
 
 `@pre_exercise_code`
 ```{r}
@@ -170,10 +187,7 @@ data(murders)
 # Load dplyr
 library(dplyr)
 
-# Use filter to define a new data frame `murders_south` with only states from the South. 
-murders_south <- filter(murders, region == "South")
-
-# Use select to only show state names and abbreviations from murders_south
+# Use select to only show state names and abbreviations from murders
 
 ```
 
@@ -182,26 +196,28 @@ murders_south <- filter(murders, region == "South")
 # Load dplyr
 library(dplyr)
 
-# Use filter to define a new data frame `murders_south` with only states from the South. 
-murders_south <- filter(murders, region == "South")
-
 # Use select to only show state names and abbreviations from murders_south
-select(murders_south, state, abb)
+select(murders, state, abb)
 ```
 
 `@sct`
 ```{r}
 test_error()
 test_function("select")
-test_output_contains("select(murders_south, state, abb)", incorrect_msg = "You need to use select. The columns you want are state and abb.")
-success_msg("Now you know how to use select! Let's move on to filter")
+test_output_contains("select(murders, state, abb)", incorrect_msg = "You need to use select. The columns you want are state and abb. The data you want is `murders`")
+success_msg("Now you know how to use select! Let's move on to filter.")
 ```
 
 
 ---
 ## filter
 
-The `dplyr` function `filter` is used to choose specific rows of the data frame to keep.
+The `dplyr` function `filter` is used to choose specific rows of the data frame to keep. Unlke `select` which is for columns, `filter` is for rows. For example you can show just New York row like this:
+
+```{r}
+filter(murders, state == "New York")
+```
+You can use other logical vector to filter rows.
 
 ```yaml
 type: NormalExercise
@@ -214,10 +230,10 @@ skills: 1
 
 `@instructions`
 
-- Use `filter` to show the top 5 states with the highest murder rates. Do not change the murders dataset, just show the result. Note that you can filter based on the `rank` column.
+- Use `filter` to show the top 5 states with the highest murder rates. After we add murder rate and rank, do not change the murders dataset, just show the result. Note that you can filter based on the `rank` column.
 
 `@hint`
-?filter
+The logical vector you want to filter by is `rank <= 5`.
 
 `@pre_exercise_code`
 ```{r}
@@ -275,7 +291,8 @@ skills: 1
 - How many states are in this category? You can use the function `nrow` for this.
 
 `@hint`
-Use filter and the `!=` operator. You can use `nrow` to quickly get the number of rows of a data frame.
+Use `filter` with the `!=` operator to remove states from the South Region. The logica vector you want is `region!="South". Once you define a new data frame without these states 
+you can use `nrow` which gets the number of rows of a data frame.
 
 `@pre_exercise_code`
 ```{r}
@@ -304,9 +321,9 @@ nrow(no_south)
 `@sct`
 ```{r}
 test_error()
-test_object("no_south", undefined_msg = "Define no_south first!", incorrect_msg = "Make sure you`re excluding the ones not in the South.")
+test_object("no_south", undefined_msg = "Define no_south first!", incorrect_msg = "The object no_south seems to be incorrectly defined. Make sure you`re excluding the ones not in the South.")
 test_function("nrow")
-test_output_contains("nrow(no_south)", incorrect_msg = "You need the number of rows for the number of states.")
+test_output_contains("nrow(no_south)", incorrect_msg = "You need the number of rows for the number of states. You may have constructe the wrong no_south object.")
 success_msg("That's great! Let's move to the next exercise.")
 ```
 
@@ -329,12 +346,13 @@ skills: 1
 ```
 
 `@instructions`
-- Create a new data frame called `murders_nw` with only the states from the northeast and the west. 
+- Create a new data frame called `murders_nw` with only the states from the Northeast and the West. 
 - How many states are in this category? 
 
 
 `@hint`
-Use filter and the `%in%` operator. You can use nrow to quickly get the number of rows of a data frame.
+Use filter and the `%in%` operator. The logical vector you want in `filter` is `region %in% c("Northeast", "West")`
+You can use `nrow` to quickly get the number of rows of a data frame.
 
 `@pre_exercise_code`
 ```{r}
@@ -442,15 +460,9 @@ success_msg("Now you know how to combine functions and use them to get specific 
 
 ## Using the pipe %>%
 
-```yaml
-type: NormalExercise
-key: 72305c532e
-lang: r
-xp: 100
-skills: 1
-```
 
-The pipe `%>%` can be used to perform operations sequentially without having to define intermediate objects. After redefining murder to include rate and rank
+The pipe `%>%` can be used to perform operations sequentially 
+without having to define intermediate objects. After redefining murder to include rate and rank.
 
 ```{r}
 library(dplyr)
@@ -459,25 +471,35 @@ murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
 
 in the solution to the previous exercise we did the following:
 ```{r}
-# Created a table, call it `my_states`, that satisfies both the required conditions 
+# Created a table 
 my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)
 
 # Used select to show only the state name, the murder rate and the rank
 select(my_states, state, rate, rank)
 ```
 
-The pipe permits us to performm both operation sequentially and without having to define a intermediate variable `my_states`
+The pipe `%>%` permits us to performm both operation sequentially and without having to define a intermediate variable `my_states`
 
 For exmple we could have mutated and selected in the same line like this:
 
 ```{r}
-mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>% select(state, rate, rank)
+mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>% 
+    select(state, rate, rank)
 ```
 
-Note that `select` no longer has a data frame as the first argument. The first argument is assumed to be the result of the operation before the `%>%`
+Note that `select` no longer has a data frame as the first argument. The first argument is assumed to be the result of the operation conducted right before the  `%>%`
+
+
+```yaml
+type: NormalExercise
+key: 72305c532e
+lang: r
+xp: 100
+skills: 1
+```
 
 `@instructions`
-Repeat the previous exercice, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
+- Repeat the previous exercice, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
 - Use a pipe `%>%` to do this in just one line.
 
 `@hint`
