@@ -95,7 +95,7 @@ Be sure to place the names within double quotes.
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
 # Create a character vector to store the names listed into city
-# Make sure to follow the same order as above
+# Make sure to follow the same order as in the instructions
 
 ```
 
@@ -104,8 +104,8 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 # here is an example of how to create a character vector
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# Create a character vector to store the temperatures listed above into city
-# Make sure to follow the same order as above
+# Create a character vector to store the temperatures listed i into city
+# Make sure to follow the same order as in the instructions
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
 ```

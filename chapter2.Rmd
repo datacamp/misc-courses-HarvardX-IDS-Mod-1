@@ -253,7 +253,7 @@ success_msg("You've now learned different ways of doing the same thing in R! You
 ---
 ## Factors
 
-Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class`  command on the *region* column. 
+Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class` command on the *region* column. 
 
 The function `levels` shows us the categories for the factor. 
 
