@@ -78,8 +78,8 @@ skills: 1
 
 
 `@instructions`
-We will use the cities from the previous question (Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto).
-Create a vector with the city names and call the object `city`. 
+The temperatures listed are from Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
+- Create a vector with these city names and call the object `city`. 
 
 `@hint`
 Be sure to place the names within double quotes. 
@@ -94,7 +94,7 @@ Be sure to place the names within double quotes.
 # here is an example of how to create a character vector
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# Create a character vector to store the names listed into city
+# Create a character vector called city to store the city names
 # Make sure to follow the same order as in the instructions
 
 ```
@@ -104,7 +104,7 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 # here is an example of how to create a character vector
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
-# Create a character vector to store the temperatures listed i into city
+# Create a character vector called city to store the city names
 # Make sure to follow the same order as in the instructions
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
@@ -186,8 +186,8 @@ names(temp) <- city
 ```{r}
 test_error()
 test_object("temp", incorrect_msg = "Check to match the numbers from the question!")
-test_object("city", incorrect_msg = "Each of the city names need quotes.")
 test_function("names",index=2,incorrect_msg = "The numeric vector should be in the parenthesis. Also, don't delete the sample code.") 
+test_student_typed("names(temp)<-city", not_typed_msg = "We want you to assign the names stored in `city` using the names function. And remember to use `<-` rather than `=`.")
 success_msg("Great job! We now know the temperatures of the respective cities.")
 ```
 
