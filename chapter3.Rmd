@@ -267,9 +267,9 @@ In the previous question, we accessed the temperature for consecutive cities (1s
 An example:
 To access the cost of `pizza` (1st) and `pasta` (5th food item) in our list, the code would be:
  
- ```{r}
- cost[c(1,5)]
- ```
+```{r}
+cost[c(1,5)]
+```
 
 ```yaml
 type: NormalExercise
