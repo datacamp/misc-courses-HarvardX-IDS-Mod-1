@@ -478,7 +478,7 @@ my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)
 select(my_states, state, rate, rank)
 ```
 
-The pipe `%>%` permits us to performm both operation sequentially and without having to define a intermediate variable `my_states`
+The pipe `%>%` permits us to perform both operation sequentially and without having to define an intermediate variable `my_states`
 
 For exmple we could have mutated and selected in the same line like this:
 
@@ -499,7 +499,7 @@ skills: 1
 ```
 
 `@instructions`
-- Repeat the previous exercice, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
+- Repeat the previous exercise, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
 - Use a pipe `%>%` to do this in just one line.
 
 `@hint`
@@ -557,7 +557,7 @@ skills: 1
 Now we will make murders the original table one gets when loading using `data(murders)`. 
 Use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consider only states in the Northeast or West, which have a murder rate lower than 1 and contain only the state, rate, and rank columns. The line should have four components
 separated by three `%>%`. 
-- The orginal dataset `murders`
+- The original dataset `murders`
 - A call to `mutate` to add the murder rate and the rank.
 - A call to `filter` to keep only the states from the Northeast or West and that have a murder rate below 1
 - A call to `select` that keeps only the columns with the stata name, the murder rate and the rank. 
