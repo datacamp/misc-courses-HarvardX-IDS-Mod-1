@@ -366,11 +366,19 @@ skills: 1
 ```
 
 `@instructions`
-Write a function `compute_s_n` that for any given $n$ computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$. 
-Report the value of the sum when `n <- 10`.
+- Write a function `compute_s_n` that for any given $n$ computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$. 
+- Report the value of the sum when `n=10`.
 
 `@hint`
-What is it when you calculate by hand, does your function agree?
+The function will look something like this:
+
+```{r}
+compute_s_n <- function(n){
+    x <- 1:n
+    ## sum the vector after you square it
+}
+```
+Then you evaluate it at 10: `compute_s_n(10)`
 
 `@pre_exercise_code`
 ```{r}
@@ -379,7 +387,16 @@ What is it when you calculate by hand, does your function agree?
 
 `@sample_code`
 ```{r}
-# Write the function for (n), with the above mentioned specifications and store it in `compute_s_n` 
+# Here is a function that adds numbers from 1 to n
+example_func <- function(n){
+    x <- 1:n
+    sum(x)
+}
+
+# Here is the sum of the first 100 numbers
+example_func(100)
+
+# Write the function with argument n, with the above mentioned specifications and store it in `compute_s_n` 
 
 # Report the value of the sum when n=10
 
@@ -387,7 +404,16 @@ What is it when you calculate by hand, does your function agree?
 
 `@solution`
 ```{r}
-# Write the function for (n), with the above mentioned specifications and store it in `compute_s_n` 
+# Here is a function that adds numbers from 1 to n
+example_func <- function(n){
+    x <- 1:n
+    sum(x)
+}
+
+# Here is the sum of the first 100 numbers
+example_func(100)
+
+# Write the function with argument n, with the above mentioned specifications and store it in `compute_s_n` 
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
@@ -409,8 +435,21 @@ fun_def %>% check_call(10) %>% check_call(100) %>% check_call(1000)
 fun_def %>% check_body()
 success_msg("That's awesome! You're getting so good at this!")
 ```
+
 ---
 ## For loops continued...
+
+Now we are going to compute the sum of the squares for several values of $n$. We will use a for-loop for this. Here is an example of a for-loop:
+
+```{r}
+results <- vector("numeric", 10)
+for(i in 1:10){
+    x <- 1:i
+    results[i] <- sum(x)
+}
+```
+
+Note that we start with a call to `vector` which constructs an empty vector that we will fill while the loop runs.
 
 ```yaml
 type: NormalExercise
@@ -420,12 +459,13 @@ xp: 100
 skills: 1
 ```
 `@instructions`
-Storing values by for loops can be very useful.
-Now define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)` and store in the results of `S_1, S_2,...,S_25`.
+- Define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)`.
+- Compute the of `S_1, S_2,...,S_25` using the function we defined in the previous exercise: `compute_s_n`
+- Save the results in `s_n`
 
 
 `@hint`
-Check the chapter on for loops for the codes!
+The line of code inside the function will be `s_n[i] <- compute_s_n(i)`. 
 
 `@pre_exercise_code`
 ```{r}
@@ -435,8 +475,15 @@ Check the chapter on for loops for the codes!
 `@sample_code`
 ```{r}
 # Define a function and store it in `compute_s_n`
+compute_s_n <- function(n){
+  x <- 1:n
+  sum(x^2)
+}
 
-# Assign values to n and x 
+# Create a vector for storing results
+s_n <- vector("numeric", 25)
+
+# write a for-loop to store the results in s_n
 
 ```
 
@@ -448,10 +495,11 @@ compute_s_n <- function(n){
   sum(x^2)
 }
 
-# Assign values to `n` and `s_n`
-n <- 1:25
+# Create a vector for storing results
 s_n <- vector("numeric", 25)
-for(i in n){
+
+# Assign values to `n` and `s_n`
+for(i in 1:25){
   s_n[i] <- compute_s_n(i)
 }
 
@@ -477,8 +525,17 @@ for_loop %>% check_cond() %>%
 success_msg("This is great! You now know the basics of for loops in R.")
 ```
 ---
-## For loops and plotting
+## Checking our math
 
+If we do the math, we can show that 
+
+$$S_n = 1^2 + 2^2 + 3^2 + \dots + n^2 =  n(n+1)(2n+1)/6 $$
+
+We have already computed the values of $S_n$ from 1 to 25 using a for loop. 
+
+If the formula is correct then a plot of $S_n$ versus $n$ should look cubic.
+
+Let's make this plot.
 ```yaml
 type: NormalExercise
 key: 4e649b5400
@@ -487,42 +544,59 @@ xp: 100
 skills: 1
 ```
 
-
-`s_n` and `n` have already been defined in the previous question and are stored in memory for you!  
-
 `@instructions`
-Using points defined by `n=1,...,25`.
-Plot `s_n` versus `n`.
+- Define `n <- 1:25`
+- Use a for loop to save the sums into a vector `s_n <- vector("numeric", 25)`
+- Plot `s_n` versus `n`.
 
 `@hint`
-In the plot code, n is the x, and s_n is the y. 
+In the plot code, `n` is the x-axis, and `s_n` is the y-axis.
 
 `@pre_exercise_code`
 ```{r}
+# no pec 
+```
+
+`@sample_code`
+```{r}
+# Define the function
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
+# Define the vector of n
 n <- 1:25
+
+# Define the vector to store data
 s_n <- vector("numeric", 25)
 for(i in n){
   s_n[i] <- compute_s_n(i)
 }
 
-```
-
-`@sample_code`
-```{r}
 #  Create the plot 
 
 ```
 
 `@solution`
 ```{r}
+# Define the function
+compute_s_n <- function(n){
+  x <- 1:n
+  sum(x^2)
+}
+
+# Define the vector of n
+n <- 1:25
+
+# Define the vector to store data
+s_n <- vector("numeric", 25)
+for(i in n){
+  s_n[i] <- compute_s_n(i)
+}
+
 #  Create the plot 
 plot(n, s_n)
-
 ```
 
 `@sct`
@@ -532,7 +606,9 @@ test_function("plot",args=c("x","y"), incorrect_msg = "Did you plot the x and y 
 success_msg("Awesome! Let's go to the last exercise in this chapter!")
 ```
 ---
-## Identical
+## Checking our math continued
+
+Now let's actually check if we get the exact same answer.
 
 ```yaml
 type: NormalExercise
@@ -543,37 +619,56 @@ skills: 1
 ```
 
 `@instructions`
-Confirm that `s_n = n(n+1)(2n+1)/6` using the `identical` command.
+- Confirm that `s_n` and `n(n+1)(2n+1)/6` are the same using the `identical` command.
 
 `@hint`
-`identical(s_n,n(n+1)(2n+1)/6)`
+`s_n` is a vector. Because `n` is a vector `n(n+1)(2n+1)/6)` is a vector. You can compare two vectors `x` and `y` with `identical(x, y)`.
 
 `@pre_exercise_code`
 ```{r}
+# no pec
+```
+
+`@sample_code`
+```{r}
+# Define the function
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
+# Define the vector of n
 n <- 1:25
+
+# Define the vector to store data
 s_n <- vector("numeric", 25)
 for(i in n){
   s_n[i] <- compute_s_n(i)
 }
 
-```
-
-`@sample_code`
-```{r}
 # Check that s_n is identical to the formula given in the instructions.
 
 ```
 
 `@solution`
 ```{r}
+# Define the function
+compute_s_n <- function(n){
+  x <- 1:n
+  sum(x^2)
+}
+
+# Define the vector of n
+n <- 1:25
+
+# Define the vector to store data
+s_n <- vector("numeric", 25)
+for(i in n){
+  s_n[i] <- compute_s_n(i)
+}
+
 # Check that s_n is identical to the formula given in the instructions.
 identical(s_n, n*(n+1)*(2*n+1)/6)
-
 ```
 
 `@sct`
