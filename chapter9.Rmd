@@ -135,7 +135,7 @@ new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 ```{r}
 test_error()
 test_function("ifelse")
-test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse. The objects being used inside the function should be `murders$state` and `murders$abb`")
+test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse. The objects being used inside the function should be `murders$state` and `murders$abb`. Also we are looking for `nchar(murders$state) strictly larger than 8.")
 success_msg("Woohoo! You're becoming a pro at this!")
 
 ```
