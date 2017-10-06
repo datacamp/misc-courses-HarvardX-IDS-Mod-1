@@ -57,7 +57,7 @@ xp: 50
 skills: 1
 ```
 
-Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`?
+Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`? You can try examples in the R console.
 
 `@instructions`
 - all(x) 
@@ -66,7 +66,7 @@ Which of the following expressions is always `FALSE` when at least one entry of 
 - all(!x)
 
 `@hint`
-Define a logical vector x and test them.
+Define a logical vector `x` such as `c(TRUE, FALSE)` and `c(TRUE, TRUE)` and test them.
 
 `@pre_exercise_code`
 ```{r}
@@ -75,9 +75,9 @@ Define a logical vector x and test them.
 
 `@sct`
 ```{r}
-msg1 = "Try again! Try an example on the R console."
-msg2 = "Re-read the question! Try an example on the R console."
-msg3 = "Check the question again. Try an example on the R console."
+msg1 = "Try `x <- c(TRUE, FALSE)` or `x <- c(TRUE, TRUE)`."
+msg2 = "Try `x <- c(TRUE, TRUE)`"
+msg3 = "Try `x <- c(TRUE, FALSE)"
 msg4 = "Good job! Let's move to the next question."
 test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
@@ -94,17 +94,23 @@ skills: 1
 The function `nchar` tells you how many characters long a character vector is. For example:
 
 ```{r}
-library(dslabs)
-data(murders)
 char_len <- nchar(murders$state)
-char_len[1:5]
+head(char_len)
 ```
+
+The function `ifelse` is useful because you convert a vectors of logicals into something else. For example, some datasets use the number -999 to denote NA. A bad practice! You can covert the -999 in a vector to NA using the following `ifelse` call:
+```{r}
+x <- c(2, 3, -999, 1, 4, 5, -999, 3, 2, 9)
+ifelse(x == -999, NA, x)
+```
+If the entry is -999 it returns NA, otherwise it returns the entry.
+
 `@instructions`
 We will combine a number of functions for this exercise.
-Use the `ifelse` function to write a line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters.
+- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters.
 
 `@hint`
-Use the `nchar` function to calculate how many characters are in a string.
+Use a call to `nchar` as the first argument of the `ifelse` function to calculate. Check to see if it's larger than 8. Then you use `murders$abb` and `murders$state` in the second and third arguments to return either the abbreviation or state name depending on the number of characters.
 
 `@pre_exercise_code`
 ```{r}
@@ -129,8 +135,9 @@ new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 ```{r}
 test_error()
 test_function("ifelse")
-test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse.")
+test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse. The objects being used inside the function should be `murders$state` and `murders$abb`")
 success_msg("Woohoo! You're becoming a pro at this!")
+
 ```
 ---
 ## Defining functions
@@ -145,13 +152,37 @@ skills: 1
 
 You will encounter situations in which the function you need does not already exist. R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
 
+To define functions we use `function`. For example the following function adds 1 to the number it receives as an argument:
+
+```{r}
+my_func <- function(x){
+    y <- x + 1
+    y
+}
+```
+
+The last value in the function, in this case that stored in `y`, gets returned.
+
+If you run the code above R does not show anything. This means you defined the function. You can test it out like this:
+
+```{r}
+my_func(5)
+```
+
 `@instructions`
 We will define a function `sum_n` for this exercise.
-Create a function `sum_n` that for any given value, say `n`, computes the sum of the integers from 1 to n. Use the function to determine the sum of integers from 1 to 5,000.
+- Create a function `sum_n` that for any given value, say `n`, creates the vector `1:n`, and then computes the sum of the integers from 1 to n. 
+- Use the function you just defined to determine the sum of integers from 1 to 5,000.
 
 `@hint`
 - To make it inclusive, use {}. 
-- Use code `sum_n <- function(n){sum(1:n)}` 
+- You can define the function like this:
+```
+sum_n <- function(n){
+    x <- 1:n
+    sum(x)
+}
+```
 
 `@pre_exercise_code`
 ```{r}
@@ -169,7 +200,10 @@ Create a function `sum_n` that for any given value, say `n`, computes the sum of
 `@solution`
 ```{r}
 # Create function called `sum_n`
-sum_n <- function(n){sum(1:n)}
+sum_n <- function(n){
+    x <- 1:n
+    sum(x)
+}
 
 # Determine the sum of integers from 1 to 5000
 sum_n(5000)
@@ -190,6 +224,17 @@ success_msg("This is awesome! Let's get to the next exercise.")
 ---
 ## Defining functions continued...
 
+We will make another function for this exercise. We will define a function `altman_plot` that takes two arguments `x` and `y` and plots the difference `y-x` in the y-axis against the sum `x+y` in the x-axis. 
+
+You can define functions with as many variables as you want. For example, here we need at least two, `x` and `y`. The following function plot log transformed values:
+
+```{r}
+log_plot <- function(x, y){
+    plot(log10(x), log10(y))
+}
+```
+
+This function does not return anything. It just makes a plot.
 ```yaml
 type: NormalExercise
 key: ea64484119
@@ -200,11 +245,16 @@ skills: 1
 
 `@instructions`
 We will make another function for this exercise.
-Create a function `altman_plot` that takes two arguments x and y and plots the difference(y-axis) against the sum(x-axis).
-
+- Create a function `altman_plot` that takes two arguments `x` and `y` and plots `y-x` versus `x+y`.
 
 `@hint`
-The command for plot, is `{plot(x+y, y-x)}`. 
+The command inside the function should be: `plot(x + y, y - x)`. Remember to define a function you use
+
+```{r}
+altman_plot <- function(var_1, var_2){
+    # code that uses var_1 and var_2
+}
+```
 
 `@pre_exercise_code`
 ```{r}
@@ -220,8 +270,9 @@ The command for plot, is `{plot(x+y, y-x)}`.
 `@solution`
 ```{r}
 # Create `altman_plot` 
-altman_plot <- function(x, y){plot(x+y, y-x)}
-
+altman_plot <- function(x, y){
+    plot(x + y, y - x)
+}
 ```
 
 `@sct`
@@ -235,6 +286,20 @@ success_msg("That's great! You can also play around with the variables and put i
 ---
 ## Lexical scope
 
+Lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when.
+
+```{r}
+x <- 8
+my_func <- function(y){
+    x <- 9
+    print(x)
+    y + x
+}
+my_funct(x)
+print(x)
+```
+Note that we `x` is 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside. 
+
 ```yaml
 type: NormalExercise
 key: f13e10ed3c
@@ -245,9 +310,18 @@ skills: 1
 
 `@instructions`
 The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when. After running the code below, what is the value of `x`?
+```{r}
+x <- 3
+my_func <- function(y){
+    x <- 5
+    y
+    print(x)
+}
+my_funct(x)
+```
 
 `@hint`
-Run the code.
+Run the code and then `print(x)`. You will have the answer.
 
 `@pre_exercise_code`
 ```{r}
@@ -258,9 +332,9 @@ x <- 3
 ```{r}
 # Run this code 
 x <- 3
-my_func <- function(y){
-x <- 5
-y+5
+    my_func <- function(y){
+    x <- 5
+    y+5
 }
 
 # Print value of x 
@@ -268,7 +342,7 @@ y+5
 
 `@solution`
 ```{r}
-# Print value of x
+# Show value of x
 x
 ```
 
@@ -281,6 +355,8 @@ success_msg("Good job!")
 ---
 ## For loops
 
+In the next exercise we are going to write a for-loop. In that for-loop we are going to call a function. We define that function here. 
+
 ```yaml
 type: NormalExercise
 key: efe45f5c56
@@ -290,9 +366,8 @@ skills: 1
 ```
 
 `@instructions`
-We are soon going to write a `for` loop. In that `for` loop we are going to call a function. We define that function here. 
-Write a function `compute_s_n` that for any given $n$ computes the sum `S_n = 1^2 + 2^2 + 3^2 +...+ n^2`. 
-Report the value of the sum when `n=10`.
+Write a function `compute_s_n` that for any given $n$ computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$. 
+Report the value of the sum when `n <- 10`.
 
 `@hint`
 What is it when you calculate by hand, does your function agree?
