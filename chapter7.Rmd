@@ -480,7 +480,7 @@ select(my_states, state, rate, rank)
 
 The pipe `%>%` permits us to perform both operation sequentially and without having to define an intermediate variable `my_states`
 
-For exmple we could have mutated and selected in the same line like this:
+For example we could have mutated and selected in the same line like this:
 
 ```{r}
 mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>% 
