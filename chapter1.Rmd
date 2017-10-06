@@ -82,7 +82,7 @@ lang: r
 xp: 100
 skills: 1
 ```
-What is the sum of the first $n$ positive integers? 
+What is the sum of the first 1000 positive integers? 
 
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
