@@ -502,14 +502,12 @@ s_n <- vector("numeric", 25)
 for(i in 1:25){
   s_n[i] <- compute_s_n(i)
 }
-
 ```
 
 `@sct`
 ```{r}
 test_error()
 test_object("compute_s_n", undefined_msg = "Make sure to define compute_s_n first.", incorrect_msg = "Are you assigning the correct values to x? ")
-test_object("n", incorrect_msg = "Check code.")
 test_object("s_n", incorrect_msg = "Have you assigned values to n and x?")
 test_function("vector")
 fun_def <- ex() %>% check_fun_def("compute_s_n")
@@ -545,7 +543,7 @@ skills: 1
 ```
 
 `@instructions`
-- Define `n <- 1:25`
+- Define `n <- 1:25`. Note that with this we can use `for(i in n)`
 - Use a for loop to save the sums into a vector `s_n <- vector("numeric", 25)`
 - Plot `s_n` versus `n`.
 
