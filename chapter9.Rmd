@@ -177,7 +177,8 @@ We will define a function `sum_n` for this exercise.
 `@hint`
 - To make it inclusive, use {}. 
 - You can define the function like this:
-```
+
+```{r}
 sum_n <- function(n){
     x <- 1:n
     sum(x)
