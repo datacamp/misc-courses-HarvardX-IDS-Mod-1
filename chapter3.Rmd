@@ -732,7 +732,8 @@ The concept of coercion is a very important one. Watching the video, we learned 
 
 As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
 
-We can coerce R into changing characters to integers and vice-versa. The code, `as.integer(x)` helps us do this. 
+We can avoid issues with coercion in R by changing characters to integers and vice-versa. This is known as typecasting. The code, `as.integer(x)` helps us convert character strings to integers. There is an equivalent function that converts integers to strings, `as.character(x)`.
+
 Let's practice doing this!
 
 ```yaml
