@@ -78,7 +78,7 @@ skills: 1
 
 
 `@instructions`
-The temperatures listed are from Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
+The temperatures we stored in `temp` are from the cities Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
 - Create a vector with these city names and call the object `city`. 
 
 `@hint`
@@ -142,7 +142,8 @@ skills: 1
 
 `@instructions`
 Use the `names` function and the objects defined in the previous exercises to associate the temperature data with its corresponding city.
-(You can go back to the previous questions and copy the objects stored.)
+(You can go back to the previous questions and copy the objects stored.) Note: to see what happened, after assigning the city
+names to the temp vector, try printing the temp vector to understand how the names are associated with elements of temp.
 
 `@hint`
 Assign names to the numeric values. 
