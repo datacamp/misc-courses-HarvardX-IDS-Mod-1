@@ -214,7 +214,6 @@ sum_n(5000)
 `@sct`
 ```{r}
 test_error()
-test_object("sum_n", undefined_msg = "Make sure you define sum_n!", incorrect_msg = "Use commands function(n) and sum.")
 test_function("sum_n", incorrect_msg = "You need to check for the sum of 5000 integers!")
 fun_def <- ex() %>% check_fun_def("sum_n")
 fun_def %>% check_arguments()
