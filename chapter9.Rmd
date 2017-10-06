@@ -387,7 +387,7 @@ Then you evaluate it at 10: `compute_s_n(10)`
 
 `@sample_code`
 ```{r}
-# Here is a function that adds numbers from 1 to n
+# Here is an example of function that adds numbers from 1 to n
 example_func <- function(n){
     x <- 1:n
     sum(x)
@@ -396,7 +396,7 @@ example_func <- function(n){
 # Here is the sum of the first 100 numbers
 example_func(100)
 
-# Write the function with argument n, with the above mentioned specifications and store it in `compute_s_n` 
+# Write a function compute_s_n that with argument n and returns of 1 + 2^2 + ...+ n^2
 
 # Report the value of the sum when n=10
 
@@ -427,8 +427,9 @@ compute_s_n(10)
 `@sct`
 ```{r}
 test_error()
-test_object("compute_s_n", undefined_msg = "Store it in `compute_s_n`.", incorrect_msg = "Make sure you include both arguments in the function command.")
-test_output_contains("compute_s_n(10)", incorrect_msg = "Place 10 instead of n in the function.")
+test_function_result("compute_s_n", incorrect_msg ="Make sure your function is producing the correct output.")
+test_output_contains("compute_s_n(10)", incorrect_msg = "Make sure your function is producing the correct output.")
+test_student_typed("compute_s_n(10)", not_typed_msg = "Make sure you evaluate the function at 10 in the last line.")
 fun_def <- ex() %>% check_fun_def("compute_s_n")
 fun_def %>% check_arguments()
 fun_def %>% check_call(10) %>% check_call(100) %>% check_call(1000)
@@ -509,7 +510,7 @@ for(i in 1:25){
 ```{r}
 test_error()
 test_object("compute_s_n", undefined_msg = "Make sure to define compute_s_n first.", incorrect_msg = "Are you assigning the correct values to x? ")
-test_object("s_n", incorrect_msg = "Have you assigned values to n and x?")
+test_object("s_n", incorrect_msg = "You are getting the incorrect values. Check that you are calling the function correctly.")
 test_function("vector")
 fun_def <- ex() %>% check_fun_def("compute_s_n")
 fun_def %>% check_arguments()
@@ -618,10 +619,10 @@ skills: 1
 ```
 
 `@instructions`
-- Confirm that `s_n` and `n(n+1)(2n+1)/6` are the same using the `identical` command.
+- Confirm that `s_n` and $n(n+1)(2n+1)/6$ are the same using the `identical` command.
 
 `@hint`
-`s_n` is a vector. Because `n` is a vector `n(n+1)(2n+1)/6)` is a vector. You can compare two vectors `x` and `y` with `identical(x, y)`.
+`s_n` is a vector. Because `n` is a vector `n*(n+1)*(2n+1)/6` is a vector. You can compare two vectors `x` and `y` with `identical(x, y)`.
 
 `@pre_exercise_code`
 ```{r}
