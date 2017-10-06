@@ -14,7 +14,6 @@ skills: 1
 What will this conditional expression return?
 Run it from the console. 
 
-
 ```{r}
 x <- c(1,2,-3,4)
 if(all(x>0)){
@@ -31,7 +30,7 @@ if(all(x>0)){
 - None of the above 
 
 `@hint`
-Are the numbers stored in `x` positive or not?
+Are the numbers stored in `x` all positive? If not the `print` after the `else` is evaluated.
 
 `@pre_exercise_code`
 ```{r}
@@ -40,10 +39,10 @@ Are the numbers stored in `x` positive or not?
 
 `@sct`
 ```{r}
-msg1 = "Look at the values again."
+msg1 = "Are all the entries in `x` positive?"
 msg2 = "Awesome! That is correct."
-msg3 = "Check the question again."
-msg4 = "Check the values in x once more."
+msg3 = "In R you can vectorize logical relantions like this. There is no reason to have `NA`s"
+msg4 = "If `all(x>0)` is `TRUE` or `FALSE` something is returned."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
