@@ -38,7 +38,7 @@ states <- sort(states)
 # Report the first alphabetical value  
 states[1]
 
-# Access `population` values from the dataset and store it in `pop`
+# Access population values from the dataset and store it in pop
 
 # Sort the object and save it in the same object 
 
@@ -48,7 +48,7 @@ states[1]
 
 `@solution`
 ```{r}
-# Access the `state` variable and store it in an object 
+# Access the state variable and store it in an object 
 states <- murders$state 
 
 # Sort the object alphabetically and redefine the object 
@@ -57,7 +57,7 @@ states <- sort(states)
 # Report the first alphabetical value  
 states[1]
 
-# Access `population` values from the dataset and store it in `pop`
+# Access population values from the dataset and store it in pop
 pop <- murders$population
 
 # Sort the object and save it in the same object
@@ -114,9 +114,9 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Access `population` from the dataset and store it in `pop`
+# Access population from the dataset and store it in pop
 
-# Use the command `order`, to order `pop` and store in object `o`
+# Use the command order, to order pop and store in object o
 
 # Find the index number of the entry with the smallest population size
 
@@ -124,10 +124,10 @@ data(murders)
 
 `@solution`
 ```{r}
-# Access `population` from the dataset and store it in `pop`
+# Access population from the dataset and store it in pop
 pop <- murders$population
 
-# Use the command `order`, to order `pop` and store in object `o`
+# Use the command order, to order pop and store in object o
 o <- order(pop)
 
 # Find the index number of the entry with the smallest population size
@@ -178,7 +178,7 @@ data(murders)
 # Find the smallest value for variable total 
 which.min(murders$total)
 
-# Find the smallest value for `population`
+# Find the smallest value for population
 
 ```
 
@@ -187,7 +187,7 @@ which.min(murders$total)
 # Find the smallest value for variable total 
 which.min(murders$total)
 
-# Find the smallest value for `population`
+# Find the smallest value for population
 which.min(murders$population)
 
 ```
@@ -232,20 +232,20 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Define the variable `i` to be the index of the smallest state
+# Define the variable i to be the index of the smallest state
 i <- which.min(murders$population)
 
-# Define variable `states` to hold the states
+# Define variable states to hold the states
 
 # Use the index you just defined to find the state with the smallest population
 ```
 
 `@solution`
 ```{r}
-# Define the variable `i` to be the index of the smallest state
+# Define the variable i to be the index of the smallest state
 i <- which.min(murders$population)
 
-# Define variable `states` to hold the states
+# Define variable states to hold the states
 states <- murders$state
 
 # Use the index you just defined to find the state with the smallest population
@@ -310,10 +310,10 @@ city_temps <- data.frame(name = city, temperature = temp)
 # Define a variable states to be the state names 
 
 
-# Define a variable `ranks` to determine the population size ranks 
+# Define a variable ranks to determine the population size ranks 
 
 
-# Create a data frame `my_df` with the state name and its rank
+# Create a data frame my_df with the state name and its rank
 
 ```
 
@@ -331,10 +331,10 @@ city_temps <- data.frame(name = city, temperature = temp)
 # Define a variable states to be the state names from the murders data frame
 states <- murders$state
 
-# Define a variable `ranks` to determine the population size ranks 
+# Define a variable ranks to determine the population size ranks 
 ranks <- rank(murders$population)
 
-# Create a data frame `my_df` with the state name and its rank
+# Create a data frame my_df with the state name and its rank
 my_df <- data.frame(states = states, ranks = ranks)
 ```
 
@@ -388,13 +388,13 @@ data(murders)
 # Define a variable states to be the state names from the murders data frame
 
 
-# Define a variable `ranks` to determine the population size ranks 
+# Define a variable ranks to determine the population size ranks 
 
 
 # Define a variable ind to store the indexes needed to order the population values
 
 
-# Create a data frame my_d with the state name and its rank and ordered from least populous to most 
+# Create a data frame my_df with the state name and its rank and ordered from least populous to most 
 
 ```
 
@@ -403,13 +403,13 @@ data(murders)
 # Define a variable states to be the state names from the murders data frame
 states <- murders$state
 
-# Define a variable `ranks` to determine the population size ranks 
+# Define a variable ranks to determine the population size ranks 
 ranks <- rank(murders$population)
 
-# Define a variable `ind` to store the indexes needed to order the population values
+# Define a variable ind to store the indexes needed to order the population values
 ind <- order(murders$population)
 
-# Create a data frame `my_df` with the state name and its rank and ordered from least populous to most 
+# Create a data frame my_df with the state name and its rank and ordered from least populous to most 
 my_df <- data.frame(states = states[ind], ranks = ranks[ind])
 
 ```
@@ -477,7 +477,7 @@ str(na_example)
 # Find out the mean of the entire dataset 
 mean(na_example)
 
-# Use `is.na` to create a logical index ind that tells which entries are NA
+# Use is.na to create a logical index ind that tells which entries are NA
 
 # Determine how many NA ind has using the sum function
 
@@ -495,7 +495,7 @@ str(na_example)
 # Find out the mean of the entire dataset 
 mean(na_example)
 
-# Use `is.na` to create an logical index ind that tells which entries are NA
+# Use is.na to create an logical index ind that tells which entries are NA
 ind <- is.na(na_example)
 
 # Determine how many NA ind has using the sum function
