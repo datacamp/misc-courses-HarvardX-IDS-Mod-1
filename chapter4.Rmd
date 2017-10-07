@@ -407,7 +407,7 @@ states <- murders$state
 ranks <- rank(murders$population)
 
 # Define a variable `ind` to store the indexes needed to order the population values
-ind <- order(states)
+ind <- order(murders$population)
 
 # Create a data frame `my_df` with the state name and its rank and ordered from least populous to most 
 my_df <- data.frame(states = states[ind], ranks = ranks[ind])
