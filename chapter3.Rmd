@@ -733,7 +733,7 @@ The concept of coercion is a very important one. Watching the video, we learned 
 
 As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
 
-We can avoid issues with coercion in R by changing characters to integers and vice-versa. This is known as typecasting. The code, `as.integer(x)` helps us convert character strings to integers. There is an equivalent function that converts integers to strings, `as.character(x)`.
+We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to integers. There is an equivalent function that converts integers to strings, `as.character(x)`.
 
 Let's practice doing this!
 
@@ -754,7 +754,7 @@ x <- c(1, 3, 5,"a")
 ```
 
 - Notice that `x` has been coerced into a character string.
-- Convert `x` to a vector of integers using the `as.integer()` function.
+- Convert `x` to a vector of integers using the `as.numeric()` function.
 
 `@hint`
 Make sure you put the numbers within "". 
@@ -767,9 +767,13 @@ Make sure you put the numbers within "".
 `@sample_code`
 ```{r}
 # Define the vector x
+x <- c(1, 3, 5,"a")
 
+# Note that the x is character vector
+x
 
 # Typecast the vector to get an integer vector
+# You will get a warning but that is ok
 
 ```
 
@@ -778,8 +782,12 @@ Make sure you put the numbers within "".
 # Define the vector x
 x <- c(1, 3, 5,"a")
 
+# Note that the x is character vector
+x
+
 # Typecast the vector to get an integer vector
-as.integer(x)
+# You will get a warning but that is ok
+as.numeric(x)
 
 ```
 
@@ -787,8 +795,8 @@ as.integer(x)
 ```{r}
 test_error()
 test_object("x", undefined_msg = "Make sure to define x first.", incorrect_msg = "Check the values stored in `x`.")
-test_output_contains("as.integer(x)", incorrect_msg = "Check the code again.")
-test_function("as.integer")
+test_output_contains("as.numeric(x)", incorrect_msg = "Check the code again.")
+test_function("as.numeric")
 success_msg("Awesome! Doesn't that feel wonderful? Now, you can try changing it back to character, using the code `as.character(x)`.")
 ```
 
