@@ -1,5 +1,5 @@
 ---
-title       : Basic Data Manipulation 
+title       : Basic Data Wrangling
 description : Just as the name suggests, we're going to practice the basics of data manipulation here.
 ---
 ## dplyr
@@ -409,9 +409,9 @@ skills: 1
 
 
 `@instructions`
-- Add a murder rate and rate column as done before
+- Add a murder rate column and a rank column as done before
 - Create a table, call it `my_states`, that satisfies both the conditions: it is in the Northeast or West and the murder rate is less than 1. 
-- Use select to show only the state name, the rank and the rate 
+- Use select to show only the state name, the rate and the rank 
 
 `@hint`
 Use the `my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)` code. Then use `select`. The columns you want are state, rate and rank.
@@ -426,7 +426,7 @@ data(murders)
 `@sample_code`
 ```{r}
 # add the rate column
-murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
+murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
 # Create a table, call it my_states, that satisfies both the conditions 
 
@@ -436,7 +436,7 @@ murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
 `@solution`
 ```{r}
 # add the rate column
-murders <- mutate(murders, rate =  total / population * 100000, rank = (-rate))
+murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
 # Create a table, call it `my_states`, that satisfies both the conditions 
 my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)
@@ -450,7 +450,7 @@ select(my_states, state, rate, rank)
 test_error()
 test_function("filter")
 test_object("my_states", undefined_msg = "Define my_states first!", incorrect_msg = "Use the filter, %in% and < commands.")
-test_output_contains("select(my_states, state, rate, rank)", incorrect_msg = "You need the use the select function. You want to see state, rate, and rank.")
+test_output_contains("select(my_states, state, rate, rank)", incorrect_msg = "You need the use the select function on `my_states`. You want to see state, rate, and rank.")
 success_msg("Now you know how to combine functions and use them to get specific answers. Let's try it one more time!")
 ```
 
