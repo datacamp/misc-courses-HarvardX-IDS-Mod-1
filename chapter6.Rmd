@@ -103,6 +103,7 @@ which(low)
 `@sct`
 ```{r}
 test_error()
+test_output_contains("which(low)", incorrect_msg = "Make sure you use `which` on the correct logical vector!")
 test_function("which", incorrect_msg = "Use the command from the instructions.")
 success_msg("Awesome!")
 ```
