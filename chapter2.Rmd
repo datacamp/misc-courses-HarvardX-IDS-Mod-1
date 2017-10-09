@@ -62,7 +62,7 @@ In the previous question, we saw the different variables that are a part of this
 
 `@instructions`
 For this question, we will use the `names()` function to extract the column names of the `murders` data frame.
-What are the column names used by the `murders` data frame for the five variables?
+- What are the column names used by the `murders` data frame for the five variables?
 
 `@hint`
 Make sure you put the name of the dataset - `murders` - in parentheses after names. 
@@ -80,7 +80,7 @@ data(murders)
 library(dslabs)
 data(murders)
 
-# Checking the column names 
+# Use the function names to extract the variable names 
 
 ```
 
@@ -91,7 +91,7 @@ data(murders)
 library(dslabs)
 data(murders)
 
-# Checking the column names 
+# Use the function names to extract the variable names 
 names(murders)
 ```
 
