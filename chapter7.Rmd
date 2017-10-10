@@ -1,6 +1,6 @@
 ---
 title       : Basic Data Wrangling
-description : Just as the name suggests, we're going to practice the basics of data manipulation here.
+description : We provide a brief introduction to the dplyr package.
 ---
 ## dplyr
 
