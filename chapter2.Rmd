@@ -182,6 +182,14 @@ An important lesson you should learn early on is that there are multiple ways of
 There are also other ways to variables from a data frame. For example we can use the square brackets `[[`
 instead of the accessor `$`. Example code is included in the editor.
 
+Now, if you instead try to access a columns with just one bracket 
+
+```{r}
+murders["population"]
+```
+R returns a subset of the original data frame containing just this column. This new ojbect will be of class `data.frame` rather than a vector. To access the column itself you need to use either the `$` accessor or the double square brackets `[[`. 
+
+This is an examaple of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
 
 ```yaml
 type: NormalExercise
@@ -193,7 +201,7 @@ skills: 1
 
 
 `@instructions`
-Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 
+- Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 
 Then use the identical function to determine if `a`, as defined in the previous exercises, and `b` are the same.
 
 `@hint`
