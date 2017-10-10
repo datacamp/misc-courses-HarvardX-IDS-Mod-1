@@ -275,7 +275,7 @@ skills: 1
 
 
 `@instructions`
-For this question we will combine two functions, in nested way, to determine the number of unique categories.
+- For this question we will combine two functions, in a nested way, to determine the number of unique categories.
 Use the functions `levels` and `length` to determine the number of regions defined by this dataset and contained in `murders$region`. 
 
 `@hint`
@@ -331,7 +331,7 @@ skills: 1
 
 `@instructions`
 We will use the `table` function to answer this question.
-Use this function in one line of code to create a table showing the number of states per region.
+- Use the `table` function in one line of code to create a table showing the number of states per region.
 
 `@hint`
 Extract the variable *region* from the `murders` dataset using `murders$region`. If you apply the function `table` function to this object it will count the number it times each region appears. 
