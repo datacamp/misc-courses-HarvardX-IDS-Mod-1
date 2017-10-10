@@ -107,7 +107,7 @@ If the entry is -999 it returns NA, otherwise it returns the entry.
 
 `@instructions`
 We will combine a number of functions for this exercise.
-- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters.
+- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters. So, for example, where the original vector has Massachusetts (13 characters), the new vector should have MA. But where the original vector has New York (8 characters), the new vector should have New York as well. 
 
 `@hint`
 Use a call to `nchar` as the first argument of the `ifelse` function to calculate. Check to see if it's larger than 8. Then you use `murders$abb` and `murders$state` in the second and third arguments to return either the abbreviation or state name depending on the number of characters.
@@ -122,6 +122,7 @@ data(murders)
 ```{r}
 # Assign the state abbreviation when the state name is longer than 8 characters 
 
+
 ```
 
 `@solution`
@@ -135,7 +136,7 @@ new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 ```{r}
 test_error()
 test_function("ifelse")
-test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse. The objects being used inside the function should be `murders$state` and `murders$abb`. Also we are looking for `nchar(murders$state) strictly larger than 8.")
+test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse. The objects being used inside the function should be `murders$state` and `murders$abb`. Also we are looking for `nchar(murders$state)` strictly larger than 8.")
 success_msg("Woohoo! You're becoming a pro at this!")
 
 ```
