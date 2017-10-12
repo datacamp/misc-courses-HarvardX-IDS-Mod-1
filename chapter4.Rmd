@@ -432,7 +432,7 @@ success_msg("Great job! See how well you're building on your knowledge of R!")
 The `na_example` dataset represents a series of counts. It is included in the *dslabs* package. You can quickly examine the object using
 
 ```{r}
-library(na_example)
+library(dslabs)
 data(na_example)
 str(na_example)
 ```
