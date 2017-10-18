@@ -143,7 +143,7 @@ skills: 1
 
 `@instructions`
 - Compute the per 100,000 murder rate for each state and store it in the object `murder_rate`. 
-- Then compute the average murder rate for the US using the function `mean`. What is this average?
+- Then compute the average of the state murder rates for the US using the function `mean`. What is this average?
 
 `@hint`
 You can use vectorization to compute the rate. If `tot` has the total murders and `pop` has the population for each state, then `tot/pop*100000` has the rate each state. Then you can simply compute the average using `mean`.
