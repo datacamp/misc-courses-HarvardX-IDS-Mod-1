@@ -610,7 +610,7 @@ test_function("mutate")
 test_function("filter")
 test_function("select")
 test_object("my_states", undefined_msg = "Define my_states!", incorrect_msg = "Make sure you put pipes to put everything in one line.")
-test_pipe(num = 2, absent_msg = "We want you to use two pipes %>%", insuf_msg = "We want you to use two pipes %>%")
+test_pipe(num = 3, absent_msg = "We want you to use three pipes %>%", insuf_msg = "We want you to use three pipes %>%")
 success_msg("This is absolutely awesome! You now know how to use basic data manipulation techniques in R.")
 ```
 
