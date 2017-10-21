@@ -539,6 +539,7 @@ filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%
 test_error()
 test_function("filter", incorrect_msg = "Everything needs to be in one line! Use a pipe to help!")
 test_output_contains("filter(murders, region %in% c('Northeast', 'West') & rate < 1) %>%  select(state, rate, rank)")
+test_pipe(num = 1, absent_msg = "We want you to use a pipe %>%", insuf_msg = "We want you to use a pipe %>%")
 success_msg("You're getting a pretty good hang of stuff now!")
 ```
 ---
@@ -609,6 +610,7 @@ test_function("mutate")
 test_function("filter")
 test_function("select")
 test_object("my_states", undefined_msg = "Define my_states!", incorrect_msg = "Make sure you put pipes to put everything in one line.")
+test_pipe(num = 2, absent_msg = "We want you to use two pipes %>%", insuf_msg = "We want you to use two pipes %>%")
 success_msg("This is absolutely awesome! You now know how to use basic data manipulation techniques in R.")
 ```
 
