@@ -450,7 +450,7 @@ Now we are going to compute the sum of the squares for several values of $n$. We
 ```{r}
 results <- vector("numeric", 10)
 n <- 10
-for(i in 1:10){
+for(i in 1:n){
     x <- 1:i
     results[i] <- sum(x)
 }
