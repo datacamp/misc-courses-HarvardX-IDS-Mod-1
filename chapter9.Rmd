@@ -300,7 +300,7 @@ my_func <- function(y){
     print(x)
     y + x
 }
-my_funct(x)
+my_func(x)
 print(x)
 ```
 Note that when we define `x` as 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside. 
@@ -322,7 +322,7 @@ my_func <- function(y){
     y
     print(x)
 }
-my_funct(x)
+my_func(x)
 ```
 
 `@hint`
