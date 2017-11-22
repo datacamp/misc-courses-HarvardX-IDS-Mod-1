@@ -8,15 +8,7 @@ difficulty level     : 1
 time needed          : Approximately 1 hour for each section 
 ---
 
---- key:45a0d2297b
-## Using variables 1
-
---- key:4360ba27cf
-type: NormalExercise
-xp: 100
-skills: 1
-```
-
+--- type:NormalExercise lang:r xp:100 skills:1 key:0141a08eb0
 ## Using variables 1
 
 What is the sum of the first $n$ positive integers? 
@@ -25,22 +17,22 @@ We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 
 *** =instructions
- 
-Define 'n=100' and then use R to compute the sum of 1 through 100 using the given formula.What is the sum?
 
+Define 'n=100' and then use R to compute the sum of 1 through 100 using the given formula.What is the sum?
 
 *** =hint
 
 Follow the sample code in the editor. 
 
-
 *** =pre_exercise_code
 ```{r}
+
 # no pec
-``` 
+```
 
 *** =sample_code
 ```{r}
+
 # Here is how you compute the sum for the first 20 integers
 20*(20+1)/2 
 
@@ -52,7 +44,6 @@ n <- 25
 n*(n+1)/2
 
 # Below, write your code to calculate the sum of the first 100 integers 
-
 ```
 
 *** =solution
@@ -71,4 +62,3 @@ test_object("n", incorrect_msg = "Make sure that you use `n` as your variable na
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
 ```
-----
