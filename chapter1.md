@@ -1,22 +1,8 @@
 ---
 title                : R Basics 
-author_field         : Rafa
 description          : In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
-author_bio           : Rafa's awseome
-university           : HarvardX 
-difficulty level     : 1
-time needed          : Approximately 1 hour for each section 
----
 
---- key:45a0d2297b
-## Using variables 1
-
---- key:4360ba27cf
-type: NormalExercise
-xp: 100
-skills: 1
-```
-
+--- type:NormalExercise lang:r xp:100 skills:1 key:29d7d854a3
 ## Using variables 1
 
 What is the sum of the first $n$ positive integers? 
@@ -24,20 +10,17 @@ What is the sum of the first $n$ positive integers?
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 
+
 *** =instructions
- 
 Define 'n=100' and then use R to compute the sum of 1 through 100 using the given formula.What is the sum?
 
-
 *** =hint
-
-Follow the sample code in the editor. 
-
+Follow the sample code in the editor.
 
 *** =pre_exercise_code
 ```{r}
 # no pec
-``` 
+```
 
 *** =sample_code
 ```{r}
@@ -71,4 +54,3 @@ test_object("n", incorrect_msg = "Make sure that you use `n` as your variable na
 test_error() 
 success_msg("Good job ! Let`s apply this to another question")
 ```
-----
