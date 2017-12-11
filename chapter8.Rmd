@@ -86,7 +86,7 @@ plot(log10_population, log10_total_gun_murders)
 test_error()
 test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Transform variable using log10. Since we are taking the log do not divide by a million.")
 test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_murders first.", incorrect_msg = "Transform variable using log10.")
-test_function("plot",args=c("x","y"), incorrect_msg = "Scatter population on murders.",index=2)
+test_function("plot",args=c("x","y"), incorrect_msg = "Scatter population on murders.")
 success_msg("Doesn't that plot look better!")
 ```
 
