@@ -564,7 +564,7 @@ separated by three `%>%`.
 - A call to `select` that keeps only the columns with the stata name, the murder rate and the rank. 
 
 The line should look something like this `my_states <- murders %>%` mutate something `%>%` filter something `%>%` select something.
-
+Please, make sure the columns in the final data frame must be in the order: `state`, `rate`, `rank`.
 
 `@hint`
 The following pieces of code should be joined by pipes:
