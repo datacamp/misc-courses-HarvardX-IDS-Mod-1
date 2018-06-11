@@ -620,7 +620,7 @@ success_msg("This is absolutely awesome! You now know how to use basic data mani
 ## End of Assessment 7
 
 ```yaml
-type: PlainMultipleChoiceExercise
+type: PureMultipleChoiceExercise
 lang: r
 xp: 0
 skills: 1
@@ -632,22 +632,17 @@ You can now close this window to go back to the <a href='https://www.edx.org/cou
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
-`@instructions`
-- Awesome
+`@possible_answers`
+- [Awesome]
 - Nope
 
 `@hint`
 - No hint necessary!
 
-`@pre_exercise_code`
-```{r}
-# no pec
-```
 
-`@sct`
-```{r}
-msg1 = "Great! Now navigate back to the course on edX!"
-msg2 = "Now navigate back to the course on edX!"
-test_mc(correct = 1, feedback_msgs = c(msg1,msg2))
-```
+`@feedback`
+
+- Great! Now navigate back to the course on edX!
+- Now navigate back to the course on edX!
+
 
