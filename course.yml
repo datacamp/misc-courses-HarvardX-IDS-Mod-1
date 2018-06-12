@@ -3,5 +3,5 @@ description      : "Find the complete course on edx.org <a href='https://www.edx
 university       : HarvardX
 difficulty_level : 2
 time_needed      : 8 hours
-from             : 'r-base-prod:28'
+from             : 'r-base-prod:v1.0.0'
 programming language : R 
