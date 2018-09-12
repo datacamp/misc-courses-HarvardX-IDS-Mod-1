@@ -356,7 +356,7 @@ skills: 1
 
 `@instructions`
 This time we will use just the `:` operator.
-Use the `:` operator to create a sequence of consecutive integers starting 12 and ending at 73 and save it in an object `x`.
+Use the `:` operator to create a sequence of consecutive integers starting 12 and ending at 73 and save it in an object `x`, then determine the length of object x.
 
 `@hint`
 Save the sequence in an object called `x`. 
