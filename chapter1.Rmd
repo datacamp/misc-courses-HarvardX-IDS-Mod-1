@@ -287,7 +287,7 @@ WARNING: if you continue the assessments by clicking on the arrow to get the nex
 
 `@possible_answers`
 - [Awesome]
-- [Nope]
+- Nope
 
 `@feedback`
 - Great! Now navigate back to the course on edX!
