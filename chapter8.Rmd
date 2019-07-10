@@ -208,11 +208,11 @@ xp: 50
 skills: 1
 ```
 
-This is the end of the programming assignment for this section. 
+This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.
 
-You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
+Click on "Awesome" to get the "points" for this question and then return to the course on edX.
 
-If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
+You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
 
 `@hint`
 - No hint necessary!
