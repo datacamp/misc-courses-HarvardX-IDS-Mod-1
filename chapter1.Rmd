@@ -19,7 +19,7 @@ What is the sum of the first $n$ positive integers?
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 `@instructions`
-- Define 'n=100'
+- Define `n=100`
 - Then use R to compute the sum of 1 through 100 using the formula $ n(n+1)/2$. What is the sum?
 
 `@hint`
