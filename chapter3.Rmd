@@ -614,7 +614,7 @@ xp: 100
 skills: 1
 ```
 
-We have discussed the *numeric* class. We just saw that the `seq` function can generate objects of this class. For another example type 
+We have discussed the *numeric* class. We just saw that the `seq` function can generate objects of this class. For another example, type 
 
 ```{r}
 class(seq(1, 10, 0.5))
@@ -740,7 +740,7 @@ The concept of coercion is a very important one. Watching the video, we learned 
 
 As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
 
-We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to integers. There is an equivalent function that converts integers to strings, `as.character(x)`.
+We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to integers. There is an equivalent function that converts its argument to a string, `as.character(x)`.
 
 Let's practice doing this!
 
