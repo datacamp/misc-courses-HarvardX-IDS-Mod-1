@@ -278,9 +278,9 @@ skills: 1
 
 This is the end of the programming assignment for this section. 
 
-You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
+You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
 
-If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
+WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
 `@hint`
 - No hint necessary!
