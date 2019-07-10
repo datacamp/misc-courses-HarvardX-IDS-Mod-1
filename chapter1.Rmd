@@ -179,7 +179,7 @@ xp: 100
 skills: 1
 ```
 
-In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
+In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log base 2 of `16` which is `4`. 
 
 In R it is often useful to evaluate a function inside another function. 
 For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. 
