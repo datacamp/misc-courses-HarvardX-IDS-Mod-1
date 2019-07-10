@@ -1,8 +1,8 @@
 ---
-title                : R Basics 
-description          : In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R. 
-
+title: 'R Basics'
+description: 'In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R.'
 ---
+
 ## Using variables 1
 
 ```yaml
@@ -16,7 +16,6 @@ skills: 1
 What is the sum of the first $n$ positive integers? 
 
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
-
 
 `@instructions`
 - Define 'n=100'
@@ -72,7 +71,9 @@ test_output_contains("5050", incorrect_msg = "You are not providing a formula th
 test_student_typed("n*(n+1)/2", times = 3, not_typed_msg = "Make sure you type the equation. Look at the example code. And don't erase the example code.")
 success_msg("Good job! Let`s apply this to another question.")
 ```
+
 ---
+
 ## Using variables 2
 
 ```yaml
@@ -82,6 +83,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 What is the sum of the first 1000 positive integers? 
 
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
@@ -89,7 +91,6 @@ We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 `@instructions`
 - Use the same formula as the last exercise but substitute `n`
 - Instead of typing the result, use the formula and defined variable.
-
 
 `@hint`
 Use the same R code as you used in the first question after changing the value of `n`.
@@ -119,17 +120,18 @@ test_student_typed("n*(n+1)/2", times = 1, not_typed_msg = "Make sure you define
 success_msg("Good job! Let`s get to work on another question!")
 ```
 
-
 ---
+
 ## Functions
 
 ```yaml
 type: MultipleChoiceExercise
 key: 0e2a0ce37a
 lang: r
-xp: 100
+xp: 50
 skills: 1
 ```
+
 Run the following code in the R console:
 
 ```{r, eval=FALSE}
@@ -140,7 +142,7 @@ sum(x)
 
 Based on the result, what do you think the functions `seq` and `sum` do? You can use the help system.
 
-`@instructions`
+`@possible_answers`
 - sum creates a list of numbers and seq adds them up. 
 - seq creates a list of numbers and sum adds them up. 
 - seq computes the difference between two arguments and sum computes the sum of 1 through 1000. 
@@ -165,6 +167,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
+
 ## Nested function calls 1
 
 ```yaml
@@ -174,20 +177,19 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log to the base 2 of `16` which is `4`. 
 
 In R it is often useful to evaluate a function inside another function. 
 For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. 
-So the first evaluation gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.  
-
+So the first evaluation gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.
 
 `@instructions`
 - Use one line of code to compute the log, to the base 10, of the square root of 100. 
 - Make sure your code includes the `log10` and `sqrt` functions.
 
-
 `@hint`
-The `log10` function call should be the argument for the `sqrt` function. 
+The `log10` function call should be the argument for the `sqrt` function.
 
 `@pre_exercise_code`
 ```{r}
@@ -224,8 +226,8 @@ test_student_typed (c("log10(sqrt(100))", "log(sqrt(100), base=10)"), times = 1,
 success_msg("Very good!")
 ```
 
-
 ---
+
 ## Nested functions call 2
 
 ```yaml
@@ -235,9 +237,10 @@ lang: r
 xp: 50
 skills: 1
 ```
+
 Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
 
-`@instructions`
+`@possible_answers`
 - `log(10^x)`
 - `log10(x^10)`
 - `log(exp(x))`
@@ -261,31 +264,30 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
+
 ## End of Assessment 1
 
 ```yaml
 type: PureMultipleChoiceExercise
 key: 5d1f828748
 lang: r
-xp: 0
+xp: 50
 skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-

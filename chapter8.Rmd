@@ -1,8 +1,17 @@
 ---
-title       : Basic Plots
-description : We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.
+title: 'Basic Plots'
+description: 'We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.'
 ---
+
 ## Scatterplots
+
+```yaml
+type: NormalExercise
+key: c535f6f10b
+lang: r
+xp: 100
+skills: 1
+```
 
 We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. You can run the code in the console to get the plot.
 
@@ -16,15 +25,7 @@ total_gun_murders <- murders$total
 plot(population_in_millions, total_gun_murders)
 ```
 
-Note that many states have populations below 5 million and are bunched up in the plot. We may gain further insights from making this plot in the log scale. 
-
-```yaml
-type: NormalExercise
-key: c535f6f10b
-lang: r
-xp: 100
-skills: 1
-```
+Note that many states have populations below 5 million and are bunched up in the plot. We may gain further insights from making this plot in the log scale.
 
 `@instructions`
 - Transform the variables using the log, to the base 10, transformation
@@ -91,9 +92,8 @@ success_msg("Doesn't that plot look better!")
 ```
 
 ---
-## Histograms
 
-Now we are going to make a histogram.
+## Histograms
 
 ```yaml
 type: NormalExercise
@@ -103,12 +103,14 @@ xp: 100
 skills: 1
 ```
 
+Now we are going to make a histogram.
 
 `@instructions`
 - Compute the population in millions and save it to the object `population_in_millions`
 - Create a histogram of the state populations using the function `hist`
 
 `@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -145,9 +147,8 @@ success_msg("We got a histogram! Awesome!")
 ```
 
 ---
-## Boxplots
 
-Now we are going to make boxplots. Boxplots are useful when we want a summary of several variables or several strata of the same variables. Making too many histograms can become too cumbersome. 
+## Boxplots
 
 ```yaml
 type: NormalExercise
@@ -157,6 +158,7 @@ xp: 100
 skills: 1
 ```
 
+Now we are going to make boxplots. Boxplots are useful when we want a summary of several variables or several strata of the same variables. Making too many histograms can become too cumbersome.
 
 `@instructions`
 In one line of code:
@@ -193,15 +195,17 @@ test_error()
 test_function("boxplot",args=c("formula","data"), incorrect_msg = "Check code. use ~ sign and include dataset.")
 success_msg("Great job! Now you've learnt all three basic types of plots in R!")
 ```
+
 ---
+
 ## End of Assessment 8
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: bd1aeba6dc
+lang: r
+xp: 50
+skills: 1
 ```
 
 This is the end of the programming assignment for this section. 
@@ -210,17 +214,13 @@ You can now close this window to go back to the <a href='https://www.edx.org/cou
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
 
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-

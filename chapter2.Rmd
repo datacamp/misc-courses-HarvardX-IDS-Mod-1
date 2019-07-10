@@ -1,16 +1,18 @@
 ---
-title       : Data Types
-description : We're going to get an overview, of the different types of variables that there are in R, and how to work with them. 
+title: 'Data Types'
+description: 'We''re going to get an overview, of the different types of variables that there are in R, and how to work with them.'
 ---
+
 ## str
 
 ```yaml
 type: MultipleChoiceExercise
 key: 0e2a0ce37a
 lang: r
-xp: 100
+xp: 50
 skills: 1
 ```
+
 We're going to be using the following dataset for this module. 
 Run this code in the console. 
 
@@ -23,8 +25,7 @@ Next, use the function `str` to examine the structure of the `murders` object. W
 
 Which of the following best describes the variables represented in this data frame:
 
-
-`@instructions`
+`@possible_answers`
 - The 51 states 
 - The murder rates for all 50 states and DC 
 - The state name, the abbreviation of the state name, the state's region, and the state's population and the total number of murders for 2010.
@@ -49,6 +50,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
+
 ## Variable names
 
 ```yaml
@@ -58,14 +60,15 @@ lang: r
 xp: 100
 skills: 1
 ```
-In the previous question, we saw the different variables that are a part of this dataset from the output of the `str()` function. The  function `names()` is specifically designed to extract the column names from a data frame. 
+
+In the previous question, we saw the different variables that are a part of this dataset from the output of the `str()` function. The  function `names()` is specifically designed to extract the column names from a data frame.
 
 `@instructions`
 For this question, we will use the `names()` function to extract the column names of the `murders` data frame.
 - What are the column names used by the `murders` data frame for the five variables?
 
 `@hint`
-Make sure you put the name of the dataset - `murders` - in parentheses after names. 
+Make sure you put the name of the dataset - `murders` - in parentheses after names.
 
 `@pre_exercise_code`
 ```{r}
@@ -104,13 +107,8 @@ success_msg("Good job!")
 ```
 
 ---
+
 ## Examining Variables
-
-In this module we have learned that every variable has a class. For example, the class can be a *character*, *numeric* or *logical*. The function `class()` can be used to determine the class of an object.
-
-Here we are going to determine the class of one of the variables in the `murders` data frame. To extract variables from a data frame we use `$`, referred to as the accessor.
-
-In the editor we show an example of how to do this. Let`s try it out for ourselves. 
 
 ```yaml
 type: NormalExercise
@@ -120,13 +118,18 @@ xp: 100
 skills: 1
 ```
 
+In this module we have learned that every variable has a class. For example, the class can be a *character*, *numeric* or *logical*. The function `class()` can be used to determine the class of an object.
+
+Here we are going to determine the class of one of the variables in the `murders` data frame. To extract variables from a data frame we use `$`, referred to as the accessor.
+
+In the editor we show an example of how to do this. Let`s try it out for ourselves.
 
 `@instructions`
 Use the accessor `$` to extract the state abbreviations and assign them to the object `a`.
 What is the class of this object?
 
 `@hint`
-Remember to assign the state abbreviations to the object `a`. 
+Remember to assign the state abbreviations to the object `a`.
 
 `@pre_exercise_code`
 ```{r}
@@ -175,7 +178,16 @@ success_msg("That's great! Now, you know what the class of `abb` is. Play around
 ```
 
 ---
+
 ## Multiple ways to access variables
+
+```yaml
+type: NormalExercise
+key: daeef502c6
+lang: r
+xp: 100
+skills: 1
+```
 
 An important lesson you should learn early on is that there are multiple ways of doing things in R. For example, to generate the first five integers we note that `1:5`, and `seq(1,5)` return the same result. 
 
@@ -191,21 +203,12 @@ R returns a subset of the original data frame containing just this column. This 
 
 This is an examaple of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
 
-```yaml
-type: NormalExercise
-key: daeef502c6
-lang: r
-xp: 100
-skills: 1
-```
-
-
 `@instructions`
 - Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 
 Then use the identical function to determine if `a`, as defined in the previous exercises, and `b` are the same.
 
 `@hint`
-You need to use 2 sets of square brackets. 
+You need to use 2 sets of square brackets.
 
 `@pre_exercise_code`
 ```{r}
@@ -259,11 +262,8 @@ success_msg("You've now learned different ways of doing the same thing in R! You
 ```
 
 ---
+
 ## Factors
-
-Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class` command on the *region* column. 
-
-The function `levels` shows us the categories for the factor. 
 
 ```yaml
 type: NormalExercise
@@ -273,13 +273,16 @@ xp: 100
 skills: 1
 ```
 
+Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class` command on the *region* column. 
+
+The function `levels` shows us the categories for the factor.
 
 `@instructions`
 - For this question we will combine two functions, in a nested way, to determine the number of unique categories.
-Use the functions `levels` and `length` to determine the number of regions defined by this dataset and contained in `murders$region`. 
+Use the functions `levels` and `length` to determine the number of regions defined by this dataset and contained in `murders$region`.
 
 `@hint`
-Make sure you're using nested functions: `levels` inside of `length`. 
+Make sure you're using nested functions: `levels` inside of `length`.
 
 `@pre_exercise_code`
 ```{r}
@@ -316,9 +319,8 @@ success_msg("Good job!")
 ```
 
 ---
-## Tables
 
-The function `table` takes a vector as input and returns the frequency of each unique element in the vector. 
+## Tables
 
 ```yaml
 type: NormalExercise
@@ -328,13 +330,14 @@ xp: 100
 skills: 1
 ```
 
+The function `table` takes a vector as input and returns the frequency of each unique element in the vector.
 
 `@instructions`
 We will use the `table` function to answer this question.
 - Use the `table` function in one line of code to create a table showing the number of states per region.
 
 `@hint`
-Extract the variable *region* from the `murders` dataset using `murders$region`. If you apply the function `table` function to this object it will count the number it times each region appears. 
+Extract the variable *region* from the `murders` dataset using `murders$region`. If you apply the function `table` function to this object it will count the number it times each region appears.
 
 `@pre_exercise_code`
 ```{r}
@@ -372,31 +375,30 @@ success_msg("You got this! Now you're a pro at making tables in R!")
 ```
 
 ---
+
 ## End of Assessment 2
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: 2af8480751
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-
-

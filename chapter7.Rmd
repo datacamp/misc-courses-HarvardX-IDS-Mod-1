@@ -1,8 +1,17 @@
 ---
-title       : Basic Data Wrangling
-description : We provide a brief introduction to the dplyr package.
+title: 'Basic Data Wrangling'
+description: 'We provide a brief introduction to the dplyr package.'
 ---
+
 ## dplyr
+
+```yaml
+type: NormalExercise
+key: 766d9c4eab
+lang: r
+xp: 100
+skills: 1
+```
 
 Load the `dplyr` package and the murders dataset.
 
@@ -20,22 +29,11 @@ murders <- mutate(murders, population_in_millions = population / 10^6)
 
 Note that we can write `population` rather than `murders$population`. The function `mutate` knows we are grabing columns from `murders`.
 
-```yaml
-type: NormalExercise
-key: 766d9c4eab
-lang: r
-xp: 100
-skills: 1
-```
-
 `@instructions`
-
 - Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate. 
 - Make sure you redefine `murders` as done in the example code above.
 
 Remember the murder rate is defined the total divided by the population size times 100,000
-
-
 
 `@hint`
 You can define a new function based on existing ones like this:
@@ -43,6 +41,7 @@ You can define a new function based on existing ones like this:
 mutate(murders, raw_rate =  total / population) 
 ```
 Note that we use the column names `total` and `population` without having the use the accessor.
+
 `@pre_exercise_code`
 ```{r}
 library(dplyr)
@@ -84,9 +83,8 @@ success_msg("Awesome! Let's learn another command with mutate.")
 ```
 
 ---
-## mutate
 
-Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
+## mutate
 
 ```yaml
 type: NormalExercise
@@ -96,12 +94,14 @@ xp: 100
 skills: 1
 ```
 
+Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
 
 `@instructions`
 - Use the function `mutate` to add a column `rank` containing the rank, from highest to lowest murder rate. Make sure you redeinfe murders.
 
 `@hint`
 Note that `rate` is already defined and that `rank(-rate)` gives you the ranks you want. Now just add that column and name the column `rank`
+
 `@pre_exercise_code`
 ```{r}
 library(dplyr)
@@ -146,14 +146,8 @@ success_msg("Good job!")
 ```
 
 ---
+
 ## select
-
-With `dplyr` we can use `select` to show only certain columns. For example with this code we would only show the states and population sizes:
-
-```{r}
-select(murders, state, population)
-```
-
 
 ```yaml
 type: NormalExercise
@@ -163,6 +157,11 @@ xp: 100
 skills: 1
 ```
 
+With `dplyr` we can use `select` to show only certain columns. For example with this code we would only show the states and population sizes:
+
+```{r}
+select(murders, state, population)
+```
 
 `@instructions`
 - Use `select` to show the state names and abbreviations in `murders`. Just show it, do not define a new object.
@@ -208,16 +207,9 @@ test_output_contains("select(murders, state, abb)", incorrect_msg = "You need to
 success_msg("Now you know how to use select! Let's move on to filter.")
 ```
 
-
 ---
+
 ## filter
-
-The `dplyr` function `filter` is used to choose specific rows of the data frame to keep. Unlke `select` which is for columns, `filter` is for rows. For example you can show just New York row like this:
-
-```{r}
-filter(murders, state == "New York")
-```
-You can use other logical vector to filter rows.
 
 ```yaml
 type: NormalExercise
@@ -227,9 +219,14 @@ xp: 100
 skills: 1
 ```
 
+The `dplyr` function `filter` is used to choose specific rows of the data frame to keep. Unlke `select` which is for columns, `filter` is for rows. For example you can show just New York row like this:
+
+```{r}
+filter(murders, state == "New York")
+```
+You can use other logical vector to filter rows.
 
 `@instructions`
-
 - Use `filter` to show the top 5 states with the highest murder rates. After we add murder rate and rank, do not change the murders dataset, just show the result. Note that you can filter based on the `rank` column.
 
 `@hint`
@@ -268,14 +265,10 @@ test_function("filter")
 test_output_contains("filter(murders, rank <= 5)", incorrect_msg = "Make sure you've written murders in your code.")
 success_msg("Great job!")
 ```
+
 ---
+
 ## filter with !=
-
-We can remove rows using the `!=` operator. For example to remove Florida we would do this:
-
-```{r}
-no_florida <- filter(murders, state != "Florida")
-```
 
 ```yaml
 type: NormalExercise
@@ -285,6 +278,11 @@ xp: 100
 skills: 1
 ```
 
+We can remove rows using the `!=` operator. For example to remove Florida we would do this:
+
+```{r}
+no_florida <- filter(murders, state != "Florida")
+```
 
 `@instructions`
 - Create a new data frame called `no_south` that removes states from the South region.
@@ -328,14 +326,8 @@ success_msg("That's great! Let's move to the next exercise.")
 ```
 
 ---
+
 ## filter with %in%
-
-We can also use the `%in%` to filter with `dplyr`. For example you can see the data from New York and Texas like this:
-
-```{r}
-filter(murders, state %in% c("New York", "Texas"))
-```
-
 
 ```yaml
 type: NormalExercise
@@ -345,10 +337,15 @@ xp: 100
 skills: 1
 ```
 
+We can also use the `%in%` to filter with `dplyr`. For example you can see the data from New York and Texas like this:
+
+```{r}
+filter(murders, state %in% c("New York", "Texas"))
+```
+
 `@instructions`
 - Create a new data frame called `murders_nw` with only the states from the Northeast and the West. 
-- How many states are in this category? 
-
+- How many states are in this category?
 
 `@hint`
 Use filter and the `%in%` operator. The logical vector you want in `filter` is `region %in% c("Northeast", "West")`
@@ -388,16 +385,10 @@ test_object("murders_nw", undefined_msg = "Define murders_nw first.", incorrect_
 test_output_contains("nrow(murders_nw)", incorrect_msg = "You need the number of rows again, same as previous question.")
 success_msg("This is great!")
 ```
+
 ---
 
 ## filtering by two conditions
-
-Suppose you want to live in the Northeast or West **and** want the murder rate to be less than 1. We want to see the data for the states satisfying these options. Note that you can use logical operators with `filter`:
-
-```{r}
-filter(murders, population < 5000000 & region == "Northeast")
-```
-
 
 ```yaml
 type: NormalExercise
@@ -407,11 +398,16 @@ xp: 100
 skills: 1
 ```
 
+Suppose you want to live in the Northeast or West **and** want the murder rate to be less than 1. We want to see the data for the states satisfying these options. Note that you can use logical operators with `filter`:
+
+```{r}
+filter(murders, population < 5000000 & region == "Northeast")
+```
 
 `@instructions`
 - Add a murder rate column and a rank column as done before
 - Create a table, call it `my_states`, that satisfies both the conditions: it is in the Northeast or West and the murder rate is less than 1. 
-- Use select to show only the state name, the rate and the rank 
+- Use select to show only the state name, the rate and the rank
 
 `@hint`
 Use the `my_states <- filter(murders, region %in% c("Northeast", "West") & rate < 1)` code. Then use `select`. The columns you want are state, rate and rank.
@@ -454,12 +450,17 @@ test_output_contains("select(my_states, state, rate, rank)", incorrect_msg = "Yo
 success_msg("Now you know how to combine functions and use them to get specific answers. Let's try it one more time!")
 ```
 
-
-
 ---
 
 ## Using the pipe %>%
 
+```yaml
+type: NormalExercise
+key: 72305c532e
+lang: r
+xp: 100
+skills: 1
+```
 
 The pipe `%>%` can be used to perform operations sequentially 
 without having to define intermediate objects. After redefining murder to include rate and rank.
@@ -489,23 +490,14 @@ mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>%
 
 Note that `select` no longer has a data frame as the first argument. The first argument is assumed to be the result of the operation conducted right before the  `%>%`
 
-
-```yaml
-type: NormalExercise
-key: 72305c532e
-lang: r
-xp: 100
-skills: 1
-```
-
 `@instructions`
 - Repeat the previous exercise, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
 - Use a pipe `%>%` to do this in just one line.
 
 `@hint`
 Use code: `filter(murders, region %in% c("Northeast", "West") & rate < 1) %>% 
-    select(state, rate, rank)` 
-    
+    select(state, rate, rank)`
+
 `@pre_exercise_code`
 ```{r}
 library(dplyr)
@@ -524,6 +516,7 @@ murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rat
 # show the result and only include the state, rate, and rank columns, all in one line
 
 ```
+
 `@solution`
 ```{r}
 ## Define the rate and rank column
@@ -534,6 +527,7 @@ filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%
    select(state, rate, rank)
    
 ```
+
 `@sct`
 ```{r}
 test_error()
@@ -542,7 +536,9 @@ test_output_contains("filter(murders, region %in% c('Northeast', 'West') & rate 
 test_pipe(num = 1, absent_msg = "We want you to use a pipe %>%", insuf_msg = "We want you to use a pipe %>%")
 success_msg("You're getting a pretty good hang of stuff now!")
 ```
+
 ---
+
 ## mutate, filter and select
 
 ```yaml
@@ -552,6 +548,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 
 
 `@instructions`
@@ -614,35 +611,31 @@ test_pipe(num = 3, absent_msg = "We want you to use three pipes %>%", insuf_msg 
 success_msg("This is absolutely awesome! You now know how to use basic data manipulation techniques in R.")
 ```
 
-
 ---
 
 ## End of Assessment 7
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: 54b0aa0655
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-
-

@@ -1,7 +1,8 @@
 ---
-title       : Vector Arithmetics
-description : We will learn about the more powerful vector arithmetic functions in R, that help us solve higher-level problems. 
+title: 'Vector Arithmetics'
+description: 'We will learn about the more powerful vector arithmetic functions in R, that help us solve higher-level problems.'
 ---
+
 ## Vectorized operations
 
 ```yaml
@@ -11,6 +12,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 Previously we created this data frame:
 
 ```{r}
@@ -73,11 +75,8 @@ success_msg("Great job!")
 ```
 
 ---
+
 ## Vectorized operations continued...
-
-We can use some of what we have learned to perform calculations that 
-would otherwise be quite complicated. Let's see an example.
-
 
 ```yaml
 type: NormalExercise
@@ -87,9 +86,10 @@ xp: 100
 skills: 1
 ```
 
+We can use some of what we have learned to perform calculations that 
+would otherwise be quite complicated. Let's see an example.
 
 `@instructions`
-
 What is the sum of the following equation: `1 + 1/2^2 + 1/3^2 + ... + 1/100^2`? Thanks to Euler we know it should be close to $\pi^2/6$. 
 
 - Define an object `x` that contains the numbers 1 through 100
@@ -130,6 +130,7 @@ success_msg("Good job!")
 ```
 
 ---
+
 ## Vectorized operation continued...
 
 ```yaml
@@ -139,6 +140,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 
 
 `@instructions`
@@ -195,28 +197,25 @@ success_msg("Awesome!")
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: 9831da4a5f
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-
-

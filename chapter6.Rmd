@@ -1,7 +1,8 @@
 ---
-title       : Indexing
-description : R provides a powerful and convenient way of indexing vectors. We're going to learn some ways of doing that!
+title: Indexing
+description: 'R provides a powerful and convenient way of indexing vectors. We''re going to learn some ways of doing that!'
 ---
+
 ## Logical Vectors
 
 ```yaml
@@ -11,6 +12,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 Here we will be using logical operators to create a logical vector.
 
 `@instructions`
@@ -18,7 +20,7 @@ Here we will be using logical operators to create a logical vector.
 - Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of murder_rate are lower than 1.
 
 `@hint`
-The code for calculating the murder rate is: `murders$total/murders$population*100000`. 
+The code for calculating the murder rate is: `murders$total/murders$population*100000`.
 
 `@pre_exercise_code`
 ```{r}
@@ -51,9 +53,8 @@ success_msg("Great job!")
 ```
 
 ---
-## which
 
-The function `which()` help us know directly, which values are low or high, etc. Let's use it in this question. 
+## which
 
 ```yaml
 type: NormalExercise
@@ -62,6 +63,8 @@ lang: r
 xp: 100
 skills: 1
 ```
+
+The function `which()` help us know directly, which values are low or high, etc. Let's use it in this question.
 
 `@instructions`
 - Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
@@ -109,16 +112,8 @@ success_msg("Awesome!")
 ```
 
 ---
+
 ## Ordering vectors
-
-Note that if we want to know which entries of a vector are lower than some values we can use code like this:
-
-```{r}
-small <- murders$population < 1000000
-murders$state[small]
-```
-
-The code above shows us the states with populations smaller than one million. 
 
 ```yaml
 type: NormalExercise
@@ -128,8 +123,17 @@ xp: 100
 skills: 1
 ```
 
+Note that if we want to know which entries of a vector are lower than some values we can use code like this:
+
+```{r}
+small <- murders$population < 1000000
+murders$state[small]
+```
+
+The code above shows us the states with populations smaller than one million.
+
 `@instructions`
-- Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the name of the states from the dataset. 
+- Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the name of the states from the dataset.
 
 `@hint`
 
@@ -171,7 +175,9 @@ test_error()
 test_output_contains("murders$state[low]", incorrect_msg = "Follow code from example given!")
 success_msg("Good job!")
 ```
+
 ---
+
 ## Filtering
 
 ```yaml
@@ -183,12 +189,12 @@ skills: 1
 ```
 
 
+
 `@instructions`
 Now we will extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1.
 - Define `low` as before.
 - Use the `&` operator to create a new object `ind` that is true when `low` is true and the state is in the Northeast
 - Use the brackets `[` and `ind` to show the state names that satisfy this condition
-
 
 `@hint`
 Use the previously defined logical vector `low` and the logical operator `&`. For states with less than 1 million it will be like this: 
@@ -241,7 +247,9 @@ test_object("ind", undefined_msg = "Make sure to define ind first!", incorrect_m
 test_output_contains("murders$state[ind]", incorrect_msg = "Use [] to retrieve names.")
 success_msg("Wasn't that good! Let's move to the next one.")
 ```
+
 ---
+
 ## Filtering continued
 
 ```yaml
@@ -251,6 +259,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 
 
 `@instructions`
@@ -300,10 +309,10 @@ test_object("avg", undefined_msg = "", incorrect_msg = "Compute the mean and sto
 test_function("sum", incorrect_msg = "Check the number of states below average murder rate.")
 success_msg("Awesome!")
 ```
----
-## Match
 
-In this exercise we use the `match` function to identify the states with abbreviations AK, MI, and IA. 
+---
+
+## Match
 
 ```yaml
 type: NormalExercise
@@ -313,6 +322,7 @@ xp: 100
 skills: 1
 ```
 
+In this exercise we use the `match` function to identify the states with abbreviations AK, MI, and IA.
 
 `@instructions`
 - Define a character vector with the abbreviations.
@@ -359,18 +369,10 @@ test_object("ind", undefined_msg = "Define ind!", incorrect_msg = "Make sure to 
 test_output_contains("murders$state[ind]", incorrect_msg = "Use square brackets.")
 success_msg("Awesome!")
 ```
+
 ---
+
 ## %in%
-
-If rather than an index we want a logical that tells us whether or not each element of a first vector is in we can use the function `%in%`.
-For example: 
-
-```{r}
-x <- c(2, 3, 5)
-y <- c(1, 2, 3, 4)
-x%in%y
-```
-Gives us a two `TRUE` followed by a `FALSE` because 2 and 3 are in `y`.  
 
 ```yaml
 type: NormalExercise
@@ -380,6 +382,15 @@ xp: 100
 skills: 1
 ```
 
+If rather than an index we want a logical that tells us whether or not each element of a first vector is in we can use the function `%in%`.
+For example: 
+
+```{r}
+x <- c(2, 3, 5)
+y <- c(1, 2, 3, 4)
+x%in%y
+```
+Gives us a two `TRUE` followed by a `FALSE` because 2 and 3 are in `y`.
 
 `@instructions`
 Which of the following are actual abbreviations: MA, ME, MI, MO, MU?
@@ -425,7 +436,9 @@ test_object("abbs", undefined_msg = "Define abbs!", incorrect_msg = "Make sure t
 test_output_contains("abbs%in%murders$abb", incorrect_msg = "Check the code. ")
 success_msg("Great job!")
 ```
+
 ---
+
 ## Logical operator
 
 ```yaml
@@ -435,6 +448,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 
 
 `@instructions`
@@ -484,34 +498,31 @@ test_output_contains("abbs[ind]", incorrect_msg = "Have you used square brackets
 success_msg("Awesome!")
 ```
 
-
 ---
 
 ## End of Assessment 6
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: 693e3e8928
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-
-

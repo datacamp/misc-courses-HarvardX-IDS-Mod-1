@@ -1,7 +1,8 @@
 ---
-title       : Sorting
-description : This chapter deals with getting more of an insight into the data we have, by helping us sort through it.
+title: Sorting
+description: 'This chapter deals with getting more of an insight into the data we have, by helping us sort through it.'
 ---
+
 ## sort
 
 ```yaml
@@ -11,7 +12,8 @@ lang: r
 xp: 100
 skills: 1
 ```
-When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the `murders` dataset as an example. 
+
+When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the `murders` dataset as an example.
 
 `@instructions`
 - Use the `$` operator to access the population size data and store it the object `pop`. 
@@ -79,14 +81,8 @@ success_msg("Good job! Now you know how to sort data in an ascending order.")
 ```
 
 ---
+
 ## order
-
-
-The function `order()` returns the index vector needed to sort the vector. This implies that `sort(x)` and `x[order(x)]` give the same result.
-
-This can be useful for finding row numbers with certain properties such as "the row for the state with the smallest population". 
-Remember that when we extract a variable from a data frame the order of the resulting vector is the same as the order of the rows of the data frame. 
-So for example, the entries of the vector `murders$state` are ordered in the same way as the states if you go down the rows of `murders`.
 
 ```yaml
 type: NormalExercise
@@ -96,16 +92,20 @@ xp: 100
 skills: 1
 ```
 
+The function `order()` returns the index vector needed to sort the vector. This implies that `sort(x)` and `x[order(x)]` give the same result.
+
+This can be useful for finding row numbers with certain properties such as "the row for the state with the smallest population". 
+Remember that when we extract a variable from a data frame the order of the resulting vector is the same as the order of the rows of the data frame. 
+So for example, the entries of the vector `murders$state` are ordered in the same way as the states if you go down the rows of `murders`.
 
 `@instructions`
 - Now instead of the smallest population size, let's find out the row number, in the data frame `murders`, of the state with the smallest population size.
 - This time we need to replace the `order()` instead of `sort()`. 
-- Remember that the entries in the vector `murders$population` follow the order of the rows of `murders`. 
-
-
+- Remember that the entries in the vector `murders$population` follow the order of the rows of `murders`.
 
 `@hint`
 Once you define `pop` with the population variable, get all the indexes using `o <- order(pop)`. The first index relates to the row with the smallest population.
+
 `@pre_exercise_code`
 ```{r}
 library(dslabs)
@@ -147,9 +147,8 @@ success_msg("Great job!")
 ```
 
 ---
-## New Codes 
 
-We can actually perform the same operation as in the previous exercise using the function `which.min`. It basically tells us which is the minimum value. 
+## New Codes
 
 ```yaml
 type: NormalExercise
@@ -159,13 +158,14 @@ xp: 100
 skills: 1
 ```
 
+We can actually perform the same operation as in the previous exercise using the function `which.min`. It basically tells us which is the minimum value.
 
 `@instructions`
 Write one line of code that gives the index of the lowest population entry.
 Use the `which.min` command.
 
 `@hint`
-Use `which.min` directly. 
+Use `which.min` directly.
 
 `@pre_exercise_code`
 ```{r}
@@ -203,9 +203,8 @@ success_msg("Great! You learned another function in R!")
 ```
 
 ---
-## Using the output of order 
 
-Now we know how small the smallest state is and we know which row represents it. However, which state is it? 
+## Using the output of order
 
 ```yaml
 type: NormalExercise
@@ -215,6 +214,7 @@ xp: 100
 skills: 1
 ```
 
+Now we know how small the smallest state is and we know which row represents it. However, which state is it?
 
 `@instructions`
 - Find the index of the smallest state using `which.min(murders$population)`. 
@@ -262,15 +262,8 @@ success_msg("Awesome! Now we have the names of the states as well!")
 ```
 
 ---
+
 ## Ranks
-
-You can create a data frame using the `data.frame` function. Here is a quick example:
-
-```{r}
-temp <- c(35, 88, 42, 84, 81, 30)
-city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
-city_temps <- data.frame(name = city, temperature = temp)
-```
 
 ```yaml
 type: NormalExercise
@@ -280,15 +273,22 @@ xp: 100
 skills: 1
 ```
 
+You can create a data frame using the `data.frame` function. Here is a quick example:
+
+```{r}
+temp <- c(35, 88, 42, 84, 81, 30)
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+city_temps <- data.frame(name = city, temperature = temp)
+```
 
 `@instructions`
 - Define a variable `states` to be the state names from `murders`
 - Use `rank(murders$population)` to determine the population size rank (from smallest to biggest) of each state. 
 - Save these ranks in an object called `ranks`.
-- Create a data frame with state names and their respective ranks. Call the data frame `my_df`. 
-
+- Create a data frame with state names and their respective ranks. Call the data frame `my_df`.
 
 `@hint`
+
 
 `@pre_exercise_code`
 ```{r}
@@ -350,10 +350,8 @@ success_msg("That's awesome! You got this!")
 ```
 
 ---
-## Data Frames, Ranks and Orders 
 
-This exercise is somewhat more challenging. We are going to 
-repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
+## Data Frames, Ranks and Orders
 
 ```yaml
 type: NormalExercise
@@ -363,6 +361,8 @@ xp: 100
 skills: 1
 ```
 
+This exercise is somewhat more challenging. We are going to 
+repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
 
 `@instructions`
 - Create variables `states` and `ranks` to store the state names and ranks by population size respectively.
@@ -371,7 +371,6 @@ skills: 1
 - The columns of the data frame must be in the specific order: state, rate, rank.
 
 `@hint`
-
 When you define `my_df`, each column will be ordered using the `ind`. It will look something like this 
 
 ```{r}
@@ -428,7 +427,16 @@ success_msg("Great job! See how well you're building on your knowledge of R!")
 ```
 
 ---
+
 ## NA
+
+```yaml
+type: NormalExercise
+key: babfb93aab
+lang: r
+xp: 100
+skills: 1
+```
 
 The `na_example` dataset represents a series of counts. It is included in the *dslabs* package. You can quickly examine the object using
 
@@ -443,15 +451,6 @@ However, when we compute the average we obtain an `NA`. You can see this by typi
 ```{r}
 mean(na_example)
 ```
-
-```yaml
-type: NormalExercise
-key: babfb93aab
-lang: r
-xp: 100
-skills: 1
-```
-
 
 `@instructions`
 - The `is.na` returns a logical vector that tells us which entries are `NA`. Assign the logical vector that is returned by `is.na(na_example)` to an object called `ind`.
@@ -513,11 +512,8 @@ success_msg("Great job! Now let's move to one last thing in this chapter.")
 ```
 
 ---
-## Removing NAs 
 
-We previously computed the average of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
-A common operation is therefore removing the entries that are NA and after that perform operations on the rest. 
-
+## Removing NAs
 
 ```yaml
 type: NormalExercise
@@ -527,14 +523,14 @@ xp: 100
 skills: 1
 ```
 
+We previously computed the average of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
+A common operation is therefore removing the entries that are NA and after that perform operations on the rest.
 
 `@instructions`
-
-Write one line of code to compute the average, but only for the entries that are not NA making use of the `!` operator before `ind`. 
-
+Write one line of code to compute the average, but only for the entries that are not NA making use of the `!` operator before `ind`.
 
 `@hint`
-Remember the `!` operator. Note that `na_example[!ind]` returns the entries that are not NA. 
+Remember the `!` operator. Note that `na_example[!ind]` returns the entries that are not NA.
 
 `@pre_exercise_code`
 ```{r}
@@ -595,28 +591,25 @@ success_msg("Awesome! Now you're all set with vectors! Get practicing on your ow
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: be5cd4c525
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-
-

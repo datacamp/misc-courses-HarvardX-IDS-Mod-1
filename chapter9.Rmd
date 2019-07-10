@@ -1,16 +1,18 @@
 ---
-title       : Programming Basics
-description : Programming Basics
+title: 'Programming Basics'
+description: 'Programming Basics'
 ---
+
 ## Conditionals
 
 ```yaml
 type: MultipleChoiceExercise
 key: 77691772c6
 lang: r
-xp: 100
+xp: 50
 skills: 1
 ```
+
 What will this conditional expression return?
 Run it from the console. 
 
@@ -23,11 +25,11 @@ if(all(x>0)){
   }
 ```
 
-`@instructions`
+`@possible_answers`
 - All Positives
 - Not All Positives
 - N/A
-- None of the above 
+- None of the above
 
 `@hint`
 Are the numbers stored in `x` all positive? If not the `print` after the `else` is evaluated.
@@ -47,6 +49,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
+
 ## Conditional continued
 
 ```yaml
@@ -59,7 +62,7 @@ skills: 1
 
 Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`? You can try examples in the R console.
 
-`@instructions`
+`@possible_answers`
 - all(x) 
 - any(x) 
 - any(!x) 
@@ -81,7 +84,9 @@ msg3 = "Try `x <- c(TRUE, FALSE)"
 msg4 = "Good job! Let's move to the next question."
 test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
+
 ---
+
 ## ifelse
 
 ```yaml
@@ -91,6 +96,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 The function `nchar` tells you how many characters long a character vector is. For example:
 
 ```{r}
@@ -107,7 +113,7 @@ If the entry is -999 it returns NA, otherwise it returns the entry.
 
 `@instructions`
 We will combine a number of functions for this exercise.
-- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters. So, for example, where the original vector has Massachusetts (13 characters), the new vector should have MA. But where the original vector has New York (8 characters), the new vector should have New York as well. 
+- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters. So, for example, where the original vector has Massachusetts (13 characters), the new vector should have MA. But where the original vector has New York (8 characters), the new vector should have New York as well.
 
 `@hint`
 Use a call to `nchar` as the first argument of the `ifelse` function to calculate. Check to see if it's larger than 8. Then you use `murders$abb` and `murders$state` in the second and third arguments to return either the abbreviation or state name depending on the number of characters.
@@ -140,7 +146,9 @@ test_object("new_names", undefined_msg = "Make sure you define new_names!", inco
 success_msg("Woohoo! You're becoming a pro at this!")
 
 ```
+
 ---
+
 ## Defining functions
 
 ```yaml
@@ -225,8 +233,18 @@ fun_def %>% check_call(1000) %>% check_result() %>% check_equal()
 fun_def %>% check_body()
 success_msg("This is awesome! Let's get to the next exercise.")
 ```
+
 ---
+
 ## Defining functions continued...
+
+```yaml
+type: NormalExercise
+key: ea64484119
+lang: r
+xp: 100
+skills: 1
+```
 
 We will make another function for this exercise. We will define a function `altman_plot` that takes two arguments `x` and `y` and plots the difference `y-x` in the y-axis against the sum `x+y` in the x-axis. 
 
@@ -239,13 +257,6 @@ log_plot <- function(x, y){
 ```
 
 This function does not return anything. It just makes a plot.
-```yaml
-type: NormalExercise
-key: ea64484119
-lang: r
-xp: 100
-skills: 1
-```
 
 `@instructions`
 We will make another function for this exercise.
@@ -291,8 +302,18 @@ test_function_definition("altman_plot",
 test_object("altman_plot", incorrect_msg = "Make sure you use `x` and `y` as your arguments and that you plot the difference `y-x` versus the sum `x+y`. Please write the sum as `x+y` not `y+x. Also, for this exercises, we want you to use the curly brackets `{ }` as in the example.") 
 success_msg("That's great! You can also play around with the variables and put in values for x and y.")
 ```
+
 ---
+
 ## Lexical scope
+
+```yaml
+type: NormalExercise
+key: f13e10ed3c
+lang: r
+xp: 100
+skills: 1
+```
 
 Lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when.
 
@@ -306,15 +327,7 @@ my_func <- function(y){
 my_func(x)
 print(x)
 ```
-Note that when we define `x` as 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside. 
-
-```yaml
-type: NormalExercise
-key: f13e10ed3c
-lang: r
-xp: 100
-skills: 1
-```
+Note that when we define `x` as 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside.
 
 `@instructions`
 The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when. After running the code below, what is the value of `x`?
@@ -360,10 +373,10 @@ test_error()
 test_object("x", incorrect_msg = "How do you print the value of x?")
 success_msg("Good job!") 
 ```
----
-## For loops
 
-In the next exercise we are going to write a for-loop. In that for-loop we are going to call a function. We define that function here. 
+---
+
+## For loops
 
 ```yaml
 type: NormalExercise
@@ -372,6 +385,8 @@ lang: r
 xp: 100
 skills: 1
 ```
+
+In the next exercise we are going to write a for-loop. In that for-loop we are going to call a function. We define that function here.
 
 `@instructions`
 - Write a function `compute_s_n` that for any given $n$ computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$. 
@@ -448,7 +463,16 @@ success_msg("That's awesome! You're getting so good at this!")
 ```
 
 ---
+
 ## For loops continued...
+
+```yaml
+type: NormalExercise
+key: a9bf58a40c
+lang: r
+xp: 100
+skills: 1
+```
 
 Now we are going to compute the sum of the squares for several values of $n$. We will use a for-loop for this. Here is an example of a for-loop:
 
@@ -463,21 +487,13 @@ for(i in 1:n){
 
 Note that we start with a call to `vector` which constructs an empty vector that we will fill while the loop runs.
 
-```yaml
-type: NormalExercise
-key: a9bf58a40c
-lang: r
-xp: 100
-skills: 1
-```
 `@instructions`
 - Define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)`.
 - Compute the the sum when n is equal to each integer from 1 to 25 using the function we defined in the previous exercise: `compute_s_n`
 - Save the results in `s_n`
 
-
 `@hint`
-The line of code inside the function will be `s_n[i] <- compute_s_n(i)`. 
+The line of code inside the function will be `s_n[i] <- compute_s_n(i)`.
 
 `@pre_exercise_code`
 ```{r}
@@ -536,8 +552,18 @@ for_loop %>% check_cond()
 #%>% check_code("in n", fixed = TRUE)
 success_msg("This is great! You now know the basics of for loops in R.")
 ```
+
 ---
+
 ## Checking our math
+
+```yaml
+type: NormalExercise
+key: 4e649b5400
+lang: r
+xp: 100
+skills: 1
+```
 
 If we do the math, we can show that 
 
@@ -548,13 +574,6 @@ We have already computed the values of $S_n$ from 1 to 25 using a for loop.
 If the formula is correct then a plot of $S_n$ versus $n$ should look cubic.
 
 Let's make this plot.
-```yaml
-type: NormalExercise
-key: 4e649b5400
-lang: r
-xp: 100
-skills: 1
-```
 
 `@instructions`
 - Define `n <- 1:25`. Note that with this we can use `for(i in n)`
@@ -617,10 +636,10 @@ test_error()
 test_function("plot",args=c("x","y"), incorrect_msg = "Did you plot the x and y axis correctly?")
 success_msg("Awesome! Let's go to the last exercise in this chapter!")
 ```
----
-## Checking our math continued
 
-Now let's actually check if we get the exact same answer.
+---
+
+## Checking our math continued
 
 ```yaml
 type: NormalExercise
@@ -629,6 +648,8 @@ lang: r
 xp: 100
 skills: 1
 ```
+
+Now let's actually check if we get the exact same answer.
 
 `@instructions`
 - Confirm that `s_n` and $n(n+1)(2n+1)/6$ are the same using the `identical` command.
@@ -691,34 +712,31 @@ test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "Make 
 success_msg("This is great! We are done with this module. Time to move on to bigger things!")
 ```
 
-
-
 ---
 
 ## End of Assessment 9
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: 226fb8de61
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!

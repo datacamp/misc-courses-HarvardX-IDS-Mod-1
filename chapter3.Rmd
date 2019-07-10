@@ -1,8 +1,8 @@
 ---
-title       : Vectors
-description : The most basic unit to store data in R are vectors. We'll learn about creating and working with them in this chapter.
-
+title: Vectors
+description: 'The most basic unit to store data in R are vectors. We''ll learn about creating and working with them in this chapter.'
 ---
+
 ## Numeric Vectors
 
 ```yaml
@@ -12,6 +12,7 @@ lang: r
 xp: 100
 skills: 1
 ```
+
 A vector is a series of values, all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
 
 ```{r}
@@ -23,7 +24,7 @@ Use the function `c()` to create a numeric vector with the average high temperat
 The average high temperatures are `35, 88, 42, 84, 81, and 30` degrees Fahrenheit. Call the object `temp`.
 
 `@hint`
-Make sure your numbers are within parenthesis and have commas separating them. 
+Make sure your numbers are within parenthesis and have commas separating them.
 
 `@pre_exercise_code`
 ```{r}
@@ -58,15 +59,8 @@ success_msg("Good job! Do you want to now try creating a character vector")
 ```
 
 ---
+
 ## Character vectors
-
-As in the previous question, we are going to create a vector. Only this time, we learn to create *character* vectors. The main difference is that these have to be written as strings and so the names are enclosed within double quotes. 
-
-A *character* vector would look something like this:
-
-```{r}
-food <- c("pizza", "burgers", "salads", "cheese", "pasta")
-```
 
 ```yaml
 type: NormalExercise
@@ -76,13 +70,20 @@ xp: 100
 skills: 1
 ```
 
+As in the previous question, we are going to create a vector. Only this time, we learn to create *character* vectors. The main difference is that these have to be written as strings and so the names are enclosed within double quotes. 
+
+A *character* vector would look something like this:
+
+```{r}
+food <- c("pizza", "burgers", "salads", "cheese", "pasta")
+```
 
 `@instructions`
 The temperatures we stored in `temp` are from the cities Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
-- Create a vector with these city names and call the object `city`. 
+- Create a vector with these city names and call the object `city`.
 
 `@hint`
-Be sure to place the names within double quotes. 
+Be sure to place the names within double quotes.
 
 `@pre_exercise_code`
 ```{r}
@@ -119,7 +120,16 @@ success_msg("Awesome! Now you've learnt to store both numeric and character vect
 ```
 
 ---
-## Connecting Numeric and Character Vectors 
+
+## Connecting Numeric and Character Vectors
+
+```yaml
+type: NormalExercise
+key: 62bba83b36
+lang: r
+xp: 100
+skills: 1
+```
 
 We have successfully assigned the temperatures as *numeric* values to `temp` and the city names as *character* values to `city`. But can we associate the temperature to it's related city? Yes! We can do so using a code we already know - `names`. We assign names to the *numeric* values.  
 
@@ -131,22 +141,13 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 names(cost) <- food
 ```
 
-```yaml
-type: NormalExercise
-key: 62bba83b36
-lang: r
-xp: 100
-skills: 1
-```
-
-
 `@instructions`
 Use the `names` function and the objects defined in the previous exercises to associate the temperature data with its corresponding city.
 (You can go back to the previous questions and copy the objects stored.) Note: to see what happened, after assigning the city
 names to the temp vector, try printing the temp vector to understand how the names are associated with elements of temp.
 
 `@hint`
-Assign names to the numeric values. 
+Assign names to the numeric values.
 
 `@pre_exercise_code`
 ```{r}
@@ -193,7 +194,16 @@ success_msg("Great job! We now know the temperatures of the respective cities.")
 ```
 
 ---
+
 ## Subsetting vectors
+
+```yaml
+type: NormalExercise
+key: b9d09364f0
+lang: r
+xp: 100
+skills: 1
+```
 
 If we want to display only selected values from the object, R can help us do that easily. 
 
@@ -204,16 +214,7 @@ cost[3:5]
 ```
 
 Note here, that we could also type `cost[c(3,4,5)]` and get the same result. 
-The `:` operator helps us condense the code and get consecutive values. 
-
-```yaml
-type: NormalExercise
-key: b9d09364f0
-lang: r
-xp: 100
-skills: 1
-```
-
+The `:` operator helps us condense the code and get consecutive values.
 
 `@instructions`
 We will learn to subset using several special operators.
@@ -262,16 +263,8 @@ success_msg("Awesome! You've learnt how to make your work easier. But make sure 
 ```
 
 ---
+
 ## Subsetting vectors continued...
-
-In the previous question, we accessed the temperature for consecutive cities (1st three). But what if we want to access the temperatures for any 2 specific cities?
-
-An example:
-To access the cost of `pizza` (1st) and `pasta` (5th food item) in our list, the code would be:
- 
-```{r}
-cost[c(1,5)]
-```
 
 ```yaml
 type: NormalExercise
@@ -281,6 +274,14 @@ xp: 100
 skills: 1
 ```
 
+In the previous question, we accessed the temperature for consecutive cities (1st three). But what if we want to access the temperatures for any 2 specific cities?
+
+An example:
+To access the cost of `pizza` (1st) and `pasta` (5th food item) in our list, the code would be:
+ 
+```{r}
+cost[c(1,5)]
+```
 
 `@instructions`
 This time we will access our object using just the `[` operator.
@@ -337,13 +338,8 @@ success_msg("Isn't that awesome! Let's move to the next exercise!")
 ```
 
 ---
-## Sequences 
 
-The `:` operator helps us create sequences of numbers. 
-For example, `32:99` would create a list of numbers from 32 to 99. 
-
-Then, if we want to know the length of this sequence, all we need to do use the `length` command. 
-
+## Sequences
 
 ```yaml
 type: NormalExercise
@@ -353,13 +349,17 @@ xp: 100
 skills: 1
 ```
 
+The `:` operator helps us create sequences of numbers. 
+For example, `32:99` would create a list of numbers from 32 to 99. 
+
+Then, if we want to know the length of this sequence, all we need to do use the `length` command.
 
 `@instructions`
 This time we will use just the `:` operator.
 Use the `:` operator to create a sequence of consecutive integers starting 12 and ending at 73 and save it in an object `x`, then determine the length of object x.
 
 `@hint`
-Save the sequence in an object called `x`. 
+Save the sequence in an object called `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -407,11 +407,8 @@ success_msg("Good job! Let's move to the next question!")
 ```
 
 ---
+
 ## Sequences continued...
-
-We can also create different types of sequences in R. 
-For example, in `seq(7, 49, 7)`, the first argument defines the start, and the second the end. The default is to go up in increments of 1, but a third argument lets us tell it by what interval.
-
 
 ```yaml
 type: NormalExercise
@@ -421,12 +418,15 @@ xp: 100
 skills: 1
 ```
 
+We can also create different types of sequences in R. 
+For example, in `seq(7, 49, 7)`, the first argument defines the start, and the second the end. The default is to go up in increments of 1, but a third argument lets us tell it by what interval.
 
 `@instructions`
 We will learn how to use the `seq()` function in this question.
 - Create a vector containing all the positive odd numbers smaller than 100. The numbers should be in ascendint order.
+
 `@hint`
-If you start at 1 and jump by 2, you`ll get the positive odd numbers. 
+If you start at 1 and jump by 2, you`ll get the positive odd numbers.
 
 `@pre_exercise_code`
 ```{r}
@@ -462,7 +462,16 @@ success_msg("Awesome! Let us 'jump' to the next exercise.")
 ```
 
 ---
-## Sequences and length 
+
+## Sequences and length
+
+```yaml
+type: NormalExercise
+key: c8deb909eb
+lang: r
+xp: 100
+skills: 1
+```
 
 The second argument of the function `seq` is actually a maximum, not necessarily the end. So if we type
 
@@ -479,15 +488,6 @@ seq(7, 49, 7)
 This can be useful because sometimes all we want are sequential numbers  that are smaller than some value. 
 
 Let's look at an example.
-
-```yaml
-type: NormalExercise
-key: c8deb909eb
-lang: r
-xp: 100
-skills: 1
-```
-
 
 `@instructions`
 Create a vector of numbers that starts at 6, does not go beyond 55, and adds numbers in increments of 4/7.
@@ -539,7 +539,16 @@ success_msg("Great job! Looks like you're getting good with sequences!")
 ```
 
 ---
+
 ## Sequences of certain length
+
+```yaml
+type: NormalExercise
+key: a005f7b688
+lang: r
+xp: 100
+skills: 1
+```
 
 The `seq()` function has another useful argument. The argument *length.out*. This argument lets us generate sequences that are increasing by the same amount but are of the prespecified length. 
 
@@ -551,17 +560,7 @@ x <- seq(0, 100, length.out = 5)
 
 produces the numbers 0, 25, 50, 75, 100. 
 
-Let's create a vector and see what is the class of the object produced. 
-
-
-```yaml
-type: NormalExercise
-key: a005f7b688
-lang: r
-xp: 100
-skills: 1
-```
-
+Let's create a vector and see what is the class of the object produced.
 
 `@instructions`
 - Determine the class of a vector generated with `seq` using the *length.out* argument. 
@@ -604,7 +603,16 @@ success_msg("Good job! Let us move on to the next exercise!")
 ```
 
 ---
+
 ## Integers
+
+```yaml
+type: NormalExercise
+key: b5c6d6d5ab
+lang: r
+xp: 100
+skills: 1
+```
 
 We have discussed the *numeric* class. We just saw that the `seq` function can generate objects of this class. For another example type 
 
@@ -625,22 +633,12 @@ in the console, you see this is an *integer* and not a *numeric*. For most  prac
 
 The main difference is that integers occupy less space in the computer memory, so for big computations using integers can have a substantial impact.
 
-
-```yaml
-type: NormalExercise
-key: b5c6d6d5ab
-lang: r
-xp: 100
-skills: 1
-```
-
-
 `@instructions`
 Does this change depending on what we store in an object?
-What is the class of the following object `a <- seq(1, 10)`? 
+What is the class of the following object `a <- seq(1, 10)`?
 
 `@hint`
-Note that there are only integer values within the seq parenthesis. 
+Note that there are only integer values within the seq parenthesis.
 
 `@pre_exercise_code`
 ```{r}
@@ -676,9 +674,8 @@ success_msg("Good job! Let's move on to the next exercise!")
 ```
 
 ---
-## Integers and Numerics
 
-Let's confirm that `1L` is an *integer* not a *numeric*.
+## Integers and Numerics
 
 ```yaml
 type: NormalExercise
@@ -688,6 +685,7 @@ xp: 100
 skills: 1
 ```
 
+Let's confirm that `1L` is an *integer* not a *numeric*.
 
 `@instructions`
 Confirm that the `class` of `1` is *numeric* and the `class` of `1L` is *integer*.
@@ -727,15 +725,8 @@ success_msg("Great, now that you know how to force a number to become an integer
 ```
 
 ---
+
 ## Coercion
-
-The concept of coercion is a very important one. Watching the video, we learned that when an entry does not match what an R function is expecting, R tries to guess what we meant before throwing an error. This might get confusing at times. 
-
-As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
-
-We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to integers. There is an equivalent function that converts integers to strings, `as.character(x)`.
-
-Let's practice doing this!
 
 ```yaml
 type: NormalExercise
@@ -745,6 +736,13 @@ xp: 100
 skills: 1
 ```
 
+The concept of coercion is a very important one. Watching the video, we learned that when an entry does not match what an R function is expecting, R tries to guess what we meant before throwing an error. This might get confusing at times. 
+
+As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
+
+We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to integers. There is an equivalent function that converts integers to strings, `as.character(x)`.
+
+Let's practice doing this!
 
 `@instructions`
 - Define the following vector:
@@ -757,7 +755,7 @@ x <- c(1, 3, 5,"a")
 - Convert `x` to a vector of integers using the `as.numeric()` function.
 
 `@hint`
-Make sure you put the numbers within "". 
+Make sure you put the numbers within "".
 
 `@pre_exercise_code`
 ```{r}
@@ -800,31 +798,30 @@ success_msg("Awesome! Doesn't that feel wonderful? Now, you can try changing it 
 ```
 
 ---
+
 ## End of Assessment 3
 
 ```yaml
 type: PureMultipleChoiceExercise
-lang: r
-xp: 0
-skills: 1
 key: d596636416
+lang: r
+xp: 50
+skills: 1
 ```
+
 This is the end of the programming assignment for this section. 
 
 You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics'>course</a>.
 
 If you want to continue the assessments without watching the videos, you can click on the arrow above to get the next exercise or hit Ctrl-K. WARNING: if you continue the assessments by clicking on the arrow to get the next exercise or by hitting Ctrl-K your assessments may NOT get scored.
 
+`@hint`
+- No hint necessary!
+
 `@possible_answers`
 - [Awesome]
 - Nope
 
-`@hint`
-- No hint necessary!
-
-
 `@feedback`
-
 - Great! Now navigate back to the course on edX!
 - Now navigate back to the course on edX!
-
