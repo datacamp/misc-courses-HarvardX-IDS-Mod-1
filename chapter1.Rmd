@@ -287,7 +287,7 @@ If you want to continue the assessments without watching the videos, you can cli
 
 `@possible_answers`
 - [Awesome]
-- Nope
+- [Nope]
 
 `@feedback`
 - Great! Now navigate back to the course on edX!
