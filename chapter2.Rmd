@@ -189,19 +189,19 @@ xp: 100
 skills: 1
 ```
 
-An important lesson you should learn early on is that there are multiple ways of doing things in R. For example, to generate the first five integers we note that `1:5`, and `seq(1,5)` return the same result. 
+An important lesson you should learn early on is that there are multiple ways to do things in R. For example, to generate the first five integers we note that `1:5` and `seq(1,5)` return the same result. 
 
-There are also other ways to variables from a data frame. For example we can use the square brackets `[[`
+There are also multiple ways to access variables in a data frame. For example we can use the square brackets `[[`
 instead of the accessor `$`. Example code is included in the editor.
 
-Now, if you instead try to access a columns with just one bracket 
+If you instead try to access a column with just one bracket, 
 
 ```{r}
 murders["population"]
 ```
 R returns a subset of the original data frame containing just this column. This new object will be of class `data.frame` rather than a vector. To access the column itself you need to use either the `$` accessor or the double square brackets `[[`. 
 
-This is an examaple of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
+This is an example of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
 
 `@instructions`
 - Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 

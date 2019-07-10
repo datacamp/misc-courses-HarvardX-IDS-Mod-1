@@ -13,7 +13,7 @@ xp: 100
 skills: 1
 ```
 
-A vector is a series of values, all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the combine function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
+A vector is a series of values, all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the concatenate (or combine) function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
 
 ```{r}
 cost <- c(50, 75, 90, 100, 150)
@@ -131,7 +131,7 @@ xp: 100
 skills: 1
 ```
 
-We have successfully assigned the temperatures as *numeric* values to `temp` and the city names as *character* values to `city`. But can we associate the temperature to it's related city? Yes! We can do so using a code we already know - `names`. We assign names to the *numeric* values.  
+We have successfully assigned the temperatures as *numeric* values to `temp` and the city names as *character* values to `city`. But can we associate the temperature to its related city? Yes! We can do so using a code we already know - `names`. We assign names to the *numeric* values.  
 
 It would look like this:
 
@@ -171,7 +171,7 @@ city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
 `@solution`
 ```{r}
-# Associate the cost values with its corresponding food item
+# Associate each cost value with its corresponding food item
 cost <- c(50, 75, 90, 100, 150)
 food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 names(cost) <- food
@@ -180,7 +180,7 @@ names(cost) <- food
 temp <- c(35, 88, 42, 84, 81, 30)
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
-# Associate the temperature values with its corresponding city
+# Associate each temperature value with its corresponding city
 names(temp) <- city
 ```
 
@@ -352,11 +352,11 @@ skills: 1
 The `:` operator helps us create sequences of numbers. 
 For example, `32:99` would create a list of numbers from 32 to 99. 
 
-Then, if we want to know the length of this sequence, all we need to do use the `length` command.
+Then, if we want to know the length of this sequence, all we need to do is use the `length` command.
 
 `@instructions`
 This time we will use just the `:` operator.
-Use the `:` operator to create a sequence of consecutive integers starting 12 and ending at 73 and save it in an object `x`, then determine the length of object x.
+Use the `:` operator to create a sequence of consecutive integers starting at 12 and ending at 73 and save it in an object `x`, then determine the length of object `x`.
 
 `@hint`
 Save the sequence in an object called `x`.
@@ -374,7 +374,7 @@ m <- 32:99
 # Determine the length of object m.
 length(m)
 
-# Create a vector x of integers that starts 12 and ends at 73.
+# Create a vector x of integers that starts at 12 and ends at 73.
 
 # Determine the length of object x.
 
@@ -389,7 +389,7 @@ m <- 32:99
 # Determine the length of object m.
 length(m)
 
-# Create a vector x of integers that starts 12 and ends at 73.
+# Create a vector x of integers that starts at 12 and ends at 73.
 x <- 12:73
 
 # Determine the length of object x.
@@ -423,7 +423,7 @@ For example, in `seq(7, 49, 7)`, the first argument defines the start, and the s
 
 `@instructions`
 We will learn how to use the `seq()` function in this question.
-- Create a vector containing all the positive odd numbers smaller than 100. The numbers should be in ascendint order.
+- Create a vector containing all the positive odd numbers smaller than 100. The numbers should be in ascending order.
 
 `@hint`
 If you start at 1 and jump by 2, you`ll get the positive odd numbers.
@@ -503,11 +503,11 @@ Use `length` and then `seq` within parentheses.
 
 `@sample_code`
 ```{r}
-# We can a vector with the multiples of 7, smaller than 50 like this 
+# We can create a vector with the multiples of 7, smaller than 50 like this 
 seq(7, 49, 7) 
 
-# But note that the second argument does not need to be last number.
-# It simply determines the maximum value permitted.
+# But note that the second argument does not need to be the last number
+# It simply determines the maximum value permitted
 # so the following line of code produces the same vector as seq(7, 49, 7)
 seq(7, 50, 7)
 
@@ -518,11 +518,11 @@ seq(7, 50, 7)
 
 `@solution`
 ```{r}
-# We can a vector with the multiples of 7, smaller than 50 like this 
+# We can create a vector with the multiples of 7, smaller than 50 like this 
 seq(7, 49, 7) 
 
-# But note that the second argument does not need to be last number.
-# It simply determines the maximum value permitted.
+# But note that the second argument does not need to be the last number
+# It simply determines the maximum value permitted
 # so the following line of code produces the same vector as seq(7, 49, 7)
 seq(7, 50, 7)
 
