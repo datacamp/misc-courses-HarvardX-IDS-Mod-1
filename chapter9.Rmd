@@ -113,7 +113,9 @@ If the entry is -999 it returns NA, otherwise it returns the entry.
 
 `@instructions`
 We will combine a number of functions for this exercise.
-- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters. So, for example, where the original vector has Massachusetts (13 characters), the new vector should have MA. But where the original vector has New York (8 characters), the new vector should have New York as well.
+- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters and assigns the state name when the name is not longer than 8 characters.
+
+For example, where the original vector has Massachusetts (13 characters), the new vector should have MA. But where the original vector has New York (8 characters), the new vector should have New York as well.
 
 `@hint`
 Use a call to `nchar` as the first argument of the `ifelse` function to calculate. Check to see if it's larger than 8. Then you use `murders$abb` and `murders$state` in the second and third arguments to return either the abbreviation or state name depending on the number of characters.
@@ -315,7 +317,7 @@ xp: 100
 skills: 1
 ```
 
-Lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when.
+Lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available at different points in the code.
 
 ```{r}
 x <- 8
@@ -330,7 +332,7 @@ print(x)
 Note that when we define `x` as 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside.
 
 `@instructions`
-The lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available when. After running the code below, what is the value of `x`?
+After running the code below, what is the value of `x`?
 ```{r}
 x <- 3
 my_func <- function(y){
@@ -358,7 +360,7 @@ x <- 3
     y+5
 }
 
-# Print value of x 
+# Print the value of x 
 ```
 
 `@solution`
@@ -410,7 +412,7 @@ Then you evaluate it at 10: `compute_s_n(10)`
 
 `@sample_code`
 ```{r}
-# Here is an example of function that adds numbers from 1 to n
+# Here is an example of a function that adds numbers from 1 to n
 example_func <- function(n){
     x <- 1:n
     sum(x)
@@ -419,7 +421,7 @@ example_func <- function(n){
 # Here is the sum of the first 100 numbers
 example_func(100)
 
-# Write a function compute_s_n that with argument n and returns of 1 + 2^2 + ...+ n^2
+# Write a function compute_s_n with argument n that for any given n computes the sum of 1 + 2^2 + ...+ n^2
 
 # Report the value of the sum when n=10
 
@@ -436,7 +438,7 @@ example_func <- function(n){
 # Here is the sum of the first 100 numbers
 example_func(100)
 
-# Write the function with argument n, with the above mentioned specifications and store it in `compute_s_n` 
+# Write a function compute_s_n with argument n that for any given n computes the sum of 1 + 2^2 + ...+ n^2
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
@@ -444,7 +446,6 @@ compute_s_n <- function(n){
 
 # Report the value of the sum when n=10
 compute_s_n(10)
-
 ```
 
 `@sct`
