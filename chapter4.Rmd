@@ -16,7 +16,7 @@ skills: 1
 When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the `murders` dataset as an example.
 
 `@instructions`
-- Use the `$` operator to access the population size data and store it the object `pop`. 
+- Use the `$` operator to access the population size data and store it in the object `pop`. 
 - Then use the `sort` function to redefine `pop` so that it is sorted. 
 - Finally use the `[` operator to report the smallest population size.
 
@@ -100,11 +100,11 @@ So for example, the entries of the vector `murders$state` are ordered in the sam
 
 `@instructions`
 - Now instead of the smallest population size, let's find out the row number, in the data frame `murders`, of the state with the smallest population size.
-- This time we need to replace the `order()` instead of `sort()`. 
+- This time we need to use `order()` instead of `sort()`. 
 - Remember that the entries in the vector `murders$population` follow the order of the rows of `murders`.
 
 `@hint`
-Once you define `pop` with the population variable, get all the indexes using `o <- order(pop)`. The first index relates to the row with the smallest population.
+Once you define `pop` with the population variable, get all the indexes using `ord <- order(pop)`. The first index relates to the row with the smallest population.
 
 `@pre_exercise_code`
 ```{r}
@@ -116,7 +116,7 @@ data(murders)
 ```{r}
 # Access population from the dataset and store it in pop
 
-# Use the command order, to order pop and store in object o
+# Use the command order, to order pop and store in object ord
 
 # Find the index number of the entry with the smallest population size
 
@@ -127,11 +127,11 @@ data(murders)
 # Access population from the dataset and store it in pop
 pop <- murders$population
 
-# Use the command order, to order pop and store in object o
-o <- order(pop)
+# Use the command order, to order pop and store in object ord
+ord <- order(pop)
 
 # Find the index number of the entry with the smallest population size
-o[1]
+ord[1]
 
 ```
 
@@ -139,8 +139,8 @@ o[1]
 ```{r}
 test_error()
 test_object("pop", undefined_msg = "Define pop first.", incorrect_msg = "Make sure you save population in pop.")
-test_object("o", undefined_msg = "Make sure you define o first!", incorrect_msg = "Store pop using the order code in object o.")
-test_output_contains("o[1]", incorrect_msg = "Use the command provided in the instructions.") 
+test_object("ord", undefined_msg = "Make sure you define ord first!", incorrect_msg = "Store pop using the order code in object ord.")
+test_output_contains("ord[1]", incorrect_msg = "Use the command provided in the instructions.") 
 test_function("order", index = 1,eval = TRUE,eq_condition = "equivalent", not_called_msg = "Make sure to call the order function.",
               incorrect_msg = "Make sure to call it on the object `pop`.")
 success_msg("Great job!")
