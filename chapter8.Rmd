@@ -28,7 +28,7 @@ plot(population_in_millions, total_gun_murders)
 Note that many states have populations below 5 million and are bunched up in the plot. We may gain further insights from making this plot in the log scale.
 
 `@instructions`
-- Transform the variables using the log, to the base 10, transformation
+- Transform the variables using the log base 10 transformation
 - Plot the log transformed total murders versus population
 
 `@hint`
@@ -79,7 +79,6 @@ log10_total_gun_murders <- log10(murders$total)
 
 # Create a scatterplot with the log scale transformed population and murders 
 plot(log10_population, log10_total_gun_murders)
-
 ```
 
 `@sct`
@@ -164,7 +163,7 @@ Now we are going to make boxplots. Boxplots are useful when we want a summary of
 In one line of code:
 
 - Stratify the state populations by region.
-- Generate boxplots for the strate.
+- Generate boxplots for the strata.
 
 Note that you can achieve this using this `population~region` inside `boxplot` to generate the strata and specify the dataset with the `data` argument.
 
