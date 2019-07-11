@@ -33,7 +33,7 @@ Note that we can write `population` rather than `murders$population`. The functi
 - Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate. 
 - Make sure you redefine `murders` as done in the example code above.
 
-Remember the murder rate is defined the total divided by the population size times 100,000
+Remember the murder rate is defined as the total murders divided by the population size times 100,000.
 
 `@hint`
 You can define a new function based on existing ones like this:
@@ -58,7 +58,7 @@ data(murders)
 # Loading dplyr
 library(dplyr)
 
-# Redefine murders so that it includes column named rate with the per 100,000 murder rates
+# Redefine murders so that it includes a column named rate with the per 100,000 murder rates
 
 ```
 
@@ -71,7 +71,7 @@ data(murders)
 # Loading dplyr
 library(dplyr)
 
-# Redefine murders so that it includes column named rate with the per 100,000 murder rates
+# Redefine murders so that it includes a column named rate with the per 100,000 murder rates
 murders <- mutate(murders, rate =  total / population * 100000)
 ```
 
@@ -97,7 +97,7 @@ skills: 1
 Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
 
 `@instructions`
-- Use the function `mutate` to add a column `rank` containing the rank, from highest to lowest murder rate. Make sure you redeinfe murders.
+- Use the function `mutate` to add a column `rank` containing the rank, from highest to lowest murder rate. Make sure you redefine murders.
 
 `@hint`
 Note that `rate` is already defined and that `rank(-rate)` gives you the ranks you want. Now just add that column and name the column `rank`
@@ -219,12 +219,12 @@ xp: 100
 skills: 1
 ```
 
-The `dplyr` function `filter` is used to choose specific rows of the data frame to keep. Unlke `select` which is for columns, `filter` is for rows. For example you can show just New York row like this:
+The `dplyr` function `filter` is used to choose specific rows of the data frame to keep. Unlike `select` which is for columns, `filter` is for rows. For example you can show just the New York row like this:
 
 ```{r}
 filter(murders, state == "New York")
 ```
-You can use other logical vector to filter rows.
+You can use other logical vectors to filter rows.
 
 `@instructions`
 - Use `filter` to show the top 5 states with the highest murder rates. After we add murder rate and rank, do not change the murders dataset, just show the result. Note that you can filter based on the `rank` column.
@@ -549,25 +549,23 @@ xp: 100
 skills: 1
 ```
 
-
+Now we will reset murders to the original table by using `data(murders)`.
 
 `@instructions`
-Now we will make murders the original table one gets when loading using `data(murders)`. 
-Use just one line to create a new data frame, called, `my_states` that has murder rate and rank column, consider only states in the Northeast or West, which have a murder rate lower than 1 and contain only the state, rate, and rank columns. The line should have four components
-separated by three `%>%`. 
+Use one line of code to create a new data frame, called `my_states`, that has murder rate and rank columns, considers only states in the Northeast or West which have a murder rate lower than 1, and contain only the state, rate, and rank columns. The line should have four components separated by three `%>%` operators: 
 - The original dataset `murders`
 - A call to `mutate` to add the murder rate and the rank.
-- A call to `filter` to keep only the states from the Northeast or West and that have a murder rate below 1
-- A call to `select` that keeps only the columns with the stata name, the murder rate and the rank. 
+- A call to `filter` to keep only the states from the Northeast or West and that have a murder rate below 1.
+- A call to `select` that keeps only the columns with the state name, the murder rate, and the rank. 
 
 The line should look something like this `my_states <- murders %>%` mutate something `%>%` filter something `%>%` select something.
-Please, make sure the columns in the final data frame must be in the order: `state`, `rate`, `rank`.
+Columns in the final data frame MUST be in the order: `state`, `rate`, `rank`.
 
 `@hint`
 The following pieces of code should be joined by pipes:
 - `mutate(rate =  total / population * 100000, rank = rank(-rate))`
 - `filter(region %in% c("Northeast", "West") & rate < 1)`
--  `select(state, rate, rank)`
+- `select(state, rate, rank)`
 
 `@pre_exercise_code`
 ```{r}
