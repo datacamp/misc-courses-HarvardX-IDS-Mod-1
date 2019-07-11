@@ -24,7 +24,7 @@ city_temps <- data.frame(name = city, temperature = temp)
 `@instructions`
 We are interested in specifying Celsius instead of Fahrenheit. Remember that to convert from Fahrenheit to Celsius we use $C = 5/9 \times (F-32)$.
 
-- Use vector arithmetics to convert `temp` to Celsius
+- Use vector arithmetic to convert `temp` to Celsius
 - Create a data frame called `city_temps` with the city names and temperatures in Celsius.
 
 `@hint`
