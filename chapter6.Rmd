@@ -382,7 +382,7 @@ xp: 100
 skills: 1
 ```
 
-If rather than an index we want a logical that tells us whether or not each element of a first vector is in we can use the function `%in%`.
+If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function `%in%`.
 For example: 
 
 ```{r}
@@ -390,12 +390,12 @@ x <- c(2, 3, 5)
 y <- c(1, 2, 3, 4)
 x%in%y
 ```
-Gives us a two `TRUE` followed by a `FALSE` because 2 and 3 are in `y`.
+Gives us two `TRUE` followed by a `FALSE` because 2 and 3 are in `y` but 5 is not.
 
 `@instructions`
 Which of the following are actual abbreviations: MA, ME, MI, MO, MU?
 - Define a character vector with the abbreviations MA, ME, MI, MO, MU.
-- Use the `%` operator to create a logical vectors that is TRUE when the abbreviation is in `murders$abb`.
+- Use the `%in%` operator to create a logical vector that is TRUE when the abbreviation is in `murders$abb`.
 
 `@hint`
 Look at what this does: 
@@ -471,7 +471,7 @@ data(murders)
 # Store the 5 abbreviations in abbs. (remember that they are character vectors)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the `which` command and `!` operator to find out which abbreviation are not actually part of the dataset and store in ind
+# Use the `which` command and `!` operator to find out which abbreviations are not actually part of the dataset and store in `ind`
 
 # What are the entries of abbs that are not actual abbreviations
 
@@ -482,7 +482,7 @@ abbs <- c("MA", "ME", "MI", "MO", "MU")
 # Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the `which` command and `!` operator to find out which abbreviation is not actually part of the dataset and store in 'ind' 
+# Use the `which` command and `!` operator to find out which abbreviations are not actually part of the dataset and store in 'ind' 
 ind <- which(!abbs%in%murders$abb)
 
 # Names of abbs in `ind`
@@ -493,7 +493,7 @@ abbs[ind]
 `@sct`
 ```{r}
 test_error()
-test_object("ind", undefined_msg = "Make sure you define ind first! ", incorrect_msg = "Use the which and ! codes." )
+test_object("ind", undefined_msg = "Make sure you define ind first!", incorrect_msg = "Use the which and ! codes." )
 test_output_contains("abbs[ind]", incorrect_msg = "Have you used square brackets?")
 success_msg("Awesome!")
 ```
