@@ -64,7 +64,7 @@ xp: 100
 skills: 1
 ```
 
-The function `which()` help us know directly, which values are low or high, etc. Let's use it in this question.
+The function `which()` helps us know directly, which values are low or high, etc. Let's use it in this question.
 
 `@instructions`
 - Use the results from the previous exercise and the function `which` to determine the indices of `murder_rate` associated with values lower than 1.
@@ -123,7 +123,7 @@ xp: 100
 skills: 1
 ```
 
-Note that if we want to know which entries of a vector are lower than some values we can use code like this:
+Note that if we want to know which entries of a vector are lower than a particular value we can use code like this:
 
 ```{r}
 small <- murders$population < 1000000
@@ -133,7 +133,7 @@ murders$state[small]
 The code above shows us the states with populations smaller than one million.
 
 `@instructions`
-- Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the name of the states from the dataset.
+- Use the results from the previous exercise to report the names of the states with murder rates lower than 1, using the square brackets to retrieve the names of the states from the dataset.
 
 `@hint`
 
@@ -191,7 +191,7 @@ skills: 1
 
 
 `@instructions`
-Now we will extend the code from the previous exercises to report the states in the Northeast with murder rates lower than 1.
+Now we will extend the code from the previous exercises to report the states in the Northeast with a murder rate lower than 1.
 - Define `low` as before.
 - Use the `&` operator to create a new object `ind` that is true when `low` is true and the state is in the Northeast
 - Use the brackets `[` and `ind` to show the state names that satisfy this condition
@@ -281,7 +281,7 @@ data(murders)
 murder_rate <- murders$total/murders$population*100000
 
 
-# Compute average murder rate and store in avg using `mean` 
+# Compute the average murder rate using `mean` and store it in object named `avg`
 
 
 # How many states have murder rates below avg ? Check using sum 
@@ -293,7 +293,7 @@ murder_rate <- murders$total/murders$population*100000
 # Store the murder rate per 100,000 for each state, in murder_rate
 murder_rate <- murders$total/murders$population*100000
 
-# Compute average murder rate and store in avg using mean
+# Compute the average murder rate using `mean` and store it in object named `avg`
 avg <-mean(murder_rate)
 
 # How many states are < avg ? Check using sum 
@@ -340,7 +340,7 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Store the 3 abbreviations in abbs in a vector (remember that they are character vectors and need quotes)
+# Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
 
 # Match the abbs to the murders$abb and store in ind
 
@@ -350,7 +350,7 @@ data(murders)
 
 `@solution`
 ```{r}
-# Store the 3 abbreviations in abbs in a vector (remember that they are character vectors and need quotes)
+# Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
 abbs <- c("AK", "MI", "IA")
 
 # Match the abbs to the murders$abb and store in `ind`
