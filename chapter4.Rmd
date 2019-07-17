@@ -368,7 +368,7 @@ repeat the previous exercise but this time order `my_df` so that the states are 
 - Create variables `states` and `ranks` to store the state names and ranks by population size respectively.
 - Create an object `ind` that stores the indexes needed to order the population values, using the `order` command. For example we could define `o <- order(murders$population)`
 - Create a data frame with both variables following the correct order. Use the bracket operator `[` to re-order each column in the data frame. For example, `states[o]` orders the abbreviations based by population size. 
-- The columns of the data frame must be in the specific order: state, rate, rank.
+- The columns of the data frame must be in the specific order: state, rank.
 
 `@hint`
 When you define `my_df`, each column will be ordered using the `ind`. It will look something like this 
