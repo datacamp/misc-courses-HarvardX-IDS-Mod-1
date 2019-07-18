@@ -257,7 +257,7 @@ identical(a,b)
 test_error()
 test_object ("b", undefined_msg = "You need to define the object `b`.", incorrect_msg = "Make sure to save the variable `abb` in the object `b`.")
 test_function("identical",index=2)
-test_student_typed("b<-murders[['abb']]",not_typed_msg = "Make sure to use the brackets instead of a the $ operator")
+test_student_typed("b<-murders[['abb']]",not_typed_msg = "Make sure to use the double brackets instead of a the $ operator")
 success_msg("You've now learned different ways of doing the same thing in R! You're making great progress!")
 ```
 
