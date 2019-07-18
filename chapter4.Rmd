@@ -175,19 +175,19 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Find the smallest value for variable total 
+# Find the index of the smallest value for variable total 
 which.min(murders$total)
 
-# Find the smallest value for population
+# Find the index of the smallest value for population
 
 ```
 
 `@solution`
 ```{r}
-# Find the smallest value for variable total 
+# Find the index of the smallest value for variable total 
 which.min(murders$total)
 
-# Find the smallest value for population
+# Find the index of the smallest value for population
 which.min(murders$population)
 
 ```
