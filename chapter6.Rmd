@@ -307,6 +307,7 @@ test_error()
 test_object("murder_rate", undefined_msg = "Define the murder rate first!", incorrect_msg = "Same formula as before.")
 test_object("avg", undefined_msg = "", incorrect_msg = "Compute the mean and store it here.")
 test_function("sum", incorrect_msg = "Check the number of states below average murder rate.")
+test_output_contains("27", incorrect_msg = "Did you count the number of states with a murder rate below `avg`?")
 success_msg("Awesome!")
 ```
 
