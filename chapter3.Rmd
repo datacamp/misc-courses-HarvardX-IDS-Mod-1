@@ -786,7 +786,7 @@ x
 
 # Typecast the vector to get an integer vector
 # You will get a warning but that is ok
-x = as.numeric(x)
+x <- as.numeric(x)
 
 ```
 
