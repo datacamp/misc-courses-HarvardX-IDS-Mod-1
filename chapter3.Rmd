@@ -80,7 +80,7 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
 `@instructions`
 The temperatures we stored in `temp` are from the cities Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
-- Create a vector with these city names and call the object `city`.
+- Create a vector with these city names and call the object `city`. Make sure to use the correct order, spelling and capitalization.
 
 `@hint`
 Be sure to place the names within double quotes.
