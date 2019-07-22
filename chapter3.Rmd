@@ -80,7 +80,8 @@ food <- c("pizza", "burgers", "salads", "cheese", "pasta")
 
 `@instructions`
 The temperatures we stored in `temp` are from the cities Beijing, Lagos, Paris, Rio de Janeiro, San Juan, and Toronto.
-- Create a vector with these city names and call the object `city`. Make sure to use the correct order, spelling and capitalization.
+- Create a vector with these city names and call the object `city`. Make sure to use the correct order, spelling and capitalization!
+- (Also note that DataCamp is not compatible with the punctuation used on an iPad or some mobile phones. Complete DataCamp exercises on a full-size computer to avoid correct answer rejections.)
 
 `@hint`
 Be sure to place the names within double quotes.
