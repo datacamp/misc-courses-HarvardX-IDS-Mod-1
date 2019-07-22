@@ -793,7 +793,7 @@ x <- as.numeric(x)
 `@sct`
 ```{r}
 test_error()
-test_object("x", undefined_msg = "Make sure to define x first.", incorrect_msg = "Assign the vector back to itself in `x`.")
+test_object("x", undefined_msg = "Make sure to define x first.", incorrect_msg = "Update the definition of `x`: assign the vector back to itself using code like `x <- ___`.")
 test_function("as.numeric")
 success_msg("Awesome! Doesn't that feel wonderful? Now, you can try changing it back to character, using the code `as.character(x)`.")
 ```
