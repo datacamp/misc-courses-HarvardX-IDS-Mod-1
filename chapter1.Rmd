@@ -223,7 +223,7 @@ log10(sqrt(100))
 `@sct`
 ```{r}
 test_error() 
-test_student_typed (c("log10(sqrt(100))", "log(sqrt(100), base=10)"), times = 1, not_typed_msg = "Make sure you use the right base for the log and put the sqrt function in parenthesis. Remember not to use variables.")
+test_output_contains("1", incorrect_msg = "Make sure you use the right base for the log and put the sqrt function inside of the log function.")
 success_msg("Very good!")
 ```
 
