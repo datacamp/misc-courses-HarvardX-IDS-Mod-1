@@ -21,6 +21,7 @@ We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 `@instructions`
 - Define `n=100`
 - Then use R to compute the sum of 1 through 100 using the formula $ n(n+1)/2$. What is the sum?
+- Make sure you do not erase or change the sample code on DataCamp exercises.
 
 `@hint`
 - Define `n` to be 100 in one line and simply type the formula using R code in the second line.
@@ -69,7 +70,6 @@ n*(n+1)/2
 test_error()
 test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
 test_output_contains("5050", incorrect_msg = "You are not providing a formula that gives the correct answer. Look at the example code.")
-test_student_typed("n*(n+1)/2", times = 3, not_typed_msg = "Make sure you type the equation. Look at the example code. And don't erase the example code.")
 success_msg("Good job! Let`s apply this to another question.")
 ```
 
