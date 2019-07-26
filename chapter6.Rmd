@@ -459,7 +459,7 @@ We are again working with the characters `abbs <- c("MA", "ME", "MI", "MO", "MU"
 - Show the entries of `abbs` that are not actual abbreviations.
 
 `@hint`
-Use the code `ind <- which(!abbs%in%murders$abb)` to get the index. Then you can use the `[` to extract the correct values of `abs`.
+Use the code `ind <- which(!abbs%in%murders$abb)` to get the index. Then you can use the `[` to extract the correct values of `abbs`.
 
 `@pre_exercise_code`
 ```{r}
@@ -472,9 +472,9 @@ data(murders)
 # Store the 5 abbreviations in abbs. (remember that they are character vectors)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the `which` command and `!` operator to find out which abbreviations are not actually part of the dataset and store in `ind`
+# Use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in `ind`
 
-# What are the entries of abbs that are not actual abbreviations
+# Names of abbreviations in `ind`
 
 ```
 
@@ -483,10 +483,10 @@ abbs <- c("MA", "ME", "MI", "MO", "MU")
 # Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
 abbs <- c("MA", "ME", "MI", "MO", "MU") 
 
-# Use the `which` command and `!` operator to find out which abbreviations are not actually part of the dataset and store in 'ind' 
+# Use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in 'ind' 
 ind <- which(!abbs%in%murders$abb)
 
-# Names of abbs in `ind`
+# Names of abbreviations in `ind`
 abbs[ind]
 
 ```
