@@ -205,7 +205,7 @@ This is an example of how R can be a bit idiosyncratic sometimes. It is very com
 
 `@instructions`
 - Use the square brackets `[[` to extract the state abbreviations and assign them to the object `b`. 
-Then use the identical function to determine if `a`, as defined in the previous exercises, and `b` are the same.
+- Then use the `identical` function to determine if `a`, as defined in the previous exercises, and `b` are the same.
 
 `@hint`
 You need to use 2 sets of square brackets.
