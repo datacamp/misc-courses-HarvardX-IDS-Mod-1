@@ -90,7 +90,7 @@ What is the sum of the first 1000 positive integers?
 We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
 
 `@instructions`
-- Use the same formula as the last exercise but change the value of `n`.
+- Use the same formula as the last exercise but change the value of `n`. Make sure you use the variable name `n` to store the value 1000.
 - Instead of typing the result, use the formula and defined variable.
 
 `@hint`
