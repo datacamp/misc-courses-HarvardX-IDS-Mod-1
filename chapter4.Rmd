@@ -116,7 +116,7 @@ data(murders)
 ```{r}
 # Access population from the dataset and store it in pop
 
-# Use the command order, to order pop and store in object ord
+# Use the command order to find the vector of indexes that order pop and store in object ord
 
 # Find the index number of the entry with the smallest population size
 
@@ -127,7 +127,7 @@ data(murders)
 # Access population from the dataset and store it in pop
 pop <- murders$population
 
-# Use the command order, to order pop and store in object ord
+# Use the command order to find the vector of indexes that orders pop and store in object ord
 ord <- order(pop)
 
 # Find the index number of the entry with the smallest population size
