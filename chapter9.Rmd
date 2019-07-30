@@ -301,7 +301,7 @@ test_function_definition("altman_plot",
                             },
                          undefined_msg = "Be sure to define `altman_plot`.",
                          incorrect_number_arguments_msg = "Make sure the function takes two arguments.")
-test_object("altman_plot", incorrect_msg = "Make sure you use `x` and `y` as your arguments and that you plot the difference `y-x` versus the sum `x+y`. Please write the sum as `x+y` not `y+x. Also, for this exercises, we want you to use the curly brackets `{ }` as in the example.") 
+test_object("altman_plot", incorrect_msg = "Make sure you use `x` and `y` as your arguments and that you plot the difference `y-x` versus the sum `x+y`. Please write the sum as `x+y` not `y+x`. Also, for this exercise, we want you to use the curly brackets `{ }` as in the example.") 
 success_msg("That's great! You can also play around with the variables and put in values for x and y.")
 ```
 
