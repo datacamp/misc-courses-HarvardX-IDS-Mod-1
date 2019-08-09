@@ -741,7 +741,7 @@ The concept of coercion is a very important one. Watching the video, we learned 
 
 As we've discussed in earlier questions, there are numeric and character vectors. The character vectors are placed in quotes and the numerics are not. 
 
-We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to integers. There is an equivalent function that converts its argument to a string, `as.character(x)`.
+We can avoid issues with coercion in R by changing characters to numerics and vice-versa. This is known as typecasting. The code, `as.numeric(x)` helps us convert character strings to numbers. There is an equivalent function that converts its argument to a string, `as.character(x)`.
 
 Let's practice doing this!
 
@@ -753,7 +753,7 @@ x <- c(1, 3, 5,"a")
 ```
 
 - Notice that `x` has been coerced into a character string.
-- Convert `x` to a vector of integers using the `as.numeric()` function.
+- Convert `x` to a vector of numbers using the `as.numeric()` function.
 
 `@hint`
 Make sure you put the numbers within "".
