@@ -784,8 +784,7 @@ x <- c(1, 3, 5,"a")
 # Note that the x is character vector
 x
 
-# Typecast the vector to get an integer vector
-# You will get a warning but that is ok
+# Use `as.numeric` to coerce `x` to a numeric vector. Be sure to reassign the new vector as `x`.
 x <- as.numeric(x)
 
 ```
