@@ -199,7 +199,9 @@ If you instead try to access a column with just one bracket,
 ```{r}
 murders["population"]
 ```
-R returns a subset of the original data frame containing just this column. This new object will be of class `data.frame` rather than a vector. To access the column itself you need to use either the `$` accessor or the double square brackets `[[`. 
+R returns a subset of the original data frame containing just this column. This new object will be of class `data.frame` rather than a vector. To access the column itself you need to use either the `$` accessor or the double square brackets `[[`.
+
+Parentheses, in contrast, are mainly used alongside functions to indicate what argument the function should be doing something to. For example, when we did `class(p)` in the last question, we wanted the function `class` to do something related to the argument `p`.
 
 This is an example of how R can be a bit idiosyncratic sometimes. It is very common to find it confusing at first.
 
