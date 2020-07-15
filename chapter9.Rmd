@@ -657,7 +657,7 @@ Now let's actually check if we get the exact same answer.
 - Confirm that `s_n` and $n(n+1)(2n+1)/6$ are the same using the `identical` command.
 
 `@hint`
-`s_n` is a vector. Because `n` is a vector `n*(n+1)*(2n+1)/6` is a vector. You can compare two vectors `x` and `y` with `identical(x, y)`.
+`s_n` is a vector. Because `n` is a vector `n*(n+1)*(2*n+1)/6` is a vector. You can compare two vectors `x` and `y` with `identical(x, y)`.
 
 `@pre_exercise_code`
 ```{r}
