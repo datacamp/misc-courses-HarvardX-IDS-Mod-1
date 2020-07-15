@@ -263,6 +263,7 @@ This function does not return anything. It just makes a plot.
 `@instructions`
 We will make another function for this exercise.
 - Create a function `altman_plot` that takes two arguments `x` and `y` and plots `y-x` (on the y-axis) against `x+y` (on the x-axis).
+	- Note: don't use parentheses around the arguments in the `plot` function because you will confuse R.
 
 `@hint`
 The command inside the function should be: `plot(x + y, y - x)`. Remember to define a function you use
@@ -301,7 +302,7 @@ test_function_definition("altman_plot",
                             },
                          undefined_msg = "Be sure to define `altman_plot`.",
                          incorrect_number_arguments_msg = "Make sure the function takes two arguments.")
-test_object("altman_plot", incorrect_msg = "Make sure you use `x` and `y` as your arguments and that you plot the difference `y-x` versus the sum `x+y`. Please write the sum as `x+y` not `y+x`. Also, for this exercise, we want you to use the curly brackets `{ }` as in the example.") 
+test_object("altman_plot", incorrect_msg = "Make sure you use `x` and `y` as your arguments and that you plot the difference `y-x` versus the sum `x+y`. Please write the sum as `x+y` not `y+x`. Also, for this exercise, we want you to use the curly brackets `{ }` as in the example. Do not use () around the arguments in the `plot` function because you will confuse R.") 
 success_msg("That's great! You can also play around with the variables and put in values for x and y.")
 ```
 
