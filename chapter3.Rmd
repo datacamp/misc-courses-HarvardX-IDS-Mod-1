@@ -754,7 +754,7 @@ x <- c(1, 3, 5,"a")
 
 - Notice that `x` has been coerced into a character string.
 - If we assign something new to a vector that we've already created, the new definition replaces whatever was previously assigned to the vector.
-	- Convert `x` to a vector of numbers using the `as.numeric()` function.
+	- Convert `x` to a vector of numbers using the `as.numeric()` function. (Note that you will get a warning message, but that is okay!)
 
 `@hint`
 Make sure you put the numbers within "".
@@ -772,7 +772,8 @@ x <- c(1, 3, 5,"a")
 # Note that the x is character vector
 x
 
-# Use `as.numeric` to coerce `x` to a numeric vector. Be sure to reassign the new vector as `x`.
+# Redefine `x` to typecast it to get an integer vector using `as.numeric`.
+# You will get a warning but that is okay
 
 ```
 
