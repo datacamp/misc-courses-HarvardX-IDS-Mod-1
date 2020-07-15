@@ -530,7 +530,7 @@ A common operation is therefore removing the entries that are NA and after that 
 Write one line of code to compute the average, but only for the entries that are not NA making use of the `!` operator before `ind`. (Remember that you can use `help("!")` to find out more about what `!` does.)
 
 `@hint`
-Remember the `!` operator. Note that `na_example[!ind]` returns the entries that are not NA.
+Remember the `!` operator, which acts as the "not" operator. If we say `!TRUE`, it will return `FALSE`. Note that `na_example[!ind]` returns the entries that are not NA.
 
 `@pre_exercise_code`
 ```{r}
