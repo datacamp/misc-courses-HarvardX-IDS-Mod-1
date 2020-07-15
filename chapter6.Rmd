@@ -17,7 +17,7 @@ Here we will be using logical operators to create a logical vector.
 
 `@instructions`
 - Compute the per 100,000 murder rate for each state and store it in an object called `murder_rate`. 
-- Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of murder_rate are lower than 1.
+- Then use the logical operators to create a logical vector, name it `low`, that tells us which entries of `murder_rate` are lower than 1, and which are not, in one line of code.
 
 `@hint`
 The code for calculating the murder rate is: `murders$total/murders$population*100000`.
