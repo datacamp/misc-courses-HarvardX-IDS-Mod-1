@@ -491,7 +491,7 @@ mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>%
 Note that `select` no longer has a data frame as the first argument. The first argument is assumed to be the result of the operation conducted right before the  `%>%`
 
 `@instructions`
-- Repeat the previous exercise, but now instead of creating a new object, show the result and only include the state, rate, and rank columns.
+- Repeat the previous exercise, but now instead of creating a new object, show the result and only include the state, rate, and rank columns in that order.
 - Use a pipe `%>%` to do this in just one line.
 
 `@hint`
@@ -513,7 +513,7 @@ library(dplyr)
 ## Define the rate column
 murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
-# show the result and only include the state, rate, and rank columns, all in one line
+# show the result and only include the state, rate, and rank columns, all in one line, in that order
 
 ```
 
@@ -522,7 +522,7 @@ murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rat
 ## Define the rate and rank column
 murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
-# show the result and only include the state, rate, and rank columns, all in one line
+# show the result and only include the state, rate, and rank columns, all in one line, in that order
 filter(murders, region %in% c("Northeast", "West") & rate < 1) %>%  
    select(state, rate, rank)
    
