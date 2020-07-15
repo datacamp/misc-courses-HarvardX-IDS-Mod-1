@@ -552,7 +552,7 @@ skills: 1
 Now we will reset murders to the original table by using `data(murders)`.
 
 `@instructions`
-Use one line of code to create a new data frame, called `my_states`, that has murder rate and rank columns, considers only states in the Northeast or West which have a murder rate lower than 1, and contain only the state, rate, and rank columns. The line should have four components separated by **three** `%>%` operators: 
+Use one line of code to create a new data frame, called `my_states`, that has murder rate and rank columns (with the rank ordered from highest to lowest), considers only states in the Northeast or West which have a murder rate lower than 1, and contain only the state, rate, and rank columns. The line should have four components separated by **three** `%>%` operators: 
 - The original dataset `murders`
 - A call to `mutate` to add the murder rate and the rank.
 - A call to `filter` to keep only the states from the Northeast or West and that have a murder rate below 1.
