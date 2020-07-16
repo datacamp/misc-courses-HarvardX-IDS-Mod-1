@@ -135,7 +135,7 @@ skills: 1
 
 Run the following code in the R console:
 
-```{r, eval=FALSE}
+```
 n <- 1000
 x <- seq(1,n)
 sum(x)
