@@ -57,7 +57,7 @@ total_gun_murders <- murders$total
 
 plot(population_in_millions, total_gun_murders)
 
-# Transform population using the log10 transformation and save to object log10_population
+# Transform population (not population in millions) using the log10 transformation and save to object log10_population
 
 # Transform total gun murders using log10 transformation and save to object log10_total_gun_murders
 
@@ -74,7 +74,7 @@ population_in_millions <- murders$population/10^6
 total_gun_murders <- murders$total
 plot(population_in_millions, total_gun_murders)
 
-# Transform population using the log10 transformation and save to object log10_population
+# Transform population (not population in millions) using the log10 transformation and save to object log10_population
 log10_population<- log10(murders$population)
 
 # Transform total gun murders using log10 transformation and save to object log10_total_gun_murders
@@ -87,7 +87,7 @@ plot(log10_population, log10_total_gun_murders)
 `@sct`
 ```{r}
 test_error()
-test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Are you using a log10 transformation?")
+test_object("log10_population", undefined_msg = "Define log10_population first.", incorrect_msg = "Are you using a log10 transformation on the correct variable?")
 test_object("log10_total_gun_murders", undefined_msg = "Define log10_total_gun_murders first.", incorrect_msg = "Transform variable using log10.")
 test_function("plot",args=c("x","y"), incorrect_msg = "Scatter population on murders.")
 success_msg("Doesn't that plot look better!")
