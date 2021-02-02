@@ -1,6 +1,8 @@
 ---
 title: Sorting
-description: 'This chapter deals with getting more of an insight into the data we have, by helping us sort through it.'
+description: >-
+  This chapter deals with getting more of an insight into the data we have, by
+  helping us sort through it.
 ---
 
 ## sort
@@ -10,7 +12,8 @@ type: NormalExercise
 key: 8d2a5d166c
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 When looking at a dataset, we may want to sort the data in an order that makes more sense for analysis. Let's learn to do this using the `murders` dataset as an example.
@@ -89,7 +92,8 @@ type: NormalExercise
 key: 9bf4a9a8ca
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The function `order()` returns the index vector needed to sort the vector. This implies that `sort(x)` and `x[order(x)]` give the same result.
@@ -155,7 +159,8 @@ type: NormalExercise
 key: 69b30d5992
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We can actually perform the same operation as in the previous exercise using the function `which.min`. It basically tells us which is the minimum value.
@@ -211,7 +216,8 @@ type: NormalExercise
 key: 3daf04cc14
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now we know how small the smallest state is and we know which row represents it. However, which state is it?
@@ -270,7 +276,8 @@ type: NormalExercise
 key: 655d8a25c3
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 You can create a data frame using the `data.frame` function. Here is a quick example:
@@ -358,7 +365,8 @@ type: NormalExercise
 key: 62209cebec
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 This exercise is somewhat more challenging. We are going to 
@@ -435,7 +443,8 @@ type: NormalExercise
 key: babfb93aab
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The `na_example` dataset represents a series of counts. It is included in the *dslabs* package. You can quickly examine the object using
@@ -520,7 +529,8 @@ type: NormalExercise
 key: 0462684851
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We previously computed the average of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
@@ -594,7 +604,8 @@ type: PureMultipleChoiceExercise
 key: be5cd4c525
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

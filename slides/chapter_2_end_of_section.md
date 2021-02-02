@@ -1,5 +1,5 @@
 ---
-title: 'End of Section'
+title: End of Section
 key: 3ab630aed973dfe465b9350f5c173041
 ---
 

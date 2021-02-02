@@ -1,6 +1,8 @@
 ---
 title: Vectors
-description: 'The most basic unit to store data in R are vectors. We''ll learn about creating and working with them in this chapter.'
+description: >-
+  The most basic unit to store data in R are vectors. We'll learn about creating
+  and working with them in this chapter.
 ---
 
 ## Numeric Vectors
@@ -10,7 +12,8 @@ type: NormalExercise
 key: eb99436e3b
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 A vector is a series of values, all of the same type. They are the most basic data type in R and can hold numeric data, character data, or logical data. In R, you can create a vector with the concatenate (or combine) function `c()`. You place the vector elements separated by a comma between the parentheses. For example a numeric vector would look something like this: 
@@ -67,7 +70,8 @@ type: NormalExercise
 key: a99d0bbace
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 As in the previous question, we are going to create a vector. Only this time, we learn to create *character* vectors. The main difference is that these have to be written as strings and so the names are enclosed within double quotes. 
@@ -129,7 +133,8 @@ type: NormalExercise
 key: 62bba83b36
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We have successfully assigned the temperatures as *numeric* values to `temp` and the city names as *character* values to `city`. But can we associate the temperature to its related city? Yes! We can do so using a code we already know - `names`. We assign names to the *numeric* values.  
@@ -203,7 +208,8 @@ type: NormalExercise
 key: b9d09364f0
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 If we want to display only selected values from the object, R can help us do that easily. 
@@ -272,7 +278,8 @@ type: NormalExercise
 key: 16e3329348
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In the previous question, we accessed the temperature for consecutive cities (1st three). But what if we want to access the temperatures for any 2 specific cities?
@@ -347,7 +354,8 @@ type: NormalExercise
 key: 90eed94daa
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The `:` operator helps us create sequences of numbers. 
@@ -416,7 +424,8 @@ type: NormalExercise
 key: c6535a161e
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We can also create different types of sequences in R. 
@@ -471,7 +480,8 @@ type: NormalExercise
 key: c8deb909eb
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The second argument of the function `seq` is actually a maximum, not necessarily the end. So if we type
@@ -548,7 +558,8 @@ type: NormalExercise
 key: a005f7b688
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The `seq()` function has another useful argument. The argument *length.out*. This argument lets us generate sequences that are increasing by the same amount but are of the prespecified length. 
@@ -612,7 +623,8 @@ type: NormalExercise
 key: b5c6d6d5ab
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We have discussed the *numeric* class. We just saw that the `seq` function can generate objects of this class. For another example, type 
@@ -683,7 +695,8 @@ type: NormalExercise
 key: 8517a900a9
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Let's confirm that `1L` is an *integer* not a *numeric*.
@@ -731,10 +744,11 @@ success_msg("Great, now that you know how to force a number to become an integer
 
 ```yaml
 type: NormalExercise
-key: 6508787042
+key: '6508787042'
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The concept of coercion is a very important one. Watching the video, we learned that when an entry does not match what an R function is expecting, R tries to guess what we meant before throwing an error. This might get confusing at times. 
@@ -807,7 +821,8 @@ type: PureMultipleChoiceExercise
 key: d596636416
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

@@ -1,6 +1,8 @@
 ---
-title: 'Data Types'
-description: 'We''re going to get an overview, of the different types of variables that there are in R, and how to work with them.'
+title: Data Types
+description: >-
+  We're going to get an overview, of the different types of variables that there
+  are in R, and how to work with them.
 ---
 
 ## str
@@ -10,7 +12,8 @@ type: MultipleChoiceExercise
 key: 0e2a0ce37a
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 We're going to be using the following dataset for this module. 
@@ -58,7 +61,8 @@ type: NormalExercise
 key: 7455b7cb2b
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In the previous question, we saw the different variables that are a part of this dataset from the output of the `str()` function. The  function `names()` is specifically designed to extract the column names from a data frame.
@@ -115,7 +119,8 @@ type: NormalExercise
 key: efedf86c1b
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In this module we have learned that every variable has a class. For example, the class can be a *character*, *numeric* or *logical*. The function `class()` can be used to determine the class of an object.
@@ -186,7 +191,8 @@ type: NormalExercise
 key: daeef502c6
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 An important lesson you should learn early on is that there are multiple ways to do things in R. For example, to generate the first five integers we note that `1:5` and `seq(1,5)` return the same result. 
@@ -272,7 +278,8 @@ type: NormalExercise
 key: 1f3a027666
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Using the `str()` command, we saw that the *region* column stores a factor. You can corroborate this by using the `class` command on the *region* column. 
@@ -329,7 +336,8 @@ type: NormalExercise
 key: 50874dd0d0
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The function `table` takes a vector as input and returns the frequency of each unique element in the vector.
@@ -387,7 +395,8 @@ type: PureMultipleChoiceExercise
 key: 2af8480751
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

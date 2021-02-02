@@ -1,6 +1,8 @@
 ---
-title: 'Vector Arithmetics'
-description: 'We will learn about the more powerful vector arithmetic functions in R, that help us solve higher-level problems.'
+title: Vector Arithmetics
+description: >-
+  We will learn about the more powerful vector arithmetic functions in R, that
+  help us solve higher-level problems.
 ---
 
 ## Vectorized operations
@@ -10,7 +12,8 @@ type: NormalExercise
 key: 496010199b
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Previously we created this data frame:
@@ -83,7 +86,8 @@ type: NormalExercise
 key: 657f51ea05
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We can use some of what we have learned to perform calculations that 
@@ -138,7 +142,8 @@ type: NormalExercise
 key: e5215311fc
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 
@@ -200,7 +205,8 @@ type: PureMultipleChoiceExercise
 key: 9831da4a5f
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

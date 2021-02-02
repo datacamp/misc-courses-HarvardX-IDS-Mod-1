@@ -1,6 +1,8 @@
 ---
-title: 'Basic Plots'
-description: 'We engage in the basics of plot-making in R, with scatterplots, histograms and box plots.'
+title: Basic Plots
+description: >-
+  We engage in the basics of plot-making in R, with scatterplots, histograms and
+  box plots.
 ---
 
 ## Scatterplots
@@ -10,7 +12,8 @@ type: NormalExercise
 key: c535f6f10b
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We made a plot of total murders versus population and noted a strong relationship: not surprisingly states with larger populations had more murders. You can run the code in the console to get the plot.
@@ -99,7 +102,8 @@ type: NormalExercise
 key: 6d782c33a3
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now we are going to make a histogram.
@@ -154,7 +158,8 @@ type: NormalExercise
 key: 41b5550054
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now we are going to make boxplots. Boxplots are useful when we want a summary of several variables or several strata of the same variables. Making too many histograms can become too cumbersome.
@@ -204,7 +209,8 @@ type: PureMultipleChoiceExercise
 key: bd1aeba6dc
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

@@ -1,6 +1,8 @@
 ---
 title: Indexing
-description: 'R provides a powerful and convenient way of indexing vectors. We''re going to learn some ways of doing that!'
+description: >-
+  R provides a powerful and convenient way of indexing vectors. We're going to
+  learn some ways of doing that!
 ---
 
 ## Logical Vectors
@@ -10,7 +12,8 @@ type: NormalExercise
 key: 010704f684
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Here we will be using logical operators to create a logical vector.
@@ -61,7 +64,8 @@ type: NormalExercise
 key: 6830d22730
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The function `which()` helps us know directly, which values are low or high, etc. Let's use it in this question.
@@ -120,7 +124,8 @@ type: NormalExercise
 key: d40747abe4
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Note that if we want to know which entries of a vector are lower than a particular value we can use code like this:
@@ -185,7 +190,8 @@ type: NormalExercise
 key: 68370abd10
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 
@@ -257,7 +263,8 @@ type: NormalExercise
 key: 11c3753c9c
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 
@@ -320,7 +327,8 @@ type: NormalExercise
 key: 26843a3448
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In this exercise we use the `match` function to identify the states with abbreviations AK, MI, and IA.
@@ -380,7 +388,8 @@ type: NormalExercise
 key: 8f682dcf90
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function `%in%`.
@@ -447,7 +456,8 @@ type: NormalExercise
 key: bad79337d1
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 
@@ -508,7 +518,8 @@ type: PureMultipleChoiceExercise
 key: 693e3e8928
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

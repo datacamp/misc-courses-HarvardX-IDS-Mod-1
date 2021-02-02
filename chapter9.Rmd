@@ -1,6 +1,6 @@
 ---
-title: 'Programming Basics'
-description: 'Programming Basics'
+title: Programming Basics
+description: Programming Basics
 ---
 
 ## Conditionals
@@ -10,7 +10,8 @@ type: MultipleChoiceExercise
 key: 77691772c6
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 What will this conditional expression return?
@@ -57,7 +58,8 @@ type: MultipleChoiceExercise
 key: 78dfb810dd
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`? You can try examples in the R console.
@@ -94,7 +96,8 @@ type: NormalExercise
 key: 04735d26b3
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The function `nchar` tells you how many characters long a character vector is. For example:
@@ -158,7 +161,8 @@ type: NormalExercise
 key: 3d324d0749
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 You will encounter situations in which the function you need does not already exist. R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
@@ -245,7 +249,8 @@ type: NormalExercise
 key: ea64484119
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We will make another function for this exercise. We will define a function `altman_plot` that takes two arguments `x` and `y` and plots the difference `y-x` in the y-axis against the sum `x+y` in the x-axis. 
@@ -315,7 +320,8 @@ type: NormalExercise
 key: f13e10ed3c
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available at different points in the code.
@@ -386,7 +392,8 @@ type: NormalExercise
 key: efe45f5c56
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In the next exercise we are going to write a for-loop. In that for-loop we are going to call a function. We define that function here.
@@ -473,7 +480,8 @@ type: NormalExercise
 key: a9bf58a40c
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now we are going to compute the sum of the squares for several values of $n$. We will use a for-loop for this. Here is an example of a for-loop:
@@ -564,7 +572,8 @@ type: NormalExercise
 key: 4e649b5400
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 If we do the math, we can show that 
@@ -648,7 +657,8 @@ type: NormalExercise
 key: 33ed29e3c1
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now let's actually check if we get the exact same answer.
@@ -723,7 +733,8 @@ type: PureMultipleChoiceExercise
 key: 226fb8de61
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

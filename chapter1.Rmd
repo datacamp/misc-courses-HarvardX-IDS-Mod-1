@@ -1,6 +1,10 @@
 ---
-title: 'R Basics'
-description: 'In this course we introduce you to the basics of computing and analyzing data in the user-friendly and helpful R interface. This first chapter starts with the very basics of functions, objects to get us acquainted with the world of R.'
+title: R Basics
+description: >-
+  In this course we introduce you to the basics of computing and analyzing data
+  in the user-friendly and helpful R interface. This first chapter starts with
+  the very basics of functions, objects to get us acquainted with the world of
+  R.
 free_preview: true
 ---
 
@@ -11,7 +15,8 @@ type: NormalExercise
 key: 0cec712ce0
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 What is the sum of the first $n$ positive integers? 
@@ -82,7 +87,8 @@ type: NormalExercise
 key: 213f198401
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 What is the sum of the first 1000 positive integers? 
@@ -130,7 +136,8 @@ type: MultipleChoiceExercise
 key: 0e2a0ce37a
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 Run the following code in the R console:
@@ -176,7 +183,8 @@ type: NormalExercise
 key: 7df9567ad1
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log base 2 of `16` which is `4`. 
@@ -236,7 +244,8 @@ type: MultipleChoiceExercise
 key: b755d1a929
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
@@ -273,7 +282,8 @@ type: PureMultipleChoiceExercise
 key: 5d1f828748
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.

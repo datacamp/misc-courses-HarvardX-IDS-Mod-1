@@ -1,6 +1,6 @@
 ---
-title: 'Basic Data Wrangling'
-description: 'We provide a brief introduction to the dplyr package.'
+title: Basic Data Wrangling
+description: We provide a brief introduction to the dplyr package.
 ---
 
 ## dplyr
@@ -10,7 +10,8 @@ type: NormalExercise
 key: 766d9c4eab
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Load the `dplyr` package and the murders dataset.
@@ -91,7 +92,8 @@ type: NormalExercise
 key: 79bec8ece0
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Note that if `rank(x)` gives you the ranks of `x` from lowest to highest, `rank(-x)` gives you the ranks from highest to lowest.
@@ -154,7 +156,8 @@ type: NormalExercise
 key: 0e7a94d0a3
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 With `dplyr` we can use `select` to show only certain columns. For example with this code we would only show the states and population sizes:
@@ -216,7 +219,8 @@ type: NormalExercise
 key: 9a56fa2057
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The `dplyr` function `filter` is used to choose specific rows of the data frame to keep. Unlike `select` which is for columns, `filter` is for rows. For example you can show just the New York row like this:
@@ -275,7 +279,8 @@ type: NormalExercise
 key: 846dd29c6c
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We can remove rows using the `!=` operator. For example to remove Florida we would do this:
@@ -334,7 +339,8 @@ type: NormalExercise
 key: 4e5d7ac60f
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 We can also use the `%in%` to filter with `dplyr`. For example you can see the data from New York and Texas like this:
@@ -395,7 +401,8 @@ type: NormalExercise
 key: 6e8611adb6
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Suppose you want to live in the Northeast or West **and** want the murder rate to be less than 1. We want to see the data for the states satisfying these options. Note that you can use logical operators with `filter`:
@@ -459,7 +466,8 @@ type: NormalExercise
 key: 72305c532e
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 The pipe `%>%` can be used to perform operations sequentially 
@@ -546,7 +554,8 @@ type: NormalExercise
 key: 60fa0dbe3a
 lang: r
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Now we will reset murders to the original table by using `data(murders)`.
@@ -619,7 +628,8 @@ type: PureMultipleChoiceExercise
 key: 54b0aa0655
 lang: r
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.
