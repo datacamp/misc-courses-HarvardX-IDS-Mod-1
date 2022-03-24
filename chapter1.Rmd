@@ -19,14 +19,12 @@ skills:
   - 1
 ```
 
-What is the sum of the first $n$ positive integers? 
-
-We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
+We are going to use the formula $ n(n+1)/2 $ to quickly compute the sum of the first $n$ positive integers, without adding them up individually.
 
 `@instructions`
 - Define `n<-100`
-- Then use R to compute the sum of 1 through 100 using the formula $ n(n+1)/2$. What is the sum?
-- Make sure you do not erase or change the sample code on DataCamp exercises.
+- Write code to compute the sum of the first $n$ integers (in this case, the integers from 1 to 100) using the formula $ n(n+1)/2$
+- Make sure you do not erase or change the sample code on DataCamp exercises
 
 `@hint`
 - Define `n` to be 100 in one line and simply type the formula using R code in the second line.
