@@ -492,7 +492,7 @@ The pipe `%>%` permits us to perform both operation sequentially and without hav
 For example we could have mutated and selected in the same line like this:
 
 ```{r}
-mutate(murders, rate =  total / population * 100000, rank = (-rate)) %>% 
+mutate(murders, rate =  total / population * 100000, rank = rank(-rate)) %>% 
     select(state, rate, rank)
 ```
 
@@ -515,9 +515,6 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Load library
-library(dplyr)
-
 ## Define the rate column
 murders <- mutate(murders, rate =  total / population * 100000, rank = rank(-rate))
 
