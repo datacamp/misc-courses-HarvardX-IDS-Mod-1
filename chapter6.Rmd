@@ -484,7 +484,7 @@ abbs <- c("MA", "ME", "MI", "MO", "MU")
 
 # Use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in `ind`
 
-# Names of abbreviations in `ind`
+# Identify abbreviations from `abbs` that are in `ind`
 
 ```
 
@@ -496,7 +496,7 @@ abbs <- c("MA", "ME", "MI", "MO", "MU")
 # Use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in 'ind' 
 ind <- which(!abbs%in%murders$abb)
 
-# Names of abbreviations in `ind`
+# Identify abbreviations from `abbs` that are in `ind`
 abbs[ind]
 
 ```
