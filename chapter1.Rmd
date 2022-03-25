@@ -229,7 +229,7 @@ log10(sqrt(100))
 `@sct`
 ```{r}
 test_error() 
-test_output_contains("1", incorrect_msg = "Make sure you use the right base for the log and put the sqrt function inside of the log function.")
+test_output_contains("log10(sqrt(100))", incorrect_msg = "Make sure you use the right base for the log and put the sqrt function inside of the log function.")
 success_msg("Very good!")
 ```
 
