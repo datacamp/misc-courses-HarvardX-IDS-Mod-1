@@ -532,12 +532,14 @@ skills:
   - 1
 ```
 
-We previously computed the average (the mean) of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
+We previously tried to compute the average (the mean) of `na_example` using `mean(na_example)` and obtained `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
 
 A common operation is therefore removing the entries that are NA and after that perform operations on the rest. The `!` operator can help with this. The `!` operator is a logical not - it returns the opposite value and can be used to invert logical vectors (for example, `!TRUE` returns `FALSE`).
 
+In the previous exercise, we defined `ind` as the logical vector that tells us which entries are `NA`. We will use `ind` again here.
+
 `@instructions`
-Write one line of code to compute the average, but only for the entries that are not NA making use of the `!` operator before `ind`. (Remember that you can use `help("!")` to find out more about what `!` does.)
+Write one line of code to compute the average (the mean) of `na_example` after removing the `NA` entries by using the `!` operator on `ind`.  (Remember that you can use `help("!")` to find out more about what `!` does.)
 
 `@hint`
 Remember the `!` operator, which acts as the "not" operator. If we say `!TRUE`, it will return `FALSE`. Note that `na_example[!ind]` returns the entries that are not NA.
@@ -556,15 +558,15 @@ x <- c(1, 2, 3)
 ind <- c(FALSE, TRUE, FALSE)
 x[!ind]
 
-# Create the ind vector
+# Create the ind vector for `na_example`
 library(dslabs)
 data(na_example)
 ind <- is.na(na_example)
 
-# We saw that this gives an NA
+# When we try to compute the average, we get the answer NA
 mean(na_example)
 
-# Compute the average, for entries of na_example that are not NA 
+# Compute the average (the mean) of `na_example` after removing the `NA` entries by using the `!` operator on `ind`
 
 ```
 
@@ -575,17 +577,16 @@ x <- c(1, 2, 3)
 ind <- c(FALSE, TRUE, FALSE)
 x[!ind]
 
-# Create the ind vector
+# Create the ind vector for `na_example`
 library(dslabs)
 data(na_example)
 ind <- is.na(na_example)
 
-# We saw that this gives an NA
+# When we try to compute the average, we get the answer NA
 mean(na_example)
 
-# Compute the average, for entries of na_example that are not NA 
+# Compute the average (the mean) of `na_example` after removing the `NA` entries by using the `!` operator on `ind`
 mean(na_example[!ind])
-
 ```
 
 `@sct`
