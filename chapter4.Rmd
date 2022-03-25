@@ -369,8 +369,7 @@ skills:
   - 1
 ```
 
-This exercise is somewhat more challenging. We are going to 
-repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
+This exercise is somewhat more challenging. We are going to repeat the previous exercise but this time order `my_df` so that the states are ordered from least populous to most.
 
 `@instructions`
 - Create variables `states` and `ranks` to store the state names and ranks by population size respectively.
@@ -428,9 +427,9 @@ test_error()
 test_object("states", undefined_msg = "Define states first.", incorrect_msg = "")
 test_object("ranks",undefined_msg = "Define ranks first.", incorrect_msg = "")
 test_function("rank")
-test_object("ind",undefined_msg = "Define ind first.", incorrect_msg = "Use the order command as well.")
+test_object("ind",undefined_msg = "Define ind first.", incorrect_msg = "Use the order command when creating ind. You will use ind twice when creating the data frame.")
 test_function("order")
-test_object("my_df", undefined_msg = "Define my_df first", incorrect_msg = "Check code.")
+test_object("my_df", undefined_msg = "Define my_df first", incorrect_msg = "Check code. Your code for my_df should use ind twice.")
 success_msg("Great job! See how well you're building on your knowledge of R!")
 ```
 
