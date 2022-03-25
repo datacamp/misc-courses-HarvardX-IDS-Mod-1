@@ -583,20 +583,12 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
 # Create new data frame called my_states (with specifications in the instructions)
 
 ```
 
 `@solution`
 ```{r}
-# Loading the libraries
-library(dplyr)
-data(murders)
-
 # Create new data frame called my_states (with specifications in the instructions)
 my_states <- murders %>% 
     mutate(rate =  total / population * 100000, rank = rank(-rate)) %>%
