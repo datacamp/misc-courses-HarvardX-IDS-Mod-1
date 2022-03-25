@@ -48,16 +48,12 @@ data(murders)
 
 `@sample_code`
 ```{r}
-# Load the datasets and define some variables
-library(dslabs)
-data(murders)
-
+# Define some variables (note that the dataset has been loaded for you)
 population_in_millions <- murders$population/10^6
 total_gun_murders <- murders$total
-
 plot(population_in_millions, total_gun_murders)
 
-# Transform population (not population in millions) using the log10 transformation and save to object log10_population
+# Transform population (the original, unadjusted population, not population in millions) using the log10 transformation and save to object log10_population
 
 # Transform total gun murders using log10 transformation and save to object log10_total_gun_murders
 
@@ -67,14 +63,12 @@ plot(population_in_millions, total_gun_murders)
 
 `@solution`
 ```{r}
-# Load the datasets and define some variables
-library(dslabs)
-data(murders)
+# Define some variables (note that the dataset has been loaded for you)
 population_in_millions <- murders$population/10^6
 total_gun_murders <- murders$total
 plot(population_in_millions, total_gun_murders)
 
-# Transform population (not population in millions) using the log10 transformation and save to object log10_population
+# Transform population (the original, unadjusted population, not population in millions) using the log10 transformation and save to object log10_population
 log10_population<- log10(murders$population)
 
 # Transform total gun murders using log10 transformation and save to object log10_total_gun_murders
