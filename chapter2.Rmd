@@ -340,7 +340,7 @@ skills:
   - 1
 ```
 
-The function `table` takes a vector as input and returns the frequency of each unique element in the vector.
+The function `table` takes a vector as input and returns the frequency of each unique element in the vector. (Note that you will see the function `c()` used in our sample code, but we are only using it here to create a vector to which we can apply the `table()` function as an example.)
 
 `@instructions`
 We will use the `table` function to answer this question.
@@ -359,6 +359,7 @@ data(murders)
 ```{r}
 # The "c" in `c()` is short for "concatenate," which is the action of connecting items into a chain
 # The function `c()` connects all of the strings within it into a single vector, which we can assign to `x`
+# Here, we are simply using `c()` to generate a vector to which we can apply the `table()` function
 x <- c("a", "a", "b", "b", "b", "c")
 # Here is an example of what the table function does
 table(x)
@@ -369,8 +370,11 @@ table(x)
 
 `@solution`
 ```{r}
-# Here is an example of what the table function does
+# The "c" in `c()` is short for "concatenate," which is the action of connecting items into a chain
+# The function `c()` connects all of the strings within it into a single vector, which we can assign to `x`
+# Here, we are simply using `c()` to generate a vector to which we can apply the `table()` function
 x <- c("a", "a", "b", "b", "b", "c")
+# Here is an example of what the table function does
 table(x)
 
 # Write one line of code to show the number of states per region
