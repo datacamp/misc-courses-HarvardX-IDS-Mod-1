@@ -532,8 +532,9 @@ skills:
   - 1
 ```
 
-We previously computed the average of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
-A common operation is therefore removing the entries that are NA and after that perform operations on the rest.
+We previously computed the average (the mean) of `na_example` using `mean(na_example)` and obtain `NA`. This is because the function `mean` returns `NA` if it encounters at least one `NA`.
+
+A common operation is therefore removing the entries that are NA and after that perform operations on the rest. The `!` operator can help with this. The `!` operator is a logical not - it returns the opposite value and can be used to invert logical vectors (for example, `!TRUE` returns `FALSE`).
 
 `@instructions`
 Write one line of code to compute the average, but only for the entries that are not NA making use of the `!` operator before `ind`. (Remember that you can use `help("!")` to find out more about what `!` does.)
