@@ -28,7 +28,7 @@ You can add columns using the `dplyr` function `mutate`. This function is aware 
 murders <- mutate(murders, population_in_millions = population / 10^6)
 ```
 
-Note that we can write `population` rather than `murders$population`. The function `mutate` knows we are grabing columns from `murders`.
+Note that we can write `population` rather than `murders$population`. The function `mutate` knows we are grabbing columns from `murders`.
 
 `@instructions`
 - Use the function `mutate` to add a murders column named `rate` with the per 100,000 murder rate. 
