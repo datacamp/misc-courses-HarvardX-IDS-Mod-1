@@ -45,6 +45,7 @@ Note that we use the column names `total` and `population` without having the us
 
 `@pre_exercise_code`
 ```{r}
+install.packages("dplyr")
 library(dplyr)
 library(dslabs)
 data(murders)
