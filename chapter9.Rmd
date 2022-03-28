@@ -396,7 +396,7 @@ skills:
   - 1
 ```
 
-In the next exercise we are going to write a for-loop. In that for-loop we are going to call a function. We define that function here.
+In the next two exercises, we are going to write a for-loop. In that for-loop we are going to call a function. We start by defining that function here, in this exercise. We will call the for loop in the next exercise.
 
 `@instructions`
 - Write a function `compute_s_n` that for any given $n$ computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$. 
