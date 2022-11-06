@@ -1,14 +1,10 @@
 ---
-title: R Basics
-description: >-
-  In this course we introduce you to the basics of computing and analyzing data
-  in the user-friendly and helpful R interface. This first chapter starts with
-  the very basics of functions, objects to get us acquainted with the world of
-  R.
-free_preview: true
+title: "Fundamentos de R"
+description: En este curso, le presentamos los conceptos básicos de la computación y el análisis de datos en la interfaz útil y fácil de usar de R. Este primer capítulo comienza con los conceptos básicos de funciones, objetos para familiarizarnos con el mundo de R.
+free_preview: yes
 ---
 
-## Using variables 1
+## Usando variables 1
 
 ```yaml
 type: NormalExercise
@@ -19,16 +15,16 @@ skills:
   - 1
 ```
 
-We are going to use the formula $ n(n+1)/2 $ to quickly compute the sum of the first $n$ positive integers, without adding them up individually.
+Vamos a usar la fórmula $ n(n+1)/2 $ para calcular rápidamente la suma de los primeros $n$ enteros positivos, sin sumarlos individualmente.
 
-`@instructions`
-- Define `n<-100`
-- Write code to compute the sum of the first $n$ integers (in this case, the integers from 1 to 100) using the formula $ n(n+1)/2$
-- Make sure you do not erase or change the sample code on DataCamp exercises
+`@instrucciones`
+- Defina `n<-100`
+- Escriba código para calcular la suma de los primeros $n$ enteros (en este caso, los enteros del 1 al 100) usando la fórmula $ n(n+1)/2$
+- Asegúrese de no borrar o cambiar el código de muestra en los ejercicios de DataCamp
 
-`@hint`
-- Define `n` to be 100 in one line and simply type the formula using R code in the second line.
-- Remember that in R you multiply using `*`.
+`@pista`
+- Defina `n` para que sea 100 en una línea y simplemente escriba la fórmula usando el código R en la segunda línea.
+- Recuerde que en R se multiplica usando `*`.
 
 `@pre_exercise_code`
 ```{r}
@@ -37,33 +33,33 @@ We are going to use the formula $ n(n+1)/2 $ to quickly compute the sum of the f
 
 `@sample_code`
 ```{r}
-# Here is how you compute the sum for the first 20 integers
+# Así es como se calcula la suma de los primeros 20 enteros
 20*(20+1)/2 
 
-# However, we can define a variable to use the formula for other values of n
+# Sin embargo, podemos definir una variable para usar la fórmula para otros valores de n
 n <- 20
 n*(n+1)/2
 
 n <- 25
 n*(n+1)/2
 
-# Below, write code to calculate the sum of the first 100 integers
+# A continuación, escriba el código para calcular la suma de los primeros 100 enteros
 
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Here is how you compute the sum for the first 20 integers
+# Así es como se calcula la suma de los primeros 20 enteros
 20*(20+1)/2 
 
-# However, we can define a variable to use the formula for other values of n
+# Sin embargo, podemos definir una variable para usar la fórmula para otros valores de n
 n <- 20
 n*(n+1)/2
 
 n <- 25
 n*(n+1)/2
 
-# Below, write code to calculate the sum of the first 100 integers 
+# A continuación, escriba el código para calcular la suma de los primeros 100 enteros
 n <- 100
 n*(n+1)/2
 ```
@@ -71,14 +67,14 @@ n*(n+1)/2
 `@sct`
 ```{r}
 test_error()
-test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
-test_output_contains("5050", incorrect_msg = "You are not providing a formula that gives the correct answer. Look at the example code.")
-success_msg("Good job! Let`s apply this to another question.")
+test_object("n", incorrect_msg = "Asegúrese de usar `n` como el nombre de variable y de haber asignado el valor correcto a `n`.")
+test_output_contains("5050", incorrect_msg = "No está proporcionando una fórmula que dé la respuesta correcta. Mire el código de ejemplo.")
+success_msg("¡Buen trabajo! Apliquemos esto a otra pregunta.")
 ```
 
 ---
 
-## Using variables 2
+## Usando variables 2
 
 ```yaml
 type: NormalExercise
@@ -89,16 +85,16 @@ skills:
   - 1
 ```
 
-What is the sum of the first 1000 positive integers? 
+¿Cuál es la suma de los primeros 1000 enteros positivos?
 
-We can use the formula $ n(n+1)/2 $ to quickly compute this quantity.
+Podemos usar la fórmula $ n(n+1)/2 $ para calcular rápidamente esta cantidad.
 
-`@instructions`
-- Use the same formula as the last exercise but change the value of `n`. Make sure you use the variable name `n` to store the value 1000.
-- Instead of typing the result, use the formula and defined variable.
+`@instrucciones`
+- Use la misma fórmula que en el último ejercicio pero cambie el valor de `n`. Asegúrese de usar el nombre de variable `n` para almacenar el valor 1000.
+- En lugar de escribir el resultado, use la fórmula y la variable definida.
 
-`@hint`
-Use the same R code as you used in the first question after changing the value of `n`.
+`@pista`
+Use el mismo código R que usó en la primera pregunta después de cambiar el valor de `n`.
 
 `@pre_exercise_code`
 ```{r}
@@ -107,27 +103,27 @@ Use the same R code as you used in the first question after changing the value o
 
 `@sample_code`
 ```{r}
-# Below, write code to calculate the sum of the first 1000 integers 
+# A continuación, escriba el código para calcular la suma de los primeros 1000 enteros
 
 ```
 
 `@solution`
 ```{r}
-# Below, write code to calculate the sum of the first 1000 integers 
+# A continuación, escriba el código para calcular la suma de los primeros 1000 enteros
 n <- 1000
 n*(n+1)/2
 ```
 
 `@sct`
 ```{r}
-test_object("n", incorrect_msg = "Make sure that you use `n` as your variable name and that you have assigned the correct value to `n`.")
-test_output_contains("500500", incorrect_msg = "You are not providing a formula that gives the correct answer. Compare your code with the previous question.")
-success_msg("Good job! Let`s get to work on another question!")
+test_object("n", incorrect_msg = "Asegúrese de usar `n` como el nombre de variable y de haber asignado el valor correcto a `n`.")
+test_output_contains("500500", incorrect_msg = "No está proporcionando una fórmula que dé la respuesta correcta. Compara su código con la pregunta anterior.")
+success_msg("¡Buen trabajo! ¡Vamos a trabajar en otra pregunta!")
 ```
 
 ---
 
-## Functions
+## Funciones
 
 ```yaml
 type: MultipleChoiceExercise
@@ -138,7 +134,7 @@ skills:
   - 1
 ```
 
-Run the following code in the R console:
+Ejecute el siguiente código en la consola R:
 
 ```
 n <- 1000
@@ -146,17 +142,17 @@ x <- seq(1,n)
 sum(x)
 ```
 
-Based on the result, what do you think the functions `seq` and `sum` do? You can use the help system.
+Según el resultado, ¿qué cree que hacen las funciones `seq` y `sum`? Puede utilizar el sistema de ayuda.
 
-`@possible_answers`
-- sum creates a list of numbers and seq adds them up. 
-- seq creates a list of numbers and sum adds them up. 
-- seq computes the difference between two arguments and sum computes the sum of 1 through 1000. 
-- sum always returns the same number
+`@respuestas_posible`
+- sum crea una lista de números y seq los suma.
+- seq crea una lista de números y sum los suma.
+- seq calcula la diferencia entre dos argumentos y sum calcula la suma de 1 a 1000.
+- sum siempre devuelve el mismo número
 
-`@hint`
-Go to R console and type `seq(1,5)`. See what you get. Then got the R console again and type `sum(seq(1,5))`. Change the `5` to other numbers.
-You can also type `?` before a function to get help.
+`@pista`
+Vaya a la consola R y escriba `seq(1,5)`. Mire lo que obtiene. Luego vaya a la consola R nuevamente y escriba `sum (seq (1,5))`. Cambie el `5` a otros números.
+También puede escribir `?` antes de una función para obtener ayuda.
 
 `@pre_exercise_code`
 ```{r}
@@ -165,16 +161,16 @@ You can also type `?` before a function to get help.
 
 `@sct`
 ```{r}
-msg1 = "Try again! Read the choices carefully. Try again."
-msg2 = "Well done. Proceed to the next exercise."
-msg3 = "There's no specification of 1 to 1000 for sum. Try again."
-msg4 = "Read the help file for sum by typing `?sum` in the R console."
+msg1 = "¡Inténtelo de nuevo! Lea atentamente las opciones. Inténtelo de nuevo."
+msg2 = "Bien hecho. Continúe con el siguiente ejercicio."
+msg3 = "No hay ninguna especificación de 1 a 1000 para la suma. Inténtalo de nuevo."
+msg4 = "Lea el archivo de ayuda de sum escribiendo `?sum` en la consola R."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
 
-## Nested function calls 1
+## Funciones anidads 1
 
 ```yaml
 type: NormalExercise
@@ -185,18 +181,18 @@ skills:
   - 1
 ```
 
-In math and programming we say we evaluate a function when we replace arguments with specific values. So if we type `log2(16)` we evaluate the `log2` function to get the log base 2 of `16` which is `4`. 
+En matemáticas y programación decimos que evaluamos una función cuando reemplazamos argumentos con valores específicos. Así que si escribimos `log2(16)` evaluamos la función `log2` para obtener el logaritmo base 2 de `16` que es `4`.
 
-In R it is often useful to evaluate a function inside another function. 
-For example, `sqrt(log2(16))` will calculate the log to the base 2 of 16 and then compute the square root of that value. 
-So the first evaluation gives a 4 and this gets evaluated by `sqrt` to give the final answer of 2.
+En R suele ser útil evaluar una función dentro de otra función.
+Por ejemplo, `sqrt(log2(16))` calculará el logaritmo en base 2 de 16 y luego calculará la raíz cuadrada de ese valor.
+Así que la primera evaluación da un 4 y esto es evaluado por `sqrt` para dar la respuesta final de 2.
 
-`@instructions`
-- Use one line of code to compute the log, to the base 10, of the square root of 100. 
-- Make sure your code includes the `log10` and `sqrt` functions.
+`@instrucciones`
+- Utilice una línea de código para calcular el logaritmo, en base 10, de la raíz cuadrada de 100.
+- Asegúrese de que su código incluya las funciones `log10` y `sqrt`.
 
-`@hint`
-The `log10` function call should be the argument for the `sqrt` function.
+`@pista`
+La llamada a la función `log10` debería ser el argumento de la función `sqrt`.
 
 `@pre_exercise_code`
 ```{r}
@@ -205,37 +201,37 @@ The `log10` function call should be the argument for the `sqrt` function.
 
 `@sample_code`
 ```{r}
-# log to the base 2 
+# logaritmo en base 2
 log2(16)
 
-# sqrt of the log to the base 2 of 16:
+# raíz cuadrada (sqrt) del logaritmo a la base 2 de 16:
 sqrt(log2(16))
 
-# Compute log to the base 10 (log10) of the sqrt of 100. Do not use variables.
+# Calcule log en base 10 (log10) de la raíz cuadrada de 100. No use variables.
 ```
 
 `@solution`
 ```{r}
-# log to the base 2 
+# logaritmo en base 2
 log2(16)
 
-# sqrt of the log to the base 2 of 16:
+# raíz cuadrada (sqrt) del logaritmo a la base 2 de 16:
 sqrt(log2(16))
 
-# Compute log to the base 10 (log10) of the sqrt of 100. Do not use variables.
+# Calcule log en base 10 (log10) de la raíz cuadrada de 100. No use variables.
 log10(sqrt(100))
 ```
 
 `@sct`
 ```{r}
 test_error() 
-test_output_contains("log10(sqrt(100))", incorrect_msg = "Make sure you use the right base for the log and put the sqrt function inside of the log function.")
-success_msg("Very good!")
+test_output_contains("log10(sqrt(100))", incorrect_msg = "Asegúrese de usar la base correcta para el log y coloque la función sqrt dentro de la función log.")
+success_msg("¡Muy bien!")
 ```
 
 ---
 
-## Nested functions call 2
+## Funciones anadidas 2 (Nested functions call 2)
 
 ```yaml
 type: MultipleChoiceExercise
@@ -246,16 +242,16 @@ skills:
   - 1
 ```
 
-Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system in the R console.
+¿Cuál de los siguientes siempre devolverá el valor numérico almacenado en `x`? Puede probar ejemplos y usar el sistema de ayuda en la consola R.
 
-`@possible_answers`
+`@respuestas_posible`
 - `log(10^x)`
 - `log10(x^10)`
 - `log(exp(x))`
 - `exp(log(x, base = 2))`
 
-`@hint`
-You are looking for the case in which a function and its inverse are called sequentially. You can also try out each one on the console: assign a numeric value to `x` then try out each of the lines of code given in the choices.
+`@pista`
+Esta buscando el caso en el que una función y su inversa se llaman secuencialmente. También puede probar cada uno en la consola: asigne un valor numérico a `x` y luego pruebe cada una de las líneas de código dadas en las opciones.
 
 `@pre_exercise_code`
 ```{r}
@@ -264,16 +260,16 @@ You are looking for the case in which a function and its inverse are called sequ
 
 `@sct`
 ```{r}
-msg1 = "Try again! Note that `log(10^1)` is not 1 but the natural log of 10."
-msg2 = "Try again! Note that `log(1^10)` is 0 not 1."
-msg3 = "Well done. Proceed to the next exercise"
-msg4 = "Try again! Note that `exp(log(2, base = 2)` is 0 not 2."
+msg1 = "¡Inténtalo de nuevo! Tenga en cuenta que `log(10^1)` no es 1 sino el logaritmo natural de 10."
+msg2 = "¡Inténtelo de nuevo! Tenga en cuenta que `log(1^10)` es 0, no 1."
+msg3 = "Bien hecho. Continúe con el siguiente ejercicio."
+msg4 = "¡Inténtelo de nuevo! Tenga en cuenta que `exp(log(2, base = 2)` es 0, no 2."
 test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
 
-## End of Assessment 1
+## Fin de la Evaluación 1
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -284,19 +280,19 @@ skills:
   - 1
 ```
 
-This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.
+Este es el final de la asignación de programación para esta sección. Por favor NO haga clic para acceder a evaluaciones adicionales desde esta página. Por favor, RESPONDA la pregunta en esta página. Si hace clic, es posible que NO se registren sus puntajes.
 
-Click on "Awesome" to get the "points" for this question and then return to the course on edX.
+Haga clic en "Impresionante" para obtener los "puntos" de esta pregunta y luego regrese al curso en edX.
 
-You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
+Ahora puede cerrar esta ventana para volver a <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
 
-`@hint`
-- No hint necessary!
+`@pista`
+- ¡No es necesaria ninguna pista!
 
-`@possible_answers`
-- [Awesome]
-- Nope
+`@respuestas_posible`
+- [Impresionante]
+- No
 
 `@feedback`
-- Great! Now navigate back to the course on edX!
-- Now navigate back to the course on edX!
+- ¡Excelente! ¡Ahora vuelva al curso en edX!
+- ¡Ahora vuelva al curso en edX!
