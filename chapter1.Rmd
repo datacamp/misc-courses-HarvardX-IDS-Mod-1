@@ -17,12 +17,12 @@ skills:
 
 Vamos a usar la fórmula $ n(n+1)/2 $ para calcular rápidamente la suma de los primeros $n$ enteros positivos, sin sumarlos individualmente.
 
-`@instrucciones`
+`@instructions`
 - Defina `n<-100`
 - Escriba código para calcular la suma de los primeros $n$ enteros (en este caso, los enteros del 1 al 100) usando la fórmula $ n(n+1)/2$
 - Asegúrese de no borrar o cambiar el código de muestra en los ejercicios de DataCamp
 
-`@pista`
+`@hint`
 - Defina `n` para que sea 100 en una línea y simplemente escriba la fórmula usando el código R en la segunda línea.
 - Recuerde que en R se multiplica usando `*`.
 
@@ -47,7 +47,7 @@ n*(n+1)/2
 
 ```
 
-`@solución`
+`@solution`
 ```{r}
 # Así es como se calcula la suma de los primeros 20 enteros
 20*(20+1)/2 
@@ -89,11 +89,11 @@ skills:
 
 Podemos usar la fórmula $ n(n+1)/2 $ para calcular rápidamente esta cantidad.
 
-`@instrucciones`
+`@instructions`
 - Use la misma fórmula que en el último ejercicio pero cambie el valor de `n`. Asegúrese de usar el nombre de variable `n` para almacenar el valor 1000.
 - En lugar de escribir el resultado, use la fórmula y la variable definida.
 
-`@pista`
+`@hint`
 Use el mismo código R que usó en la primera pregunta después de cambiar el valor de `n`.
 
 `@pre_exercise_code`
@@ -144,13 +144,13 @@ sum(x)
 
 Según el resultado, ¿qué cree que hacen las funciones `seq` y `sum`? Puede utilizar el sistema de ayuda.
 
-`@respuestas_posible`
+`@possible_answers`
 - sum crea una lista de números y seq los suma.
 - seq crea una lista de números y sum los suma.
 - seq calcula la diferencia entre dos argumentos y sum calcula la suma de 1 a 1000.
 - sum siempre devuelve el mismo número
 
-`@pista`
+`@hint`
 Vaya a la consola R y escriba `seq(1,5)`. Mire lo que obtiene. Luego vaya a la consola R nuevamente y escriba `sum (seq (1,5))`. Cambie el `5` a otros números.
 También puede escribir `?` antes de una función para obtener ayuda.
 
@@ -187,11 +187,11 @@ En R suele ser útil evaluar una función dentro de otra función.
 Por ejemplo, `sqrt(log2(16))` calculará el logaritmo en base 2 de 16 y luego calculará la raíz cuadrada de ese valor.
 Así que la primera evaluación da un 4 y esto es evaluado por `sqrt` para dar la respuesta final de 2.
 
-`@instrucciones`
+`@instructions`
 - Utilice una línea de código para calcular el logaritmo, en base 10, de la raíz cuadrada de 100.
 - Asegúrese de que su código incluya las funciones `log10` y `sqrt`.
 
-`@pista`
+`@hint`
 La llamada a la función `log10` debería ser el argumento de la función `sqrt`.
 
 `@pre_exercise_code`
@@ -244,13 +244,13 @@ skills:
 
 ¿Cuál de los siguientes siempre devolverá el valor numérico almacenado en `x`? Puede probar ejemplos y usar el sistema de ayuda en la consola R.
 
-`@respuestas_posible`
+`@possible_answers`
 - `log(10^x)`
 - `log10(x^10)`
 - `log(exp(x))`
 - `exp(log(x, base = 2))`
 
-`@pista`
+`@hint`
 Esta buscando el caso en el que una función y su inversa se llaman secuencialmente. También puede probar cada uno en la consola: asigne un valor numérico a `x` y luego pruebe cada una de las líneas de código dadas en las opciones.
 
 `@pre_exercise_code`
@@ -286,10 +286,10 @@ Haga clic en "Impresionante" para obtener los "puntos" de esta pregunta y luego 
 
 Ahora puede cerrar esta ventana para volver a <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
 
-`@pista`
+`@hint`
 - ¡No es necesaria ninguna pista!
 
-`@respuestas_posible`
+`@possible_answers`
 - [Impresionante]
 - No
 
