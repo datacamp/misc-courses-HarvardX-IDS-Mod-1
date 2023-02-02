@@ -1,6 +1,6 @@
 ---
 title: Conceptos Básicos de Programación
-description: Programming Basics
+description:Conceptos Básicos de Programación
 ---
 
 ## Conditionals
