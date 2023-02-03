@@ -3,7 +3,7 @@ title: Conceptos Básicos de Programación
 description:Conceptos Básicos de Programación
 ---
 
-## Conditionals
+## Condicionales
 
 ```yaml
 type: MultipleChoiceExercise
@@ -14,44 +14,44 @@ skills:
   - 1
 ```
 
-What will this conditional expression return?
-Run it from the console. 
+¿Qué devolverá esta expresión condicional?
+Ejecútalo desde la consola.
 
 ```{r}
 x <- c(1,2,-3,4)
 if(all(x>0)){
-    print("All Positives")
+    print("Todos positivos")
   } else{
-     print("Not All Positives")
+     print("No todos positivos")
   }
 ```
 
-`@possible_answers`
-- All Positives
-- Not All Positives
-- N/A
-- None of the above
+`@posibles_respuestas`
+- Todos positivos
+- No todos positivos
+- No disponible
+- Ninguna de las anteriores
 
-`@hint`
-Are the numbers stored in `x` all positive? If not the `print` after the `else` is evaluated.
+`@pista`
+¿Los números almacenados en `x` son todos positivos? Si no, se evalúa `print` después de `else`.
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec
 ```
 
 `@sct`
 ```{r}
-msg1 = "Are all the entries in `x` positive?"
-msg2 = "Awesome! That is correct."
-msg3 = "In R you can vectorize logical relations like this. There is no reason to have `NA`s"
-msg4 = "If `all(x>0)` is `TRUE` or `FALSE` something is returned."
+msg1 = "¿Todas las entradas en `x` son positivas?"
+msg2 = "¡Impresionante! Eso esta correcto."
+msg3 = "En R puedes vectorizar relaciones lógicas como esta. No hay razón para tener NA"
+msg4 = "Si `all(x>0)` es `TRUE` o `FALSE` se devuelve algo."
 test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
 ---
 
-## Conditional continued
+## Condicional continuado
 
 ```yaml
 type: MultipleChoiceExercise
@@ -62,28 +62,28 @@ skills:
   - 1
 ```
 
-Which of the following expressions is always `FALSE` when at least one entry of a logical vector x is `TRUE`? You can try examples in the R console.
+¿Cuál de las siguientes expresiones es siempre `FALSE` cuando al menos una entrada de un vector lógico x es `TRUE`? Puede probar ejemplos en la consola R.
 
-`@possible_answers`
+`@posibles_respuestas`
 - all(x) 
 - any(x) 
 - any(!x) 
 - all(!x)
 
-`@hint`
-Define a logical vector `x` such as `c(TRUE, FALSE)` and `c(TRUE, TRUE)` and test them.
+`@pista`
+Defina un vector lógico `x` como `c(TRUE, FALSE)` y `c(TRUE, TRUE)` y pruébelos.
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec
 ```
 
 `@sct`
 ```{r}
-msg1 = "Try `x <- c(TRUE, FALSE)` or `x <- c(TRUE, TRUE)`."
-msg2 = "Try `x <- c(TRUE, TRUE)`"
-msg3 = "Try `x <- c(TRUE, FALSE)"
-msg4 = "Good job! Let's move to the next question."
+msg1 = "Prueba `x <- c(TRUE, FALSE)` o `x <- c(TRUE,TRUE)`."
+msg2 = "Prueba `x <- c(TRUE, TRUE)`"
+msg3 = "Prueba `x <- c(TRUE, FALSE)"
+msg4 = "¡Buen trabajo! Pasemos a la siguiente pregunta."
 test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 ```
 
@@ -100,45 +100,44 @@ skills:
   - 1
 ```
 
-The function `nchar` tells you how many characters long a character vector is. For example:
+La función `nchar` te dice cuántos caracteres tiene un vector de caracteres. Por ejemplo:
 
 ```{r}
 char_len <- nchar(murders$state)
 head(char_len)
 ```
+La función `ifelse` es útil porque convierte un vector de lógicos en otra cosa. Por ejemplo, algunos conjuntos de datos usan el número -999 para indicar NA. ¡Una mala práctica! Puede convertir el -999 en un vector a NA usando la siguiente llamada `ifelse`:
 
-The function `ifelse` is useful because you convert a vector of logicals into something else. For example, some datasets use the number -999 to denote NA. A bad practice! You can convert the -999 in a vector to NA using the following `ifelse` call:
 ```{r}
 x <- c(2, 3, -999, 1, 4, 5, -999, 3, 2, 9)
 ifelse(x == -999, NA, x)
 ```
-If the entry is -999 it returns NA, otherwise it returns the entry.
+Si la entrada es -999, devuelve ; de lo contrario, devuelve la entrada.
 
-`@instructions`
-We will combine a number of functions for this exercise.
-- Use the `ifelse` function to write one line of code that assigns to the object `new_names` the state abbreviation when the state name is longer than 8 characters and assigns the state name when the name is not longer than 8 characters.
+`@instruciones`
+Combinaremos una serie de funciones para este ejercicio.
+- Use la función `ifelse` para escribir una línea de código que asigne al objeto `new_names` la abreviatura del estado cuando el nombre del estado tiene más de 8 caracteres y asigna el nombre del estado cuando el nombre no tiene más de 8 caracteres.
 
-For example, where the original vector has Massachusetts (13 characters), the new vector should have MA. But where the original vector has New York (8 characters), the new vector should have New York as well.
+Por ejemplo, donde el vector original tiene Massachusetts (13 caracteres), el nuevo vector debe tener MA. Pero donde el vector original tiene Nueva York (8 caracteres), el nuevo vector también debería tener Nueva York.
 
-`@hint`
-Use a call to `nchar` as the first argument of the `ifelse` function to calculate. Check to see if it's larger than 8. Then you use `murders$abb` and `murders$state` in the second and third arguments to return either the abbreviation or state name depending on the number of characters.
+`@pista`
+Use una llamada a `nchar` como primer argumento de la función `ifelse` para calcular. Verifique si es mayor que 8. Luego use `murders$abb` y `murders$state` en el segundo y tercer argumento para devolver la abreviatura o el nombre del estado dependiendo de la cantidad de caracteres.
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 library(dslabs)
 data(murders)
 ```
 
-`@sample_code`
+`@Codigo_de_muestra`
 ```{r}
-# Assign the state abbreviation when the state name is longer than 8 characters 
-
+# Asigne la abreviatura del estado cuando el nombre del estado tenga más de 8 caracteres
 
 ```
 
-`@solution`
+`@solucion`
 ```{r}
-# Assign the state abbreviation when the state name is longer than 8 characters 
+# Asigne la abreviatura del estado cuando el nombre del estado tenga más de 8 caracteres
 new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 
 ```
@@ -147,14 +146,14 @@ new_names <- ifelse(nchar(murders$state)>8, murders$abb, murders$state)
 ```{r}
 test_error()
 test_function("ifelse")
-test_object("new_names", undefined_msg = "Make sure you define new_names!", incorrect_msg = "It has to be one line of code. Combine nchar and ifelse. The objects being used inside the function should be `murders$state` and `murders$abb`. Also we are looking for `nchar(murders$state)` strictly larger than 8.")
-success_msg("Woohoo! You're becoming a pro at this!")
+test_object("new_names", undefined_msg = "¡Asegúrate de definir new_names!", incorrect_msg = "Tiene que ser una línea de código. Combine nchar y ifelse. Los objetos que se utilizan dentro de la función deben ser `murders$state` and `murders$abb`. También buscamos `nchar(murders$state)` estrictamente mayor que 8.")
+success_msg("¡Guau! ¡Te estás convirtiendo en un profesional en esto!")
 
 ```
 
 ---
 
-## Defining functions
+## Definiendo Funciones
 
 ```yaml
 type: NormalExercise
@@ -165,9 +164,9 @@ skills:
   - 1
 ```
 
-You will encounter situations in which the function you need does not already exist. R permits you to write your own.  Let's practice one such situation, in which you first need to define the function to be used. The functions you define can have multiple arguments as well as default values.
+Encontrará situaciones en las que la función que necesita aún no existe. R le permite escribir el suyo propio. Practiquemos una de esas situaciones, en la que primero debe definir la función que se utilizará. Las funciones que defina pueden tener varios argumentos, así como valores predeterminados.
 
-To define functions we use `function`. For example the following function adds 1 to the number it receives as an argument:
+Para definir funciones usamos `function`. Por ejemplo, la siguiente función suma 1 al número que recibe como argumento:
 
 ```{r}
 my_func <- function(x){
@@ -176,22 +175,23 @@ my_func <- function(x){
 }
 ```
 
-The last value in the function, in this case that stored in `y`, gets returned.
+Se devuelve el último valor de la función, en este caso el almacenado en `y`.
 
-If you run the code above R does not show anything. This means you defined the function. You can test it out like this:
+Si ejecuta el código anterior, R no muestra nada. Esto significa que definiste la función. Puedes probarlo así:
 
 ```{r}
 my_func(5)
 ```
 
-`@instructions`
-We will define a function `sum_n` for this exercise.
-- Create a function `sum_n` that for any given value, say `n`, creates the vector `1:n`, and then computes the sum of the integers from 1 to n. 
-- Use the function you just defined to determine the sum of integers from 1 to 5,000.
+`@instrucciones`
+Definiremos una función `sum_n` para este ejercicio.
+- Cree una función `sum_n` que para cualquier valor dado, digamos `n`, cree el vector `1:n`, y luego calcule la suma de los números enteros de 1 a n.
+- Utilice la función que acaba de definir para determinar la suma de los números enteros del 1 al 5000.
 
-`@hint`
-- To make it inclusive, use {}. 
-- You can define the function like this:
+`@psita`
+
+- Para que sea inclusivo, utilice {}.
+- Puedes definir la función así:
 
 ```{r}
 sum_n <- function(n){
@@ -200,28 +200,31 @@ sum_n <- function(n){
 }
 ```
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec 
 ```
 
-`@sample_code`
+`@Codigo_de_muestra`
 ```{r}
-# Create function called `sum_n`
 
-# Use the function to determine the sum of integers from 1 to 5000
+# Crear función llamada `sum_n`
+
+# Usa la función para determinar la suma de enteros del 1 al 5000
 
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Create function called `sum_n`
+
+# Crear función llamada `sum_n`
 sum_n <- function(n){
     x <- 1:n
     sum(x)
 }
 
-# Determine the sum of integers from 1 to 5000
+
+# Determinar la suma de enteros del 1 al 5000
 sum_n(5000)
 
 ```
@@ -229,7 +232,7 @@ sum_n(5000)
 `@sct`
 ```{r}
 test_error()
-test_function("sum_n", incorrect_msg = "You need to check for the sum of 5000 integers!")
+test_function("sum_n", incorrect_msg = "¡Necesitas verificar la suma de 5000 enteros!")
 fun_def <- ex() %>% check_fun_def("sum_n")
 fun_def %>% check_arguments()
 fun_def %>% check_call(5000) %>% check_result() %>% check_equal()
@@ -237,12 +240,12 @@ fun_def %>% check_call(100) %>% check_result() %>% check_equal()
 fun_def %>% check_call(1000) %>% check_result() %>% check_equal()
 
 fun_def %>% check_body()
-success_msg("This is awesome! Let's get to the next exercise.")
+success_msg("¡Esto es increíble! Vayamos al siguiente ejercicio.")
 ```
 
 ---
 
-## Defining functions continued...
+## Defiendo funciones continuación...
 
 ```yaml
 type: NormalExercise
@@ -253,9 +256,11 @@ skills:
   - 1
 ```
 
-We will make another function for this exercise. We will define a function `altman_plot` that takes two arguments `x` and `y` and plots the difference `y-x` in the y-axis against the sum `x+y` in the x-axis. 
 
-You can define functions with as many variables as you want. For example, here we need at least two, `x` and `y`. The following function plots log transformed values:
+Haremos otra función para este ejercicio. Definiremos una función `altman_plot` que toma dos argumentos `x` e `y` y traza la diferencia `y-x` en el eje y contra la suma `x+y` en el eje x.
+
+
+Puede definir funciones con tantas variables como desee. Por ejemplo, aquí necesitamos al menos dos, `x` e `y`. La siguiente función traza valores transformados de registro:
 
 ```{r}
 log_plot <- function(x, y){
@@ -263,15 +268,15 @@ log_plot <- function(x, y){
 }
 ```
 
-This function does not return anything. It just makes a plot.
+Esta función no devuelve nada. Simplemente hace una trama.
 
-`@instructions`
-We will make another function for this exercise.
-- Create a function `altman_plot` that takes two arguments `x` and `y` and plots `y-x` (on the y-axis) against `x+y` (on the x-axis).
-	- Note: don't use parentheses around the arguments in the `plot` function because you will confuse R.
-
-`@hint`
-The command inside the function should be: `plot(x + y, y - x)`. Remember to define a function you use
+`@instrucciones`
+Haremos otra función para este ejercicio.
+- Cree una función `altman_plot` que tome dos argumentos `x` y `y` y grafique `y-x` (en el eje y) contra `x+y` (en el eje x).
+- Nota: no use paréntesis alrededor de los argumentos en la función `plot` porque confundirá a R.
+- 
+`@pista`
+El comando dentro de la función debería ser: `plot(x + y, y - x)`. Recuerda definir una función que uses
 
 ```{r}
 altman_plot <- function(var_1, var_2){
@@ -279,20 +284,21 @@ altman_plot <- function(var_1, var_2){
 }
 ```
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec 
 ```
 
-`@sample_code`
+`@Código_de_muestra`
 ```{r}
-# Create `altman_plot` 
+
+# Crear `altman_plot`
 
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Create `altman_plot` 
+# Crear `altman_plot`
 altman_plot <- function(x, y){
     plot(x + y, y - x)
 }
@@ -303,17 +309,17 @@ altman_plot <- function(x, y){
 test_error()
 test_function_definition("altman_plot",
                            body_test = {
-                           	test_function("plot", incorrect_msg = "Make sure you call `plot` inside your function")
+                           	test_function("plot", incorrect_msg = "Asegúrate de llamar a `plot` dentro de tu función")
                             },
-                         undefined_msg = "Be sure to define `altman_plot`.",
-                         incorrect_number_arguments_msg = "Make sure the function takes two arguments.")
-test_object("altman_plot", incorrect_msg = "Make sure you use `x` and `y` as your arguments and that you plot the difference `y-x` versus the sum `x+y`. Please write the sum as `x+y` not `y+x`. Also, for this exercise, we want you to use the curly brackets `{ }` as in the example. Do not use () around the arguments in the `plot` function because you will confuse R.") 
-success_msg("That's great! You can also play around with the variables and put in values for x and y.")
+                         undefined_msg = "Asegúrese de definir `altman_plot`.",
+                         incorrect_number_arguments_msg = "Asegúrate de que la función tome dos argumentos.")
+test_object("altman_plot", incorrect_msg = "Asegúrate de usar `x` e `y` como argumentos y de trazar la diferencia `y-x` frente a la suma `x+y`. Escriba la suma como `x+y` no `y+x`. Además, para este ejercicio, queremos que use las llaves `{ }` como en el ejemplo. No use () alrededor de los argumentos en la función `plot` porque confundirá a R.") 
+success_msg("¡Eso es genial! También puedes jugar con las variables y poner valores para x e y.")
 ```
 
 ---
 
-## Lexical scope
+## Ámbito léxico
 
 ```yaml
 type: NormalExercise
@@ -324,7 +330,7 @@ skills:
   - 1
 ```
 
-Lexical scoping is a convention used by many languages that determine when an object is available by its name. When you run the code below you will see which `x` is available at different points in the code.
+El ámbito léxico es una convención utilizada por muchos idiomas que determina cuándo un objeto está disponible por su nombre. Cuando ejecute el código a continuación, verá qué `x` está disponible en diferentes puntos del código.
 
 ```{r}
 x <- 8
@@ -336,10 +342,10 @@ my_func <- function(y){
 my_func(x)
 print(x)
 ```
-Note that when we define `x` as 9, this is inside the function, but it is 8 after you run the function. The `x` changed inside the function but not outside.
+Tenga en cuenta que cuando definimos `x` como 9, esto está dentro de la función, pero es 8 después de ejecutar la función. La `x` cambió dentro de la función pero no fuera.
 
-`@instructions`
-After running the code below, what is the value of `x`?
+`@instrucciones`
+Después de ejecutar el siguiente código, ¿cuál es el valor de `x`?
 ```{r}
 x <- 3
 my_func <- function(y){
@@ -350,42 +356,44 @@ my_func <- function(y){
 my_func(x)
 ```
 
-`@hint`
-Run the code and then `print(x)`. You will have the answer.
 
-`@pre_exercise_code`
+`@pista`
+Ejecute el código y luego `print(x)`. Tendrás la respuesta.
+
+`@Codigo_pre_ejercicio`
 ```{r}
 x <- 3
 ```
 
-`@sample_code`
+`@Codigo_de_muestra`
 ```{r}
-# Run this code 
+
+# Ejecutar este código
 x <- 3
     my_func <- function(y){
     x <- 5
     y+5
 }
 
-# Print the value of x 
-```
 
-`@solution`
+# Imprime el valor de x
+```
+`@solución`
 ```{r}
-# Show value of x
+# Mostrar valor de x
 x
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_object("x", incorrect_msg = "How do you print the value of x?")
-success_msg("Good job!") 
+test_object("x", incorrect_msg = "¿Cómo se imprime el valor de x?")
+success_msg("¡Buen trabajo!") 
 ```
 
 ---
 
-## For loops
+## Bluckes For
 
 ```yaml
 type: NormalExercise
@@ -396,48 +404,50 @@ skills:
   - 1
 ```
 
-In the next two exercises, we are going to write a for-loop. In that for-loop we are going to call a function. We start by defining that function here, in this exercise. We will call the for loop in the next exercise.
+En los próximos dos ejercicios, vamos a escribir un bucle for. En ese ciclo for vamos a llamar a una función. Comenzamos definiendo esa función aquí, en este ejercicio. Llamaremos al bucle for en el siguiente ejercicio.
 
-`@instructions`
-- Write a function `compute_s_n` that for any given $n$ computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$. 
-- Report the value of the sum when `n=10`.
+`@instrucciones`
+- Escribe una función `compute_s_n` que para cualquier $n$ determinado calcule la suma $S_n = 1^2 + 2^2 + 3^2 + \dots + n^2$.
+- Reportar el valor de la suma cuando `n=10`.
 
-`@hint`
-The function will look something like this:
+`@pista`
+La función se verá algo como esto:
 
 ```{r}
 compute_s_n <- function(n){
     x <- 1:n
-    ## sum the vector after you square it
+ ## suma el vector después de elevarlo al cuadrado
 }
 ```
-Then you evaluate it at 10: `compute_s_n(10)`
+Luego lo evalúas en 10: `compute_s_n(10)`
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
+
 ```{r}
 # no pec 
 ```
 
-`@sample_code`
+`@Código_de_muestra`
 ```{r}
-# Here is an example of a function that adds numbers from 1 to n
+
+# Aquí hay un ejemplo de una función que suma números del 1 al n
 example_func <- function(n){
     x <- 1:n
     sum(x)
 }
 
-# Here is the sum of the first 100 numbers
+# Aquí está la suma de los primeros 100 números
 example_func(100)
 
-# Write a function compute_s_n with argument n that for any given n computes the sum of 1 + 2^2 + ...+ n^2
+# Escribe una función compute_s_n con el argumento n que para cualquier n calcula la suma de 1 + 2^2 + ...+ n^2
 
-# Report the value of the sum when n=10
+# Reportar el valor de la suma cuando n=10
 
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Here is a function that adds numbers from 1 to n
+# Aquí hay una función que suma números del 1 al n
 example_func <- function(n){
     x <- 1:n
     sum(x)
@@ -446,34 +456,34 @@ example_func <- function(n){
 # Here is the sum of the first 100 numbers
 example_func(100)
 
-# Write a function compute_s_n with argument n that for any given n computes the sum of 1 + 2^2 + ...+ n^2
+# Escribe una función compute_s_n con el argumento n que para cualquier n calcula la suma de 1 + 2^2 + ...+ n^2
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Report the value of the sum when n=10
+# Reportar el valor de la suma cuando n=10
 compute_s_n(10)
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_function_result("compute_s_n", incorrect_msg ="Make sure your function is producing the correct output.")
-test_output_contains("compute_s_n(10)", incorrect_msg = "Make sure your function is producing the correct output.")
-test_student_typed("compute_s_n(10)", not_typed_msg = "Make sure you evaluate the function at 10 in the last line.")
+test_function_result("compute_s_n", incorrect_msg ="Asegúrese de que su función esté produciendo la salida correcta.")
+test_output_contains("compute_s_n(10)", incorrect_msg = "Asegúrese de que su función esté produciendo la salida correcta.")
+test_student_typed("compute_s_n(10)", not_typed_msg = "Asegúrate de evaluar la función en 10 en la última línea.")
 fun_def <- ex() %>% check_fun_def("compute_s_n")
 fun_def %>% check_arguments()
 fun_def %>% check_call(10) %>% check_result() %>% check_equal()
 fun_def %>% check_call(100) %>% check_result() %>% check_equal()
 fun_def %>% check_call(1000) %>% check_result() %>% check_equal()
 fun_def %>% check_body()
-success_msg("That's awesome! You're getting so good at this!")
+success_msg("¡Eso es genial! ¡Te estás volviendo tan bueno en esto!")
 ```
 
 ---
 
-## For loops continued...
+## Bucles For continuación...
 
 ```yaml
 type: NormalExercise
@@ -483,8 +493,7 @@ xp: 100
 skills:
   - 1
 ```
-
-Now we are going to compute the sum of the squares for several values of $n$. We will use a for-loop for this. Here is an example of a for-loop:
+Ahora vamos a calcular la suma de los cuadrados de varios valores de $n$. Usaremos un bucle for para esto. Aquí hay un ejemplo de un bucle for:
 
 ```{r}
 results <- vector("numeric", 10)
@@ -495,48 +504,50 @@ for(i in 1:n){
 }
 ```
 
-Note that we start with a call to `vector` which constructs an empty vector that we will fill while the loop runs.
+Tenga en cuenta que comenzamos con una llamada a `vector` que construye un vector vacío que llenaremos mientras se ejecuta el ciclo.
 
-`@instructions`
-- Define an empty numeric vector `s_n` of size 25 using `s_n <- vector("numeric", 25)`.
-- Compute the the sum when n is equal to each integer from 1 to 25 using the function we defined in the previous exercise: `compute_s_n`
-- Save the results in `s_n`
+`@instrucciones`
+- Defina un vector numérico vacío `s_n` de tamaño 25 usando `s_n <- vector("numeric", 25)`.
+- Calcula la suma cuando n es igual a cada número entero del 1 al 25 usando la función que definimos en el ejercicio anterior: `compute_s_n`
+- Guarda los resultados en `s_n`
 
-`@hint`
-The line of code inside the function will be `s_n[i] <- compute_s_n(i)`.
+`@pista`
+La línea de código dentro de la función será `s_n[i] <- compute_s_n(i)`.
 
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec 
 ```
 
-`@sample_code`
+`@Código_de_muestra`
 ```{r}
-# Define a function and store it in `compute_s_n`
+# Definir una función y guardarla en `compute_s_n`
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Create a vector for storing results
+# Definir una función y guardarla en `compute_s_n`
 s_n <- vector("numeric", 25)
 
-# write a for-loop to store the results in s_n
 
+# escribir un ciclo for para almacenar los resultados en s_n
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Define a function and store it in `compute_s_n`
+
+# Definir una función y guardarla en `compute_s_n`
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Create a vector for storing results
+# Crear un vector para almacenar resultados
 s_n <- vector("numeric", 25)
 
-# Assign values to `n` and `s_n`
+
+# Asigna valores a `n` y `s_n`
 for(i in 1:25){
   s_n[i] <- compute_s_n(i)
 }
@@ -545,8 +556,9 @@ for(i in 1:25){
 `@sct`
 ```{r}
 test_error()
-test_object("compute_s_n", undefined_msg = "Make sure to define compute_s_n first.", incorrect_msg = "Are you assigning the correct values to x? ")
-test_object("s_n", incorrect_msg = "You are getting the incorrect values. Check that you are calling the function correctly.")
+test_object("compute_s_n", undefined_msg = "Asegúrese de definir compute_s_n primero.", incorrect_msg = "¿Estás asignando los valores correctos a x?")
+test_object("s_n", incorrect_msg = "
+Está obteniendo los valores incorrectos. Comprueba que estás llamando a la función correctamente.")
 test_function("vector")
 fun_def <- ex() %>% check_fun_def("compute_s_n")
 fun_def %>% check_arguments()
@@ -555,17 +567,17 @@ fun_def %>% check_call(100) %>% check_result() %>% check_equal()
 fun_def %>% check_call(1000) %>% check_result() %>% check_equal()
 fun_def %>% check_body()
 for_loop <- ex() %>% check_for()
-# check condition ("i in 1:5" in the solution)
-# note that check_code might be too stringent, since someone could
-# create a variable, e.g. a <- 1:5, and give that to the for loop
+# verificar condición ("i en 1:5" en la solución)
+# tenga en cuenta que check_code podría ser demasiado estricto, ya que alguien podría
+# crear una variable, p. a <- 1:5, y dale eso al ciclo for
 for_loop %>% check_cond() 
 #%>% check_code("in n", fixed = TRUE)
-success_msg("This is great! You now know the basics of for loops in R.")
+success_msg("¡Esto es genial! Ahora conoce los conceptos básicos de bucles for en R.")
 ```
 
 ---
 
-## Checking our math
+## Comprobando nuestras matemáticas
 
 ```yaml
 type: NormalExercise
@@ -576,81 +588,83 @@ skills:
   - 1
 ```
 
-If we do the math, we can show that 
+Si hacemos los cálculos, podemos demostrar que
 
-$$S_n = 1^2 + 2^2 + 3^2 + \dots + n^2 =  n(n+1)(2n+1)/6 $$
+$$S_n = 1^2 + 2^2 + 3^2 + \dots + n^2 = n(n+1)(2n+1)/6 $$
 
-We have already computed the values of $S_n$ from 1 to 25 using a for loop. 
+Ya hemos calculado los valores de $S_n$ de 1 a 25 usando un bucle for.
 
-If the formula is correct then a plot of $S_n$ versus $n$ should look cubic.
+Si la fórmula es correcta, una gráfica de $S_n$ frente a $n$ debería verse cúbica.
 
-Let's make this plot.
+Hagamos esta trama.
+`@instrucciones`
+- Definir `n <- 1:25`. Note que con esto podemos usar `for(i in n)`
+- Use un bucle for para guardar las sumas en un vector `s_n <- vector("numeric", 25)`
+- Traza `s_n` (en el eje y) contra `n` (en el eje x).
 
-`@instructions`
-- Define `n <- 1:25`. Note that with this we can use `for(i in n)`
-- Use a for loop to save the sums into a vector `s_n <- vector("numeric", 25)`
-- Plot `s_n` (on the y-axis) against `n` (on the x-axis).
+`@pista`
 
-`@hint`
-In the plot code, `n` is the x-axis, and `s_n` is the y-axis.
-
-`@pre_exercise_code`
+En el código de la trama, `n` es el eje x y `s_n` es el eje y.
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec 
 ```
 
-`@sample_code`
+`@Codigo_de_muestra`
 ```{r}
-# Define the function
+
+# Defina la función
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Define the vector of n
+# Defina el vector de n
 n <- 1:25
 
-# Define the vector to store data
+# Defina el vector para almacenar datos
 s_n <- vector("numeric", 25)
 for(i in n){
   s_n[i] <- compute_s_n(i)
 }
 
-#  Create the plot 
+# Crea la trama
 
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Define the function
+
+# Definir la función
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Define the vector of n
+
+# Defina el vector de n
 n <- 1:25
 
-# Define the vector to store data
+# Defina el vector para almacenar datos
 s_n <- vector("numeric", 25)
 for(i in n){
   s_n[i] <- compute_s_n(i)
 }
 
-#  Create the plot 
+# Crea la trama
 plot(n, s_n)
 ```
 
 `@sct`
 ```{r}
 test_error()
-test_function("plot",args=c("x","y"), incorrect_msg = "Did you plot the x and y axis correctly?")
-success_msg("Awesome! Let's go to the last exercise in this chapter!")
+test_function("plot",args=c("x","y"), incorrect_msg = "¿Trazó correctamente los ejes x e y?")
+success_msg("¡Impresionante! ¡Vamos al último ejercicio de este capítulo!")
 ```
 
 ---
 
-## Checking our math continued
+## Comprobando nuestras matemáticas continuación
 
 ```yaml
 type: NormalExercise
@@ -660,73 +674,73 @@ xp: 100
 skills:
   - 1
 ```
+Ahora vamos a comprobar si obtenemos exactamente la misma respuesta.
 
-Now let's actually check if we get the exact same answer.
+`@instrucciones`
+- Confirme que `s_n` y $n(n+1)(2n+1)/6$ son iguales usando el comando `identical`.
 
-`@instructions`
-- Confirm that `s_n` and $n(n+1)(2n+1)/6$ are the same using the `identical` command.
+`@pista`
+`s_n` es un vector. Porque `n` es un vector `n*(n+1)*(2*n+1)/6` es un vector. Puedes comparar dos vectores `x` e `y` con `identical(x, y)`.
 
-`@hint`
-`s_n` is a vector. Because `n` is a vector `n*(n+1)*(2*n+1)/6` is a vector. You can compare two vectors `x` and `y` with `identical(x, y)`.
-
-`@pre_exercise_code`
+`@Codigo_pre_ejercicio`
 ```{r}
 # no pec
 ```
 
-`@sample_code`
+`@Codigo_de_muestra`
 ```{r}
-# Define the function
+# Definir la función
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Define the vector of n
+# Definir el vector de n
 n <- 1:25
 
-# Define the vector to store data
+# Definir el vector para almacenar datos
 s_n <- vector("numeric", 25)
 for(i in n){
   s_n[i] <- compute_s_n(i)
 }
 
-# Check that s_n is identical to the formula given in the instructions.
-
+# Verifique que s_n sea idéntico a la fórmula dada en las instrucciones.
 ```
 
-`@solution`
+`@solución`
 ```{r}
-# Define the function
+
+# Definir la función
 compute_s_n <- function(n){
   x <- 1:n
   sum(x^2)
 }
 
-# Define the vector of n
+# Definir el vector de n
 n <- 1:25
 
-# Define the vector to store data
+# Definir el vector para almacenar datos
 s_n <- vector("numeric", 25)
 for(i in n){
   s_n[i] <- compute_s_n(i)
 }
 
-# Check that s_n is identical to the formula given in the instructions.
-identical(s_n, n*(n+1)*(2*n+1)/6)
+
+# Verifique que s_n sea idéntico a la fórmula dada en las instrucciones.
+idéntico(s_n, n*(n+1)*(2*n+1)/6)
 ```
 
 `@sct`
 ```{r}
 test_error()
 test_function("identical")
-test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "Make sure you're checking your formula!")
-success_msg("This is great! We are done with this module. Time to move on to bigger things!")
+test_output_contains("identical(s_n, n*(n+1)*(2*n+1)/6)", incorrect_msg = "¡Asegúrate de revisar tu fórmula!")
+success_msg("¡Esto es genial! Hemos terminado con este módulo. ¡Es hora de pasar a cosas más grandes!")
 ```
 
 ---
 
-## End of Assessment 9
+## Fin de la Evaluación 9
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -737,19 +751,19 @@ skills:
   - 1
 ```
 
-This is the end of the programming assignment for this section. Please DO NOT click through to additional assessments from this page. Please DO answer the question on this page. If you do click through, your scores may NOT be recorded.
+Este es el final de la asignación de programación para esta sección. NO haga clic para acceder a evaluaciones adicionales desde esta página. Por favor, RESPONDA la pregunta en esta página. Si hace clic, es posible que NO se registren sus puntajes.
 
-Click on "Awesome" to get the "points" for this question and then return to the course on edX.
+Haga clic en "Impresionante" para obtener los "puntos" de esta pregunta y luego regrese al curso en edX.
 
-You can now close this window to go back to the <a href='https://www.edx.org/course/data-science-r-basics-2'>course</a>.
+Ahora puede cerrar esta ventana para volver al <a href='https://www.edx.org/course/data-science-r-basics-2'>curso</a>.
 
-`@hint`
-- No hint necessary!
+`@pista`
+- ¡No es necesario dar pistas!
 
-`@possible_answers`
-- [Awesome]
-- Nope
+`@posibles_respuestas`
+- [Impresionante]
+- No
 
-`@feedback`
-- Great! Now navigate back to the course on edX!
-- Now navigate back to the course on edX!
+`@comentarios`
+- ¡Gran! ¡Ahora vuelve al curso en edX!
+- ¡Ahora vuelve al curso en edX!
